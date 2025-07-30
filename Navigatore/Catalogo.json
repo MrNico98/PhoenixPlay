@@ -1,6 +1,8 @@
 {
   "Catalogo": [
     { "nome_gioco": "WUCHANG: Fallen Feathers", "steamdbid": "2277560", "versione": "", "online": "false", "download": "", "exe": "", "dipendenze": "steam.exe"},
+    { "nome_gioco": "TEST", "steamdbid": "2277560", "versione": "", "online": "false", "download": "", "exe": "", "dipendenze": "steam.exe"},
+    { "nome_gioco": "TEST1", "steamdbid": "2277560", "versione": "", "online": "false", "download": "", "exe": "", "dipendenze": "steam.exe"},
     { "nome_gioco": "Killing Floor 3", "steamdbid": "1430190", "versione": "", "online": "true", "download": "", "exe": "KF.exe", "dipendenze": "steam.exe"},
     { "nome_gioco": "PEAK", "steamdbid": "3527290", "versione": "v1.9.a", "online": "true", "download": "https://flashbang.sh/dl/3CMQ5v3WtxDC3ZirgGE2Idgel52wGewR0OKjLuRMBPbZmnVAfn1xTdn3L2spNd6DwRq9LwPdLtxQz3YZ7imrDVluLacSO-PAev4qgQ?v=1753803468-Jm2plRwDDmnP7LA4C%2BrtHD3U5EzH13Vsw0jB6jH9FI4%3D", "exe": "PEAK.exe", "dipendenze": "steam.exe"}
   ]
