@@ -1,7 +1,7 @@
 {
   "Home": [
     { "nome_gioco": "WUCHANG: Fallen Feathers", "steamdbid": "2277560", "versione": "", "online": "false", "download": "", "exe": "", "dipendenze": "steam.exe"},
-    { "nome_gioco": "Killing Floor 3", "steamdbid": "1430190", "versione": "", "online": "true", "download": "", "exe": "KF.exe", "dipendenze": "steam.exe"},
-    { "nome_gioco": "PEAK", "steamdbid": "3527290", "versione": "v1.9.a", "online": "true", "download": "https://buzzheavier.com/hzxqu2vzonz3", "exe": "PEAK.exe", "dipendenze": "steam.exe"}
+    { "nome_gioco": "Schedule I", "steamdbid": "3164500", "versione": "v.0.3.6f6", "online": "true", "download": "", "exe": "Schedule I.exe", "dipendenze": "steam.exe"},
+    { "nome_gioco": "PEAK", "steamdbid": "3527290", "versione": "v.1.9.a", "online": "true", "download": "https://buzzheavier.com/hzxqu2vzonz3", "exe": "PEAK.exe", "dipendenze": "steam.exe"}
   ]
 }
