@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phoenix Play - Il primo launcher di giochi gratuito italiano</title>
+    <style>
+        :root {
+            --primary: #ff5722;
+            --primary-dark: #e64a19;
+            --secondary: #303f9f;
+            --dark: #212121;
+            --light: #f5f5f5;
+            --gray: #757575;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #1a1a1a;
+            color: var(--light);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to right, var(--dark), var(--secondary));
+            padding: 2rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(255, 87, 34, 0.5);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--light);
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        section {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .feature {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+        
+        .feature-description {
+            color: var(--gray);
+        }
+        
+        .help-section {
+            background: linear-gradient(to right, var(--secondary), var(--dark));
+            border-radius: 10px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            padding: 2rem 1rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .social-links {
+            margin-top: 1rem;
+        }
+        
+        .social-link {
+            color: var(--light);
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">🔥 Phoenix Play</div>
+            <h1>Il primo launcher di giochi gratuito italiano</h1>
+            <p class="subtitle">Scarica, installa e gioca senza pubblicità, con integrazione Steam Tools e tracciamento del tempo di gioco. Targato AiMods!</p>
+            <a href="#download" class="cta-button">Scarica Ora</a>
+        </div>
+    </header>
+    
+    <section id="features">
+        <h2 class="section-title">Perché scegliere Phoenix Play?</h2>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">📥</div>
+                <h3 class="feature-title">Download Diretti</h3>
+                <p class="feature-description">Nessuna pubblicità, download veloci e disponibilità immediata di tutti i giochi.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">⚙️</div>
+                <h3 class="feature-title">Installazione Automatica</h3>
+                <p class="feature-description">Gestione automatica di installazione, avvio e disinstallazione dei giochi, proprio come Steam.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🛡️</div>
+                <h3 class="feature-title">Giochi Testati</h3>
+                <p class="feature-description">Tutti i giochi vengono testati per verificarne il funzionamento e la sicurezza prima di essere pubblicati.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🔧</div>
+                <h3 class="feature-title">Integrazione Steam Tools</h3>
+                <p class="feature-description">Accesso a file .lua e .manifest attraverso la sezione dedicata Steam Tools.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">⏱️</div>
+                <h3 class="feature-title">Tracciamento Tempo di Gioco</h3>
+                <p class="feature-description">Tieni traccia della durata totale delle tue sessioni di gioco.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">💾</div>
+                <h3 class="feature-title">Libreria Personale</h3>
+                <p class="feature-description">Organizza tutti i tuoi giochi in un'unica libreria, facile da navigare e personalizzare.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="help">
+        <div class="help-section">
+            <h2 class="section-title">Il tuo aiuto è importante!</h2>
+            <p>I link di download non sono permanenti, ma lo diventano se vengono scaricati 30 volte in 2 mesi. Questo ci aiuta a mantenere il servizio gratuito per tutti.</p>
+            <p>Condividi Phoenix Play con i tuoi amici per aiutarci a rendere permanenti i link dei giochi!</p>
+            <a href="#share" class="cta-button">Condividi Ora</a>
+        </div>
+    </section>
+    
+    <section id="download">
+        <h2 class="section-title">Scarica Phoenix Play</h2>
+        <div style="text-align: center;">
+            <p>Scarica subito il launcher e inizia a giocare!</p>
+            <a href="#" class="cta-button">Download per Windows</a>
+            <p style="margin-top: 1rem; color: var(--gray);">Versione 1.0 - 25MB</p>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="logo">Phoenix Play</div>
+            <p>Il primo launcher di giochi gratuito italiano by AiMods</p>
+            <div class="social-links">
+                <a href="#" class="social-link">📱</a>
+                <a href="#" class="social-link">💬</a>
+                <a href="#" class="social-link">👥</a>
+            </div>
+            <p style="margin-top: 2rem; color: var(--gray);">© 2023 AiMods - Tutti i diritti riservati</p>
+        </div>
+    </footer>
+</body>
+</html>
