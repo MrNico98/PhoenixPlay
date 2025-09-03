@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
+        /* VARIABILI */
         :root {
             --primary: #ff5722;
             --primary-dark: #e64a19;
@@ -20,6 +21,8 @@
             --gray-dark: #616161;
             --success: #4caf50;
         }
+        
+        /* RESET E BASE */
         * {
             margin: 0;
             padding: 0;
@@ -44,6 +47,8 @@
             line-height: 1.2;
             margin-bottom: 1rem;
         }
+        
+        /* LAYOUT */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -57,6 +62,38 @@
         .text-center {
             text-align: center;
         }
+        
+        /* LANGUAGE SWITCHER */
+        .language-switcher {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            z-index: 1001;
+            display: flex;
+            background: rgba(30, 30, 30, 0.8);
+            border-radius: 50px;
+            padding: 0.3rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .language-btn {
+            background: none;
+            border: none;
+            color: var(--gray);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .language-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* HEADER */
         header {
             background: linear-gradient(135deg, var(--darker) 0%, var(--secondary-dark) 100%);
             padding: 0;
@@ -111,6 +148,8 @@
             color: var(--light);
             font-weight: 300;
         }
+        
+        /* PULSANTI */
         .cta-button {
             display: inline-block;
             background: linear-gradient(to right, var(--primary), var(--primary-dark));
@@ -163,6 +202,8 @@
             background: var(--primary);
             color: white;
         }
+        
+        /* SEZIONI */
         .section-title {
             text-align: center;
             margin-bottom: 4rem;
@@ -179,6 +220,8 @@
             margin: 1rem auto;
             border-radius: 2px;
         }
+        
+        /* FEATURES */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -231,6 +274,8 @@
         .feature-description {
             color: var(--gray);
         }
+        
+        /* HELP SECTION */
         .help-section {
             background: linear-gradient(135deg, var(--secondary) 0%, var(--darker) 100%);
             border-radius: 15px;
@@ -256,6 +301,8 @@
             position: relative;
             z-index: 2;
         }
+        
+        /* DOWNLOAD SECTION */
         .download-section {
             text-align: center;
             background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
@@ -281,6 +328,8 @@
             padding: 0.5rem 1rem;
             border-radius: 50px;
         }
+        
+        /* GALLERY */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -308,6 +357,8 @@
             font-size: 4rem;
             color: rgba(255, 255, 255, 0.2);
         }
+        
+        /* FAQ */
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
@@ -345,6 +396,8 @@
         .faq-active .faq-answer {
             display: block;
         }
+        
+        /* FOOTER */
         footer {
             background: linear-gradient(135deg, var(--darker) 0%, #000 100%);
             padding: 4rem 0 2rem;
@@ -422,6 +475,8 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--gray);
         }
+        
+        /* ANIMAZIONI */
         @keyframes pulse {
             0% {
                 text-shadow: 0 0 10px rgba(255, 87, 34, 0.7);
@@ -449,6 +504,8 @@
         .float-animation {
             animation: float 5s ease-in-out infinite;
         }
+        
+        /* NAVIGATION */
         .navbar {
             position: fixed;
             top: 0;
@@ -496,6 +553,8 @@
         .navbar-link:hover {
             color: var(--primary);
         }
+        
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             .logo {
                 font-size: 3.5rem;
@@ -529,18 +588,28 @@
             .navbar-menu {
                 display: none;
             }
+            
+            .language-switcher {
+                top: 1rem;
+                right: 1rem;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="language-switcher">
+        <button class="language-btn active" data-lang="it">IT</button>
+        <button class="language-btn" data-lang="en">EN</button>
+    </div>
+    
     <nav class="navbar">
         <div class="navbar-container">
             <a href="#" class="navbar-logo"><i class="fas fa-fire"></i> Phoenix Play</a>
             <ul class="navbar-menu">
-                <li class="navbar-item"><a href="#features" class="navbar-link">Caratteristiche</a></li>
-                <li class="navbar-item"><a href="#download" class="navbar-link">Download</a></li>
+                <li class="navbar-item"><a href="#features" class="navbar-link" data-translate="features">Caratteristiche</a></li>
+                <li class="navbar-item"><a href="#download" class="navbar-link" data-translate="download">Download</a></li>
                 <li class="navbar-item"><a href="#faq" class="navbar-link">FAQ</a></li>
-                <li class="navbar-item"><a href="#support" class="navbar-link">Supporto</a></li>
+                <li class="navbar-item"><a href="#support" class="navbar-link" data-translate="support">Supporto</a></li>
             </ul>
         </div>
     </nav>
@@ -549,11 +618,11 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo float-animation"><i class="fas fa-fire"></i> Phoenix Play</div>
-                <h1>Il primo launcher di giochi gratuito italiano</h1>
-                <p class="subtitle">Scarica, installa e gioca senza pubblicità, con integrazione Steam Tools e tracciamento del tempo di gioco. Targato AiMods!</p>
+                <h1 data-translate="title">Il primo launcher di giochi gratuito italiano</h1>
+                <p class="subtitle" data-translate="subtitle">Scarica, installa e gioca senza pubblicità, con integrazione Steam Tools e tracciamento del tempo di gioco. Targato AiMods!</p>
                 <div class="button-group">
-                    <a href="#download" class="cta-button"><i class="fas fa-download"></i> Scarica Ora</a>
-                    <a href="#features" class="cta-button secondary-button"><i class="fas fa-info-circle"></i> Scopri di più</a>
+                    <a href="#download" class="cta-button"><i class="fas fa-download"></i> <span data-translate="downloadNow">Scarica Ora</span></a>
+                    <a href="#features" class="cta-button secondary-button"><i class="fas fa-info-circle"></i> <span data-translate="discoverMore">Scopri di più</span></a>
                 </div>
             </div>
         </div>
@@ -561,43 +630,43 @@
     
     <section id="features">
         <div class="container">
-            <h2 class="section-title">Perché scegliere Phoenix Play?</h2>
+            <h2 class="section-title" data-translate="whyChoose">Perché scegliere Phoenix Play?</h2>
             
             <div class="features">
                 <div class="feature">
                     <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-                    <h3 class="feature-title">Download Diretti</h3>
-                    <p class="feature-description">Nessuna pubblicità, download veloci e disponibilità immediata di tutti i giochi.</p>
+                    <h3 class="feature-title" data-translate="directDownloads">Download Diretti</h3>
+                    <p class="feature-description" data-translate="directDownloadsDesc">Nessuna pubblicità, download veloci e disponibilità immediata di tutti i giochi.</p>
                 </div>
                 
                 <div class="feature">
                     <div class="feature-icon"><i class="fas fa-cogs"></i></div>
-                    <h3 class="feature-title">Installazione Automatica</h3>
-                    <p class="feature-description">Gestione automatica di installazione, avvio e disinstallazione dei giochi, proprio come Steam.</p>
+                    <h3 class="feature-title" data-translate="autoInstall">Installazione Automatica</h3>
+                    <p class="feature-description" data-translate="autoInstallDesc">Gestione automatica di installazione, avvio e disinstallazione dei giochi, proprio come Steam.</p>
                 </div>
                 
                 <div class="feature">
                     <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3 class="feature-title">Giochi Testati</h3>
-                    <p class="feature-description">Tutti i giochi vengono testati per verificarne il funzionamento e la sicurezza prima di essere pubblicati.</p>
+                    <h3 class="feature-title" data-translate="testedGames">Giochi Testati</h3>
+                    <p class="feature-description" data-translate="testedGamesDesc">Tutti i giochi vengono testati per verificarne il funzionamento e la sicurezza prima di essere pubblicati.</p>
                 </div>
                 
                 <div class="feature">
                     <div class="feature-icon"><i class="fab fa-steam"></i></div>
-                    <h3 class="feature-title">Integrazione Steam Tools</h3>
-                    <p class="feature-description">Accesso a file .lua e .manifest attraverso la sezione dedicata Steam Tools.</p>
+                    <h3 class="feature-title" data-translate="steamIntegration">Integrazione Steam Tools</h3>
+                    <p class="feature-description" data-translate="steamIntegrationDesc">Accesso a file .lua e .manifest attraverso la sezione dedicata Steam Tools.</p>
                 </div>
                 
                 <div class="feature">
                     <div class="feature-icon"><i class="fas fa-clock"></i></div>
-                    <h3 class="feature-title">Tracciamento Tempo di Gioco</h3>
-                    <p class="feature-description">Tieni traccia della durata totale delle tue sessioni di gioco.</p>
+                    <h3 class="feature-title" data-translate="timeTracking">Tracciamento Tempo di Gioco</h3>
+                    <p class="feature-description" data-translate="timeTrackingDesc">Tieni traccia della durata totale delle tue sessioni di gioco.</p>
                 </div>
                 
                 <div class="feature">
                     <div class="feature-icon"><i class="fas fa-gamepad"></i></div>
-                    <h3 class="feature-title">Libreria Personale</h3>
-                    <p class="feature-description">Organizza tutti i tuoi giochi in un'unica libreria, facile da navigare e personalizzare.</p>
+                    <h3 class="feature-title" data-translate="personalLibrary">Libreria Personale</h3>
+                    <p class="feature-description" data-translate="personalLibraryDesc">Organizza tutti i tuoi giochi in un'unica libreria, facile da navigare e personalizzare.</p>
                 </div>
             </div>
         </div>
@@ -607,10 +676,10 @@
         <div class="container">
             <div class="help-section">
                 <div class="help-content">
-                    <h2 class="section-title">Il tuo aiuto è importante!</h2>
-                    <p>I link di download non sono permanenti, ma lo diventano se vengono scaricati 30 volte in 2 mesi. Questo ci aiuta a mantenere il servizio gratuito per tutti.</p>
-                    <p>Condividi Phoenix Play con i tuoi amici per aiutarci a rendere permanenti i link dei giochi!</p>
-                    <a href="#share" class="cta-button"><i class="fas fa-share-alt"></i> Condividi Ora</a>
+                    <h2 class="section-title" data-translate="helpImportant">Il tuo aiuto è importante!</h2>
+                    <p data-translate="helpDesc1">I link di download non sono permanenti, ma lo diventano se vengono scaricati 30 volte in 2 mesi. Questo ci aiuta a mantenere il servizio gratuito per tutti.</p>
+                    <p data-translate="helpDesc2">Condividi Phoenix Play con i tuoi amici per aiutarci a rendere permanenti i link dei giochi!</p>
+                    <a href="#share" class="cta-button"><i class="fas fa-share-alt"></i> <span data-translate="shareNow">Condividi Ora</span></a>
                 </div>
             </div>
         </div>
@@ -618,7 +687,7 @@
     
     <section id="gallery">
         <div class="container">
-            <h2 class="section-title">Screenshot</h2>
+            <h2 class="section-title" data-translate="screenshots">Screenshot</h2>
             <div class="gallery">
                 <div class="gallery-item"><i class="fas fa-image"></i></div>
                 <div class="gallery-item"><i class="fas fa-image"></i></div>
@@ -631,12 +700,12 @@
     <section id="download">
         <div class="container">
             <div class="download-section">
-                <h2 class="section-title">Scarica Phoenix Play</h2>
-                <p>Scarica subito il launcher e inizia a giocare!</p>
-                <a href="#" class="cta-button"><i class="fas fa-download"></i> Download per Windows</a>
+                <h2 class="section-title" data-translate="downloadTitle">Scarica Phoenix Play</h2>
+                <p data-translate="downloadDesc">Scarica subito il launcher e inizia a giocare!</p>
+                <a href="#" class="cta-button"><i class="fas fa-download"></i> <span data-translate="downloadForWindows">Download per Windows</span></a>
                 
                 <div class="download-info">
-                    <span class="download-meta"><i class="fas fa-tag"></i> Versione 1.0</span>
+                    <span class="download-meta"><i class="fas fa-tag"></i> <span data-translate="version">Versione</span> 1.0</span>
                     <span class="download-meta"><i class="fas fa-weight-hanging"></i> 25MB</span>
                     <span class="download-meta"><i class="fas fa-windows"></i> Windows 10/11</span>
                 </div>
@@ -646,35 +715,35 @@
     
     <section id="faq">
         <div class="container">
-            <h2 class="section-title">Domande Frequenti</h2>
+            <h2 class="section-title">FAQ</h2>
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Phoenix Play è veramente gratuito?</span>
+                        <span data-translate="faq1Question">Phoenix Play è veramente gratuito?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Sì, Phoenix Play è completamente gratuito e senza pubblicità. Il nostro obiettivo è fornire un'esperienza di gaming senza costi nascosti.</p>
+                        <p data-translate="faq1Answer">Sì, Phoenix Play è completamente gratuito e senza pubblicità. Il nostro obiettivo è fornire un'esperienza di gaming senza costi nascosti.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Come posso contribuire al progetto?</span>
+                        <span data-translate="faq2Question">Come posso contribuire al progetto?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Puoi contribuire condividendo Phoenix Play con i tuoi amici, segnalando bug o suggerendo nuovi giochi da aggiungere alla piattaforma.</p>
+                        <p data-translate="faq2Answer">Puoi contribuire condividendo Phoenix Play con i tuoi amici, segnalando bug o suggerendo nuovi giochi da aggiungere alla piattaforma.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>I giochi sono sicuri e privi di virus?</span>
+                        <span data-translate="faq3Question">I giochi sono sicuri e privi di virus?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Tutti i giochi vengono testati accuratamente per garantire la sicurezza e l'assenza di malware prima di essere pubblicati sulla piattaforma.</p>
+                        <p data-translate="faq3Answer">Tutti i giochi vengono testati accuratamente per garantire la sicurezza e l'assenza di malware prima di essere pubblicati sulla piattaforma.</p>
                     </div>
                 </div>
             </div>
@@ -686,7 +755,7 @@
             <div class="footer-content">
                 <div class="footer-info">
                     <div class="footer-logo"><i class="fas fa-fire"></i> Phoenix Play</div>
-                    <p class="footer-description">Il primo launcher di giochi gratuito italiano by AiMods</p>
+                    <p class="footer-description" data-translate="footerDesc">Il primo launcher di giochi gratuito italiano by AiMods</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
@@ -696,17 +765,17 @@
                 </div>
                 
                 <div class="footer-links">
-                    <h3 class="footer-heading">Link Utili</h3>
+                    <h3 class="footer-heading" data-translate="usefulLinks">Link Utili</h3>
                     <ul class="footer-links">
-                        <li><a href="#features">Caratteristiche</a></li>
-                        <li><a href="#download">Download</a></li>
+                        <li><a href="#features" data-translate="features">Caratteristiche</a></li>
+                        <li><a href="#download" data-translate="download">Download</a></li>
                         <li><a href="#faq">FAQ</a></li>
-                        <li><a href="#support">Supporto</a></li>
+                        <li><a href="#support" data-translate="support">Supporto</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-links">
-                    <h3 class="footer-heading">Contatti</h3>
+                    <h3 class="footer-heading" data-translate="contacts">Contatti</h3>
                     <ul class="footer-links">
                         <li><a href="mailto:support@phoenixplay.it"><i class="fas fa-envelope"></i> support@phoenixplay.it</a></li>
                         <li><a href="#"><i class="fab fa-discord"></i> Discord Community</a></li>
@@ -716,36 +785,154 @@
             </div>
             
             <div class="copyright">
-                <p>© 2023 AiMods - Tutti i diritti riservati</p>
+                <p>© 2023 AiMods - <span data-translate="allRights">Tutti i diritti riservati</span></p>
             </div>
         </div>
     </footer>
 
     <script>
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentNode;
-                item.classList.toggle('faq-active');
-                
-                const icon = question.querySelector('i');
-                if (item.classList.contains('faq-active')) {
-                    icon.classList.remove('fa-chevron-down');
-                    icon.classList.add('fa-chevron-up');
+        // Traduzioni
+        const translations = {
+            it: {
+                title: "Il primo launcher di giochi gratuito italiano",
+                subtitle: "Scarica, installa e gioca senza pubblicità, con integrazione Steam Tools e tracciamento del tempo di gioco. Targato AiMods!",
+                downloadNow: "Scarica Ora",
+                discoverMore: "Scopri di più",
+                whyChoose: "Perché scegliere Phoenix Play?",
+                directDownloads: "Download Diretti",
+                directDownloadsDesc: "Nessuna pubblicità, download veloci e disponibilità immediata di tutti i giochi.",
+                autoInstall: "Installazione Automatica",
+                autoInstallDesc: "Gestione automatica di installazione, avvio e disinstallazione dei giochi, proprio come Steam.",
+                testedGames: "Giochi Testati",
+                testedGamesDesc: "Tutti i giochi vengono testati per verificarne il funzionamento e la sicurezza prima di essere pubblicati.",
+                steamIntegration: "Integrazione Steam Tools",
+                steamIntegrationDesc: "Accesso a file .lua e .manifest attraverso la sezione dedicata Steam Tools.",
+                timeTracking: "Tracciamento Tempo di Gioco",
+                timeTrackingDesc: "Tieni traccia della durata totale delle tue sessioni di gioco.",
+                personalLibrary: "Libreria Personale",
+                personalLibraryDesc: "Organizza tutti i tuoi giochi in un'unica libreria, facile da navigare e personalizzare.",
+                helpImportant: "Il tuo aiuto è importante!",
+                helpDesc1: "I link di download non sono permanenti, ma lo diventano se vengono scaricati 30 volte in 2 mesi. Questo ci aiuta a mantenere il servizio gratuito per tutti.",
+                helpDesc2: "Condividi Phoenix Play con i tuoi amici per aiutarci a rendere permanenti i link dei giochi!",
+                shareNow: "Condividi Ora",
+                screenshots: "Screenshot",
+                downloadTitle: "Scarica Phoenix Play",
+                downloadDesc: "Scarica subito il launcher e inizia a giocare!",
+                downloadForWindows: "Download per Windows",
+                version: "Versione",
+                faq1Question: "Phoenix Play è veramente gratuito?",
+                faq1Answer: "Sì, Phoenix Play è completamente gratuito e senza pubblicità. Il nostro obiettivo è fornire un'esperienza di gaming senza costi nascosti.",
+                faq2Question: "Come posso contribuire al progetto?",
+                faq2Answer: "Puoi contribuire condividendo Phoenix Play con i tuoi amici, segnalando bug o suggerendo nuovi giochi da aggiungere alla piattaforma.",
+                faq3Question: "I giochi sono sicuri e privi di virus?",
+                faq3Answer: "Tutti i giochi vengono testati accuratamente per garantire la sicurezza e l'assenza di malware prima di essere pubblicati sulla piattaforma.",
+                footerDesc: "Il primo launcher di giochi gratuito italiano by AiMods",
+                usefulLinks: "Link Utili",
+                features: "Caratteristiche",
+                download: "Download",
+                support: "Supporto",
+                contacts: "Contatti",
+                allRights: "Tutti i diritti riservati"
+            },
+            en: {
+                title: "The first free Italian game launcher",
+                subtitle: "Download, install and play without ads, with Steam Tools integration and gameplay time tracking. By AiMods!",
+                downloadNow: "Download Now",
+                discoverMore: "Discover More",
+                whyChoose: "Why choose Phoenix Play?",
+                directDownloads: "Direct Downloads",
+                directDownloadsDesc: "No ads, fast downloads and immediate availability of all games.",
+                autoInstall: "Automatic Installation",
+                autoInstallDesc: "Automatic management of game installation, launch and uninstallation, just like Steam.",
+                testedGames: "Tested Games",
+                testedGamesDesc: "All games are tested to verify their functionality and safety before being published.",
+                steamIntegration: "Steam Tools Integration",
+                steamIntegrationDesc: "Access to .lua and .manifest files through the dedicated Steam Tools section.",
+                timeTracking: "Play Time Tracking",
+                timeTrackingDesc: "Keep track of the total duration of your gaming sessions.",
+                personalLibrary: "Personal Library",
+                personalLibraryDesc: "Organize all your games in a single library, easy to navigate and customize.",
+                helpImportant: "Your help is important!",
+                helpDesc1: "Download links are not permanent, but become permanent if they are downloaded 30 times in 2 months. This helps us keep the service free for everyone.",
+                helpDesc2: "Share Phoenix Play with your friends to help us make game links permanent!",
+                shareNow: "Share Now",
+                screenshots: "Screenshots",
+                downloadTitle: "Download Phoenix Play",
+                downloadDesc: "Download the launcher now and start playing!",
+                downloadForWindows: "Download for Windows",
+                version: "Version",
+                faq1Question: "Is Phoenix Play really free?",
+                faq1Answer: "Yes, Phoenix Play is completely free and without ads. Our goal is to provide a gaming experience with no hidden costs.",
+                faq2Question: "How can I contribute to the project?",
+                faq2Answer: "You can contribute by sharing Phoenix Play with your friends, reporting bugs or suggesting new games to add to the platform.",
+                faq3Question: "Are the games safe and virus-free?",
+                faq3Answer: "All games are thoroughly tested to ensure safety and absence of malware before being published on the platform.",
+                footerDesc: "The first free Italian game launcher by AiMods",
+                usefulLinks: "Useful Links",
+                features: "Features",
+                download: "Download",
+                support: "Support",
+                contacts: "Contacts",
+                allRights: "All rights reserved"
+            }
+        };
+
+        // Funzionalità cambio lingua
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageButtons = document.querySelectorAll('.language-btn');
+            let currentLang = 'it';
+            
+            languageButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    if (lang !== currentLang) {
+                        currentLang = lang;
+                        switchLanguage(lang);
+                        
+                        // Aggiorna pulsanti attivi
+                        languageButtons.forEach(btn => btn.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            function switchLanguage(lang) {
+                document.querySelectorAll('[data-translate]').forEach(element => {
+                    const key = element.getAttribute('data-translate');
+                    if (translations[lang][key]) {
+                        element.textContent = translations[lang][key];
+                    }
+                });
+            }
+            
+            // Funzionalità FAQ
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const item = question.parentNode;
+                    item.classList.toggle('faq-active');
+                    
+                    const icon = question.querySelector('i');
+                    if (item.classList.contains('faq-active')) {
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    } else {
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    }
+                });
+            });
+            
+            // Animazione di scroll per la navbar
+            window.addEventListener('scroll', () => {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.style.background = 'rgba(18, 18, 18, 0.95)';
+                    navbar.style.padding = '0.7rem 0';
                 } else {
-                    icon.classList.remove('fa-chevron-up');
-                    icon.classList.add('fa-chevron-down');
+                    navbar.style.background = 'rgba(18, 18, 18, 0.95)';
+                    navbar.style.padding = '1rem 0';
                 }
             });
-        });
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(18, 18, 18, 0.95)';
-                navbar.style.padding = '0.7rem 0';
-            } else {
-                navbar.style.background = 'rgba(18, 18, 18, 0.95)';
-                navbar.style.padding = '1rem 0';
-            }
         });
     </script>
 </body>
