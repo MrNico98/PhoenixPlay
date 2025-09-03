@@ -66,17 +66,15 @@
         
         /* LANGUAGE SWITCHER */
         .language-switcher {
-            position: fixed;
-            top: 1.5rem;
-            right: 1.5rem;
-            z-index: 1001;
-            display: flex;
-            background: rgba(30, 30, 30, 0.8);
-            border-radius: 50px;
-            padding: 0.3rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+    display: flex;
+    background: rgba(30, 30, 30, 0.8);
+    border-radius: 50px;
+    padding: 0.3rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-left: 2rem; /* spaziatura dal menu */
+}
+
         
         .language-btn {
             background: none;
@@ -126,10 +124,25 @@
             margin: 0 auto;
         }
         
-        .logo-img {
-            height: 120px;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+        
+        .logo-img {
+            height: 80px;
             animation: pulse 2s infinite;
+        }
+        
+        .logo-text {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-shadow: 0 0 20px rgba(255, 87, 34, 0.7);
+            font-family: 'Montserrat', sans-serif;
         }
         
         h1 {
@@ -596,11 +609,7 @@
     </style>
 </head>
 <body>
-    <div class="language-switcher">
-        <button class="language-btn active" data-lang="it">IT</button>
-        <button class="language-btn" data-lang="en">EN</button>
-    </div>
-    
+ 
     <nav class="navbar">
         <div class="navbar-container">
             <a href="#" class="navbar-logo">
@@ -612,13 +621,20 @@
                 <li class="navbar-item"><a href="#faq" class="navbar-link">FAQ</a></li>
                 <li class="navbar-item"><a href="#support" class="navbar-link" data-translate="support">Supporto</a></li>
             </ul>
+         <div class="language-switcher">
+          <button class="language-btn active" data-lang="it">IT</button>
+          <button class="language-btn" data-lang="en">EN</button>
+         </div>
         </div>
     </nav>
     
     <header>
         <div class="container">
             <div class="header-content">
-                <img src="https://raw.githubusercontent.com/Mrnico98/PhoenixPlay/main/Immagini/logoPhoenix.png" alt="Phoenix Play" class="navbar-logo">
+                <div class="logo-container float-animation">
+                    <img src="https://raw.githubusercontent.com/Mrnico98/PhoenixPlay/main/Immagini/logoPhoenix.png" alt="Phoenix Play" class="logo-img">
+                    <div class="logo-text">Phoenix Play</div>
+                </div>
                 <h1 data-translate="title">Il primo launcher di giochi gratuito italiano</h1>
                 <p class="subtitle" data-translate="subtitle">Scarica, installa e gioca senza pubblicità, con integrazione Steam Tools e tracciamento del tempo di gioco.</p>
                 <div class="button-group">
