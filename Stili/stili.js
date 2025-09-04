@@ -1,4 +1,3 @@
-// Funzionalità FAQ
 document.querySelectorAll('.faq-question').forEach(question => {
     question.addEventListener('click', () => {
         const item = question.parentNode;
@@ -15,7 +14,6 @@ document.querySelectorAll('.faq-question').forEach(question => {
     });
 });
 
-// Animazione di scroll per la navbar
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
