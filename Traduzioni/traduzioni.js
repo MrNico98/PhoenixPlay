@@ -1,4 +1,3 @@
-// Traduzioni
 const translations = {
     it: {
         title: "Il primo launcher di giochi gratuito italiano",
@@ -84,7 +83,6 @@ const translations = {
     }
 };
 
-// Funzionalità cambio lingua
 document.addEventListener('DOMContentLoaded', function() {
     const languageButtons = document.querySelectorAll('.language-btn');
     let currentLang = 'it';
