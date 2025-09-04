@@ -1,4 +1,3 @@
-/* VARIABILI */
 :root {
     --primary: #ff5722;
     --primary-dark: #e64a19;
@@ -13,7 +12,6 @@
     --success: #4caf50;
 }
 
-/* RESET E BASE */
 * {
     margin: 0;
     padding: 0;
@@ -39,7 +37,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
 }
 
-/* LAYOUT */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -54,7 +51,6 @@ section {
     text-align: center;
 }
 
-/* LANGUAGE SWITCHER */
 .language-switcher {
     display: flex;
     background: rgba(30, 30, 30, 0.8);
@@ -62,7 +58,7 @@ section {
     padding: 0.3rem;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    margin-left: 2rem; /* spaziatura dal menu */
+    margin-left: 2rem;
 }
 
 .language-btn {
@@ -81,7 +77,6 @@ section {
     color: white;
 }
 
-/* HEADER */
 header {
     background: linear-gradient(135deg, var(--darker) 0%, var(--secondary-dark) 100%);
     padding: 0;
@@ -150,7 +145,6 @@ h1 {
     font-weight: 300;
 }
 
-/* PULSANTI */
 .cta-button {
     display: inline-block;
     background: linear-gradient(to right, var(--primary), var(--primary-dark));
@@ -204,7 +198,6 @@ h1 {
     color: white;
 }
 
-/* SEZIONI */
 .section-title {
     text-align: center;
     margin-bottom: 4rem;
@@ -222,7 +215,6 @@ h1 {
     border-radius: 2px;
 }
 
-/* FEATURES */
 .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -276,7 +268,6 @@ h1 {
     color: var(--gray);
 }
 
-/* HELP SECTION */
 .help-section {
     background: linear-gradient(135deg, var(--secondary) 0%, var(--darker) 100%);
     border-radius: 15px;
@@ -303,7 +294,6 @@ h1 {
     z-index: 2;
 }
 
-/* DOWNLOAD SECTION */
 .download-section {
     text-align: center;
     background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
@@ -330,7 +320,6 @@ h1 {
     border-radius: 50px;
 }
 
-/* GALLERY */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -359,7 +348,6 @@ h1 {
     color: rgba(255, 255, 255, 0.2);
 }
 
-/* FAQ */
 .faq-container {
     max-width: 800px;
     margin: 0 auto;
@@ -398,7 +386,6 @@ h1 {
     display: block;
 }
 
-/* FOOTER */
 footer {
     background: linear-gradient(135deg, var(--darker) 0%, #000 100%);
     padding: 4rem 0 2rem;
@@ -476,7 +463,6 @@ footer {
     color: var(--gray);
 }
 
-/* ANIMAZIONI */
 @keyframes pulse {
     0% {
         filter: drop-shadow(0 0 5px rgba(255, 87, 34, 0.7));
@@ -505,7 +491,6 @@ footer {
     animation: float 5s ease-in-out infinite;
 }
 
-/* NAVIGATION */
 .navbar {
     position: fixed;
     top: 0;
@@ -551,7 +536,6 @@ footer {
     color: var(--primary);
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
     .logo-img {
         height: 80px;
