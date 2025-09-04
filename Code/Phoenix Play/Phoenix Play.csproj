@@ -1,0 +1,94 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>Phoenix_Play</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <SatelliteResourceLanguages>it</SatelliteResourceLanguages>
+    <PlaywrightBrowserPlatform>win</PlaywrightBrowserPlatform>
+	<PlaywrightSkipInstallBrowsers>true</PlaywrightSkipInstallBrowsers>
+	<PlaywrightSkipInstall>true</PlaywrightSkipInstall>
+	<DebugType>none</DebugType>
+	<DebugSymbols>false</DebugSymbols>
+	<Optimize>true</Optimize>
+	<Deterministic>true</Deterministic>
+	<IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
+	<SuppressTrimAnalysisWarnings>true</SuppressTrimAnalysisWarnings>
+	<SatelliteResourceLanguages>it;en</SatelliteResourceLanguages>
+	<PublishSingleFile>true</PublishSingleFile>
+	<TrimMode>partial</TrimMode>
+	<EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+	<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+	<EnableUnsafeBinaryFormatterSerialization>false</EnableUnsafeBinaryFormatterSerialization>
+	<EventSourceSupport>false</EventSourceSupport>
+    <ApplicationIcon>pngLogoApp.ico</ApplicationIcon>
+	<Deterministic>true</Deterministic>
+	<AssemblyVersion>0.0.0.2</AssemblyVersion>
+	<FileVersion>0.0.0.2</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="pngLogoApp.ico" />
+  </ItemGroup>
+
+  <!-- Esclusione piattaforme non Windows -->
+  <ItemGroup>
+    <Content Remove="**/.playwright/node/linux*/**" />
+    <Content Remove="**/.playwright/node/mac*/**" />
+    <Content Remove="**/.playwright/node/arm*/**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove=".playwright/**" />
+    <Content Include=".playwright/node/win32_x64/**" />
+  </ItemGroup>
+  <!-- Rimozione post-build cartelle superflue -->
+  <Target Name="CleanNonWindowsPlaywright" AfterTargets="Build">
+    <RemoveDir Directories=".playwright\node\linux-arm64" />
+    <RemoveDir Directories=".playwright\node\linux-x64" />
+    <RemoveDir Directories=".playwright\node\mac-arm64" />
+    <RemoveDir Directories=".playwright\node\mac-x64" />
+  </Target>
+  <Target Name="RemoveUnnecessaryFiles" AfterTargets="Publish">
+    <!-- Rimuove tutte le DLL non essenziali -->
+    <ItemGroup>
+      <FilesToDelete Include="$(PublishDir)*.pdb;$(PublishDir)*.xml;$(PublishDir)*.config" />
+    </ItemGroup>
+    <Delete Files="@(FilesToDelete)" />
+    
+    <!-- Rimuove runtime non Windows -->
+    <RemoveDir Directories="$(PublishDir)runtimes\linux-*;$(PublishDir)runtimes\osx-*" />
+  </Target>
+  <ItemGroup>
+    <None Remove="Resources\English.json" />
+    <None Remove="Resources\Italiano.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.12.2" />
+    <PackageReference Include="Microsoft.Playwright" Version="1.54.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\English.json" />
+    <Resource Include="Resources\Italiano.json" />
+  </ItemGroup>
+
+  <!-- Risorse generate -->
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
