@@ -4,7 +4,7 @@
 [![Downloads](https://img.shields.io/github/downloads/mrnico98/PhoenixPlay/total?style=for-the-badge)](https://github.com/mrnico98/PhoenixPlay/releases)
 [![Platform](https://img.shields.io/badge/platform-Windows-blue?style=for-the-badge&logo=windows)](https://mrnico98.github.io/PhoenixPlay/)
 [![License](https://img.shields.io/github/license/mrnico98/PhoenixPlay?style=for-the-badge)](LICENSE)
-[![Telegram](https://img.shields.io/badge/Telegram-Join%20Us-blue?style=for-the-badge&logo=telegram)](https://t.me/phoenixplay)
+[![Telegram](https://img.shields.io/badge/Telegram-Join%20Us-blue?style=for-the-badge&logo=telegram)](https://t.me/+9yp0UCZGICczNWU0)
 
 ---
 
