@@ -44,7 +44,7 @@ Phoenix Play is a Windows launcher that lets you **download, install, and manage
 - Report bugs via [Issues](https://github.com/mrnico98/PhoenixPlay/issues)  
 - Suggest games or features  
 - Share Phoenix Play with your friends  
-- Support the project via [☕ Ko-fi](https://ko-fi.com/)  
+- Support the project via [☕ Ko-fi]([https://ko-fi.com/](https://ko-fi.com/aimodsita))  
 
 ---
 
@@ -86,7 +86,7 @@ Phoenix Play è un launcher per Windows che permette di scaricare, installare e 
 - Segnala bug aprendo una [Issue](https://github.com/mrnico98/PhoenixPlay/issues)  
 - Suggerisci giochi o nuove funzionalità  
 - Condividi Phoenix Play con amici  
-- Supporta lo sviluppo con un [☕ Ko-fi](https://ko-fi.com/)  
+- Supporta lo sviluppo con un [☕ Ko-fi]([https://ko-fi.com/](https://ko-fi.com/aimodsita))  
 
 ---
 
