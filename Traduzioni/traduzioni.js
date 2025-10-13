@@ -38,7 +38,9 @@ const translations = {
         download: "Download",
         support: "Supporto",
         contacts: "Contatti",
-        allRights: "Tutti i diritti riservati"
+        allRights: "Tutti i diritti riservati",
+        faq4Question: "In caso di problemi contattateci su Telegram",
+        faq5Question: "Non trovi un gioco? Puoi richiederlo su questo bot Telegram"
     },
     en: {
         title: "The first free Italian game launcher",
@@ -79,7 +81,9 @@ const translations = {
         download: "Download",
         support: "Support",
         contacts: "Contacts",
-        allRights: "All rights reserved"
+        allRights: "All rights reserved",
+        faq4Question: "If you have problems contact us on Telegram",
+        faq5Question: "Can't find a game? You can request it on this Telegram bot"
     }
 };
 
@@ -110,3 +114,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
