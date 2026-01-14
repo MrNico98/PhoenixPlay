@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phoenix Play Container Games</title>
+    <title>Phoneix Play Container Games</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -824,7 +824,7 @@
             <div class="header-content">
                 <div class="logo">
                     <i class="fas fa-gamepad"></i>
-                    <h1>Phoenix Play<span>Container Games</span></h1>
+                    <h1>Phoneix Play <span>Container Games</span></h1>
                 </div>
                 <div class="stats">
                     <div class="stat-item">
@@ -990,7 +990,7 @@
 
     <footer>
         <div class="container">
-            <p>Phoenix Play Container Games - Catalogo di giochi da SteamRip, OnlineFix e FitGirl</p>
+            <p>Phoneix Play Container Games - Catalogo di giochi da SteamRip, OnlineFix e FitGirl</p>
             <p>I dati vengono recuperati automaticamente da fonti pubbliche. Le immagini dei giochi sono di proprietà dei rispettivi sviluppatori.</p>
         </div>
     </footer>
@@ -1641,7 +1641,7 @@ function filterCrossSourceDuplicates(games) {
             }
             
             // Get image URL from Steam data for current source
-            const imageUrl = getSteamImageUrl(title);
+            const imageUrl = getSteamImageUrl(title, game.source);
             
             // Get source badge class
             const sourceBadgeClass = `${game.source}-badge-card`;
@@ -1669,11 +1669,14 @@ function filterCrossSourceDuplicates(games) {
         }
 
 // Get Steam/GOG image URL for a game title from current source data
-function getSteamImageUrl(title, source = currentSource) {
+function getSteamImageUrl(title, source = null) {
     if (!title) return `https://via.placeholder.com/400x200/2d3748/4299e1?text=No+Image`;
     
+    // Usa la fonte del gioco se specificata, altrimenti usa currentSource
+    const gameSource = source || currentSource;
+    
     // Try to find Steam data for this game in the specified source
-    const currentSteamData = steamData[source];
+    const currentSteamData = steamData[gameSource];
     const steamInfo = currentSteamData.find(s => {
         if (!s.title) return false;
         return normalizeTitle(s.title).includes(normalizeTitle(title)) || 
@@ -1815,8 +1818,8 @@ function normalizeTitle(title) {
             modalSourceBadge.className = `modal-source-badge ${game.source}-badge-card`;
             
             // Set modal image
-            const imageUrl = getSteamImageUrl(title);
-            modalImage.style.backgroundImage = `url('${imageUrl}')`;
+const imageUrl = getSteamImageUrl(title, game.source);
+modalImage.style.backgroundImage = `url('${imageUrl}')`;
             
             // Format date
             let formattedDate = 'Data sconosciuta';
