@@ -1617,56 +1617,58 @@ function filterCrossSourceDuplicates(games) {
     updatePagination();
 }
         // Create a game card element
-        function createGameCard(game) {
-            const card = document.createElement('div');
-            card.className = 'game-card';
-            
-            // Get game data
-            const title = getGameTitle(game);
-            const fileSize = getFormattedFileSize(game);
-            
-            // Format date
-            let formattedDate = 'Data sconosciuta';
-            try {
-                const uploadDate = new Date(getUploadDate(game));
-                if (!isNaN(uploadDate.getTime())) {
-                    formattedDate = uploadDate.toLocaleDateString('it-IT', {
-                        day: '2-digit',
-                        month: '2-digit',
-                        year: 'numeric'
-                    });
-                }
-            } catch (e) {
-                console.log('Errore formattazione data:', e);
-            }
-            
-            // Get image URL from Steam data for current source
-            const imageUrl = getSteamImageUrl(title, game.source);
-            
-            // Get source badge class
-            const sourceBadgeClass = `${game.source}-badge-card`;
-            
-            card.innerHTML = `
-                <div class="game-image" style="background-image: url('${imageUrl}')">
-                    <div class="game-source-badge ${sourceBadgeClass}">${game.source.toUpperCase()}</div>
-                </div>
-                <div class="game-info">
-                    <h3 class="game-title" title="${title}">${title}</h3>
-                    <div class="game-meta">
-                        <div class="game-date"><i class="far fa-calendar-alt"></i> ${formattedDate}</div>
-                        <div class="game-size"><i class="fas fa-hdd"></i> ${fileSize}</div>
-                    </div>
-                    <button class="game-download-btn" data-game-id="${title}">
-                        <i class="fas fa-download"></i> Vedi Download
-                    </button>
-                </div>
-            `;
-            
-            // Add click event to show game details
-            card.querySelector('.game-download-btn').addEventListener('click', () => showGameDetails(game));
-            
-            return card;
+function createGameCard(game) {
+    const card = document.createElement('div');
+    card.className = 'game-card';
+    
+    // Get game data
+    const title = getGameTitle(game);
+    const cleanTitle = cleanDisplayTitle(title); // Usa il titolo pulito
+    const fileSize = getFormattedFileSize(game);
+    
+    // Format date
+    let formattedDate = 'Data sconosciuta';
+    try {
+        const uploadDate = new Date(getUploadDate(game));
+        if (!isNaN(uploadDate.getTime())) {
+            formattedDate = uploadDate.toLocaleDateString('it-IT', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            });
         }
+    } catch (e) {
+        console.log('Errore formattazione data:', e);
+    }
+    
+    // Get image URL from Steam data for current source
+    const imageUrl = getSteamImageUrl(title, game.source);
+    
+    // Get source badge class
+    const sourceBadgeClass = `${game.source}-badge-card`;
+    
+    card.innerHTML = `
+        <div class="game-image" style="background-image: url('${imageUrl}')">
+            <div class="game-source-badge ${sourceBadgeClass}">${game.source.toUpperCase()}</div>
+        </div>
+        <div class="game-info">
+            <h3 class="game-title" title="${cleanTitle}">${cleanTitle}</h3>
+            <div class="game-meta">
+                <div class="game-date"><i class="far fa-calendar-alt"></i> ${formattedDate}</div>
+                <div class="game-size"><i class="fas fa-hdd"></i> ${fileSize}</div>
+            </div>
+            <button class="game-download-btn" data-game-id="${title}">
+                <i class="fas fa-download"></i> Vedi Download
+            </button>
+        </div>
+    `;
+    
+    // Add click event to show game details
+    card.querySelector('.game-download-btn').addEventListener('click', () => showGameDetails(game));
+    
+    return card;
+}
+
 
 // Get Steam/GOG image URL for a game title from current source data
 function getSteamImageUrl(title, source = null) {
@@ -2102,6 +2104,28 @@ modalImage.style.backgroundImage = `url('${imageUrl}')`;
                 }
             });
         }
+
+        // Clean game title for display (remove "Free Download" and other unwanted text)
+function cleanDisplayTitle(title) {
+    if (!title) return '';
+    
+    // Rimuovi "Free Download" e varianti
+    let cleanTitle = title
+        .replace(/\bFree Download\b/gi, '')
+        .replace(/\bDownload Free\b/gi, '')
+        .replace(/\bFREE\b/gi, '')
+        .replace(/\bDOWNLOAD\b/gi, '')
+        .replace(/\bFree\b/g, '')
+        .replace(/\bDownload\b/g, '');
+    
+    // Rimuovi doppi spazi e trim
+    cleanTitle = cleanTitle.replace(/\s+/g, ' ').trim();
+    
+    // Rimuovi caratteri speciali all'inizio/fine
+    cleanTitle = cleanTitle.replace(/^[:\-–—\s]+|[:\-–—\s]+$/g, '');
+    
+    return cleanTitle || title;
+}
 
         // Switch between sources
         function switchSource(source) {
