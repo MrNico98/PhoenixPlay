@@ -1,0 +1,1102 @@
+:root {
+    --primary-color: #1a202c;
+    --secondary-color: #2d3748;
+    --accent-color: #f97316; /* Arancione predominante */
+    --accent-steamrip: #0ea5e9;
+    --accent-onlinefix: #10b981;
+    --accent-fitgirl: #8b5cf6;
+    --light-color: #e2e8f0;
+    --dark-color: #0d1117;
+    --success-color: #22c55e;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--dark-color);
+    padding: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+.stats {
+    display: flex;
+    gap: 25px;
+    background-color: var(--secondary-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #a0aec0;
+}
+
+/* Source Selector */
+.source-selector {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: var(--dark-color);
+    border-radius: 12px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.source-btn {
+    flex: 1;
+    min-width: 150px;
+    padding: 15px;
+    background-color: var(--secondary-color);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    color: var(--light-color);
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.source-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.source-btn.active {
+    border-color: var(--accent-color);
+}
+
+.source-btn.steamrip.active {
+    border-color: var(--accent-steamrip);
+    background-color: rgba(14, 165, 233, 0.08);
+}
+
+.source-btn.onlinefix.active {
+    border-color: var(--accent-onlinefix);
+    background-color: rgba(16, 185, 129, 0.08);
+}
+
+.source-btn.fitgirl.active {
+    border-color: var(--accent-fitgirl);
+    background-color: rgba(139, 92, 246, 0.08);
+}
+
+.source-badge {
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.steamrip-badge {
+    background-color: var(--accent-steamrip);
+}
+
+.onlinefix-badge {
+    background-color: var(--accent-onlinefix);
+}
+
+.fitgirl-badge {
+    background-color: var(--accent-fitgirl);
+}
+
+/* Main Layout */
+.main-layout {
+    display: flex;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+/* Filters Panel */
+.filters-panel {
+    flex: 0 0 280px;
+    background-color: var(--secondary-color);
+    border-radius: 12px;
+    padding: 20px;
+    height: fit-content;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.filter-section {
+    margin-bottom: 25px;
+}
+
+.filter-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+    padding-bottom: 8px;
+    border-bottom: 1px solid #4a5568;
+}
+
+.search-box {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #1a202c;
+    border: 2px solid #4a5568;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+}
+
+.search-box:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.category-list {
+    list-style: none;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.category-list li {
+    margin-bottom: 8px;
+}
+
+.category-btn {
+    width: 100%;
+    text-align: left;
+    padding: 10px 15px;
+    background-color: #1a202c;
+    border: none;
+    border-radius: 6px;
+    color: var(--light-color);
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category-btn:hover {
+    background-color: #2d3748;
+    transform: translateX(3px);
+}
+
+.category-btn.active {
+    background-color: rgba(249, 115, 22, 0.15);
+    font-weight: 600;
+    border-left: 3px solid var(--accent-color);
+}
+
+.category-count {
+    background-color: var(--dark-color);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+.sort-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sort-btn {
+    padding: 10px 15px;
+    background-color: #1a202c;
+    border: none;
+    border-radius: 6px;
+    color: var(--light-color);
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s;
+}
+
+.sort-btn:hover {
+    background-color: #2d3748;
+}
+
+.sort-btn.active {
+    background-color: rgba(249, 115, 22, 0.15);
+    font-weight: 600;
+    border-left: 3px solid var(--accent-color);
+}
+
+.file-size-filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.size-slider {
+    flex: 1;
+    height: 8px;
+    background: #1a202c;
+    border-radius: 4px;
+    outline: none;
+}
+
+.size-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.size-value {
+    min-width: 70px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+/* Games Grid */
+.games-grid {
+    flex: 1;
+}
+
+.games-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.games-count {
+    font-size: 1.2rem;
+}
+
+.source-indicator {
+    padding: 8px 15px;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-all-indicator {
+    background: linear-gradient(135deg, var(--accent-steamrip), var(--accent-onlinefix), var(--accent-fitgirl));
+    color: white;
+}
+
+.view-toggle {
+    display: flex;
+    gap: 10px;
+}
+
+.view-btn {
+    background-color: var(--secondary-color);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    color: var(--light-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.view-btn.active {
+    background-color: rgba(249, 115, 22, 0.15);
+    border: 1px solid var(--accent-color);
+}
+
+
+.games-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+/* Game Card */
+.game-card {
+    background-color: var(--secondary-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    position: relative;
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.game-image {
+    height: 200px;
+    width: 100%;
+    background-color: #1a202c;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.game-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.8));
+}
+
+.game-source-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.steamrip-badge-card {
+    background-color: var(--accent-steamrip);
+}
+
+.onlinefix-badge-card {
+    background-color: var(--accent-onlinefix);
+}
+
+
+.fitgirl-badge-card {
+    background-color: var(--accent-fitgirl);
+}
+
+.game-info {
+    padding: 20px;
+}
+
+.game-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: white;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.game-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #a0aec0;
+}
+
+.game-size {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.game-download-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.game-download-btn:hover {
+    background-color: #ea580c;
+}
+
+/* Game Details Modal */
+.game-details-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: var(--secondary-color);
+    margin: 40px auto;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+    background-color: var(--dark-color);
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.modal-source-badge {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+.modal-image {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 2px solid var(--accent-color);
+}
+
+.download-options {
+    margin-top: 30px;
+}
+
+.download-options h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+.download-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.download-link {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s;
+    border-left: 4px solid transparent;
+}
+
+.download-link:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-left-color: var(--accent-color);
+}
+
+.link-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.link-icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--dark-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.buzzheavier {
+    background-color: #f97316;
+}
+
+.vikingfile {
+    background-color: #10b981;
+}
+
+.gofile {
+    background-color: #8b5cf6;
+}
+
+.onedrive {
+    background-color: #0078d4;
+}
+
+.mega {
+    background-color: #d90066;
+}
+
+.torrent {
+    background-color: #7e57c2;
+}
+
+.magnet {
+    background-color: #ef4444;
+}
+
+.link-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.preferred-badge {
+    background-color: var(--warning-color);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.link-btn {
+    padding: 10px 25px;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.link-btn:hover {
+    background-color: #ea580c;
+}
+
+.game-properties {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.property {
+    background-color: var(--primary-color);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.property-label {
+    font-size: 0.9rem;
+    color: #a0aec0;
+}
+
+.property-value {
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 12px;
+    border-top: 3px solid var(--accent-color);
+}
+
+.pagination-btn {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    color: var(--light-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-numbers {
+    display: flex;
+    gap: 8px;
+}
+
+.page-number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.page-number:hover {
+    background-color: var(--accent-color);
+}
+
+.page-number.active {
+    background-color: var(--accent-color);
+    font-weight: 600;
+}
+
+.page-info {
+    margin: 0 15px;
+    font-weight: 600;
+}
+
+/* Loading */
+.loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2rem;
+    grid-column: 1 / -1;
+}
+
+.loading i {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+/* FAQ Section */
+.faq-section {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: var(--dark-color);
+    border-radius: 16px;
+    border-left: 5px solid var(--accent-color);
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.faq-section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.faq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.faq-header h2 {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.close-faq {
+    background: none;
+    border: none;
+    color: var(--light-color);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.close-faq:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: rotate(90deg);
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.faq-category {
+    background-color: var(--secondary-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    border-top: 3px solid var(--accent-color);
+}
+
+.faq-category:hover {
+    transform: translateY(-5px);
+}
+
+.faq-category h3 {
+    padding: 20px;
+    background-color: rgba(249, 115, 22, 0.1);
+    margin: 0;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid rgba(249, 115, 22, 0.2);
+}
+
+.faq-category.fitgirl h3 {
+    background-color: rgba(168, 85, 247, 0.1);
+    border-bottom: 2px solid rgba(168, 85, 247, 0.2);
+}
+
+.faq-category.steamrip h3 {
+    background-color: rgba(249, 115, 22, 0.1);
+    border-bottom: 2px solid rgba(249, 115, 22, 0.2);
+}
+
+.faq-category.onlinefix h3 {
+    background-color: rgba(34, 197, 94, 0.1);
+    border-bottom: 2px solid rgba(34, 197, 94, 0.2);
+}
+
+.faq-content {
+    padding: 20px;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.step {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.step p {
+    margin: 0;
+    flex: 1;
+}
+
+code {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: var(--accent-color);
+}
+
+.support-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.support-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.support-item i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-top: 3px;
+}
+
+.support-item h4 {
+    margin: 0 0 8px 0;
+    color: var(--light-color);
+}
+
+.support-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #a0aec0;
+}
+
+.telegram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #f97316;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.telegram-link:hover {
+    background-color: #ea580c;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(249, 115, 22, 0.3);
+}
+
+/* FAQ Button */
+.faq-button-container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.faq-toggle-btn {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-fitgirl));
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+}
+
+.faq-toggle-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+}
+
+.faq-toggle-btn i {
+    font-size: 1.3rem;
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    padding: 25px 0;
+    background-color: var(--dark-color);
+    text-align: center;
+    color: #a0aec0;
+    font-size: 0.9rem;
+    border-top: 3px solid var(--accent-color);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .main-layout {
+        flex-direction: column;
+    }
+    
+    .filters-panel {
+        flex: none;
+        width: 100%;
+    }
+    
+    .games-container {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    
+    .faq-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .source-selector {
+        flex-direction: column;
+    }
+    
+    .source-btn {
+        min-width: 100%;
+    }
+    
+    .games-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .games-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 20px auto;
+    }
+    
+    .pagination {
+        flex-wrap: wrap;
+    }
+    
+    .page-numbers {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 15px;
+    }
+    
+    .faq-section {
+        padding: 20px;
+    }
+    
+    .faq-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .close-faq {
+        align-self: flex-end;
+    }
+    
+    .step {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Aggiungi un effetto di evidenziazione per OnlineFix multiplayer */
+@keyframes pulse-multiplayer {
+    0% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
+}
+
+/* Stile per evidenziare che OnlineFix è multiplayer */
+.source-btn.onlinefix {
+    position: relative;
+    overflow: hidden;
+}
+
+.source-btn.onlinefix::after {
+    content: '🎮 MULTIPLAYER';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    font-size: 0.6rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: bold;
+    animation: pulse-multiplayer 2s infinite;
+}
