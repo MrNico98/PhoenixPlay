@@ -538,10 +538,10 @@ function renderGames() {
             return false;
         }
         
-        // Search filter
+        // Search filter - cerca nel titolo ORIGINALE
         const searchTerm = searchBox.value.toLowerCase();
-        const title = getGameTitle(game).toLowerCase();
-        if (searchTerm && !title.includes(searchTerm)) {
+        const originalTitle = getGameTitle(game).toLowerCase();
+        if (searchTerm && !originalTitle.includes(searchTerm)) {
             return false;
         }
         
@@ -631,9 +631,10 @@ function createGameCard(game) {
     const card = document.createElement('div');
     card.className = 'game-card';
     
-    // Get game data
-    const title = getGameTitle(game);
-    const cleanTitle = cleanDisplayTitle(title); // Usa il titolo pulito
+    // Get game data - usa il titolo ORIGINALE dai dati Hydralinks
+    const originalTitle = getGameTitle(game); // Titolo originale di Hydralinks
+    const displayTitle = cleanDisplayTitle(originalTitle); // Solo per aspetto visivo
+    
     const fileSize = getFormattedFileSize(game);
     
     // Format date
@@ -651,8 +652,8 @@ function createGameCard(game) {
         console.log('Errore formattazione data:', e);
     }
     
-    // Get image URL from Steam data for current source
-    const imageUrl = getSteamImageUrl(title, game.source);
+    // Get image URL - usa il titolo ORIGINALE per cercare in steamData
+    const imageUrl = getSteamImageUrl(originalTitle, game.source);
     
     // Get source badge class
     const sourceBadgeClass = `${game.source}-badge-card`;
@@ -662,18 +663,18 @@ function createGameCard(game) {
             <div class="game-source-badge ${sourceBadgeClass}">${game.source.toUpperCase()}</div>
         </div>
         <div class="game-info">
-            <h3 class="game-title" title="${cleanTitle}">${cleanTitle}</h3>
+            <h3 class="game-title" title="${displayTitle}">${displayTitle}</h3>
             <div class="game-meta">
                 <div class="game-date"><i class="far fa-calendar-alt"></i> ${formattedDate}</div>
                 <div class="game-size"><i class="fas fa-hdd"></i> ${fileSize}</div>
             </div>
-            <button class="game-download-btn" data-game-id="${title}">
+            <button class="game-download-btn" data-game-id="${originalTitle}">
                 <i class="fas fa-download"></i> Vedi Download
             </button>
         </div>
     `;
     
-    // Add click event to show game details
+    // Add click event to show game details - passa il gioco ORIGINALE
     card.querySelector('.game-download-btn').addEventListener('click', () => showGameDetails(game));
     
     return card;
@@ -688,10 +689,12 @@ function getSteamImageUrl(title, source = null) {
     
     // Try to find Steam data for this game in the specified source
     const currentSteamData = steamData[gameSource];
+    
+    // CERCA DIRETTAMENTE PER TITOLO ESATTO (senza normalizzazione)
     const steamInfo = currentSteamData.find(s => {
         if (!s.title) return false;
-        return normalizeTitle(s.title).includes(normalizeTitle(title)) || 
-               normalizeTitle(title).includes(normalizeTitle(s.title));
+        // Confronto DIRETTO del titolo
+        return s.title.toLowerCase() === title.toLowerCase();
     });
     
     if (steamInfo && steamInfo.steam_appid) {
@@ -712,31 +715,6 @@ function getSteamImageUrl(title, source = null) {
     // Fallback to placeholder
     const shortTitle = title.substring(0, 30);
     return `https://via.placeholder.com/400x200/2d3748/4299e1?text=${encodeURIComponent(shortTitle)}`;
-}
-
-function normalizeTitle(title) {
-    if (!title) return '';
-    
-    // Rimuovi prefissi comuni di FitGirl
-    let normalized = title.toLowerCase()
-        .replace(/fitgirl repack/gi, '')
-        .replace(/repack/gi, '')
-        .replace(/complete bundle/gi, '')
-        .replace(/ultimate edition/gi, '')
-        .replace(/deluxe edition/gi, '')
-        .replace(/v[\d.]+/gi, '')  // Rimuovi versioni come v1.2.0.1
-        .replace(/[\d.]+\.\d+/g, '')  // Rimuovi numeri di versione complessi
-        .replace(/\+\s*\d+\s*dlcs?/gi, '')
-        .replace(/\+\s*bonuses?/gi, '')
-        .replace(/\(.*?\)/g, '')
-        .replace(/\[.*?\]/g, '')
-        .replace(/\s+/g, ' ')
-        .trim();
-    
-    // Estrai solo il nome base del gioco (prima di eventuali trattini)
-    normalized = normalized.split(/[-–—:]/)[0].trim();
-    
-    return normalized;
 }
 
 // Update pagination controls
@@ -818,18 +796,19 @@ function addPageNumber(page) {
 
 // Show game details modal
 function showGameDetails(game) {
-    const title = getGameTitle(game);
+    const originalTitle = getGameTitle(game); // Titolo originale di Hydralinks
+    const displayTitle = cleanDisplayTitle(originalTitle); // Solo per aspetto visivo
     const fileSize = getFormattedFileSize(game);
     
-    // Set modal title
-    modalTitleText.textContent = title;
+    // Set modal title - usa il titolo VISIVO (pulito)
+    modalTitleText.textContent = displayTitle;
     
     // Set source badge
     modalSourceBadge.textContent = game.source.toUpperCase();
     modalSourceBadge.className = `modal-source-badge ${game.source}-badge-card`;
     
-    // Set modal image
-    const imageUrl = getSteamImageUrl(title, game.source);
+    // Set modal image - usa il titolo ORIGINALE per cercare l'immagine
+    const imageUrl = getSteamImageUrl(originalTitle, game.source);
     modalImage.style.backgroundImage = `url('${imageUrl}')`;
     
     // Format date
@@ -872,8 +851,8 @@ function showGameDetails(game) {
             <div class="property-value">${game.source.toUpperCase()}</div>
         </div>
         <div class="property">
-            <div class="property-label">Versione</div>
-            <div class="property-value">${game.baseName !== title ? 'Ultima versione disponibile' : 'Versione standard'}</div>
+            <div class="property-label">Titolo Originale</div>
+            <div class="property-value" style="font-size: 0.9rem; color: #a0aec0;">${originalTitle}</div>
         </div>
     `;
     
