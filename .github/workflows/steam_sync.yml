@@ -1,4 +1,4 @@
-name: Daily Steam Sync
+name: Daily Steam Sync + Fix
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  run-script:
+  run-scripts:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,10 +21,16 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests
+          pip install requests urllib3
 
-      - name: Run steamid sync
+      - name: Run steamid.py
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           python pythonscripts/steamid.py
+
+      - name: Run fixsteamid.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          python pythonscripts/fixsteamid.py
