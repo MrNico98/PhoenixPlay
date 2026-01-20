@@ -1,0 +1,30 @@
+name: Daily Steam Sync
+
+on:
+  schedule:
+    - cron: "0 9 * * *"   # Ogni giorno alle 09:00 (UTC)
+  workflow_dispatch:     # Avvio manuale da GitHub
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          python main.py
