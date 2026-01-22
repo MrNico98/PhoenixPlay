@@ -907,6 +907,7 @@ function setDownloadInstructions(source) {
 }
 
 // Display download links in modal
+// Display download links in modal - VERSIONE CORRETTA
 function displayDownloadLinks(links, source) {
     downloadLinks.innerHTML = '';
     
@@ -920,97 +921,115 @@ function displayDownloadLinks(links, source) {
         return;
     }
     
-    // Group links by site
-    const linksBySite = {};
+    console.log('Links da processare:', links);
     
-    links.forEach(link => {
+    // Mostra ogni link
+    links.forEach((link, index) => {
         if (!link) return;
         
-        let siteKey = '';
-        let displayLink = link;
+        console.log('Processando link:', link);
         
-        if (typeof link === 'string') {
-            if (link.includes('buzzheavier.com')) {
-                siteKey = 'buzzheavier.com';
-            } else if (link.includes('vikingfile.com')) {
-                siteKey = 'vikingfile.com';
-            } else if (link.includes('gofile.io')) {
-                siteKey = 'gofile.io';
-            } else if (link.includes('1drv.ms') || link.includes('onedrive.live.com')) {
-                siteKey = '1drv.ms';
-            } else if (link.includes('mega.nz')) {
-                siteKey = 'mega.nz';
-            } else if (link.startsWith('magnet:')) {
-                siteKey = 'magnet';
-            } else if (link.includes('torrent')) {
-                siteKey = 'magnet';
-            } else {
-                siteKey = 'other';
-            }
+        const linkDiv = document.createElement('div');
+        linkDiv.className = 'download-link';
+        
+        // Ottieni informazioni sul link
+        const linkInfo = getLinkInfo(link);
+        
+        // Crea un URI sicuro per la visualizzazione
+        const safeDisplayUri = link.length > 100 ? link.substring(0, 100) + '...' : link;
+        
+        // Crea un href sicuro
+        let safeHref = link;
+        if (link.startsWith('magnet:')) {
+            safeHref = link;
+        } else if (link.startsWith('http://') || link.startsWith('https://')) {
+            safeHref = link;
+        } else {
+            safeHref = link.startsWith('?xt=') ? 'magnet:' + link : link;
         }
         
-        if (siteKey !== 'other') {
-            if (!linksBySite[siteKey]) {
-                linksBySite[siteKey] = [];
-            }
-            linksBySite[siteKey].push(displayLink);
-        }
+        linkDiv.innerHTML = `
+            <div class="link-info">
+                <div class="link-icon ${linkInfo.class}">
+                    <i class="${linkInfo.icon}"></i>
+                </div>
+                <div>
+                    <div class="link-name">${linkInfo.name} ${links.length > 1 ? `(#${index + 1})` : ''}</div>
+                    <div style="font-size: 0.9rem; color: #a0aec0; margin-top: 5px; word-break: break-all;">${safeDisplayUri}</div>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                ${index === 0 ? '<span class="preferred-badge"><i class="fas fa-crown"></i> Preferito</span>' : ''}
+                <a href="${safeHref}" target="_blank" class="link-btn">
+                    <i class="fas fa-external-link-alt"></i> Vai al Download
+                </a>
+            </div>
+        `;
+        
+        downloadLinks.appendChild(linkDiv);
     });
-    
-    // Sort sites by priority
-    const sortedSites = Object.keys(linksBySite).sort((a, b) => {
-        return (SITE_PRIORITY[a]?.priority || 99) - (SITE_PRIORITY[b]?.priority || 99);
-    });
-    
-    // Display download links
-    sortedSites.forEach((siteKey, index) => {
-        const siteInfo = SITE_PRIORITY[siteKey] || { 
-            name: siteKey, 
-            class: 'other', 
-            icon: 'fas fa-external-link-alt',
-            priority: 99 
+}
+
+// Funzione per ottenere informazioni su un link (indipendente da SITE_PRIORITY)
+function getLinkInfo(link) {
+    if (!link) {
+        return {
+            name: 'Download',
+            class: 'other',
+            icon: 'fas fa-download',
+            priority: 99
         };
-        
-        linksBySite[siteKey].forEach((uri, uriIndex) => {
-            const linkDiv = document.createElement('div');
-            linkDiv.className = 'download-link';
+    }
+    
+    // Per magnet links
+    if (link.startsWith('magnet:')) {
+        return {
+            name: 'Torrent Magnet',
+            class: 'magnet',
+            icon: 'fas fa-magnet',
+            priority: 1
+        };
+    }
+    
+    // Per HTTP/HTTPS links
+    if (link.startsWith('http://') || link.startsWith('https://')) {
+        try {
+            const url = new URL(link);
+            const hostname = url.hostname.replace('www.', '');
             
-            // Create a safe URI for display
-            const displayUri = uri.length > 100 ? uri.substring(0, 100) + '...' : uri;
+            // Cerca nella SITE_PRIORITY per nome personalizzato e priorità
+            const siteKey = Object.keys(SITE_PRIORITY).find(key => hostname.includes(key));
             
-            // Create a safe href (magnet links need special handling)
-            let safeHref = uri;
-            if (uri.startsWith('magnet:')) {
-                // magnet links are already safe
-                safeHref = uri;
-            } else if (uri.startsWith('http://') || uri.startsWith('https://')) {
-                safeHref = uri;
+            if (siteKey) {
+                // Usa le informazioni dalla SITE_PRIORITY
+                return SITE_PRIORITY[siteKey];
             } else {
-                // Assume it's a magnet link without the magnet: prefix
-                safeHref = uri.startsWith('?xt=') ? 'magnet:' + uri : uri;
+                // Link non in SITE_PRIORITY - mostra comunque
+                return {
+                    name: hostname,
+                    class: 'direct',
+                    icon: 'fas fa-download',
+                    priority: 3
+                };
             }
-            
-            linkDiv.innerHTML = `
-                <div class="link-info">
-                    <div class="link-icon ${siteInfo.class}">
-                        <i class="${siteInfo.icon}"></i>
-                    </div>
-                    <div>
-                        <div class="link-name">${siteInfo.name} ${linksBySite[siteKey].length > 1 ? `(#${uriIndex + 1})` : ''}</div>
-                        <div style="font-size: 0.9rem; color: #a0aec0; margin-top: 5px; word-break: break-all;">${displayUri}</div>
-                    </div>
-                </div>
-                <div style="display: flex; align-items: center; gap: 15px;">
-                    ${index === 0 && siteInfo.priority <= 2 ? '<span class="preferred-badge"><i class="fas fa-crown"></i> Preferito</span>' : ''}
-                    <a href="${safeHref}" target="_blank" class="link-btn">
-                        <i class="fas fa-external-link-alt"></i> Vai al Download
-                    </a>
-                </div>
-            `;
-            
-            downloadLinks.appendChild(linkDiv);
-        });
-    });
+        } catch (e) {
+            // URL non valido
+            return {
+                name: 'Download',
+                class: 'other',
+                icon: 'fas fa-download',
+                priority: 4
+            };
+        }
+    }
+    
+    // Altri tipi di link
+    return {
+        name: 'Download',
+        class: 'other',
+        icon: 'fas fa-download',
+        priority: 5
+    };
 }
 
 // Clean game title for display (remove "Free Download" and other unwanted text)
