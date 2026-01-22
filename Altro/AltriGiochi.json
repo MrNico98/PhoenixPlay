@@ -2,19 +2,11 @@
   "name": "AIMODS",
   "downloads": [
     {
-      "title": "Minecraft",
-      "uploadDate": "2026-01-21T20:30:34+00:00",
-      "fileSize": "606 MB",
+      "title": "Minecraft (v.3.2.18)",
+      "uploadDate": "2026-01-22T17:40:34+00:00",
+      "fileSize": "4 MB",
       "uris": [
-        "https://vikingfile.com/f/J2h6TLfn3E"
-      ]
-    },
-   {
-      "title": "7 Days to Die Free Download (v1.1.b14 + Multiplayer)",
-      "uploadDate": "2024-11-15T23:54:08+00:00",
-      "fileSize": "12.6 GB",
-      "uris": [
-        "https://gofile.io/d/PxoqlZ"
+        "https://skmedix.pl/binaries/skl/3.2.18/win-x64/SKlauncher-3.2.18_Setup.exe"
       ]
     }
   ]
