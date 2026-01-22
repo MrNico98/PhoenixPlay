@@ -1351,3 +1351,16 @@ footer {
     border-radius: 12px;
     font-weight: bold;
 }
+/* Aggiungi queste classi CSS */
+.link-icon.direct {
+    background-color: #3b82f6 !important;
+}
+
+.link-icon.other {
+    background-color: #6b7280 !important;
+}
+
+/* Assicurati che anche skmedix.pl sia riconosciuto */
+.link-icon.skmedix {
+    background-color: #8b5cf6 !important; /* Colore viola */
+}
