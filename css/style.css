@@ -1100,3 +1100,210 @@ footer {
     font-weight: bold;
     animation: pulse-multiplayer 2s infinite;
 }
+/* Aggiungi al file CSS esistente */
+
+/* Stile per la guida GDK */
+.gdk-guide {
+    border-top: 3px solid #8b5cf6 !important;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(139, 92, 246, 0.02)) !important;
+}
+
+.gdk-guide h3 {
+    background-color: rgba(139, 92, 246, 0.15) !important;
+    border-bottom: 2px solid rgba(139, 92, 246, 0.3) !important;
+    color: #8b5cf6 !important;
+}
+
+.warning-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: rgba(245, 158, 11, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid var(--warning-color);
+}
+
+.warning-header i {
+    font-size: 1.5rem;
+    color: var(--warning-color);
+}
+
+.gdk-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.step-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.step-card {
+    background-color: var(--primary-color);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #4a5568;
+    transition: all 0.3s;
+    height: 100%;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-color: #8b5cf6;
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #4a5568;
+}
+
+.step-number-large {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.step-header h4 {
+    margin: 0;
+    color: var(--light-color);
+    font-size: 1.1rem;
+}
+
+.step-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.command-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    background-color: var(--dark-color);
+    border-radius: 8px;
+    border-left: 4px solid #8b5cf6;
+}
+
+.command-box i {
+    color: #8b5cf6;
+}
+
+.step-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #a0aec0;
+    margin-top: 5px;
+}
+
+.step-note i {
+    color: #8b5cf6;
+}
+
+.important-note {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05));
+    border-radius: 12px;
+    padding: 25px;
+    border: 2px solid #3b82f6;
+}
+
+.note-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.note-header i {
+    font-size: 1.5rem;
+    color: #3b82f6;
+}
+
+.note-header h4 {
+    margin: 0;
+    color: #3b82f6;
+    font-size: 1.3rem;
+}
+
+.note-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.note-content li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+}
+
+.note-content li i {
+    color: #8b5cf6;
+}
+
+.warning-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px;
+    background-color: rgba(245, 158, 11, 0.1);
+    border-radius: 8px;
+    margin-top: 15px;
+    border-left: 4px solid var(--warning-color);
+}
+
+.warning-text i {
+    color: var(--warning-color);
+    font-size: 1.2rem;
+    margin-top: 3px;
+}
+
+.warning-text strong {
+    color: var(--warning-color);
+}
+
+/* Responsive per la guida GDK */
+@media (max-width: 1024px) {
+    .step-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .step-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .important-note {
+        padding: 20px;
+    }
+    
+    .note-content ul {
+        flex-direction: column;
+    }
+}
