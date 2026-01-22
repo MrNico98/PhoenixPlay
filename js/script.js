@@ -2,13 +2,15 @@
 let allGamesData = {
     steamrip: [],
     onlinefix: [],
-    fitgirl: []
+    fitgirl: [],
+    altro: [] // AGGIUNTA: Nuova categoria Altro Provider
 };
 
 let steamData = {
     steamrip: [],
     onlinefix: [],
-    fitgirl: []
+    fitgirl: [],
+    altro: [] // AGGIUNTA: Nuova categoria Altro Provider
 };
 
 let categories = new Set();
@@ -63,6 +65,7 @@ const closeFaqBtn = document.getElementById('close-faq');
 const sourceSteamripBtn = document.getElementById('source-steamrip');
 const sourceOnlinefixBtn = document.getElementById('source-onlinefix');
 const sourceFitgirlBtn = document.getElementById('source-fitgirl');
+const sourceAltroBtn = document.getElementById('source-altro'); // AGGIUNTA: Pulsante Altro Provider
 
 // Site priority order
 const SITE_PRIORITY = {
@@ -85,33 +88,32 @@ document.addEventListener('DOMContentLoaded', function() {
 async function loadAllGamesData() {
     try {
         // Carica i dati Steam per tutte le fonti
-        const [steamripSteamData, onlinefixSteamData, fitgirlSteamData] = await Promise.all([
+        const [steamripSteamData, onlinefixSteamData, fitgirlSteamData, altroSteamData] = await Promise.all([
             loadSteamData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDSteamRip.json'),
             loadSteamData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDOnlineFix.json'),
-            loadSteamData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDFitGirl.json')
+            loadSteamData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDFitGirl.json'),
+            loadSteamData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDAltro.json') // AGGIUNTA: Dati Steam per Altro Provider
         ]);
         
         steamData.steamrip = steamripSteamData;
         steamData.onlinefix = onlinefixSteamData;
         steamData.fitgirl = fitgirlSteamData;
+        steamData.altro = altroSteamData; // AGGIUNTA
         
         // Carica tutti i sorgenti in parallelo
-        const [steamripData, onlinefixData, fitgirlData] = await Promise.all([
+        const [steamripData, onlinefixData, fitgirlData, altroData] = await Promise.all([
             loadSourceData('https://hydralinks.pages.dev/sources/steamrip.json', 'steamrip'),
             loadSourceData('https://hydralinks.pages.dev/sources/onlinefix.json', 'onlinefix'),
-            loadSourceData('https://hydralinks.pages.dev/sources/fitgirl.json', 'fitgirl')
+            loadSourceData('https://hydralinks.pages.dev/sources/fitgirl.json', 'fitgirl'),
+            loadSourceData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/Altro/AltriGiochi.json', 'altro') // AGGIUNTA: Dati Altro Provider
         ]);
         
         // Rimuovi duplicati all'interno di ciascuna fonte
         allGamesData.steamrip = removeDuplicatesAndKeepLatest(steamripData, 'steamrip');
         allGamesData.onlinefix = removeDuplicatesAndKeepLatest(onlinefixData, 'onlinefix');
         allGamesData.fitgirl = removeDuplicatesAndKeepLatest(fitgirlData, 'fitgirl');
-        
-        console.log('Giochi dopo rimozione duplicati per fonte:');
-        console.log('- SteamRip:', allGamesData.steamrip.length);
-        console.log('- OnlineFix:', allGamesData.onlinefix.length);
-        console.log('- FitGirl:', allGamesData.fitgirl.length);
-        
+        allGamesData.altro = removeDuplicatesAndKeepLatest(altroData, 'altro'); // AGGIUNTA
+                
         // Processa i giochi per la fonte corrente
         processGamesData();
         updateStats();
@@ -264,7 +266,7 @@ function extractBaseGameName(title) {
 // Load data from a single source
 async function loadSourceData(url, source) {
     try {
-        console.log(`Caricamento dati da ${url}...`);
+        console.log(`Caricamento dati da ${url} (${source})...`);
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -272,11 +274,11 @@ async function loadSourceData(url, source) {
         const json = await response.json();
         
         // Different sources have different data structures
-        if (source === 'steamrip') {
+        if (source === 'steamrip' || source === 'onlinefix' || source === 'fitgirl') {
             return json.downloads || [];
-        } else if (source === 'onlinefix') {
-            return json.downloads || [];
-        } else if (source === 'fitgirl') {
+        } else if (source === 'altro') {
+            // AGGIUNTA: Gestione struttura dati per Altro Provider
+            // Il JSON di Altro Provider ha la struttura: {"name": "AIMODS", "downloads": [...]}
             return json.downloads || [];
         }
         return [];
@@ -466,6 +468,7 @@ function updateSourceCounts() {
     document.getElementById('steamrip-count').textContent = allGamesData.steamrip.length;
     document.getElementById('onlinefix-count').textContent = allGamesData.onlinefix.length;
     document.getElementById('fitgirl-count').textContent = allGamesData.fitgirl.length;
+    document.getElementById('altro-count').textContent = allGamesData.altro.length; // AGGIUNTA
 }
 
 // Setup categories filter
@@ -523,7 +526,8 @@ function renderGames() {
         gamesToFilter = [
             ...allGamesData.steamrip.map(g => ({ ...g, source: 'steamrip' })),
             ...allGamesData.onlinefix.map(g => ({ ...g, source: 'onlinefix' })),
-            ...allGamesData.fitgirl.map(g => ({ ...g, source: 'fitgirl' }))
+            ...allGamesData.fitgirl.map(g => ({ ...g, source: 'fitgirl' })),
+            ...allGamesData.altro.map(g => ({ ...g, source: 'altro' })) // AGGIUNTA
         ];
         gamesToFilter = filterCrossSourceDuplicates(gamesToFilter);
     } else {
@@ -589,10 +593,19 @@ function renderGames() {
         const sourceNames = {
             steamrip: 'SteamRip',
             onlinefix: 'OnlineFix',
-            fitgirl: 'FitGirl'
+            fitgirl: 'FitGirl',
+            altro: 'Altro Provider' // AGGIUNTA
         };
+        
+        const sourceIcons = {
+            steamrip: 'cloud-download-alt',
+            onlinefix: 'wifi',
+            fitgirl: 'female',
+            altro: 'plus-circle' // AGGIUNTA
+        };
+        
         sourceIndicator.innerHTML = `
-            <i class="fas fa-${currentSource === 'steamrip' ? 'cloud-download-alt' : currentSource === 'onlinefix' ? 'wifi' : 'female'}"></i>
+            <i class="fas fa-${sourceIcons[currentSource]}"></i>
             <span>${sourceNames[currentSource]}</span>
         `;
     }
@@ -883,6 +896,9 @@ function setDownloadInstructions(source) {
         case 'fitgirl':
             instructions = '<p>FitGirl repacks sono altamente compressi. Durante l\'installazione potrebbero essere necessari diversi minuti/ore. Disabilita l\'antivirus durante l\'installazione per evitare falsi positivi.</p>';
             break;
+        case 'altro': // AGGIUNTA
+            instructions = '<p><strong>🎮 MISTO:</strong> Questa categoria include giochi da varie fonti diverse. Segui le istruzioni specifiche per ciascun gioco. Alcuni potrebbero essere portatili, altri richiedere installazione.</p>';
+            break;
         default:
             instructions = '<p>Clicca su un link per avviare il download. I link magnet possono essere aperti con un client torrent.</p>';
     }
@@ -1032,11 +1048,19 @@ function switchSource(source) {
     const sourceNames = {
         steamrip: 'SteamRip',
         onlinefix: 'OnlineFix',
-        fitgirl: 'FitGirl'
+        fitgirl: 'FitGirl',
+        altro: 'Altro Provider' // AGGIUNTA
+    };
+    
+    const sourceIcons = {
+        steamrip: 'cloud-download-alt',
+        onlinefix: 'wifi',
+        fitgirl: 'female',
+        altro: 'plus-circle' // AGGIUNTA
     };
     
     sourceIndicator.innerHTML = `
-        <i class="fas fa-${source === 'steamrip' ? 'cloud-download-alt' : source === 'onlinefix' ? 'wifi' : 'female'}"></i>
+        <i class="fas fa-${sourceIcons[source]}"></i>
         <span>${sourceNames[source]}</span>
     `;
     
@@ -1137,6 +1161,7 @@ function setupEventListeners() {
     sourceSteamripBtn.addEventListener('click', () => switchSource('steamrip'));
     sourceOnlinefixBtn.addEventListener('click', () => switchSource('onlinefix'));
     sourceFitgirlBtn.addEventListener('click', () => switchSource('fitgirl'));
+    sourceAltroBtn.addEventListener('click', () => switchSource('altro')); // AGGIUNTA
     
     // Modal close button
     closeModalBtn.addEventListener('click', closeModal);
