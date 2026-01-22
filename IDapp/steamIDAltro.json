@@ -2,5 +2,9 @@
     {
         "title":  "Minecraft Java",
         "steam_appid": null
+    },
+        {
+        "title":  "Small Space",
+        "steam_appid": "3151380"
     }
 ]
