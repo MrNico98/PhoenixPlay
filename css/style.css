@@ -1307,3 +1307,47 @@ footer {
         flex-direction: column;
     }
 }
+:root {
+    /* Aggiungi questa variabile colore */
+    --accent-altro: #ec4899; /* Rosa per Altro Provider */
+}
+
+/* Stile per il pulsante Altro Provider */
+.source-btn.altro.active {
+    border-color: var(--accent-altro);
+    background-color: rgba(236, 72, 153, 0.08);
+}
+
+/* Badge per Altro Provider */
+.altro-badge {
+    background-color: var(--accent-altro);
+}
+
+/* Badge per scheda gioco Altro Provider */
+.altro-badge-card {
+    background-color: var(--accent-altro);
+}
+
+/* Stile per la FAQ di Altro Provider */
+.faq-category.altro h3 {
+    background-color: rgba(236, 72, 153, 0.1) !important;
+    border-bottom: 2px solid rgba(236, 72, 153, 0.3) !important;
+}
+
+/* Aggiungi stile per il pulsante Altro Provider */
+.source-btn.altro {
+    position: relative;
+}
+
+.source-btn.altro::after {
+    content: '🎮 MISTO';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: linear-gradient(135deg, #ec4899, #db2777);
+    color: white;
+    font-size: 0.6rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: bold;
+}
