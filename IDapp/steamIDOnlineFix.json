@@ -2140,6 +2140,10 @@
     "steam_appid": null
   },
   {
+    "title": "ENDLESS Legend 2 0.0.74.162738-S35",
+    "steam_appid": "3116640"
+  },
+  {
     "title": "Endless Legend Emperor Edition 1.8.45.S3",
     "steam_appid": "521220"
   },
@@ -8574,6 +8578,10 @@
   {
     "title": "XCOM 2 Build 09102018",
     "steam_appid": "844860"
+  },
+  {
+    "title": "YAPYAP 1.0.512",
+    "steam_appid": null
   },
   {
     "title": "Ymir 0.6.3.11",
