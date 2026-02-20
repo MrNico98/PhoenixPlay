@@ -1716,6 +1716,10 @@
     "steam_appid": "649640"
   },
   {
+    "title": "Ashes of Ambition",
+    "steam_appid": "2644220"
+  },
+  {
     "title": "Ashes of Oahu",
     "steam_appid": "671600"
   },
@@ -9734,6 +9738,10 @@
   {
     "title": "Forgiveness (MULTi4) [FitGirl Repack]",
     "steam_appid": "573410"
+  },
+  {
+    "title": "Forgotlings",
+    "steam_appid": "2059570"
   },
   {
     "title": "Forgotten 23 – v1.0.3-220725",
@@ -19520,12 +19528,20 @@
     "steam_appid": "1536770"
   },
   {
+    "title": "Pure Pool Pro – Build 1605",
+    "steam_appid": "3456930"
+  },
+  {
     "title": "Pure Rock Crawling – v1.0 (Release) + Windows 7 Fix",
     "steam_appid": "824720"
   },
   {
     "title": "Purpose 1951 (+ Windows 7 Fix, MULTi4) [FitGirl Repack]",
     "steam_appid": 2119630
+  },
+  {
+    "title": "PurrPlate – v1.1",
+    "steam_appid": "306130"
   },
   {
     "title": "Puyo Puyo Tetris + Update 4",
@@ -22410,6 +22426,10 @@
   {
     "title": "Sky Oceans: Wings for Hire – v1.0.0-0.9.157b",
     "steam_appid": "1691750"
+  },
+  {
+    "title": "Sky Realm Idle",
+    "steam_appid": "1580820"
   },
   {
     "title": "Skydrift Infinity",
@@ -27666,6 +27686,10 @@
   {
     "title": "Total War: Attila (v1.6.0.13356.2972767 + 8 DLCs, MULTi9) [FitGirl Repack, Selective Download - from 8.3 GB]",
     "steam_appid": "325610"
+  },
+  {
+    "title": "Total War: Attila – v1.8.1.1299.3427123 + 8 DLCs",
+    "steam_appid": null
   },
   {
     "title": "Total War: PHARAOH DYNASTIES – v2.1.6 + 3 DLCs/Bonuses + Modding Tools",
