@@ -3964,6 +3964,10 @@
     "steam_appid": "1302240"
   },
   {
+    "title": "LANESPLIT Build 07032026",
+    "steam_appid": null
+  },
+  {
     "title": "Lara Croft and the Guardian of Light 1.03",
     "steam_appid": "35130"
   },
@@ -6726,6 +6730,10 @@
   {
     "title": "Slay the Spire 2 0.98.1",
     "steam_appid": "2868840"
+  },
+  {
+    "title": "Slay the Spire 2 0.98.3",
+    "steam_appid": null
   },
   {
     "title": "Slime Rancher 2 1.0.2",
