@@ -266,7 +266,6 @@ function extractBaseGameName(title) {
 // Load data from a single source
 async function loadSourceData(url, source) {
     try {
-        console.log(`Caricamento dati da ${url} (${source})...`);
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
