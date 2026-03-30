@@ -102,9 +102,9 @@ async function loadAllGamesData() {
         
         // Carica tutti i sorgenti in parallelo
         const [steamripData, onlinefixData, fitgirlData, altroData] = await Promise.all([
-            loadSourceData('https://hydralinks.pages.dev/sources/steamrip.json', 'steamrip'),
-            loadSourceData('https://hydralinks.pages.dev/sources/onlinefix.json', 'onlinefix'),
-            loadSourceData('https://hydralinks.pages.dev/sources/fitgirl.json', 'fitgirl'),
+            loadSourceData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamrip.json', 'steamrip'),
+            loadSourceData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/onlinefix.json', 'onlinefix'),
+            loadSourceData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/fitgirl.json', 'fitgirl'),
             loadSourceData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/Altro/AltriGiochi.json', 'altro') // AGGIUNTA: Dati Altro Provider
         ]);
         
