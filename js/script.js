@@ -695,7 +695,7 @@ function createGameCard(game) {
 
 // Get Steam/GOG image URL for a game title from current source data
 function getSteamImageUrl(title, source = null) {
-    if (!title) return `https://via.placeholder.com/400x200/2d3748/4299e1?text=No+Image`;
+    if (!title) return getSvgPlaceholder('No Image');
     
     // Usa la fonte del gioco se specificata, altrimenti usa currentSource
     const gameSource = source || currentSource;
@@ -721,13 +721,20 @@ function getSteamImageUrl(title, source = null) {
         } 
         // Regular Steam ID
         else {
+            // Questa è l'URL vera dell'immagine Steam
             return `https://cdn.cloudflare.steamstatic.com/steam/apps/${appId}/header.jpg`;
         }
     }
     
-    // Fallback to placeholder
+    // Se non trova l'immagine Steam, usa il placeholder SVG inline
     const shortTitle = title.substring(0, 30);
-    return `https://via.placeholder.com/400x200/2d3748/4299e1?text=${encodeURIComponent(shortTitle)}`;
+    return getSvgPlaceholder(shortTitle);
+}
+
+// Funzione helper per creare SVG placeholder
+function getSvgPlaceholder(text) {
+    const encodedText = encodeURIComponent(text);
+    return `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%232d3748'/%3E%3Ctext x='50%25' y='50%25' font-size='14' fill='%234299e1' text-anchor='middle' dy='.3em'%3E${encodedText}%3C/text%3E%3C/svg%3E`;
 }
 
 // Update pagination controls
