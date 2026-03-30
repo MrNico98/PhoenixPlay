@@ -400,6 +400,10 @@
     "steam_appid": "2592160"
   },
   {
+    "title": "Ars Notoria 0.4.0.1",
+    "steam_appid": null
+  },
+  {
     "title": "As Dusk Falls 1.19.5761.0",
     "steam_appid": "1341820"
   },
@@ -976,6 +980,10 @@
     "steam_appid": "3501070"
   },
   {
+    "title": "Car Service Together 0.96F48",
+    "steam_appid": null
+  },
+  {
     "title": "Car Service Together 0.9F3",
     "steam_appid": "1487630"
   },
@@ -1420,6 +1428,10 @@
     "steam_appid": "644390"
   },
   {
+    "title": "D&D Lords of Waterdeep Build 20122025",
+    "steam_appid": null
+  },
+  {
     "title": "DAEMON X MACHINA 1.0.6",
     "steam_appid": "1342490"
   },
@@ -1560,6 +1572,10 @@
     "steam_appid": "3240220"
   },
   {
+    "title": "DEADLINE DELIVERY 0.980",
+    "steam_appid": null
+  },
+  {
     "title": "Deadly Broadcast Build 02062023",
     "steam_appid": "3705460"
   },
@@ -1662,6 +1678,10 @@
   {
     "title": "Descending The Woods Build  15012025",
     "steam_appid": "1606340"
+  },
+  {
+    "title": "Desecrators 1.0.5g",
+    "steam_appid": null
   },
   {
     "title": "Desolate 1.3.4",
@@ -1838,6 +1858,10 @@
   {
     "title": "DRAGON QUEST BUILDERS 2 1.7.3a",
     "steam_appid": "1184820"
+  },
+  {
+    "title": "Dragonkin The Banished 1.2.64.53721",
+    "steam_appid": null
   },
   {
     "title": "Drake Hollow Build 31032021",
@@ -3720,6 +3744,10 @@
     "steam_appid": "552080"
   },
   {
+    "title": "It Has My Face 0.9.183",
+    "steam_appid": null
+  },
+  {
     "title": "It Takes Two 1.0.0.2",
     "steam_appid": "1886840"
   },
@@ -4340,6 +4368,14 @@
     "steam_appid": "1445790"
   },
   {
+    "title": "Mall Rivals 0.2.39",
+    "steam_appid": null
+  },
+  {
+    "title": "Mamas Sleeping Angels 1.3",
+    "steam_appid": null
+  },
+  {
     "title": "Manual Samuel Anniversary Edition Build 25112020",
     "steam_appid": null
   },
@@ -4846,6 +4882,10 @@
   {
     "title": "Never Alone 1.8",
     "steam_appid": "1934680"
+  },
+  {
+    "title": "Never Grave The Witch and The Curse 1.3c.s0.2323220",
+    "steam_appid": null
   },
   {
     "title": "Nibiru 0.9.5",
@@ -5484,6 +5524,10 @@
     "steam_appid": "3697560"
   },
   {
+    "title": "Pizza Slice 0.60.99",
+    "steam_appid": null
+  },
+  {
     "title": "Plague Inc Evolved 1.18.3.2",
     "steam_appid": "246620"
   },
@@ -5830,6 +5874,10 @@
   {
     "title": "REANIMAL Build 13022026",
     "steam_appid": "2129530"
+  },
+  {
+    "title": "REANIMAL Build 18032026",
+    "steam_appid": null
   },
   {
     "title": "REANIMAL Build 27022026",
@@ -6432,6 +6480,10 @@
     "steam_appid": "1323900"
   },
   {
+    "title": "Screamer Build 18032026",
+    "steam_appid": null
+  },
+  {
     "title": "Screaming Chicken Ultimate Showdown 1.1.1",
     "steam_appid": null
   },
@@ -6737,6 +6789,10 @@
   },
   {
     "title": "Slay the Spire 2 0.98.3",
+    "steam_appid": null
+  },
+  {
+    "title": "Slay the Spire 2 0.99.1",
     "steam_appid": null
   },
   {
@@ -8757,6 +8813,10 @@
   },
   {
     "title": "YAPYAP 1.0.3.596-e1730",
+    "steam_appid": null
+  },
+  {
+    "title": "YAPYAP 1.0.3.606-deeb8",
     "steam_appid": null
   },
   {
