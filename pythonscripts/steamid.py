@@ -17,15 +17,15 @@ BASE_PATH = "IDapp"
 
 SOURCES = {
     "SteamRip": {
-        "url": "https://hydralinks.pages.dev/sources/steamrip.json",
+        "url": "https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamrip.json",
         "output": "steamIDSteamRip.json"
     },
     "FitGirl": {
-        "url": "https://hydralinks.pages.dev/sources/fitgirl.json",
+        "url": "https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/fitgirl.json",
         "output": "steamIDFitGirl.json"
     },
     "OnlineFix": {
-        "url": "https://hydralinks.pages.dev/sources/onlinefix.json",
+        "url": "https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/onlinefix.json",
         "output": "steamIDOnlineFix.json"
     }
 }
