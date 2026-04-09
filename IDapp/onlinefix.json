@@ -2,6 +2,102 @@
   "name": "onlinefix",
   "downloads": [
     {
+      "fileSize": "3.7 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:613167574b59c89448ae5a5ae7c279ad20e51c10&dn=Anomaly+Company&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Anomaly Company Build 02032026",
+      "uploadDate": "2026-04-08T08:17:29.000Z"
+    },
+    {
+      "fileSize": "29.2 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:9d1158bf7ea1e52e82e33a6e91e1e64759f1b7c6&dn=Screamer&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Screamer Build 07042026",
+      "uploadDate": "2026-04-08T08:19:13.000Z"
+    },
+    {
+      "fileSize": "3.6 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:a2b3bd118b198919aa8c8c3ab810ff9b949837aa&dn=Project+Castaway&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Project Castaway 1.0.5",
+      "uploadDate": "2026-04-07T13:03:46.000Z"
+    },
+    {
+      "fileSize": "1.7 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:a57bb58d1c32a617a9e8ffc6873ce4f7ef3fa3f9&dn=I+Know+a+Guy+Shady+Life+Simulator&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "I Know a Guy Shady Life Simulator Build 05042026",
+      "uploadDate": "2026-04-06T12:42:50.000Z"
+    },
+    {
+      "fileSize": "5.6 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:ebc26659e88a55a5124324b021ba38f7941d5d4e&dn=Subnautica+Below+Zero&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Subnautica Below Zero Build 03102025 ������ �����������",
+      "uploadDate": "2026-04-03T13:44:39.000Z"
+    },
+    {
+      "fileSize": "5.6 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:bade8990e8b52fcdb2908a56b3f7dc3459a9aff3&dn=Subnautica+Below+Zero&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Subnautica Below Zero Build 03102025 ������ �����������",
+      "uploadDate": "2026-04-03T01:10:25.000Z"
+    },
+    {
+      "fileSize": "5.6 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:d549624ea6dfca79083643decc15b9adc66227fc&dn=Subnautica+Below+Zero&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Subnautica Below Zero Build 03102025 ������ �����������",
+      "uploadDate": "2026-04-02T22:24:36.000Z"
+    },
+    {
+      "fileSize": "2.3 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:059fd8049c95e90a6cf46408fb75e18585f41c79&dn=Chained+Wheels&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Chained Wheels Build 30032026",
+      "uploadDate": "2026-04-02T19:30:08.000Z"
+    },
+    {
+      "fileSize": "5.6 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:781ea2047e27563a1bbc8f2cb5fe62b86eb0b0a1&dn=Subnautica+Below+Zero&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Subnautica Below Zero Build 03102025 ������ �����������",
+      "uploadDate": "2026-04-02T19:30:33.000Z"
+    },
+    {
+      "fileSize": "1.9 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:c03785f23504435aef70feed21aa66532ed397a4&dn=Voodoo+Fishin&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Voodoo Fishin Build 31032026",
+      "uploadDate": "2026-04-02T13:15:28.000Z"
+    },
+    {
+      "fileSize": "5.6 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:e9d84edbed7429a294a888931609973be73e523f&dn=Subnautica+Below+Zero&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Subnautica Below Zero Build 03102025 ������ �����������",
+      "uploadDate": "2026-04-02T13:14:49.000Z"
+    },
+    {
+      "fileSize": "602 MB",
+      "uris": [
+        "magnet:?xt=urn:btih:4b8de026d248ada6904af9c3daf84050a3e33f2c&dn=Mall+Rivals&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Mall Rivals 0.2.65",
+      "uploadDate": "2026-04-02T13:12:26.000Z"
+    },
+    {
       "fileSize": "8.3 GB",
       "uris": [
         "magnet:?xt=urn:btih:27c3f2b4f512c1f42ecbac7e2d7c4e89da3ef635&dn=Cooking+Simulator+2+Better+Together&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
