@@ -26,6 +26,6 @@ jobs:
       - name: Run steamid.py
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          STEAMGRIDDB_API_KEY: $${{ secrets.STEAMGRIDKEY }}
+          STEAMGRIDDB_API_KEY: ${{ secrets.STEAMGRIDKEY }}
         run: |
           python pythonscripts/steamid.py
