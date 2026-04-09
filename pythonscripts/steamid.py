@@ -54,6 +54,32 @@ def clean_title(title):
     title = re.sub(r'\s*Download\s*$', '', title, flags=re.IGNORECASE)
     return title.strip()
 
+def clean_title_for_search(title, source_name):
+    """Pulisce il titolo per la ricerca in base alla source"""
+    if not title:
+        return ""
+    
+    title = clean_title(title)
+    
+    # Pulizia specifica per OnlineFix
+    if source_name == "OnlineFix":
+        # Rimuove "Build XXXX" (es: Build 02032026, Build 12345)
+        title = re.sub(r'\s+Build\s+[\d]+', '', title, flags=re.IGNORECASE)
+        # Rimuove versioni tipo "1.0.5", "v1.2.3", "1.0", "1.0.0.0"
+        title = re.sub(r'\s+v?\d+(?:\.\d+)+$', '', title)
+        title = title.strip()
+    
+    # Pulizia specifica per FitGirl
+    elif source_name == "FitGirl":
+        # Prende tutto ciò che è prima del " – " (trattino lungo)
+        if " – " in title:
+            title = title.split(" – ")[0].strip()
+        # Gestisce anche trattino normale come fallback
+        elif " - " in title:
+            title = title.split(" - ")[0].strip()
+    
+    return title
+
 # ----------------------------
 # STEAMGRIDDB (SOLO IMMAGINI)
 # ----------------------------
@@ -94,14 +120,14 @@ def get_game_images(session, game_id):
     
     return images
 
-def find_game_images(session, game_title):
+def find_game_images(session, game_title, source_name=""):
     """Trova game su SteamGridDB e recupera solo le immagini"""
     headers = {
         "Authorization": f"Bearer {STEAMGRIDDB_API_KEY}",
         "Accept": "application/json"
     }
     
-    search_term = clean_title(game_title)
+    search_term = clean_title_for_search(game_title, source_name)
     if len(search_term) < 3:
         return None, None, None
     
@@ -231,7 +257,7 @@ def process_source(name, url, output_file):
     
     # Processa in parallelo (10 alla volta)
     with ThreadPoolExecutor(max_workers=10) as executor:
-        futures = {executor.submit(find_game_images, session, title): title for title in games}
+        futures = {executor.submit(find_game_images, session, title, name): title for title in games}
         
         for i, future in enumerate(as_completed(futures), 1):
             title = futures[future]
