@@ -19,7 +19,7 @@ BRANCH = "main"
 BASE_PATH = "IDapp"
 
 # SteamGridDB API
-STEAMGRIDDB_API_KEY = os.getenv("STEAMGRIDKEY")
+STEAMGRIDDB_API_KEY = "6104c407ab88f159ec34420579c6a21e"
 STEAMGRIDDB_BASE = "https://www.steamgriddb.com/api/v2"
 
 SOURCES = {
