@@ -3,100 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phoneix Play Container Games</title>
+    <title>Phoenix Play - Container Games</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- Alpine.js per interattività moderna -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body>
-    <header>
+<body class="dark" x-data="app()" x-init="init()">
+    <!-- Header moderno -->
+    <header class="sticky-header">
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <i class="fas fa-gamepad"></i>
-                    <h1>Phoneix Play <span>Container Games</span></h1>
+                    <div class="logo-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h1>Phoenix <span>Play</span></h1>
                 </div>
                 <div class="stats">
-                    <div class="stat-item">
+                    <div class="stat-card">
                         <div class="stat-value" id="total-games">0</div>
                         <div class="stat-label">Giochi</div>
                     </div>
-                    <div class="stat-item">
+                    <div class="stat-card">
                         <div class="stat-value" id="total-size">0 GB</div>
-                        <div class="stat-label">Dimensione Totale</div>
+                        <div class="stat-label">Dimensione</div>
                     </div>
-                    <div class="stat-item">
+                    <div class="stat-card">
                         <div class="stat-value" id="last-update">Oggi</div>
-                        <div class="stat-label">Ultimo Aggiornamento</div>
+                        <div class="stat-label">Aggiornamento</div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
+    <!-- Hero Slider Section -->
+    <section class="hero-slider" x-data="heroSlider(3)" x-init="init()">
+        <div class="slider-container">
+            <template x-for="(slide, index) in slides" :key="index">
+                <div class="slide" x-show="current === index" 
+                     x-transition:enter="transition-all duration-700 ease-out"
+                     x-transition:enter-start="opacity-0 scale-[1.02]"
+                     x-transition:enter-end="opacity-100 scale-100"
+                     x-transition:leave="transition-all duration-500 ease-in"
+                     x-transition:leave-start="opacity-100"
+                     x-transition:leave-end="opacity-0">
+                    <div class="slide-bg" :style="{ backgroundImage: 'url(' + slide.image + ')' }">
+                        <div class="slide-overlay"></div>
+                    </div>
+                    <div class="slide-content">
+                        <div class="slide-logo">
+                            <img :src="slide.logo" :alt="slide.title">
+                        </div>
+                        <div class="slide-meta">
+                            <span class="slide-badge" x-text="slide.version"></span>
+                            <span class="slide-platform">PC</span>
+                        </div>
+                        <p class="slide-desc" x-text="slide.description"></p>
+                        <div class="slide-buttons">
+                            <a :href="slide.link" class="btn-primary">
+                                <i class="fas fa-download"></i> Scarica Ora
+                            </a>
+                            <a :href="slide.link" class="btn-secondary">
+                                Dettagli <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            
+            <!-- Slider Controls -->
+            <button class="slider-nav prev" @click="prev()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-nav next" @click="next()">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <!-- Slider Dots -->
+            <div class="slider-dots">
+                <template x-for="(slide, index) in slides" :key="index">
+                    <button class="dot" :class="{ active: current === index }" @click="goTo(index)"></button>
+                </template>
+            </div>
+        </div>
+    </section>
+
     <div class="container">
-        <!-- Source Selector -->
-<div class="source-selector">
-    <button class="source-btn steamrip active" id="source-steamrip">
-        <i class="fas fa-cloud-download-alt"></i>
-        SteamRip
-        <span class="source-badge steamrip-badge" id="steamrip-count">0</span>
-    </button>
-    <button class="source-btn onlinefix" id="source-onlinefix">
-        <i class="fas fa-wifi"></i>
-        OnlineFix
-        <span class="source-badge onlinefix-badge" id="onlinefix-count">0</span>
-    </button>
-    <button class="source-btn fitgirl" id="source-fitgirl">
-        <i class="fas fa-female"></i>
-        FitGirl
-        <span class="source-badge fitgirl-badge" id="fitgirl-count">0</span>
-    </button>
-    <!-- AGGIUNGI QUESTO PULSANTE -->
-    <button class="source-btn altro" id="source-altro">
-        <i class="fas fa-plus-circle"></i>
-        Altro Provider
-        <span class="source-badge altro-badge" id="altro-count">0</span>
-    </button>
-</div>
+        <!-- Source Selector Moderno -->
+        <div class="source-selector">
+            <button class="source-btn steamrip active" id="source-steamrip">
+                <i class="fas fa-cloud-download-alt"></i>
+                <span>SteamRip</span>
+                <span class="source-count" id="steamrip-count">0</span>
+            </button>
+            <button class="source-btn onlinefix" id="source-onlinefix">
+                <i class="fas fa-wifi"></i>
+                <span>OnlineFix</span>
+                <span class="source-count" id="onlinefix-count">0</span>
+            </button>
+            <button class="source-btn fitgirl" id="source-fitgirl">
+                <i class="fas fa-female"></i>
+                <span>FitGirl</span>
+                <span class="source-count" id="fitgirl-count">0</span>
+            </button>
+            <button class="source-btn altro" id="source-altro">
+                <i class="fas fa-plus-circle"></i>
+                <span>Altro Provider</span>
+                <span class="source-count" id="altro-count">0</span>
+            </button>
+        </div>
+
+        <!-- Layout principale -->
         <div class="main-layout">
-            <!-- Filters Panel -->
+            <!-- Filters Panel - Stile moderno -->
             <aside class="filters-panel">
                 <div class="filter-section">
-                    <h3><i class="fas fa-search"></i> Cerca Gioco</h3>
-                    <input type="text" class="search-box" id="search-box" placeholder="Digita il nome del gioco...">
+                    <h3><i class="fas fa-search"></i> Cerca</h3>
+                    <div class="search-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" class="search-box" id="search-box" placeholder="Cerca un gioco...">
+                    </div>
                 </div>
                 
                 <div class="filter-section">
                     <h3><i class="fas fa-filter"></i> Categorie</h3>
                     <ul class="category-list" id="category-list">
-                        <li><button class="category-btn active">Tutte le categorie <span class="category-count" id="all-count">0</span></button></li>
-                        <!-- Categories will be loaded here -->
+                        <li><button class="category-btn active" data-category="all">
+                            <span>Tutti</span>
+                            <span class="category-count">0</span>
+                        </button></li>
                     </ul>
                 </div>
                 
                 <div class="filter-section">
-                    <h3><i class="fas fa-sort"></i> Ordina per</h3>
+                    <h3><i class="fas fa-sort"></i> Ordina</h3>
                     <div class="sort-options">
                         <button class="sort-btn active" data-sort="date-desc">
-                            <i class="fas fa-calendar-alt"></i> Data: Più recenti
+                            <i class="fas fa-calendar-alt"></i> Più recenti
                         </button>
                         <button class="sort-btn" data-sort="date-asc">
-                            <i class="fas fa-calendar-alt"></i> Data: Più vecchi
+                            <i class="fas fa-calendar-alt"></i> Più vecchi
                         </button>
                         <button class="sort-btn" data-sort="size-desc">
-                            <i class="fas fa-download"></i> Dimensione: Grandi
+                            <i class="fas fa-hdd"></i> Più grandi
                         </button>
                         <button class="sort-btn" data-sort="size-asc">
-                            <i class="fas fa-download"></i> Dimensione: Piccoli
+                            <i class="fas fa-hdd"></i> Più piccoli
                         </button>
                     </div>
                 </div>
                 
                 <div class="filter-section">
-                    <h3><i class="fas fa-hdd"></i> Dimensione File</h3>
-                    <div class="file-size-filter">
-                        <input type="range" min="0" max="150" value="0" class="size-slider" id="size-slider">
-                        <div class="size-value" id="size-value">Tutte le dimensioni</div>
+                    <h3><i class="fas fa-chart-line"></i> Dimensione max</h3>
+                    <div class="size-filter">
+                        <input type="range" min="0" max="150" value="150" class="size-slider" id="size-slider">
+                        <div class="size-value" id="size-value">Tutti</div>
                     </div>
                 </div>
             </aside>
@@ -104,14 +167,14 @@
             <!-- Games Grid -->
             <main class="games-grid">
                 <div class="games-header">
-                    <div class="games-count" id="games-count">Caricamento giochi...</div>
+                    <div class="games-count" id="games-count">Caricamento...</div>
                     <div class="source-indicator" id="source-indicator">
                         <i class="fas fa-cloud-download-alt"></i>
                         <span>SteamRip</span>
                     </div>
                     <div class="view-toggle">
                         <button class="view-btn active" id="view-grid">
-                            <i class="fas fa-th-large"></i>
+                            <i class="fas fa-th"></i>
                         </button>
                         <button class="view-btn" id="view-list">
                             <i class="fas fa-list"></i>
@@ -120,306 +183,138 @@
                 </div>
                 
                 <div class="games-container" id="games-container">
-                    <div class="loading">
-                        <i class="fas fa-spinner fa-spin"></i>
-                        <p>Caricamento catalogo giochi...</p>
+                    <div class="loading-skeleton">
+                        <div class="skeleton-card" v-for="i in 6">
+                            <div class="skeleton-image"></div>
+                            <div class="skeleton-title"></div>
+                            <div class="skeleton-meta"></div>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Pagination -->
-                <div class="pagination" id="pagination" style="display: none;">
+                <div class="pagination" id="pagination">
                     <button class="pagination-btn" id="first-page">
-                        <i class="fas fa-angle-double-left"></i> Prima
+                        <i class="fas fa-angle-double-left"></i>
                     </button>
                     <button class="pagination-btn" id="prev-page">
-                        <i class="fas fa-chevron-left"></i> Precedente
+                        <i class="fas fa-chevron-left"></i>
                     </button>
-                    
                     <div class="page-info">
                         Pagina <span id="current-page">1</span> di <span id="total-pages">1</span>
                     </div>
-                    
                     <button class="pagination-btn" id="next-page">
-                        Successivo <i class="fas fa-chevron-right"></i>
+                        <i class="fas fa-chevron-right"></i>
                     </button>
                     <button class="pagination-btn" id="last-page">
-                        Ultima <i class="fas fa-angle-double-right"></i>
+                        <i class="fas fa-angle-double-right"></i>
                     </button>
-                    
-                    <div class="page-numbers" id="page-numbers">
-                        <!-- Page numbers will be generated here -->
-                    </div>
                 </div>
             </main>
         </div>
 
-        <!-- FAQ Button -->
-        <div class="faq-button-container">
+        <!-- Trending Games Section -->
+        <section class="trending-section">
+            <div class="section-header">
+                <h2><i class="fas fa-fire"></i> Giochi più scaricati</h2>
+                <a href="#" class="view-all">Vedi tutti <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="trending-grid" id="trending-grid">
+                <!-- Popolato da JS -->
+            </div>
+        </section>
+
+        <!-- FAQ Section Collapsible -->
+        <div class="faq-wrapper">
             <button class="faq-toggle-btn" id="faq-toggle">
                 <i class="fas fa-question-circle"></i>
                 <span>Guida Installazione</span>
+                <i class="fas fa-chevron-down"></i>
             </button>
-        </div>
-
-        <!-- FAQ Section (Collapsible) -->
-        <section class="faq-section" id="faq-section">
-            <div class="faq-header">
-                <h2><i class="fas fa-question-circle"></i> Domande Frequenti (FAQ)</h2>
-                <button class="close-faq" id="close-faq">&times;</button>
-            </div>
             
-            <div class="faq-grid">
-                <div class="faq-category">
-                    <h3><i class="fas fa-female"></i> Come installare giochi FitGirl</h3>
-                    <div class="faq-content">
-                        <p>I giochi FitGirl sono distribuiti tramite <strong>link magnet</strong> per il download via torrent.</p>
-                        <div class="steps">
-                            <div class="step">
-                                <span class="step-number">1</span>
-                                <p>Installa un client torrent come <strong>qBittorrent</strong> o similari</p>
-                            </div>
-                            <div class="step">
-                                <span class="step-number">2</span>
-                                <p>Clicca sul pulsante di download dal nostro sito</p>
-                            </div>
-                            <div class="step">
-                                <span class="step-number">3</span>
-                                <p>Il client torrent si aprirà automaticamente con il torrent</p>
-                            </div>
-                            <div class="step">
-                                <span class="step-number">4</span>
-                                <p>Una volta completato il download, apri la cartella e avvia il <code>setup.exe</code></p>
-                            </div>
-                            <div class="step">
-                                <span class="step-number">💡</span>
-                                <p><strong>Importante:</strong> L'installazione può richiedere molto tempo a causa dell'alta compressione</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="faq-section" id="faq-section">
+                <div class="faq-header">
+                    <h2><i class="fas fa-compass"></i> Domande Frequenti</h2>
+                    <button class="close-faq" id="close-faq">&times;</button>
                 </div>
                 
-                <div class="faq-category">
-                    <h3><i class="fas fa-cloud-download-alt"></i> Come installare giochi da SteamRip</h3>
-                    <div class="faq-content">
-                        <p>I giochi SteamRip sono in formato <strong>.zip portatile</strong> e non richiedono installazione.</p>
-                        <div class="steps">
-                            <div class="step">
-                                <span class="step-number">1</span>
-                                <p>Scegli un mirror di download (consigliamo <strong>Buzzheavier</strong>)</p>
-                            </div>
-                            <div class="step">
-                                <span class="step-number">2</span>
-                                <p>Scarica l'archivio .zip e estrailo</p>
-                            </div>
-                            <div class="step">
-                                <span class="step-number">3</span>
-                                <p>Apri la cartella del gioco e cerca l'<code>.exe</code> principale</p>
-                            </div>
-                            <div class="step">
-                                <span class="step-number">4</span>
-                                <p>Avvia il gioco direttamente dall'eseguibile</p>
-                            </div>
-                            <div class="step">
-                                <span class="step-number">ℹ️</span>
-                                <p>La cartella <code>Redist</code> contiene le dipendenze necessarie se mancano sul tuo sistema</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="faq-category">
-                    <h3><i class="fas fa-wifi"></i> Come installare da OnlineFix</h3>
-                    <div class="faq-content">
-                        <p>OnlineFix combina giochi portatili con patch multiplayer.</p>
-                        <div class="steps">
-                            <div class="step">
-                                <span class="step-number">1</span>
-                                <p>Scarica il torrent tramite client come <strong>qBittorrent</strong></p>
-                            </div>
-                            <div class="step">
-                                <span class="step-number">2</span>
-                                <p>Una volta scaricato, estrai gli archivi .zip</p>
-                            </div>
-                            <div class="step">
-                                <span class="step-number">3</span>
-                                <p>Troverai due cartelle: il gioco principale e la cartella <code>OnlineFix</code></p>
-                            </div>
-                            <div class="step">
-                                <span class="step-number">4</span>
-                                <p>Copia il contenuto della cartella <code>OnlineFix</code> nella cartella del gioco</p>
-                            </div>
-                            <div class="step">
-                                <span class="step-number">🔐</span>
-                                <p><strong>Password degli zip:</strong> <code>online-fix.me</code></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="faq-category">
-    <h3><i class="fas fa-comments"></i> Supporto & Informazioni</h3>
-    <div class="faq-content">
-        <div class="support-info">
-            <div class="support-item">
-                <i class="fas fa-question"></i>
-                <div>
-                    <h4>Hai bisogno di aiuto?</h4>
-                    <p>Per qualsiasi dubbio o problema, contatta il nostro team di supporto su Telegram:</p>
-                    <a href="https://t.me/+9yp0UCZGICczNWU0" target="_blank" class="telegram-link">
-                        <i class="fab fa-telegram"></i> AIMODS su Telegram
-                    </a>
-                </div>
-            </div>
-            
-            <div class="support-item">
-                <i class="fas fa-ad"></i>
-                <div>
-                    <h4>Senza Pubblicità</h4>
-                    <p>Il nostro sito è completamente <strong>privo di ADS</strong> e tracker pubblicitari per un'esperienza utente pulita e sicura.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- NUOVA GUIDA GDK - Sezione a larghezza completa -->
-<div class="faq-category gdk-guide" style="grid-column: 1 / -1;">
-    <h3><i class="fas fa-terminal"></i> Guida Installazione GDK (Xbox Game Development Kit)</h3>
-    <div class="faq-content">
-        <div class="gdk-instructions">
-            <div class="warning-header">
-                <i class="fas fa-exclamation-triangle"></i>
-                <p><strong>Se nello zip trovate il file "GDK_Helper.bat" seguite questa procedura:</strong></p>
-            </div>
-            
-            <div class="gdk-steps">
-                <div class="step-row">
-                    <div class="step-card">
-                        <div class="step-header">
-                            <span class="step-number-large">1</span>
-                            <h4>Abilita Developer Mode</h4>
-                        </div>
-                        <div class="step-content">
-                            <p>Avvia <code>GDK_Helper.bat</code> come <strong>amministratore</strong></p>
-                            <div class="command-box">
-                                <i class="fas fa-terminal"></i>
-                                <span>Premi il tasto <code>3</code> per abilitare il developer mode</span>
-                            </div>
-                            <div class="step-note">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Questa operazione modifica le impostazioni di sistema</span>
-                            </div>
+                <div class="faq-grid">
+                    <div class="faq-card">
+                        <div class="faq-icon"><i class="fas fa-female"></i></div>
+                        <h3>FitGirl Repacks</h3>
+                        <div class="faq-content">
+                            <p>Giochi altamente compressi con installazione guidata.</p>
+                            <ul class="steps-list">
+                                <li><span class="step">1</span> Scarica il torrent con qBittorrent</li>
+                                <li><span class="step">2</span> Avvia il file setup.exe</li>
+                                <li><span class="step">3</span> Attendi il completamento (può richiedere ore)</li>
+                            </ul>
                         </div>
                     </div>
                     
-                    <div class="step-card">
-                        <div class="step-header">
-                            <span class="step-number-large">2</span>
-                            <h4>Riavvio Sistema</h4>
-                        </div>
-                        <div class="step-content">
-                            <p><strong>Riavvia completamente il PC</strong></p>
-                            <div class="command-box">
-                                <i class="fas fa-sync-alt"></i>
-                                <span>È fondamentale riavviare per applicare le modifiche</span>
-                            </div>
-                            <div class="step-note">
-                                <i class="fas fa-exclamation-circle"></i>
-                                <span>Non saltare questo passaggio!</span>
-                            </div>
+                    <div class="faq-card">
+                        <div class="faq-icon"><i class="fas fa-cloud-download-alt"></i></div>
+                        <h3>SteamRip</h3>
+                        <div class="faq-content">
+                            <p>Giochi portatili pronti all'uso, nessuna installazione.</p>
+                            <ul class="steps-list">
+                                <li><span class="step">1</span> Scarica l'archivio .zip</li>
+                                <li><span class="step">2</span> Estrai in una cartella</li>
+                                <li><span class="step">3</span> Avvia l'eseguibile .exe</li>
+                            </ul>
                         </div>
                     </div>
                     
-                    <div class="step-card">
-                        <div class="step-header">
-                            <span class="step-number-large">3</span>
-                            <h4>Installa Gioco e DLC</h4>
-                        </div>
-                        <div class="step-content">
-                            <p>Riavvia <code>GDK_Helper.bat</code> come <strong>amministratore</strong></p>
-                            <div class="command-box">
-                                <i class="fas fa-terminal"></i>
-                                <span>Premi <code>1</code> → Installa il gioco principale</span>
-                            </div>
-                            <div class="command-box">
-                                <i class="fas fa-terminal"></i>
-                                <span>Premi <code>2</code> → Installa i DLC (se presenti)</span>
-                            </div>
-                            <div class="step-note">
-                                <i class="fas fa-clock"></i>
-                                <span>Segui le istruzioni a schermo durante l'installazione</span>
-                            </div>
+                    <div class="faq-card">
+                        <div class="faq-icon"><i class="fas fa-wifi"></i></div>
+                        <h3>OnlineFix</h3>
+                        <div class="faq-content">
+                            <p>Giochi multiplayer pronti per giocare online.</p>
+                            <ul class="steps-list">
+                                <li><span class="step">1</span> Scarica e estrai il gioco</li>
+                                <li><span class="step">2</span> Applica la patch OnlineFix</li>
+                                <li><span class="step">3</span> Password: online-fix.me</li>
+                            </ul>
                         </div>
                     </div>
                     
-                    <div class="step-card">
-                        <div class="step-header">
-                            <span class="step-number-large">4</span>
-                            <h4>Disabilita Developer Mode</h4>
+                    <div class="faq-card gdk-guide">
+                        <div class="faq-icon"><i class="fas fa-terminal"></i></div>
+                        <h3>Guida GDK (Xbox)</h3>
+                        <div class="faq-content">
+                            <p>Per giochi con file GDK_Helper.bat</p>
+                            <ul class="steps-list">
+                                <li><span class="step">1</span> Esegui GDK_Helper.bat come admin</li>
+                                <li><span class="step">2</span> Premi 3 → Abilita Developer Mode</li>
+                                <li><span class="step">3</span> Riavvia il PC</li>
+                                <li><span class="step">4</span> Riavvia GDK_Helper → Premi 1 (Installa)</li>
+                                <li><span class="step">5</span> Premi 4 → Disabilita Developer Mode</li>
+                            </ul>
                         </div>
-                        <div class="step-content">
-                            <p>Alla fine dell'installazione</p>
-                            <div class="command-box">
-                                <i class="fas fa-terminal"></i>
-                                <span>Premi il tasto <code>4</code> per disabilitare il developer mode</span>
-                            </div>
-                            <div class="step-note">
-                                <i class="fas fa-shield-alt"></i>
-                                <span>Consigliato per la sicurezza del sistema</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="important-note">
-                    <div class="note-header">
-                        <i class="fas fa-info-circle"></i>
-                        <h4>Informazioni Importanti</h4>
-                    </div>
-                    <div class="note-content">
-                        <p><strong>Questa procedura è necessaria solo per giochi specifici che richiedono:</strong></p>
-                        <ul>
-                            <li><i class="fas fa-gamepad"></i> Microsoft GDK (Xbox Game Development Kit)</li>
-                            <li><i class="fas fa-xbox"></i> Giochi provenienti da piattaforma Xbox</li>
-                            <li><i class="fas fa-windows"></i> Giochi con protezioni specifiche Microsoft</li>
-                        </ul>
-                        <p class="warning-text">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            <strong>Attenzione:</strong> L'abilitazione del developer mode può temporaneamente modificare le impostazioni di sicurezza di Windows. Disabilitarlo dopo l'installazione.
-                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-            </div>
-        </section>
     </div>
 
     <!-- Game Details Modal -->
-    <div class="game-details-modal" id="game-details-modal">
-        <div class="modal-content">
+    <div class="modal" id="game-details-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
             <div class="modal-header">
-                <div class="modal-title" id="modal-title">
-                    <span id="modal-title-text">Titolo Gioco</span>
-                    <span class="modal-source-badge steamrip-badge-card" id="modal-source-badge">SteamRip</span>
+                <div class="modal-title">
+                    <span id="modal-title-text">Titolo</span>
+                    <span class="modal-badge" id="modal-source-badge">SteamRip</span>
                 </div>
-                <button class="close-modal" id="close-modal">&times;</button>
+                <button class="modal-close" id="close-modal">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="modal-image" id="modal-image"></div>
-                
-                <div class="game-properties" id="game-properties">
-                    <!-- Game properties will be loaded here -->
-                </div>
-                
-                <div class="download-options">
-                    <h3><i class="fas fa-download"></i> Opzioni di Download</h3>
-                    <div id="download-instructions"></div>
-                    <div class="download-links" id="download-links">
-                        <!-- Download links will be loaded here -->
-                    </div>
+                <div class="modal-properties" id="game-properties"></div>
+                <div class="download-section">
+                    <h3><i class="fas fa-download"></i> Link Download</h3>
+                    <div id="download-instructions" class="download-instructions"></div>
+                    <div class="download-links" id="download-links"></div>
                 </div>
             </div>
         </div>
@@ -427,9 +322,20 @@
 
     <footer>
         <div class="container">
-            <p>Phoneix Play Container Games - Catalogo di giochi da SteamRip, OnlineFix e FitGirl</p>
-            <p>I dati vengono recuperati automaticamente da fonti pubbliche. Le immagini dei giochi sono di proprietà dei rispettivi sviluppatori.</p>
-            <p>© 2026 AIMODS. Tutti i diritti riservati.</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-gamepad"></i>
+                    <span>Phoenix Play</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#">DMCA</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Contatti</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>© 2026 AIMODS - Tutti i diritti riservati</p>
+                </div>
+            </div>
         </div>
     </footer>
 

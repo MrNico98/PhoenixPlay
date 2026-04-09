@@ -1,17 +1,92 @@
+// Alpine.js Slider Component
+function heroSlider(totalSlides) {
+    return {
+        current: 0,
+        total: totalSlides,
+        autoplayTimer: null,
+        autoplayDelay: 6000,
+        slides: [
+            {
+                title: "Samson",
+                version: "B 22679769",
+                image: "https://via.placeholder.com/1920x800/1a1e26/f97316?text=Samson",
+                logo: "https://via.placeholder.com/400x100/1a1e26/f97316?text=SAMSON",
+                description: "Samson comes home to the worst streets of Tyndalston, a place that built him hard and never forgave him. Muscle, speed, and nerve decide who stays upright.",
+                link: "#"
+            },
+            {
+                title: "ALL WILL FALL",
+                version: "V 1.0.10",
+                image: "https://via.placeholder.com/1920x800/1a1e26/10b981?text=ALL+WILL+FALL",
+                logo: "https://via.placeholder.com/400x100/1a1e26/10b981?text=ALL+WILL+FALL",
+                description: "In a dying world overtaken by the endless ocean, your goal is to grow a small settlement into a sprawling vertical city of your dreams.",
+                link: "#"
+            },
+            {
+                title: "DEATH STRANDING 2",
+                version: "V 1.2.57.0",
+                image: "https://via.placeholder.com/1920x800/1a1e26/8b5cf6?text=DEATH+STRANDING+2",
+                logo: "https://via.placeholder.com/400x100/1a1e26/8b5cf6?text=DEATH+STRANDING+2",
+                description: "Sam sets out on a new journey to save humanity from extinction. Join them as they traverse a world beset by otherworldly enemies.",
+                link: "#"
+            }
+        ],
+        
+        init() {
+            this.startAutoplay();
+        },
+        
+        startAutoplay() {
+            this.autoplayTimer = setInterval(() => this.next(), this.autoplayDelay);
+        },
+        
+        stopAutoplay() {
+            if (this.autoplayTimer) {
+                clearInterval(this.autoplayTimer);
+                this.autoplayTimer = null;
+            }
+        },
+        
+        next() {
+            this.current = (this.current + 1) % this.total;
+            this.restartAutoplay();
+        },
+        
+        prev() {
+            this.current = this.current === 0 ? this.total - 1 : this.current - 1;
+            this.restartAutoplay();
+        },
+        
+        goTo(index) {
+            this.current = index;
+            this.restartAutoplay();
+        },
+        
+        restartAutoplay() {
+            this.stopAutoplay();
+            this.startAutoplay();
+        }
+    }
+}
+
 // Global variables
 let allGamesData = {
     steamrip: [],
     onlinefix: [],
     fitgirl: [],
-    altro: [] // AGGIUNTA: Nuova categoria Altro Provider
+    altro: []
 };
 
 let steamData = {
     steamrip: [],
     onlinefix: [],
     fitgirl: [],
-    altro: [] // AGGIUNTA: Nuova categoria Altro Provider
+    altro: []
 };
+
+// Cache per le immagini SteamGridDB
+let steamGridCache = new Map();
+let pendingImageRequests = new Map();
 
 let categories = new Set();
 let currentSource = "steamrip";
@@ -20,11 +95,20 @@ let currentSort = "date-desc";
 let currentView = "grid";
 let maxFileSize = 0;
 
-// Pagination variables
 const GAMES_PER_PAGE = 30;
 let currentPage = 1;
 let totalPages = 1;
 let filteredGames = [];
+
+const SITE_PRIORITY = {
+    'buzzheavier.com': { name: 'Buzzheavier', class: 'buzzheavier', icon: 'fas fa-bolt', priority: 1 },
+    'vikingfile.com': { name: 'Vikingfile', class: 'vikingfile', icon: 'fas fa-shield-alt', priority: 2 },
+    'gofile.io': { name: 'Gofile', class: 'gofile', icon: 'fas fa-file-archive', priority: 3 },
+    '1drv.ms': { name: 'OneDrive', class: 'onedrive', icon: 'fas fa-cloud', priority: 1 },
+    'onedrive.live.com': { name: 'OneDrive', class: 'onedrive', icon: 'fas fa-cloud', priority: 1 },
+    'mega.nz': { name: 'MEGA', class: 'mega', icon: 'fas fa-database', priority: 2 },
+    'magnet': { name: 'Torrent Magnet', class: 'magnet', icon: 'fas fa-magnet', priority: 1 }
+};
 
 // DOM elements
 const gamesContainer = document.getElementById('games-container');
@@ -54,514 +138,306 @@ const nextPageBtn = document.getElementById('next-page');
 const lastPageBtn = document.getElementById('last-page');
 const currentPageEl = document.getElementById('current-page');
 const totalPagesEl = document.getElementById('total-pages');
-const pageNumbersEl = document.getElementById('page-numbers');
-
-// FAQ elements
 const faqSection = document.getElementById('faq-section');
 const faqToggleBtn = document.getElementById('faq-toggle');
 const closeFaqBtn = document.getElementById('close-faq');
-
-// Source buttons
 const sourceSteamripBtn = document.getElementById('source-steamrip');
 const sourceOnlinefixBtn = document.getElementById('source-onlinefix');
 const sourceFitgirlBtn = document.getElementById('source-fitgirl');
-const sourceAltroBtn = document.getElementById('source-altro'); // AGGIUNTA: Pulsante Altro Provider
+const sourceAltroBtn = document.getElementById('source-altro');
 
-// Site priority order
-const SITE_PRIORITY = {
-    'buzzheavier.com': { name: 'Buzzheavier', class: 'buzzheavier', icon: 'fas fa-bolt', priority: 1 },
-    'vikingfile.com': { name: 'Vikingfile', class: 'vikingfile', icon: 'fas fa-shield-alt', priority: 2 },
-    'gofile.io': { name: 'Gofile', class: 'gofile', icon: 'fas fa-file-archive', priority: 3 },
-    '1drv.ms': { name: 'OneDrive', class: 'onedrive', icon: 'fas fa-cloud', priority: 1 },
-    'onedrive.live.com': { name: 'OneDrive', class: 'onedrive', icon: 'fas fa-cloud', priority: 1 },
-    'mega.nz': { name: 'MEGA', class: 'mega', icon: 'fas fa-database', priority: 2 },
-    'magnet': { name: 'Torrent Magnet', class: 'magnet', icon: 'fas fa-magnet', priority: 1 }
-};
+// SteamGridDB API Key
+const STEAMGRIDDB_API_KEY = "6104c407ab88f159ec34420579c6a21e";
 
-// Initialize the application
-document.addEventListener('DOMContentLoaded', function() {
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
     loadAllGamesData();
     setupEventListeners();
 });
 
-// Load all games data from JSON sources
+// Load all games data
 async function loadAllGamesData() {
     try {
-        // Carica i dati Steam per tutte le fonti
         const [steamripSteamData, onlinefixSteamData, fitgirlSteamData, altroSteamData] = await Promise.all([
             loadSteamData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDSteamRip.json'),
             loadSteamData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDOnlineFix.json'),
             loadSteamData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDFitGirl.json'),
-            loadSteamData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDAltro.json') // AGGIUNTA: Dati Steam per Altro Provider
+            loadSteamData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDAltro.json')
         ]);
         
         steamData.steamrip = steamripSteamData;
         steamData.onlinefix = onlinefixSteamData;
         steamData.fitgirl = fitgirlSteamData;
-        steamData.altro = altroSteamData; // AGGIUNTA
+        steamData.altro = altroSteamData;
         
-        // Carica tutti i sorgenti in parallelo
         const [steamripData, onlinefixData, fitgirlData, altroData] = await Promise.all([
             loadSourceData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamrip.json', 'steamrip'),
             loadSourceData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/onlinefix.json', 'onlinefix'),
             loadSourceData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/fitgirl.json', 'fitgirl'),
-            loadSourceData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/Altro/AltriGiochi.json', 'altro') // AGGIUNTA: Dati Altro Provider
+            loadSourceData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/Altro/AltriGiochi.json', 'altro')
         ]);
         
-        // Rimuovi duplicati all'interno di ciascuna fonte
         allGamesData.steamrip = removeDuplicatesAndKeepLatest(steamripData, 'steamrip');
         allGamesData.onlinefix = removeDuplicatesAndKeepLatest(onlinefixData, 'onlinefix');
         allGamesData.fitgirl = removeDuplicatesAndKeepLatest(fitgirlData, 'fitgirl');
-        allGamesData.altro = removeDuplicatesAndKeepLatest(altroData, 'altro'); // AGGIUNTA
-                
-        // Processa i giochi per la fonte corrente
+        allGamesData.altro = removeDuplicatesAndKeepLatest(altroData, 'altro');
+        
         processGamesData();
         updateStats();
         renderGames();
         setupCategories();
         updateSourceCounts();
+        renderTrendingGames();
         
     } catch (error) {
-        console.error('Errore nel caricamento dei dati:', error);
+        console.error('Errore:', error);
         showErrorMessage('Errore nel caricamento dei dati. Riprova più tardi.');
     }
 }
 
-// Load Steam data for a specific source
 async function loadSteamData(url) {
     try {
-        console.log(`Caricamento Steam data da ${url}...`);
         const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const json = await response.json();
-        return json || [];
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return await response.json() || [];
     } catch (error) {
-        console.error(`Errore nel caricamento Steam data:`, error);
+        console.error(`Errore Steam data:`, error);
         return [];
     }
 }
 
-// Remove duplicate games and keep only the latest version
 function removeDuplicatesAndKeepLatest(games, source) {
     if (!games || !Array.isArray(games)) return [];
-    
     const gameMap = new Map();
     
     games.forEach(game => {
-        // Estrai il nome base del gioco (per matching cross-fonte)
         const baseName = extractBaseGameName(game.title || game.name || '');
         const uploadDate = new Date(game.uploadDate || game.date || '1970-01-01');
-        
-        // Crea un ID unico per questo gioco (baseName + source)
         const gameId = `${source}:${baseName}`;
-        
-        // Se è un gioco di FitGirl, gestisci diversamente perché ha titoli diversi
-        let existingGame = gameMap.get(gameId);
-        
-        // Verifica se questo gioco è più recente di quello esistente
-        if (!existingGame || uploadDate > existingGame.uploadDate) {
-            gameMap.set(gameId, {
-                ...game,
-                baseName: baseName,
-                uploadDate: uploadDate,
-                source: source
-            });
-        }
-    });
-    
-    // Converti la mappa in array
-    return Array.from(gameMap.values());
-}
-
-function filterCrossSourceDuplicates(games) {
-    if (!games || games.length === 0) return [];
-    
-    const gameMap = new Map();
-    
-    games.forEach(game => {
-        const baseName = game.baseName || extractBaseGameName(game.title);
-        const uploadDate = new Date(game.uploadDate || game.date || '1970-01-01');
-        
-        // Crea un ID basato solo sul nome base (senza fonte)
-        // Questo ci permette di identificare lo stesso gioco tra fonti diverse
-        const gameId = baseName;
-        
         const existingGame = gameMap.get(gameId);
         
         if (!existingGame || uploadDate > existingGame.uploadDate) {
-            gameMap.set(gameId, {
-                ...game,
-                baseName: baseName,
-                uploadDate: uploadDate
-            });
+            gameMap.set(gameId, { ...game, baseName, uploadDate, source });
         }
     });
     
     return Array.from(gameMap.values());
 }
 
-// Extract base game name by removing version info
 function extractBaseGameName(title) {
     if (!title) return '';
-    
-    // Converte in minuscolo per il confronto
-    let name = title.toLowerCase();
-    
-    // Rimuovi i prefissi comuni di FitGirl
-    name = name
-        .replace(/fitgirl repack/gi, '')
-        .replace(/repack/gi, '')
-        .replace(/complete bundle/gi, '')
-        .replace(/ultimate edition/gi, '')
-        .replace(/deluxe edition/gi, '');
-    
-    // Rimuovi versioni e numeri di build
-    // Pattern: v1.2.3, v1.0, build 123, ecc.
-    name = name
-        .replace(/\s*(v\d+\.\d+(\.\d+)*(\.\d+)*)/gi, '')
-        .replace(/\s*(\d+\.\d+(\.\d+)*(\.\d+)*)/gi, '')
+    let name = title.toLowerCase()
+        .replace(/fitgirl repack|repack|complete bundle|ultimate edition|deluxe edition/gi, '')
+        .replace(/\s*v\d+\.\d+(\.\d+)*(\.\d+)*/gi, '')
+        .replace(/\s*\d+\.\d+(\.\d+)*(\.\d+)*/gi, '')
         .replace(/\s+build\s+\d+/gi, '')
-        .replace(/\s+patch\s+\d+\.\d+/gi, '');
-    
-    // Rimuovi DLCs e informazioni aggiuntive
-    name = name
+        .replace(/\s*\[\s*multi\d*\s*\]/gi, '')
         .replace(/\s*\(\s*multi\d*\s*\)/gi, '')
         .replace(/\s*\+\s*\d+\s*dlcs?/gi, '')
-        .replace(/\s*\+\s*bonuses?/gi, '')
-        .replace(/\s*-\s*.*?(repack|edition|bundle)/gi, '');
-    
-    // Rimuovi parentesi e parentesi quadre
-    name = name
         .replace(/\s*\[.*?\]/g, '')
-        .replace(/\s*\(.*?\)/g, '');
-    
-    // Rimuovi trattini e spazi extra
-    name = name
+        .replace(/\s*\(.*?\)/g, '')
         .replace(/[:–—\-]/g, ' ')
         .replace(/\s+/g, ' ')
         .trim();
     
-    // Rimuovi parole comuni che non sono parte del titolo principale
-    const commonWords = [
-        'the ', 'a ', 'an ', 'and ', 'or ', 'but ', 'in ', 'on ', 'at ', 'to ', 'for ',
-        'edition', 'version', 'update', 'free', 'download', 'full', 'game', 'pc', 'windows'
-    ];
-    
-    commonWords.forEach(word => {
-        const regex = new RegExp(`\\b${word}\\b`, 'gi');
-        name = name.replace(regex, '');
-    });
-    
-    // Tronca a parole significative (massimo 5 parole)
-    const words = name.split(/\s+/).filter(w => w.length > 0);
-    if (words.length > 5) {
-        name = words.slice(0, 5).join(' ');
-    }
-    
-    return name || title.toLowerCase(); // Fallback al titolo originale
+    return name || title.toLowerCase();
 }
 
-// Load data from a single source
 async function loadSourceData(url, source) {
     try {
         const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const json = await response.json();
-        
-        // Different sources have different data structures
-        if (source === 'steamrip' || source === 'onlinefix' || source === 'fitgirl') {
-            return json.downloads || [];
-        } else if (source === 'altro') {
-            // AGGIUNTA: Gestione struttura dati per Altro Provider
-            // Il JSON di Altro Provider ha la struttura: {"name": "AIMODS", "downloads": [...]}
-            return json.downloads || [];
-        }
-        return [];
+        return json.downloads || [];
     } catch (error) {
-        console.error(`Errore nel caricamento di ${source}:`, error);
+        console.error(`Errore ${source}:`, error);
         return [];
     }
 }
 
-// Process games data for current source
 function processGamesData() {
     const games = allGamesData[currentSource];
     categories.clear();
     maxFileSize = 0;
     
     games.forEach(game => {
-        // Extract file size
         game.numericSize = extractFileSize(game);
-        
-        // Update max file size
         if (game.numericSize && game.numericSize > maxFileSize) {
             maxFileSize = Math.ceil(game.numericSize);
         }
-        
-        // Assign category based on source
         assignCategory(game);
-        
-        // Add to categories set
-        if (game.category) {
-            categories.add(game.category);
-        }
-        
-        // Add source identifier
+        if (game.category) categories.add(game.category);
         game.source = currentSource;
-        
-        // Ensure game has all required properties
-        if (!game.title && game.name) {
-            game.title = game.name;
-        }
-        if (!game.uris && game.links) {
-            game.uris = game.links;
-        }
-        
-        // Store base name for filtering
+        if (!game.title && game.name) game.title = game.name;
+        if (!game.uris && game.links) game.uris = game.links;
         game.baseName = extractBaseGameName(game.title);
     });
     
-    // Update size slider max value
-    sizeSlider.max = maxFileSize;
-    sizeSlider.value = maxFileSize;
-    updateSizeValue(maxFileSize);
+    if (sizeSlider) {
+        sizeSlider.max = maxFileSize;
+        sizeSlider.value = maxFileSize;
+        updateSizeValue(maxFileSize);
+    }
 }
 
-// Extract file size from game object
 function extractFileSize(game) {
-    if (game.fileSize) {
-        const sizeMatch = game.fileSize.match(/([\d.]+)\s*(MB|GB)/i);
-        if (sizeMatch) {
-            const size = parseFloat(sizeMatch[1]);
-            const unit = sizeMatch[2].toUpperCase();
-            return unit === 'GB' ? size : size / 1024;
-        }
-    } else if (game.size) {
-        const sizeMatch = game.size.match(/([\d.]+)\s*(MB|GB)/i);
-        if (sizeMatch) {
-            const size = parseFloat(sizeMatch[1]);
-            const unit = sizeMatch[2].toUpperCase();
-            return unit === 'GB' ? size : size / 1024;
-        }
+    const sizeStr = game.fileSize || game.size || '';
+    const match = sizeStr.match(/([\d.]+)\s*(MB|GB)/i);
+    if (match) {
+        const size = parseFloat(match[1]);
+        const unit = match[2].toUpperCase();
+        return unit === 'GB' ? size : size / 1024;
     }
     return 0;
 }
 
-// Get formatted file size for display
 function getFormattedFileSize(game) {
-    if (game.fileSize) {
-        return game.fileSize;
-    } else if (game.size) {
-        return game.size;
-    }
-    return 'N/A';
+    return game.fileSize || game.size || 'N/A';
 }
 
-// Get upload date for display
 function getUploadDate(game) {
-    if (game.uploadDate) {
-        return game.uploadDate;
-    } else if (game.date) {
-        return game.date;
-    }
-    return new Date().toISOString();
+    return game.uploadDate || game.date || new Date().toISOString();
 }
 
-// Get game title
 function getGameTitle(game) {
-    if (game.title) {
-        return game.title;
-    } else if (game.name) {
-        return game.name;
-    }
-    return 'Sconosciuto';
+    return game.title || game.name || 'Sconosciuto';
 }
 
-// Get download links/URIs
 function getDownloadLinks(game) {
-    if (game.uris && Array.isArray(game.uris)) {
-        return game.uris;
-    } else if (game.links && Array.isArray(game.links)) {
-        return game.links;
-    }
-    return [];
+    return (game.uris && Array.isArray(game.uris)) ? game.uris : (game.links || []);
 }
 
-// Assign category based on game title (simulated)
 function assignCategory(game) {
     const title = getGameTitle(game).toLowerCase();
+    const categories = {
+        'simulator|simulatore': 'Simulazione',
+        'horror|survival|spavento': 'Horror',
+        'action|azione|combat|shooter|fight': 'Azione',
+        'adventure|avventura|story|narrative': 'Avventura',
+        'rpg|role': 'RPG',
+        'strategy|strategia|tactical': 'Strategia',
+        'indie|platform': 'Indie',
+        'sports|sport|football|basketball|tennis': 'Sport',
+        'racing|drive|car|automobil': 'Corse',
+        'open world|sandbox': 'Open World',
+        'puzzle|casual|family': 'Puzzle'
+    };
     
-    if (title.includes('simulator') || title.includes('simulatore')) {
-        game.category = 'Simulazione';
-    } else if (title.includes('horror') || title.includes('survival') || title.includes('spavento')) {
-        game.category = 'Horror';
-    } else if (title.includes('action') || title.includes('azione') || title.includes('combat') || title.includes('shooter') || title.includes('fight')) {
-        game.category = 'Azione';
-    } else if (title.includes('adventure') || title.includes('avventura') || title.includes('story') || title.includes('narrative')) {
-        game.category = 'Avventura';
-    } else if (title.includes('rpg') || title.includes('role')) {
-        game.category = 'RPG';
-    } else if (title.includes('strategy') || title.includes('strategia') || title.includes('tactical')) {
-        game.category = 'Strategia';
-    } else if (title.includes('indie') || title.includes('platform')) {
-        game.category = 'Indie';
-    } else if (title.includes('sports') || title.includes('sport') || title.includes('football') || title.includes('basketball') || title.includes('tennis')) {
-        game.category = 'Sport';
-    } else if (title.includes('racing') || title.includes('drive') || title.includes('car') || title.includes('automobil')) {
-        game.category = 'Corse';
-    } else if (title.includes('open world') || title.includes('sandbox')) {
-        game.category = 'Open World';
-    } else if (title.includes('puzzle') || title.includes('casual') || title.includes('family')) {
-        game.category = 'Puzzle';
-    } else {
-        game.category = 'Altro';
+    for (const [pattern, category] of Object.entries(categories)) {
+        if (new RegExp(pattern).test(title)) {
+            game.category = category;
+            return;
+        }
     }
+    game.category = 'Altro';
 }
 
-// Update statistics
 function updateStats() {
     const games = allGamesData[currentSource];
-    totalGamesEl.textContent = games.length;
+    if (totalGamesEl) totalGamesEl.textContent = games.length;
     
-    // Calculate total size
     let totalSizeGB = 0;
-    games.forEach(game => {
-        if (game.numericSize) totalSizeGB += game.numericSize;
-    });
+    games.forEach(game => { if (game.numericSize) totalSizeGB += game.numericSize; });
+    if (totalSizeEl) totalSizeEl.textContent = totalSizeGB.toFixed(1) + ' GB';
     
-    totalSizeEl.textContent = totalSizeGB.toFixed(1) + ' GB';
-    
-    // Get most recent upload date
     if (games.length > 0) {
-        let dates = [];
-        games.forEach(game => {
-            const date = new Date(getUploadDate(game));
-            if (!isNaN(date.getTime())) {
-                dates.push(date);
-            }
-        });
-        
-        if (dates.length > 0) {
+        const dates = games.map(game => new Date(getUploadDate(game))).filter(d => !isNaN(d.getTime()));
+        if (dates.length) {
             dates.sort((a, b) => b - a);
-            const lastUpdate = dates[0];
-            const now = new Date();
-            const diffDays = Math.floor((now - lastUpdate) / (1000 * 60 * 60 * 24));
-            
-            if (diffDays === 0) {
-                document.getElementById('last-update').textContent = 'Oggi';
-            } else if (diffDays === 1) {
-                document.getElementById('last-update').textContent = 'Ieri';
-            } else {
-                document.getElementById('last-update').textContent = `${diffDays} giorni fa`;
+            const diffDays = Math.floor((new Date() - dates[0]) / (1000 * 60 * 60 * 24));
+            const lastUpdateEl = document.getElementById('last-update');
+            if (lastUpdateEl) {
+                if (diffDays === 0) lastUpdateEl.textContent = 'Oggi';
+                else if (diffDays === 1) lastUpdateEl.textContent = 'Ieri';
+                else lastUpdateEl.textContent = `${diffDays} giorni fa`;
             }
         }
     }
 }
 
-// Update source counts
 function updateSourceCounts() {
-    document.getElementById('steamrip-count').textContent = allGamesData.steamrip.length;
-    document.getElementById('onlinefix-count').textContent = allGamesData.onlinefix.length;
-    document.getElementById('fitgirl-count').textContent = allGamesData.fitgirl.length;
-    document.getElementById('altro-count').textContent = allGamesData.altro.length; // AGGIUNTA
+    const steamripCount = document.getElementById('steamrip-count');
+    const onlinefixCount = document.getElementById('onlinefix-count');
+    const fitgirlCount = document.getElementById('fitgirl-count');
+    const altroCount = document.getElementById('altro-count');
+    
+    if (steamripCount) steamripCount.textContent = allGamesData.steamrip.length;
+    if (onlinefixCount) onlinefixCount.textContent = allGamesData.onlinefix.length;
+    if (fitgirlCount) fitgirlCount.textContent = allGamesData.fitgirl.length;
+    if (altroCount) altroCount.textContent = allGamesData.altro.length;
 }
 
-// Setup categories filter
 function setupCategories() {
     const games = allGamesData[currentSource];
-    
-    // Clear existing categories (except "All")
-    const allBtn = categoryList.querySelector('.category-btn.active');
-    categoryList.innerHTML = '';
-    categoryList.appendChild(allBtn);
-    
-    // Count games per category
     const categoryCounts = {};
     games.forEach(game => {
         const cat = game.category || 'Altro';
         categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
     });
     
-    // Add category buttons
+    // Mantieni il bottone "Tutti" se esiste
+    let allBtn = categoryList.querySelector('.category-btn.active');
+    if (!allBtn || !allBtn.hasAttribute('data-category')) {
+        allBtn = document.createElement('button');
+        allBtn.className = 'category-btn active';
+        allBtn.setAttribute('data-category', 'all');
+        allBtn.innerHTML = `Tutti <span class="category-count">${games.length}</span>`;
+    } else {
+        allBtn.innerHTML = `Tutti <span class="category-count">${games.length}</span>`;
+    }
+    
+    categoryList.innerHTML = '';
+    const allLi = document.createElement('li');
+    allLi.appendChild(allBtn);
+    categoryList.appendChild(allLi);
+    
     Array.from(categories).sort().forEach(category => {
         const li = document.createElement('li');
         const count = categoryCounts[category] || 0;
-        
-        li.innerHTML = `
-            <button class="category-btn" data-category="${category}">
-                ${category} <span class="category-count">${count}</span>
-            </button>
-        `;
-        
+        li.innerHTML = `<button class="category-btn" data-category="${category}">${category} <span class="category-count">${count}</span></button>`;
         categoryList.appendChild(li);
     });
     
-    // Update "All" count
-    document.querySelector('.category-count').textContent = games.length;
-    
-    // Add event listeners to category buttons
-    document.querySelectorAll('.category-btn[data-category]').forEach(btn => {
+    document.querySelectorAll('.category-btn').forEach(btn => {
         btn.addEventListener('click', function() {
             document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
             this.classList.add('active');
             currentFilter = this.dataset.category;
-            currentPage = 1; // Reset to first page when changing filter
+            currentPage = 1;
             renderGames();
         });
     });
 }
 
-// Render games based on current filters and sort
 function renderGames() {
-    // Combina tutti i giochi da tutte le fonti quando si cerca
     let gamesToFilter;
     
-    if (searchBox.value.trim() !== '') {
-        // Se c'è una ricerca, combina tutte le fonti
+    if (searchBox && searchBox.value.trim() !== '') {
         gamesToFilter = [
             ...allGamesData.steamrip.map(g => ({ ...g, source: 'steamrip' })),
             ...allGamesData.onlinefix.map(g => ({ ...g, source: 'onlinefix' })),
             ...allGamesData.fitgirl.map(g => ({ ...g, source: 'fitgirl' })),
-            ...allGamesData.altro.map(g => ({ ...g, source: 'altro' })) // AGGIUNTA
+            ...allGamesData.altro.map(g => ({ ...g, source: 'altro' }))
         ];
         gamesToFilter = filterCrossSourceDuplicates(gamesToFilter);
     } else {
-        // Altrimenti, usa solo la fonte corrente
-        gamesToFilter = allGamesData[currentSource];
+        gamesToFilter = [...allGamesData[currentSource]];
     }
     
-    // Filter games
     filteredGames = gamesToFilter.filter(game => {
-        // Category filter (solo se non stiamo cercando in tutte le fonti)
-        if (searchBox.value.trim() === '' && currentFilter !== 'all' && game.category !== currentFilter) {
-            return false;
+        if (searchBox && searchBox.value.trim() === '' && currentFilter !== 'all' && game.category !== currentFilter) return false;
+        if (searchBox && searchBox.value) {
+            const originalTitle = getGameTitle(game).toLowerCase();
+            if (!originalTitle.includes(searchBox.value.toLowerCase())) return false;
         }
-        
-        // Search filter - cerca nel titolo ORIGINALE
-        const searchTerm = searchBox.value.toLowerCase();
-        const originalTitle = getGameTitle(game).toLowerCase();
-        if (searchTerm && !originalTitle.includes(searchTerm)) {
-            return false;
-        }
-        
-        // Size filter
-        const maxSize = parseInt(sizeSlider.value);
-        if (maxSize < maxFileSize && (!game.numericSize || game.numericSize > maxSize)) {
-            return false;
-        }
-        
+        const maxSize = parseInt(sizeSlider?.value || maxFileSize);
+        if (maxSize < maxFileSize && (!game.numericSize || game.numericSize > maxSize)) return false;
         return true;
     });
     
-    // Sort games
     filteredGames.sort((a, b) => {
         const dateA = new Date(getUploadDate(a));
         const dateB = new Date(getUploadDate(b));
-        
         switch(currentSort) {
             case 'date-desc': return dateB - dateA;
             case 'date-asc': return dateA - dateB;
@@ -571,57 +447,30 @@ function renderGames() {
         }
     });
     
-    // Calculate pagination
     totalPages = Math.ceil(filteredGames.length / GAMES_PER_PAGE);
-    if (currentPage > totalPages) {
-        currentPage = totalPages || 1;
-    }
+    if (currentPage > totalPages) currentPage = totalPages || 1;
     
-    // Update games count
     const startIndex = (currentPage - 1) * GAMES_PER_PAGE + 1;
     const endIndex = Math.min(currentPage * GAMES_PER_PAGE, filteredGames.length);
-    gamesCountEl.textContent = `Mostrando ${startIndex}-${endIndex} di ${filteredGames.length} giochi`;
+    if (gamesCountEl) gamesCountEl.textContent = `Mostrando ${startIndex}-${endIndex} di ${filteredGames.length} giochi`;
     
-    // Update source indicator per mostrare se stiamo cercando in tutte le fonti
-    if (searchBox.value.trim() !== '') {
-        sourceIndicator.innerHTML = `
-            <i class="fas fa-search"></i>
-            <span>Risultati da tutte le fonti</span>
-        `;
-    } else {
-        const sourceNames = {
-            steamrip: 'SteamRip',
-            onlinefix: 'OnlineFix',
-            fitgirl: 'FitGirl',
-            altro: 'Altro Provider' // AGGIUNTA
-        };
-        
-        const sourceIcons = {
-            steamrip: 'cloud-download-alt',
-            onlinefix: 'wifi',
-            fitgirl: 'female',
-            altro: 'plus-circle' // AGGIUNTA
-        };
-        
-        sourceIndicator.innerHTML = `
-            <i class="fas fa-${sourceIcons[currentSource]}"></i>
-            <span>${sourceNames[currentSource]}</span>
-        `;
+    const sourceNames = { steamrip: 'SteamRip', onlinefix: 'OnlineFix', fitgirl: 'FitGirl', altro: 'Altro Provider' };
+    const sourceIcons = { steamrip: 'cloud-download-alt', onlinefix: 'wifi', fitgirl: 'female', altro: 'plus-circle' };
+    
+    if (sourceIndicator) {
+        if (searchBox && searchBox.value.trim() !== '') {
+            sourceIndicator.innerHTML = `<i class="fas fa-search"></i><span>Risultati da tutte le fonti</span>`;
+        } else {
+            sourceIndicator.innerHTML = `<i class="fas fa-${sourceIcons[currentSource]}"></i><span>${sourceNames[currentSource]}</span>`;
+        }
     }
     
-    // Clear container
+    if (!gamesContainer) return;
     gamesContainer.innerHTML = '';
     
-    // Render games for current page
     if (filteredGames.length === 0) {
-        gamesContainer.innerHTML = `
-            <div class="loading">
-                <i class="fas fa-search"></i>
-                <h3>Nessun gioco trovato</h3>
-                <p>Prova a modificare i filtri o la ricerca</p>
-            </div>
-        `;
-        pagination.style.display = 'none';
+        gamesContainer.innerHTML = `<div class="loading"><i class="fas fa-search"></i><h3>Nessun gioco trovato</h3><p>Prova a modificare i filtri</p></div>`;
+        if (pagination) pagination.style.display = 'none';
         return;
     }
     
@@ -629,116 +478,248 @@ function renderGames() {
     const end = start + GAMES_PER_PAGE;
     const gamesToShow = filteredGames.slice(start, end);
     
-    gamesToShow.forEach(game => {
+    // Crea le card una per una
+    gamesToShow.forEach((game, index) => {
         const gameCard = createGameCard(game);
         gamesContainer.appendChild(gameCard);
+        
+        // Carica l'immagine in modo asincrono
+        loadGameImage(gameCard, game);
     });
     
-    // Update pagination controls
+    if (pagination) pagination.style.display = filteredGames.length > GAMES_PER_PAGE ? 'flex' : 'none';
     updatePagination();
 }
 
-// Create a game card element
+async function loadGameImage(card, game) {
+    const imageDiv = card.querySelector('.game-image');
+    if (!imageDiv) return;
+    
+    const imageUrl = await getGameImageUrl(game);
+    if (imageUrl) {
+        imageDiv.style.backgroundImage = `url('${imageUrl}')`;
+        imageDiv.style.backgroundSize = 'cover';
+        imageDiv.style.backgroundPosition = 'center';
+    }
+}
+
+async function getGameImageUrl(game) {
+    const title = getGameTitle(game);
+    const source = game.source || currentSource;
+    const cacheKey = `${title}_${source}`;
+    
+    // Check cache
+    if (steamGridCache.has(cacheKey)) {
+        return steamGridCache.get(cacheKey);
+    }
+    
+    // Check pending request
+    if (pendingImageRequests.has(cacheKey)) {
+        return pendingImageRequests.get(cacheKey);
+    }
+    
+    const promise = (async () => {
+        try {
+            // First try: via steam_appid from steamData
+            const currentSteamData = steamData[source];
+            const steamInfo = currentSteamData?.find(s => s?.title?.toLowerCase() === title.toLowerCase());
+            
+            if (steamInfo && steamInfo.steam_appid) {
+                const appId = steamInfo.steam_appid.toString();
+                if (appId.startsWith('GOG:')) {
+                    const url = `https://images.gog.com/${appId.replace('GOG:', '')}_product_card_v2_mobile_slider_639.webp`;
+                    steamGridCache.set(cacheKey, url);
+                    return url;
+                }
+                const url = `https://cdn.cloudflare.steamstatic.com/steam/apps/${appId}/header.jpg`;
+                steamGridCache.set(cacheKey, url);
+                return url;
+            }
+            
+            // Second try: search on SteamGridDB
+            const cleanTitle = title
+                .replace(/fitgirl repack|repack|free download|download free/gi, '')
+                .replace(/\s*\([^)]*\)/g, '')
+                .replace(/\s*\[[^\]]*\]/g, '')
+                .trim();
+            
+            const searchTerm = encodeURIComponent(cleanTitle.substring(0, 100));
+            const searchUrl = `https://www.steamgriddb.com/api/v2/search/autocomplete/${searchTerm}`;
+            
+            const response = await fetch(searchUrl, {
+                headers: {
+                    'Authorization': `Bearer ${STEAMGRIDDB_API_KEY}`,
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
+            
+            const data = await response.json();
+            
+            if (data.success && data.data && data.data.length > 0) {
+                // Trova il miglior match
+                let bestMatch = null;
+                const cleanLower = cleanTitle.toLowerCase();
+                
+                for (const item of data.data) {
+                    const itemName = item.name.toLowerCase();
+                    if (itemName === cleanLower || 
+                        cleanLower.includes(itemName) || 
+                        itemName.includes(cleanLower) ||
+                        (cleanLower.split(' ')[0] === itemName.split(' ')[0] && cleanLower.length > 3)) {
+                        bestMatch = item;
+                        break;
+                    }
+                }
+                
+                if (!bestMatch) {
+                    bestMatch = data.data[0];
+                }
+                
+                const gameId = bestMatch.id;
+                
+                // Cerca l'immagine hero (header)
+                const heroUrl = `https://www.steamgriddb.com/api/v2/heroes/game/${gameId}`;
+                const heroResponse = await fetch(heroUrl, {
+                    headers: {
+                        'Authorization': `Bearer ${STEAMGRIDDB_API_KEY}`,
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (heroResponse.ok) {
+                    const heroData = await heroResponse.json();
+                    if (heroData.success && heroData.data && heroData.data.length > 0) {
+                        // Prendi l'immagine più recente o la prima
+                        const heroImage = heroData.data.sort((a, b) => b.id - a.id)[0];
+                        const imageUrl = heroImage.url;
+                        steamGridCache.set(cacheKey, imageUrl);
+                        return imageUrl;
+                    }
+                }
+                
+                // Fallback: cerca grid image
+                const gridUrl = `https://www.steamgriddb.com/api/v2/grids/game/${gameId}`;
+                const gridResponse = await fetch(gridUrl, {
+                    headers: {
+                        'Authorization': `Bearer ${STEAMGRIDDB_API_KEY}`,
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (gridResponse.ok) {
+                    const gridData = await gridResponse.json();
+                    if (gridData.success && gridData.data && gridData.data.length > 0) {
+                        const gridImage = gridData.data[0];
+                        const imageUrl = gridImage.url;
+                        steamGridCache.set(cacheKey, imageUrl);
+                        return imageUrl;
+                    }
+                }
+            }
+            
+            // Nessuna immagine trovata
+            const placeholder = getSvgPlaceholder(title.substring(0, 30));
+            steamGridCache.set(cacheKey, placeholder);
+            return placeholder;
+            
+        } catch (error) {
+            console.error(`Errore caricamento immagine per ${title}:`, error);
+            const placeholder = getSvgPlaceholder(title.substring(0, 30));
+            steamGridCache.set(cacheKey, placeholder);
+            return placeholder;
+        } finally {
+            pendingImageRequests.delete(cacheKey);
+        }
+    })();
+    
+    pendingImageRequests.set(cacheKey, promise);
+    return promise;
+}
+
+function filterCrossSourceDuplicates(games) {
+    if (!games || games.length === 0) return [];
+    const gameMap = new Map();
+    
+    games.forEach(game => {
+        const baseName = game.baseName || extractBaseGameName(game.title);
+        const uploadDate = new Date(game.uploadDate || game.date || '1970-01-01');
+        const existingGame = gameMap.get(baseName);
+        if (!existingGame || uploadDate > existingGame.uploadDate) {
+            gameMap.set(baseName, { ...game, baseName, uploadDate });
+        }
+    });
+    
+    return Array.from(gameMap.values());
+}
+
 function createGameCard(game) {
     const card = document.createElement('div');
     card.className = 'game-card';
+    card.setAttribute('data-game-title', getGameTitle(game));
     
-    // Get game data - usa il titolo ORIGINALE dai dati Hydralinks
-    const originalTitle = getGameTitle(game); // Titolo originale di Hydralinks
-    const displayTitle = cleanDisplayTitle(originalTitle); // Solo per aspetto visivo
-    
+    const originalTitle = getGameTitle(game);
+    const displayTitle = cleanDisplayTitle(originalTitle);
     const fileSize = getFormattedFileSize(game);
     
-    // Format date
     let formattedDate = 'Data sconosciuta';
     try {
         const uploadDate = new Date(getUploadDate(game));
         if (!isNaN(uploadDate.getTime())) {
-            formattedDate = uploadDate.toLocaleDateString('it-IT', {
-                day: '2-digit',
-                month: '2-digit',
-                year: 'numeric'
-            });
+            formattedDate = uploadDate.toLocaleDateString('it-IT');
         }
-    } catch (e) {
-        console.log('Errore formattazione data:', e);
-    }
+    } catch (e) {}
     
-    // Get image URL - usa il titolo ORIGINALE per cercare in steamData
-    const imageUrl = getSteamImageUrl(originalTitle, game.source);
-    
-    // Get source badge class
     const sourceBadgeClass = `${game.source}-badge-card`;
     
     card.innerHTML = `
-        <div class="game-image" style="background-image: url('${imageUrl}')">
+        <div class="game-image" style="background-image: url('${getSvgPlaceholder(displayTitle)}'); background-size: cover; background-position: center;">
             <div class="game-source-badge ${sourceBadgeClass}">${game.source.toUpperCase()}</div>
         </div>
         <div class="game-info">
-            <h3 class="game-title" title="${displayTitle}">${displayTitle}</h3>
+            <h3 class="game-title" title="${displayTitle.replace(/"/g, '&quot;')}">${displayTitle}</h3>
             <div class="game-meta">
                 <div class="game-date"><i class="far fa-calendar-alt"></i> ${formattedDate}</div>
                 <div class="game-size"><i class="fas fa-hdd"></i> ${fileSize}</div>
             </div>
-            <button class="game-download-btn" data-game-id="${originalTitle}">
+            <button class="game-download-btn" data-game-id="${originalTitle.replace(/"/g, '&quot;')}">
                 <i class="fas fa-download"></i> Vedi Download
             </button>
         </div>
     `;
     
-    // Add click event to show game details - passa il gioco ORIGINALE
-    card.querySelector('.game-download-btn').addEventListener('click', () => showGameDetails(game));
+    card.querySelector('.game-download-btn').addEventListener('click', (e) => {
+        e.stopPropagation();
+        showGameDetails(game);
+    });
     
     return card;
 }
 
-// Get Steam/GOG image URL for a game title from current source data
-function getSteamImageUrl(title, source = null) {
-    if (!title) return getSvgPlaceholder('No Image');
-    
-    // Usa la fonte del gioco se specificata, altrimenti usa currentSource
-    const gameSource = source || currentSource;
-    
-    // Try to find Steam data for this game in the specified source
-    const currentSteamData = steamData[gameSource];
-    
-    // CERCA DIRETTAMENTE PER TITOLO ESATTO (senza normalizzazione)
-    const steamInfo = currentSteamData.find(s => {
-        if (!s.title) return false;
-        // Confronto DIRETTO del titolo
-        return s.title.toLowerCase() === title.toLowerCase();
-    });
-    
-    if (steamInfo && steamInfo.steam_appid) {
-        const appId = steamInfo.steam_appid.toString();
-        
-        // Check if it's a GOG ID
-        if (appId.startsWith('GOG:')) {
-            const gogId = appId.replace('GOG:', '');
-            // GOG cover image URL
-            return `https://images.gog.com/${gogId}_product_card_v2_mobile_slider_639.webp`;
-        } 
-        // Regular Steam ID
-        else {
-            // Questa è l'URL vera dell'immagine Steam
-            return `https://cdn.cloudflare.steamstatic.com/steam/apps/${appId}/header.jpg`;
-        }
-    }
-    
-    // Se non trova l'immagine Steam, usa il placeholder SVG inline
-    const shortTitle = title.substring(0, 30);
-    return getSvgPlaceholder(shortTitle);
+function cleanDisplayTitle(title) {
+    if (!title) return '';
+    return title
+        .replace(/\bFree Download\b/gi, '')
+        .replace(/\bDownload Free\b/gi, '')
+        .replace(/\bFREE\b/gi, '')
+        .replace(/\bDOWNLOAD\b/gi, '')
+        .replace(/\bFree\b/g, '')
+        .replace(/\bDownload\b/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
 }
 
-// Funzione helper per creare SVG placeholder
 function getSvgPlaceholder(text) {
-    const encodedText = encodeURIComponent(text);
-    return `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%232d3748'/%3E%3Ctext x='50%25' y='50%25' font-size='14' fill='%234299e1' text-anchor='middle' dy='.3em'%3E${encodedText}%3C/text%3E%3C/svg%3E`;
+    const encodedText = encodeURIComponent(text.substring(0, 50));
+    return `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%231a1e26'/%3E%3Ctext x='50%25' y='50%25' font-size='14' fill='%23f97316' text-anchor='middle' dy='.3em'%3E${encodedText}%3C/text%3E%3C/svg%3E`;
 }
 
-// Update pagination controls
 function updatePagination() {
-    // Show/hide pagination
+    if (!pagination) return;
+    
     if (filteredGames.length > GAMES_PER_PAGE) {
         pagination.style.display = 'flex';
     } else {
@@ -746,499 +727,244 @@ function updatePagination() {
         return;
     }
     
-    // Update page info
-    currentPageEl.textContent = currentPage;
-    totalPagesEl.textContent = totalPages;
+    if (currentPageEl) currentPageEl.textContent = currentPage;
+    if (totalPagesEl) totalPagesEl.textContent = totalPages;
     
-    // Enable/disable buttons
-    firstPageBtn.disabled = currentPage === 1;
-    prevPageBtn.disabled = currentPage === 1;
-    nextPageBtn.disabled = currentPage === totalPages;
-    lastPageBtn.disabled = currentPage === totalPages;
-    
-    // Generate page numbers
-    pageNumbersEl.innerHTML = '';
-    
-    // Show first few pages, current page, and last few pages
-    const maxPageButtons = 7;
-    let startPage = Math.max(1, currentPage - Math.floor(maxPageButtons / 2));
-    let endPage = Math.min(totalPages, startPage + maxPageButtons - 1);
-    
-    // Adjust if we're near the end
-    if (endPage - startPage + 1 < maxPageButtons) {
-        startPage = Math.max(1, endPage - maxPageButtons + 1);
-    }
-    
-    // Add first page if not already included
-    if (startPage > 1) {
-        addPageNumber(1);
-        if (startPage > 2) {
-            const ellipsis = document.createElement('span');
-            ellipsis.textContent = '...';
-            ellipsis.style.padding = '0 5px';
-            pageNumbersEl.appendChild(ellipsis);
-        }
-    }
-    
-    // Add page numbers
-    for (let i = startPage; i <= endPage; i++) {
-        addPageNumber(i);
-    }
-    
-    // Add last page if not already included
-    if (endPage < totalPages) {
-        if (endPage < totalPages - 1) {
-            const ellipsis = document.createElement('span');
-            ellipsis.textContent = '...';
-            ellipsis.style.padding = '0 5px';
-            pageNumbersEl.appendChild(ellipsis);
-        }
-        addPageNumber(totalPages);
-    }
+    if (firstPageBtn) firstPageBtn.disabled = currentPage === 1;
+    if (prevPageBtn) prevPageBtn.disabled = currentPage === 1;
+    if (nextPageBtn) nextPageBtn.disabled = currentPage === totalPages;
+    if (lastPageBtn) lastPageBtn.disabled = currentPage === totalPages;
 }
 
-// Add a page number button
-function addPageNumber(page) {
-    const pageBtn = document.createElement('div');
-    pageBtn.className = `page-number ${page === currentPage ? 'active' : ''}`;
-    pageBtn.textContent = page;
-    pageBtn.addEventListener('click', () => {
-        if (page !== currentPage) {
-            currentPage = page;
-            renderGames();
-            // Scroll to top of games container
-            gamesContainer.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-    pageNumbersEl.appendChild(pageBtn);
-}
-
-// Show game details modal
-function showGameDetails(game) {
-    const originalTitle = getGameTitle(game); // Titolo originale di Hydralinks
-    const displayTitle = cleanDisplayTitle(originalTitle); // Solo per aspetto visivo
+async function showGameDetails(game) {
+    if (!gameDetailsModal) return;
+    
+    const originalTitle = getGameTitle(game);
+    const displayTitle = cleanDisplayTitle(originalTitle);
     const fileSize = getFormattedFileSize(game);
     
-    // Set modal title - usa il titolo VISIVO (pulito)
-    modalTitleText.textContent = displayTitle;
+    if (modalTitleText) modalTitleText.textContent = displayTitle;
+    if (modalSourceBadge) {
+        modalSourceBadge.textContent = game.source.toUpperCase();
+        modalSourceBadge.className = `modal-badge ${game.source}-badge-card`;
+    }
     
-    // Set source badge
-    modalSourceBadge.textContent = game.source.toUpperCase();
-    modalSourceBadge.className = `modal-source-badge ${game.source}-badge-card`;
+    // Load image for modal
+    const imageUrl = await getGameImageUrl(game);
+    if (modalImage) {
+        modalImage.style.backgroundImage = `url('${imageUrl}')`;
+        modalImage.style.backgroundSize = 'cover';
+        modalImage.style.backgroundPosition = 'center';
+    }
     
-    // Set modal image - usa il titolo ORIGINALE per cercare l'immagine
-    const imageUrl = getSteamImageUrl(originalTitle, game.source);
-    modalImage.style.backgroundImage = `url('${imageUrl}')`;
-    
-    // Format date
     let formattedDate = 'Data sconosciuta';
     try {
         const uploadDate = new Date(getUploadDate(game));
         if (!isNaN(uploadDate.getTime())) {
             formattedDate = uploadDate.toLocaleDateString('it-IT', {
-                weekday: 'long',
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
+                weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
             });
         }
-    } catch (e) {
-        console.log('Errore formattazione data dettagli:', e);
-    }
+    } catch (e) {}
     
-    // Set download instructions based on source
     setDownloadInstructions(game.source);
     
-    // Set game properties
-    gameProperties.innerHTML = `
-        <div class="property">
-            <div class="property-label">Categoria</div>
-            <div class="property-value">${game.category}</div>
-        </div>
-        <div class="property">
-            <div class="property-label">Dimensione</div>
-            <div class="property-value">${fileSize}</div>
-        </div>
-        <div class="property">
-            <div class="property-label">Data di Upload</div>
-            <div class="property-value">${formattedDate}</div>
-        </div>
-        <div class="property">
-            <div class="property-label">Fonte</div>
-            <div class="property-value">${game.source.toUpperCase()}</div>
-        </div>
-        <div class="property">
-            <div class="property-label">Titolo Originale</div>
-            <div class="property-value" style="font-size: 0.9rem; color: #a0aec0;">${originalTitle}</div>
-        </div>
-    `;
+    if (gameProperties) {
+        gameProperties.innerHTML = `
+            <div class="property"><div class="property-label">Categoria</div><div class="property-value">${game.category || 'N/A'}</div></div>
+            <div class="property"><div class="property-label">Dimensione</div><div class="property-value">${fileSize}</div></div>
+            <div class="property"><div class="property-label">Data Upload</div><div class="property-value">${formattedDate}</div></div>
+            <div class="property"><div class="property-label">Fonte</div><div class="property-value">${game.source.toUpperCase()}</div></div>
+            <div class="property"><div class="property-label">Titolo Originale</div><div class="property-value" style="font-size:0.85rem;color:var(--text-secondary)">${originalTitle}</div></div>
+        `;
+    }
     
-    // Process download links
     const links = getDownloadLinks(game);
     displayDownloadLinks(links, game.source);
     
-    // Show modal
-    gameDetailsModal.style.display = 'block';
+    gameDetailsModal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
-    
-    if (!game.source) {
-        game.source = currentSource;
-    }
 }
 
-// Set download instructions based on source
 function setDownloadInstructions(source) {
-    let instructions = '';
-    
-    switch(source) {
-        case 'steamrip':
-            instructions = '<p>I link sono mostrati in ordine di preferenza: <strong>buzzheavier</strong> → <strong>vikingfile</strong> → <strong>gofile</strong></p>';
-            break;
-        case 'onlinefix':
-            instructions = '<p><strong>🔴 IMPORTANTE:</strong> Tutti i giochi OnlineFix sono <strong>MULTIPLAYER</strong> e richiedono una connessione internet per funzionare correttamente. Spesso includono funzionalità multiplayer e supporto per giocare online con amici.</p>';
-            break;
-        case 'fitgirl':
-            instructions = '<p>FitGirl repacks sono altamente compressi. Durante l\'installazione potrebbero essere necessari diversi minuti/ore. Disabilita l\'antivirus durante l\'installazione per evitare falsi positivi.</p>';
-            break;
-        case 'altro': // AGGIUNTA
-            instructions = '<p><strong>🎮 MISTO:</strong> Questa categoria include giochi da varie fonti diverse. Segui le istruzioni specifiche per ciascun gioco. Alcuni potrebbero essere portatili, altri richiedere installazione.</p>';
-            break;
-        default:
-            instructions = '<p>Clicca su un link per avviare il download. I link magnet possono essere aperti con un client torrent.</p>';
-    }
-    
-    downloadInstructions.innerHTML = instructions;
+    if (!downloadInstructions) return;
+    const instructions = {
+        steamrip: '<p>I link sono mostrati in ordine di preferenza: <strong>buzzheavier</strong> → <strong>vikingfile</strong> → <strong>gofile</strong></p>',
+        onlinefix: '<p><strong>🔴 IMPORTANTE:</strong> Giochi <strong>MULTIPLAYER</strong> con supporto online.</p>',
+        fitgirl: '<p>FitGirl repacks sono altamente compressi. Disabilita l\'antivirus durante l\'installazione.</p>',
+        altro: '<p><strong>🎮 MISTO:</strong> Giochi da varie fonti. Segui le istruzioni specifiche.</p>'
+    };
+    downloadInstructions.innerHTML = instructions[source] || '<p>Clicca su un link per avviare il download.</p>';
 }
 
-// Display download links in modal
-// Display download links in modal - VERSIONE CORRETTA
 function displayDownloadLinks(links, source) {
+    if (!downloadLinks) return;
     downloadLinks.innerHTML = '';
     
     if (!links || links.length === 0) {
-        downloadLinks.innerHTML = `
-            <div style="text-align: center; padding: 30px; color: #a0aec0;">
-                <i class="fas fa-exclamation-circle" style="font-size: 2rem; margin-bottom: 15px;"></i>
-                <p>Nessun link di download disponibile per questo gioco</p>
-            </div>
-        `;
+        downloadLinks.innerHTML = `<div style="text-align:center;padding:30px;color:var(--text-secondary)"><i class="fas fa-exclamation-circle"></i><p>Nessun link disponibile</p></div>`;
         return;
     }
     
-    console.log('Links da processare:', links);
-    
-    // Mostra ogni link
     links.forEach((link, index) => {
         if (!link) return;
-        
-        console.log('Processando link:', link);
+        const linkInfo = getLinkInfo(link);
+        let safeHref = link;
+        if (link.startsWith('magnet:') || link.startsWith('http')) {
+            safeHref = link;
+        } else if (link.startsWith('?xt=')) {
+            safeHref = 'magnet:' + link;
+        } else if (!link.startsWith('http') && !link.startsWith('magnet:')) {
+            safeHref = 'https://' + link;
+        }
         
         const linkDiv = document.createElement('div');
         linkDiv.className = 'download-link';
-        
-        // Ottieni informazioni sul link
-        const linkInfo = getLinkInfo(link);
-        
-        // Crea un URI sicuro per la visualizzazione
-        const safeDisplayUri = link.length > 100 ? link.substring(0, 100) + '...' : link;
-        
-        // Crea un href sicuro
-        let safeHref = link;
-        if (link.startsWith('magnet:')) {
-            safeHref = link;
-        } else if (link.startsWith('http://') || link.startsWith('https://')) {
-            safeHref = link;
-        } else {
-            safeHref = link.startsWith('?xt=') ? 'magnet:' + link : link;
-        }
-        
         linkDiv.innerHTML = `
             <div class="link-info">
-                <div class="link-icon ${linkInfo.class}">
-                    <i class="${linkInfo.icon}"></i>
-                </div>
-                <div>
-                    <div class="link-name">${linkInfo.name} ${links.length > 1 ? `(#${index + 1})` : ''}</div>
-                    <div style="font-size: 0.9rem; color: #a0aec0; margin-top: 5px; word-break: break-all;">${safeDisplayUri}</div>
-                </div>
+                <div class="link-icon ${linkInfo.class}"><i class="${linkInfo.icon}"></i></div>
+                <div><div class="link-name">${linkInfo.name} ${links.length > 1 ? `(#${index + 1})` : ''}</div></div>
             </div>
-            <div style="display: flex; align-items: center; gap: 15px;">
+            <div style="display:flex;align-items:center;gap:15px">
                 ${index === 0 ? '<span class="preferred-badge"><i class="fas fa-crown"></i> Preferito</span>' : ''}
-                <a href="${safeHref}" target="_blank" class="link-btn">
-                    <i class="fas fa-external-link-alt"></i> Vai al Download
-                </a>
+                <a href="${safeHref}" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fas fa-external-link-alt"></i> Download</a>
             </div>
         `;
-        
         downloadLinks.appendChild(linkDiv);
     });
 }
 
-// Funzione per ottenere informazioni su un link (indipendente da SITE_PRIORITY)
 function getLinkInfo(link) {
-    if (!link) {
-        return {
-            name: 'Download',
-            class: 'other',
-            icon: 'fas fa-download',
-            priority: 99
-        };
-    }
-    
-    // Per magnet links
-    if (link.startsWith('magnet:')) {
-        return {
-            name: 'Torrent Magnet',
-            class: 'magnet',
-            icon: 'fas fa-magnet',
-            priority: 1
-        };
-    }
-    
-    // Per HTTP/HTTPS links
-    if (link.startsWith('http://') || link.startsWith('https://')) {
+    if (!link) return { name: 'Download', class: 'other', icon: 'fas fa-download', priority: 99 };
+    if (link.startsWith('magnet:')) return { name: 'Torrent Magnet', class: 'magnet', icon: 'fas fa-magnet', priority: 1 };
+    if (link.startsWith('http')) {
         try {
-            const url = new URL(link);
-            const hostname = url.hostname.replace('www.', '');
-            
-            // Cerca nella SITE_PRIORITY per nome personalizzato e priorità
+            const hostname = new URL(link).hostname.replace('www.', '');
             const siteKey = Object.keys(SITE_PRIORITY).find(key => hostname.includes(key));
-            
-            if (siteKey) {
-                // Usa le informazioni dalla SITE_PRIORITY
-                return SITE_PRIORITY[siteKey];
-            } else {
-                // Link non in SITE_PRIORITY - mostra comunque
-                return {
-                    name: hostname,
-                    class: 'direct',
-                    icon: 'fas fa-download',
-                    priority: 3
-                };
-            }
-        } catch (e) {
-            // URL non valido
-            return {
-                name: 'Download',
-                class: 'other',
-                icon: 'fas fa-download',
-                priority: 4
-            };
-        }
+            if (siteKey) return SITE_PRIORITY[siteKey];
+            return { name: hostname.split('.')[0].charAt(0).toUpperCase() + hostname.split('.')[0].slice(1), class: 'direct', icon: 'fas fa-download', priority: 3 };
+        } catch(e) { return { name: 'Download', class: 'other', icon: 'fas fa-download', priority: 4 }; }
     }
-    
-    // Altri tipi di link
-    return {
-        name: 'Download',
-        class: 'other',
-        icon: 'fas fa-download',
-        priority: 5
-    };
+    return { name: 'Download', class: 'other', icon: 'fas fa-download', priority: 5 };
 }
 
-// Clean game title for display (remove "Free Download" and other unwanted text)
-function cleanDisplayTitle(title) {
-    if (!title) return '';
-    
-    // Rimuovi "Free Download" e varianti
-    let cleanTitle = title
-        .replace(/\bFree Download\b/gi, '')
-        .replace(/\bDownload Free\b/gi, '')
-        .replace(/\bFREE\b/gi, '')
-        .replace(/\bDOWNLOAD\b/gi, '')
-        .replace(/\bFree\b/g, '')
-        .replace(/\bDownload\b/g, '');
-    
-    // Rimuovi doppi spazi e trim
-    cleanTitle = cleanTitle.replace(/\s+/g, ' ').trim();
-    
-    // Rimuovi caratteri speciali all'inizio/fine
-    cleanTitle = cleanTitle.replace(/^[:\-–—\s]+|[:\-–—\s]+$/g, '');
-    
-    return cleanTitle || title;
-}
-
-// Switch between sources
 function switchSource(source) {
-    // Update active source button
     document.querySelectorAll('.source-btn').forEach(btn => btn.classList.remove('active'));
-    document.getElementById(`source-${source}`).classList.add('active');
+    const sourceBtn = document.getElementById(`source-${source}`);
+    if (sourceBtn) sourceBtn.classList.add('active');
     
-    // Update current source
     currentSource = source;
-    
-    // Update source indicator
-    const sourceNames = {
-        steamrip: 'SteamRip',
-        onlinefix: 'OnlineFix',
-        fitgirl: 'FitGirl',
-        altro: 'Altro Provider' // AGGIUNTA
-    };
-    
-    const sourceIcons = {
-        steamrip: 'cloud-download-alt',
-        onlinefix: 'wifi',
-        fitgirl: 'female',
-        altro: 'plus-circle' // AGGIUNTA
-    };
-    
-    sourceIndicator.innerHTML = `
-        <i class="fas fa-${sourceIcons[source]}"></i>
-        <span>${sourceNames[source]}</span>
-    `;
-    
-    // Reset filter and pagination
     currentFilter = "all";
     currentPage = 1;
-    document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-    document.querySelector('.category-btn').classList.add('active');
     
-    // Process games for new source
+    const allCategoryBtn = document.querySelector('.category-btn');
+    if (allCategoryBtn) {
+        document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+        allCategoryBtn.classList.add('active');
+    }
+    
     processGamesData();
     updateStats();
     renderGames();
     setupCategories();
 }
 
-// Update size filter value display
 function updateSizeValue(value) {
-    if (value == maxFileSize) {
-        sizeValue.textContent = 'Tutte le dimensioni';
-    } else {
-        sizeValue.textContent = `Fino a ${value} GB`;
-    }
+    if (!sizeValue) return;
+    sizeValue.textContent = value == maxFileSize ? 'Tutti' : `Fino a ${value} GB`;
 }
 
-// Close game details modal
 function closeModal() {
-    gameDetailsModal.style.display = 'none';
+    if (gameDetailsModal) gameDetailsModal.style.display = 'none';
     document.body.style.overflow = 'auto';
 }
 
-// Show error message
 function showErrorMessage(message) {
-    const gamesContainer = document.getElementById('games-container');
-    gamesContainer.innerHTML = `
-        <div class="loading">
-            <i class="fas fa-exclamation-triangle" style="color: var(--danger-color);"></i>
-            <h3>Errore di caricamento</h3>
-            <p>${message}</p>
-        </div>
-    `;
-}
-
-// FAQ Toggle Functions
-function toggleFAQ() {
-    faqSection.classList.toggle('active');
-    
-    // Scorri verso la FAQ quando viene aperta
-    if (faqSection.classList.contains('active')) {
-        setTimeout(() => {
-            faqSection.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
+    if (gamesContainer) {
+        gamesContainer.innerHTML = `<div class="loading"><i class="fas fa-exclamation-triangle"></i><h3>Errore</h3><p>${message}</p></div>`;
     }
 }
 
-// Setup event listeners
-function setupEventListeners() {
-    // Search box
-    searchBox.addEventListener('input', () => {
-        currentPage = 1; // Reset to first page when searching
-        renderGames();
-    });
+function toggleFAQ() {
+    if (faqSection) faqSection.classList.toggle('active');
+}
+
+function renderTrendingGames() {
+    const trendingGrid = document.getElementById('trending-grid');
+    if (!trendingGrid) return;
     
-    // Sort buttons
+    const allGames = [
+        ...allGamesData.steamrip.slice(0, 8),
+        ...allGamesData.onlinefix.slice(0, 4),
+        ...allGamesData.fitgirl.slice(0, 4)
+    ].slice(0, 12);
+    
+    trendingGrid.innerHTML = '';
+    allGames.forEach(game => {
+        const card = document.createElement('div');
+        card.className = 'game-card';
+        card.innerHTML = `
+            <div class="game-image" style="background-image: url('${getSvgPlaceholder(getGameTitle(game))}'); background-size: cover; background-position: center;">
+                <div class="game-source-badge ${game.source}-badge-card">${game.source.toUpperCase()}</div>
+            </div>
+            <div class="game-info">
+                <h3 class="game-title">${cleanDisplayTitle(getGameTitle(game))}</h3>
+                <div class="game-meta">
+                    <span><i class="fas fa-hdd"></i> ${getFormattedFileSize(game)}</span>
+                </div>
+            </div>
+        `;
+        card.addEventListener('click', () => showGameDetails(game));
+        trendingGrid.appendChild(card);
+        
+        // Load image async
+        loadGameImage(card, game);
+    });
+}
+
+function setupEventListeners() {
+    if (searchBox) searchBox.addEventListener('input', () => { currentPage = 1; renderGames(); });
+    
     sortButtons.forEach(btn => {
         btn.addEventListener('click', function() {
             sortButtons.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
             currentSort = this.dataset.sort;
-            currentPage = 1; // Reset to first page when sorting
+            currentPage = 1;
             renderGames();
         });
     });
     
-    // Size slider
-    sizeSlider.addEventListener('input', function() {
-        updateSizeValue(this.value);
-        currentPage = 1; // Reset to first page when filtering by size
-        renderGames();
-    });
+    if (sizeSlider) sizeSlider.addEventListener('input', function() { updateSizeValue(this.value); currentPage = 1; renderGames(); });
     
-    // View toggle
-    viewGridBtn.addEventListener('click', function() {
+    if (viewGridBtn) viewGridBtn.addEventListener('click', () => {
         viewGridBtn.classList.add('active');
-        viewListBtn.classList.remove('active');
+        viewListBtn?.classList.remove('active');
         currentView = 'grid';
-        gamesContainer.classList.remove('list-view');
+        if (gamesContainer) gamesContainer.classList.remove('list-view');
     });
     
-    viewListBtn.addEventListener('click', function() {
+    if (viewListBtn) viewListBtn.addEventListener('click', () => {
         viewListBtn.classList.add('active');
-        viewGridBtn.classList.remove('active');
+        viewGridBtn?.classList.remove('active');
         currentView = 'list';
-        gamesContainer.classList.add('list-view');
+        if (gamesContainer) gamesContainer.classList.add('list-view');
     });
     
-    // Source switching
-    sourceSteamripBtn.addEventListener('click', () => switchSource('steamrip'));
-    sourceOnlinefixBtn.addEventListener('click', () => switchSource('onlinefix'));
-    sourceFitgirlBtn.addEventListener('click', () => switchSource('fitgirl'));
-    sourceAltroBtn.addEventListener('click', () => switchSource('altro')); // AGGIUNTA
+    if (sourceSteamripBtn) sourceSteamripBtn.addEventListener('click', () => switchSource('steamrip'));
+    if (sourceOnlinefixBtn) sourceOnlinefixBtn.addEventListener('click', () => switchSource('onlinefix'));
+    if (sourceFitgirlBtn) sourceFitgirlBtn.addEventListener('click', () => switchSource('fitgirl'));
+    if (sourceAltroBtn) sourceAltroBtn.addEventListener('click', () => switchSource('altro'));
     
-    // Modal close button
-    closeModalBtn.addEventListener('click', closeModal);
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+    if (gameDetailsModal) gameDetailsModal.addEventListener('click', (e) => { if (e.target === gameDetailsModal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
     
-    // Close modal when clicking outside
-    gameDetailsModal.addEventListener('click', function(e) {
-        if (e.target === this) {
-            closeModal();
-        }
-    });
+    if (firstPageBtn) firstPageBtn.addEventListener('click', () => { if (currentPage > 1) { currentPage = 1; renderGames(); gamesContainer?.scrollIntoView({ behavior: 'smooth' }); } });
+    if (prevPageBtn) prevPageBtn.addEventListener('click', () => { if (currentPage > 1) { currentPage--; renderGames(); gamesContainer?.scrollIntoView({ behavior: 'smooth' }); } });
+    if (nextPageBtn) nextPageBtn.addEventListener('click', () => { if (currentPage < totalPages) { currentPage++; renderGames(); gamesContainer?.scrollIntoView({ behavior: 'smooth' }); } });
+    if (lastPageBtn) lastPageBtn.addEventListener('click', () => { if (currentPage < totalPages) { currentPage = totalPages; renderGames(); gamesContainer?.scrollIntoView({ behavior: 'smooth' }); } });
     
-    // Close modal with ESC key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            closeModal();
-        }
-    });
-    
-    // Pagination buttons
-    firstPageBtn.addEventListener('click', () => {
-        if (currentPage > 1) {
-            currentPage = 1;
-            renderGames();
-            gamesContainer.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-    
-    prevPageBtn.addEventListener('click', () => {
-        if (currentPage > 1) {
-            currentPage--;
-            renderGames();
-            gamesContainer.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-    
-    nextPageBtn.addEventListener('click', () => {
-        if (currentPage < totalPages) {
-            currentPage++;
-            renderGames();
-            gamesContainer.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-    
-    lastPageBtn.addEventListener('click', () => {
-        if (currentPage < totalPages) {
-            currentPage = totalPages;
-            renderGames();
-            gamesContainer.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-    
-    // FAQ Toggle Button
-    faqToggleBtn.addEventListener('click', toggleFAQ);
-    closeFaqBtn.addEventListener('click', toggleFAQ);
+    if (faqToggleBtn) faqToggleBtn.addEventListener('click', toggleFAQ);
+    if (closeFaqBtn) closeFaqBtn.addEventListener('click', toggleFAQ);
 }
