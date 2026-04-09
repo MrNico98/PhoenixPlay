@@ -1,42 +1,201 @@
-// Alpine.js Slider Component
+// Alpine.js Slider Component - VERSIONE DINAMICA
 function heroSlider(totalSlides) {
     return {
         current: 0,
         total: totalSlides,
         autoplayTimer: null,
         autoplayDelay: 6000,
-        slides: [
-            {
-                title: "Samson",
-                version: "B 22679769",
-                image: "https://via.placeholder.com/1920x800/1a1e26/f97316?text=Samson",
-                logo: "https://via.placeholder.com/400x100/1a1e26/f97316?text=SAMSON",
-                description: "Samson comes home to the worst streets of Tyndalston, a place that built him hard and never forgave him. Muscle, speed, and nerve decide who stays upright.",
-                link: "#"
-            },
-            {
-                title: "ALL WILL FALL",
-                version: "V 1.0.10",
-                image: "https://via.placeholder.com/1920x800/1a1e26/10b981?text=ALL+WILL+FALL",
-                logo: "https://via.placeholder.com/400x100/1a1e26/10b981?text=ALL+WILL+FALL",
-                description: "In a dying world overtaken by the endless ocean, your goal is to grow a small settlement into a sprawling vertical city of your dreams.",
-                link: "#"
-            },
-            {
-                title: "DEATH STRANDING 2",
-                version: "V 1.2.57.0",
-                image: "https://via.placeholder.com/1920x800/1a1e26/8b5cf6?text=DEATH+STRANDING+2",
-                logo: "https://via.placeholder.com/400x100/1a1e26/8b5cf6?text=DEATH+STRANDING+2",
-                description: "Sam sets out on a new journey to save humanity from extinction. Join them as they traverse a world beset by otherworldly enemies.",
-                link: "#"
-            }
-        ],
+        slides: [],
+        initialized: false,
         
         init() {
-            this.startAutoplay();
+            // Attende che i dati globali siano caricati
+            this.waitForData();
+        },
+        
+        waitForData() {
+            const checkInterval = setInterval(() => {
+                // Controlla se i dati dei provider sono stati caricati
+                if (window.allGamesData && 
+                    window.allGamesData.steamrip && window.allGamesData.steamrip.length > 0 &&
+                    window.allGamesData.onlinefix && window.allGamesData.onlinefix.length > 0 &&
+                    window.allGamesData.fitgirl && window.allGamesData.fitgirl.length > 0) {
+                    clearInterval(checkInterval);
+                    this.generateSlidesFromData();
+                    this.startAutoplay();
+                }
+            }, 500);
+            
+            // Timeout dopo 10 secondi
+            setTimeout(() => {
+                clearInterval(checkInterval);
+                if (!this.initialized) {
+                    this.generateFallbackSlides();
+                    this.startAutoplay();
+                }
+            }, 10000);
+        },
+        
+        generateSlidesFromData() {
+            // Prende 1 gioco RANDOM da SteamRip
+            const steamripGames = window.allGamesData.steamrip || [];
+            const randomSteamrip = steamripGames.length > 0 ? 
+                steamripGames[Math.floor(Math.random() * steamripGames.length)] : null;
+            
+            // Prende 1 gioco RANDOM da OnlineFix
+            const onlinefixGames = window.allGamesData.onlinefix || [];
+            const randomOnlinefix = onlinefixGames.length > 0 ? 
+                onlinefixGames[Math.floor(Math.random() * onlinefixGames.length)] : null;
+            
+            // Prende 1 gioco RANDOM da FitGirl
+            const fitgirlGames = window.allGamesData.fitgirl || [];
+            const randomFitgirl = fitgirlGames.length > 0 ? 
+                fitgirlGames[Math.floor(Math.random() * fitgirlGames.length)] : null;
+            
+            this.slides = [];
+            
+            if (randomSteamrip) {
+                this.slides.push(this.createSlideFromGame(randomSteamrip, 'steamrip'));
+            }
+            if (randomOnlinefix) {
+                this.slides.push(this.createSlideFromGame(randomOnlinefix, 'onlinefix'));
+            }
+            if (randomFitgirl) {
+                this.slides.push(this.createSlideFromGame(randomFitgirl, 'fitgirl'));
+            }
+            
+            // Se non ci sono abbastanza slides, usa fallback
+            if (this.slides.length === 0) {
+                this.generateFallbackSlides();
+            }
+            
+            this.total = this.slides.length;
+            this.initialized = true;
+            
+            // Forza l'aggiornamento della view
+            this.$nextTick(() => {
+                this.current = 0;
+            });
+        },
+        
+        createSlideFromGame(game, source) {
+            const title = this.cleanDisplayTitle(game.title || game.name || 'Sconosciuto');
+            const version = this.extractVersion(game);
+            const imageUrl = this.getGameImageUrl(game);
+            const description = this.truncateDescription(game.description || this.getDefaultDescription(source), 120);
+            
+            const sourceNames = {
+                steamrip: 'SteamRip',
+                onlinefix: 'OnlineFix',
+                fitgirl: 'FitGirl'
+            };
+            
+            return {
+                title: title,
+                version: version,
+                image: imageUrl,
+                logo: imageUrl,
+                description: description,
+                link: "#",
+                downloadUrl: "#",
+                gameData: game,
+                source: source,
+                sourceName: sourceNames[source] || source.toUpperCase()
+            };
+        },
+        
+        getGameImageUrl(game) {
+            if (game.hero_image) return game.hero_image;
+            if (game.grid_image) return game.grid_image;
+            if (game.icon_image) return game.icon_image;
+            
+            // Placeholder colorato basato sul titolo
+            const title = this.cleanDisplayTitle(game.title || game.name || 'Game');
+            const colors = ['f97316', '10b981', '8b5cf6', 'ef4444', '3b82f6', 'ec4899'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            return `https://via.placeholder.com/1920x800/1a1e26/${color}?text=${encodeURIComponent(title.substring(0, 30))}`;
+        },
+        
+        cleanDisplayTitle(title) {
+            if (!title) return '';
+            return title
+                .replace(/\bFree Download\b/gi, '')
+                .replace(/\bDownload Free\b/gi, '')
+                .replace(/\bFREE\b/gi, '')
+                .replace(/\bDOWNLOAD\b/gi, '')
+                .replace(/\s+/g, ' ')
+                .trim()
+                .substring(0, 50);
+        },
+        
+        extractVersion(game) {
+            // Cerca di estrarre la versione dal titolo o dai metadati
+            const title = game.title || game.name || '';
+            const versionMatch = title.match(/[Vv]?\s*(\d+\.\d+(?:\.\d+)?)/);
+            if (versionMatch) return `V ${versionMatch[1]}`;
+            if (game.version) return game.version;
+            if (game.build) return `Build ${game.build}`;
+            return "Ultima versione";
+        },
+        
+        getDefaultDescription(source) {
+            const descriptions = {
+                steamrip: "Gioco portatile SteamRip, pronto all'uso. Nessuna installazione richiesta, estrai e gioca!",
+                onlinefix: "Versione OnlineFix con supporto multiplayer. Gioca online con i tuoi amici!",
+                fitgirl: "Repack FitGirl altamente compresso. Installazione guidata e risparmio di spazio!"
+            };
+            return descriptions[source] || "Scarica e gioca subito a questo fantastico titolo!";
+        },
+        
+        truncateDescription(desc, maxLength) {
+            if (!desc) return '';
+            if (desc.length <= maxLength) return desc;
+            return desc.substring(0, maxLength) + '...';
+        },
+        
+        generateFallbackSlides() {
+            // Fallback nel caso i dati non siano ancora caricati
+            this.slides = [
+                {
+                    title: "Caricamento in corso...",
+                    version: "V 1.0",
+                    image: "https://via.placeholder.com/1920x800/1a1e26/f97316?text=SteamRip",
+                    logo: "https://via.placeholder.com/400x100/1a1e26/f97316?text=SteamRip",
+                    description: "Attendi il caricamento dei giochi SteamRip",
+                    link: "#",
+                    downloadUrl: "#",
+                    source: "steamrip",
+                    sourceName: "SteamRip"
+                },
+                {
+                    title: "Caricamento in corso...",
+                    version: "V 1.0",
+                    image: "https://via.placeholder.com/1920x800/1a1e26/10b981?text=OnlineFix",
+                    logo: "https://via.placeholder.com/400x100/1a1e26/10b981?text=OnlineFix",
+                    description: "Attendi il caricamento dei giochi OnlineFix",
+                    link: "#",
+                    downloadUrl: "#",
+                    source: "onlinefix",
+                    sourceName: "OnlineFix"
+                },
+                {
+                    title: "Caricamento in corso...",
+                    version: "V 1.0",
+                    image: "https://via.placeholder.com/1920x800/1a1e26/8b5cf6?text=FitGirl",
+                    logo: "https://via.placeholder.com/400x100/1a1e26/8b5cf6?text=FitGirl",
+                    description: "Attendi il caricamento dei giochi FitGirl",
+                    link: "#",
+                    downloadUrl: "#",
+                    source: "fitgirl",
+                    sourceName: "FitGirl"
+                }
+            ];
+            this.total = this.slides.length;
+            this.initialized = true;
         },
         
         startAutoplay() {
+            if (this.autoplayTimer) clearInterval(this.autoplayTimer);
             this.autoplayTimer = setInterval(() => this.next(), this.autoplayDelay);
         },
         
@@ -65,28 +224,49 @@ function heroSlider(totalSlides) {
         restartAutoplay() {
             this.stopAutoplay();
             this.startAutoplay();
+        },
+        
+        showGameDetails(slide) {
+            if (slide.gameData) {
+                if (window.showGameDetailsModal) {
+                    window.showGameDetailsModal(slide.gameData);
+                } else {
+                    console.log("Dettagli gioco:", slide.title);
+                    alert(`🎮 ${slide.title}\n📦 Fonte: ${slide.sourceName}\n🔗 Disponibile su ${slide.sourceName}`);
+                }
+            }
+        },
+        
+        downloadGame(slide) {
+            if (slide.gameData) {
+                if (window.showGameDetailsModal) {
+                    window.showGameDetailsModal(slide.gameData);
+                } else {
+                    const links = slide.gameData.uris || slide.gameData.links || [];
+                    if (links.length > 0) {
+                        window.open(links[0], '_blank');
+                    } else {
+                        alert(`🔗 Link download per ${slide.title} disponibili nel dettaglio.`);
+                    }
+                }
+            }
         }
     }
 }
 
-// Global variables
-let allGamesData = {
+// Riferimento globale per i dati
+window.allGamesData = {
     steamrip: [],
     onlinefix: [],
     fitgirl: [],
     altro: []
 };
 
-let steamData = {
-    steamrip: [],
-    onlinefix: [],
-    fitgirl: [],
-    altro: []
-};
+// Riferimento alla funzione showGameDetails
+window.showGameDetailsModal = null;
 
-// Cache per le immagini SteamGridDB
-let steamGridCache = new Map();
-let pendingImageRequests = new Map();
+// Cache per le immagini
+let imageCache = new Map();
 
 let categories = new Set();
 let currentSource = "steamrip";
@@ -146,9 +326,6 @@ const sourceOnlinefixBtn = document.getElementById('source-onlinefix');
 const sourceFitgirlBtn = document.getElementById('source-fitgirl');
 const sourceAltroBtn = document.getElementById('source-altro');
 
-// SteamGridDB API Key
-const STEAMGRIDDB_API_KEY = "6104c407ab88f159ec34420579c6a21e";
-
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     loadAllGamesData();
@@ -158,18 +335,15 @@ document.addEventListener('DOMContentLoaded', () => {
 // Load all games data
 async function loadAllGamesData() {
     try {
-        const [steamripSteamData, onlinefixSteamData, fitgirlSteamData, altroSteamData] = await Promise.all([
-            loadSteamData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDSteamRip.json'),
-            loadSteamData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDOnlineFix.json'),
-            loadSteamData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDFitGirl.json'),
-            loadSteamData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDAltro.json')
+        // Carica i JSON con le immagini (nuovo formato)
+        const [steamripImageData, onlinefixImageData, fitgirlImageData, altroImageData] = await Promise.all([
+            loadImageData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDSteamRip.json'),
+            loadImageData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDOnlineFix.json'),
+            loadImageData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDFitGirl.json'),
+            loadImageData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDAltro.json')
         ]);
         
-        steamData.steamrip = steamripSteamData;
-        steamData.onlinefix = onlinefixSteamData;
-        steamData.fitgirl = fitgirlSteamData;
-        steamData.altro = altroSteamData;
-        
+        // Carica i dati originali dei giochi
         const [steamripData, onlinefixData, fitgirlData, altroData] = await Promise.all([
             loadSourceData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamrip.json', 'steamrip'),
             loadSourceData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/onlinefix.json', 'onlinefix'),
@@ -177,10 +351,11 @@ async function loadAllGamesData() {
             loadSourceData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/Altro/AltriGiochi.json', 'altro')
         ]);
         
-        allGamesData.steamrip = removeDuplicatesAndKeepLatest(steamripData, 'steamrip');
-        allGamesData.onlinefix = removeDuplicatesAndKeepLatest(onlinefixData, 'onlinefix');
-        allGamesData.fitgirl = removeDuplicatesAndKeepLatest(fitgirlData, 'fitgirl');
-        allGamesData.altro = removeDuplicatesAndKeepLatest(altroData, 'altro');
+        // Unisci i dati dei giochi con le immagini
+        window.allGamesData.steamrip = mergeGamesWithImages(steamripData, steamripImageData, 'steamrip');
+        window.allGamesData.onlinefix = mergeGamesWithImages(onlinefixData, onlinefixImageData, 'onlinefix');
+        window.allGamesData.fitgirl = mergeGamesWithImages(fitgirlData, fitgirlImageData, 'fitgirl');
+        window.allGamesData.altro = mergeGamesWithImages(altroData, altroImageData, 'altro');
         
         processGamesData();
         updateStats();
@@ -189,39 +364,50 @@ async function loadAllGamesData() {
         updateSourceCounts();
         renderTrendingGames();
         
+        // Aggiorna lo slider con i dati reali (trigger evento)
+        window.dispatchEvent(new CustomEvent('gamesDataLoaded'));
+        
     } catch (error) {
         console.error('Errore:', error);
         showErrorMessage('Errore nel caricamento dei dati. Riprova più tardi.');
     }
 }
 
-async function loadSteamData(url) {
+async function loadImageData(url) {
     try {
         const response = await fetch(url);
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         return await response.json() || [];
     } catch (error) {
-        console.error(`Errore Steam data:`, error);
+        console.error(`Errore caricamento immagini:`, error);
         return [];
     }
 }
 
-function removeDuplicatesAndKeepLatest(games, source) {
+function mergeGamesWithImages(games, imagesData, source) {
     if (!games || !Array.isArray(games)) return [];
-    const gameMap = new Map();
     
-    games.forEach(game => {
-        const baseName = extractBaseGameName(game.title || game.name || '');
-        const uploadDate = new Date(game.uploadDate || game.date || '1970-01-01');
-        const gameId = `${source}:${baseName}`;
-        const existingGame = gameMap.get(gameId);
-        
-        if (!existingGame || uploadDate > existingGame.uploadDate) {
-            gameMap.set(gameId, { ...game, baseName, uploadDate, source });
+    // Crea una mappa delle immagini per titolo
+    const imageMap = new Map();
+    imagesData.forEach(img => {
+        if (img.title) {
+            imageMap.set(img.title.toLowerCase().trim(), img);
         }
     });
     
-    return Array.from(gameMap.values());
+    // Unisci i dati
+    return games.map(game => {
+        const gameTitle = game.title || game.name || '';
+        const imageInfo = imageMap.get(gameTitle.toLowerCase().trim());
+        
+        return {
+            ...game,
+            source: source,
+            hero_image: imageInfo?.hero_image || null,
+            grid_image: imageInfo?.grid_image || null,
+            icon_image: imageInfo?.icon_image || null
+        };
+    });
 }
 
 function extractBaseGameName(title) {
@@ -256,7 +442,7 @@ async function loadSourceData(url, source) {
 }
 
 function processGamesData() {
-    const games = allGamesData[currentSource];
+    const games = window.allGamesData[currentSource];
     categories.clear();
     maxFileSize = 0;
     
@@ -309,7 +495,7 @@ function getDownloadLinks(game) {
 
 function assignCategory(game) {
     const title = getGameTitle(game).toLowerCase();
-    const categories = {
+    const categoriesMap = {
         'simulator|simulatore': 'Simulazione',
         'horror|survival|spavento': 'Horror',
         'action|azione|combat|shooter|fight': 'Azione',
@@ -323,7 +509,7 @@ function assignCategory(game) {
         'puzzle|casual|family': 'Puzzle'
     };
     
-    for (const [pattern, category] of Object.entries(categories)) {
+    for (const [pattern, category] of Object.entries(categoriesMap)) {
         if (new RegExp(pattern).test(title)) {
             game.category = category;
             return;
@@ -333,7 +519,7 @@ function assignCategory(game) {
 }
 
 function updateStats() {
-    const games = allGamesData[currentSource];
+    const games = window.allGamesData[currentSource];
     if (totalGamesEl) totalGamesEl.textContent = games.length;
     
     let totalSizeGB = 0;
@@ -361,21 +547,20 @@ function updateSourceCounts() {
     const fitgirlCount = document.getElementById('fitgirl-count');
     const altroCount = document.getElementById('altro-count');
     
-    if (steamripCount) steamripCount.textContent = allGamesData.steamrip.length;
-    if (onlinefixCount) onlinefixCount.textContent = allGamesData.onlinefix.length;
-    if (fitgirlCount) fitgirlCount.textContent = allGamesData.fitgirl.length;
-    if (altroCount) altroCount.textContent = allGamesData.altro.length;
+    if (steamripCount) steamripCount.textContent = window.allGamesData.steamrip.length;
+    if (onlinefixCount) onlinefixCount.textContent = window.allGamesData.onlinefix.length;
+    if (fitgirlCount) fitgirlCount.textContent = window.allGamesData.fitgirl.length;
+    if (altroCount) altroCount.textContent = window.allGamesData.altro.length;
 }
 
 function setupCategories() {
-    const games = allGamesData[currentSource];
+    const games = window.allGamesData[currentSource];
     const categoryCounts = {};
     games.forEach(game => {
         const cat = game.category || 'Altro';
         categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
     });
     
-    // Mantieni il bottone "Tutti" se esiste
     let allBtn = categoryList.querySelector('.category-btn.active');
     if (!allBtn || !allBtn.hasAttribute('data-category')) {
         allBtn = document.createElement('button');
@@ -414,14 +599,14 @@ function renderGames() {
     
     if (searchBox && searchBox.value.trim() !== '') {
         gamesToFilter = [
-            ...allGamesData.steamrip.map(g => ({ ...g, source: 'steamrip' })),
-            ...allGamesData.onlinefix.map(g => ({ ...g, source: 'onlinefix' })),
-            ...allGamesData.fitgirl.map(g => ({ ...g, source: 'fitgirl' })),
-            ...allGamesData.altro.map(g => ({ ...g, source: 'altro' }))
+            ...window.allGamesData.steamrip.map(g => ({ ...g, source: 'steamrip' })),
+            ...window.allGamesData.onlinefix.map(g => ({ ...g, source: 'onlinefix' })),
+            ...window.allGamesData.fitgirl.map(g => ({ ...g, source: 'fitgirl' })),
+            ...window.allGamesData.altro.map(g => ({ ...g, source: 'altro' }))
         ];
         gamesToFilter = filterCrossSourceDuplicates(gamesToFilter);
     } else {
-        gamesToFilter = [...allGamesData[currentSource]];
+        gamesToFilter = [...window.allGamesData[currentSource]];
     }
     
     filteredGames = gamesToFilter.filter(game => {
@@ -478,166 +663,24 @@ function renderGames() {
     const end = start + GAMES_PER_PAGE;
     const gamesToShow = filteredGames.slice(start, end);
     
-    // Crea le card una per una
-    gamesToShow.forEach((game, index) => {
+    gamesToShow.forEach(game => {
         const gameCard = createGameCard(game);
         gamesContainer.appendChild(gameCard);
-        
-        // Carica l'immagine in modo asincrono
-        loadGameImage(gameCard, game);
     });
     
     if (pagination) pagination.style.display = filteredGames.length > GAMES_PER_PAGE ? 'flex' : 'none';
     updatePagination();
 }
 
-async function loadGameImage(card, game) {
-    const imageDiv = card.querySelector('.game-image');
-    if (!imageDiv) return;
-    
-    const imageUrl = await getGameImageUrl(game);
-    if (imageUrl) {
-        imageDiv.style.backgroundImage = `url('${imageUrl}')`;
-        imageDiv.style.backgroundSize = 'cover';
-        imageDiv.style.backgroundPosition = 'center';
+function getGameImageUrl(game) {
+    if (game.hero_image) {
+        return game.hero_image;
     }
-}
-
-async function getGameImageUrl(game) {
+    if (game.grid_image) {
+        return game.grid_image;
+    }
     const title = getGameTitle(game);
-    const source = game.source || currentSource;
-    const cacheKey = `${title}_${source}`;
-    
-    // Check cache
-    if (steamGridCache.has(cacheKey)) {
-        return steamGridCache.get(cacheKey);
-    }
-    
-    // Check pending request
-    if (pendingImageRequests.has(cacheKey)) {
-        return pendingImageRequests.get(cacheKey);
-    }
-    
-    const promise = (async () => {
-        try {
-            // First try: via steam_appid from steamData
-            const currentSteamData = steamData[source];
-            const steamInfo = currentSteamData?.find(s => s?.title?.toLowerCase() === title.toLowerCase());
-            
-            if (steamInfo && steamInfo.steam_appid) {
-                const appId = steamInfo.steam_appid.toString();
-                if (appId.startsWith('GOG:')) {
-                    const url = `https://images.gog.com/${appId.replace('GOG:', '')}_product_card_v2_mobile_slider_639.webp`;
-                    steamGridCache.set(cacheKey, url);
-                    return url;
-                }
-                const url = `https://cdn.cloudflare.steamstatic.com/steam/apps/${appId}/header.jpg`;
-                steamGridCache.set(cacheKey, url);
-                return url;
-            }
-            
-            // Second try: search on SteamGridDB
-            const cleanTitle = title
-                .replace(/fitgirl repack|repack|free download|download free/gi, '')
-                .replace(/\s*\([^)]*\)/g, '')
-                .replace(/\s*\[[^\]]*\]/g, '')
-                .trim();
-            
-            const searchTerm = encodeURIComponent(cleanTitle.substring(0, 100));
-            const searchUrl = `https://www.steamgriddb.com/api/v2/search/autocomplete/${searchTerm}`;
-            
-            const response = await fetch(searchUrl, {
-                headers: {
-                    'Authorization': `Bearer ${STEAMGRIDDB_API_KEY}`,
-                    'Accept': 'application/json'
-                }
-            });
-            
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}`);
-            }
-            
-            const data = await response.json();
-            
-            if (data.success && data.data && data.data.length > 0) {
-                // Trova il miglior match
-                let bestMatch = null;
-                const cleanLower = cleanTitle.toLowerCase();
-                
-                for (const item of data.data) {
-                    const itemName = item.name.toLowerCase();
-                    if (itemName === cleanLower || 
-                        cleanLower.includes(itemName) || 
-                        itemName.includes(cleanLower) ||
-                        (cleanLower.split(' ')[0] === itemName.split(' ')[0] && cleanLower.length > 3)) {
-                        bestMatch = item;
-                        break;
-                    }
-                }
-                
-                if (!bestMatch) {
-                    bestMatch = data.data[0];
-                }
-                
-                const gameId = bestMatch.id;
-                
-                // Cerca l'immagine hero (header)
-                const heroUrl = `https://www.steamgriddb.com/api/v2/heroes/game/${gameId}`;
-                const heroResponse = await fetch(heroUrl, {
-                    headers: {
-                        'Authorization': `Bearer ${STEAMGRIDDB_API_KEY}`,
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (heroResponse.ok) {
-                    const heroData = await heroResponse.json();
-                    if (heroData.success && heroData.data && heroData.data.length > 0) {
-                        // Prendi l'immagine più recente o la prima
-                        const heroImage = heroData.data.sort((a, b) => b.id - a.id)[0];
-                        const imageUrl = heroImage.url;
-                        steamGridCache.set(cacheKey, imageUrl);
-                        return imageUrl;
-                    }
-                }
-                
-                // Fallback: cerca grid image
-                const gridUrl = `https://www.steamgriddb.com/api/v2/grids/game/${gameId}`;
-                const gridResponse = await fetch(gridUrl, {
-                    headers: {
-                        'Authorization': `Bearer ${STEAMGRIDDB_API_KEY}`,
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (gridResponse.ok) {
-                    const gridData = await gridResponse.json();
-                    if (gridData.success && gridData.data && gridData.data.length > 0) {
-                        const gridImage = gridData.data[0];
-                        const imageUrl = gridImage.url;
-                        steamGridCache.set(cacheKey, imageUrl);
-                        return imageUrl;
-                    }
-                }
-            }
-            
-            // Nessuna immagine trovata
-            const placeholder = getSvgPlaceholder(title.substring(0, 30));
-            steamGridCache.set(cacheKey, placeholder);
-            return placeholder;
-            
-        } catch (error) {
-            console.error(`Errore caricamento immagine per ${title}:`, error);
-            const placeholder = getSvgPlaceholder(title.substring(0, 30));
-            steamGridCache.set(cacheKey, placeholder);
-            return placeholder;
-        } finally {
-            pendingImageRequests.delete(cacheKey);
-        }
-    })();
-    
-    pendingImageRequests.set(cacheKey, promise);
-    return promise;
+    return getSvgPlaceholder(title.substring(0, 30));
 }
 
 function filterCrossSourceDuplicates(games) {
@@ -664,6 +707,7 @@ function createGameCard(game) {
     const originalTitle = getGameTitle(game);
     const displayTitle = cleanDisplayTitle(originalTitle);
     const fileSize = getFormattedFileSize(game);
+    const imageUrl = getGameImageUrl(game);
     
     let formattedDate = 'Data sconosciuta';
     try {
@@ -676,7 +720,7 @@ function createGameCard(game) {
     const sourceBadgeClass = `${game.source}-badge-card`;
     
     card.innerHTML = `
-        <div class="game-image" style="background-image: url('${getSvgPlaceholder(displayTitle)}'); background-size: cover; background-position: center;">
+        <div class="game-image" style="background-image: url('${imageUrl}'); background-size: cover; background-position: center;">
             <div class="game-source-badge ${sourceBadgeClass}">${game.source.toUpperCase()}</div>
         </div>
         <div class="game-info">
@@ -736,12 +780,18 @@ function updatePagination() {
     if (lastPageBtn) lastPageBtn.disabled = currentPage === totalPages;
 }
 
-async function showGameDetails(game) {
+// Funzione esportata globalmente per lo slider
+window.showGameDetailsModal = function(game) {
+    showGameDetails(game);
+};
+
+function showGameDetails(game) {
     if (!gameDetailsModal) return;
     
     const originalTitle = getGameTitle(game);
     const displayTitle = cleanDisplayTitle(originalTitle);
     const fileSize = getFormattedFileSize(game);
+    const imageUrl = getGameImageUrl(game);
     
     if (modalTitleText) modalTitleText.textContent = displayTitle;
     if (modalSourceBadge) {
@@ -749,8 +799,6 @@ async function showGameDetails(game) {
         modalSourceBadge.className = `modal-badge ${game.source}-badge-card`;
     }
     
-    // Load image for modal
-    const imageUrl = await getGameImageUrl(game);
     if (modalImage) {
         modalImage.style.backgroundImage = `url('${imageUrl}')`;
         modalImage.style.backgroundSize = 'cover';
@@ -894,17 +942,18 @@ function renderTrendingGames() {
     if (!trendingGrid) return;
     
     const allGames = [
-        ...allGamesData.steamrip.slice(0, 8),
-        ...allGamesData.onlinefix.slice(0, 4),
-        ...allGamesData.fitgirl.slice(0, 4)
+        ...window.allGamesData.steamrip.slice(0, 8),
+        ...window.allGamesData.onlinefix.slice(0, 4),
+        ...window.allGamesData.fitgirl.slice(0, 4)
     ].slice(0, 12);
     
     trendingGrid.innerHTML = '';
     allGames.forEach(game => {
         const card = document.createElement('div');
         card.className = 'game-card';
+        const imageUrl = getGameImageUrl(game);
         card.innerHTML = `
-            <div class="game-image" style="background-image: url('${getSvgPlaceholder(getGameTitle(game))}'); background-size: cover; background-position: center;">
+            <div class="game-image" style="background-image: url('${imageUrl}'); background-size: cover; background-position: center;">
                 <div class="game-source-badge ${game.source}-badge-card">${game.source.toUpperCase()}</div>
             </div>
             <div class="game-info">
@@ -916,9 +965,6 @@ function renderTrendingGames() {
         `;
         card.addEventListener('click', () => showGameDetails(game));
         trendingGrid.appendChild(card);
-        
-        // Load image async
-        loadGameImage(card, game);
     });
 }
 

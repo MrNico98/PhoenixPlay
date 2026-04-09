@@ -40,55 +40,59 @@
 
     <!-- Hero Slider Section -->
     <section class="hero-slider" x-data="heroSlider(3)" x-init="init()">
-        <div class="slider-container">
-            <template x-for="(slide, index) in slides" :key="index">
-                <div class="slide" x-show="current === index" 
-                     x-transition:enter="transition-all duration-700 ease-out"
-                     x-transition:enter-start="opacity-0 scale-[1.02]"
-                     x-transition:enter-end="opacity-100 scale-100"
-                     x-transition:leave="transition-all duration-500 ease-in"
-                     x-transition:leave-start="opacity-100"
-                     x-transition:leave-end="opacity-0">
-                    <div class="slide-bg" :style="{ backgroundImage: 'url(' + slide.image + ')' }">
-                        <div class="slide-overlay"></div>
+    <div class="slider-container">
+        <template x-for="(slide, index) in slides" :key="index">
+            <div class="slide" x-show="current === index" 
+                 x-transition:enter="transition-all duration-700 ease-out"
+                 x-transition:enter-start="opacity-0 scale-[1.02]"
+                 x-transition:enter-end="opacity-100 scale-100"
+                 x-transition:leave="transition-all duration-500 ease-in"
+                 x-transition:leave-start="opacity-100"
+                 x-transition:leave-end="opacity-0">
+                <div class="slide-bg" :style="{ backgroundImage: 'url(' + slide.image + ')' }">
+                    <div class="slide-overlay"></div>
+                </div>
+                <div class="slide-content">
+                    <div class="slide-badge-provider" :class="slide.source">
+                        <i x-show="slide.source === 'steamrip'" class="fas fa-cloud-download-alt"></i>
+                        <i x-show="slide.source === 'onlinefix'" class="fas fa-wifi"></i>
+                        <i x-show="slide.source === 'fitgirl'" class="fas fa-female"></i>
+                        <span x-text="slide.sourceName"></span>
                     </div>
-                    <div class="slide-content">
-                        <div class="slide-logo">
-                            <img :src="slide.logo" :alt="slide.title">
-                        </div>
-                        <div class="slide-meta">
-                            <span class="slide-badge" x-text="slide.version"></span>
-                            <span class="slide-platform">PC</span>
-                        </div>
-                        <p class="slide-desc" x-text="slide.description"></p>
-                        <div class="slide-buttons">
-                            <a :href="slide.link" class="btn-primary">
-                                <i class="fas fa-download"></i> Scarica Ora
-                            </a>
-                            <a :href="slide.link" class="btn-secondary">
-                                Dettagli <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
+                    <h2 class="slide-title" x-text="slide.title"></h2>
+                    <div class="slide-meta">
+                        <span class="slide-version" x-text="slide.version"></span>
+                        <span class="slide-platform">PC</span>
+                    </div>
+                    <p class="slide-desc" x-text="slide.description"></p>
+                    <div class="slide-buttons">
+                        <button class="btn-primary" @click="downloadGame(slide)">
+                            <i class="fas fa-download"></i> Scarica Ora
+                        </button>
+                        <button class="btn-secondary" @click="showGameDetails(slide)">
+                            Dettagli <i class="fas fa-arrow-right"></i>
+                        </button>
                     </div>
                 </div>
-            </template>
-            
-            <!-- Slider Controls -->
-            <button class="slider-nav prev" @click="prev()">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="slider-nav next" @click="next()">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-            
-            <!-- Slider Dots -->
-            <div class="slider-dots">
-                <template x-for="(slide, index) in slides" :key="index">
-                    <button class="dot" :class="{ active: current === index }" @click="goTo(index)"></button>
-                </template>
             </div>
+        </template>
+        
+        <!-- Slider Controls -->
+        <button class="slider-nav prev" @click="prev()">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-nav next" @click="next()">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <!-- Slider Dots -->
+        <div class="slider-dots">
+            <template x-for="(slide, index) in slides" :key="index">
+                <button class="dot" :class="{ active: current === index }" @click="goTo(index)"></button>
+            </template>
         </div>
-    </section>
+    </div>
+</section>
 
     <div class="container">
         <!-- Source Selector Moderno -->

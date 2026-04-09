@@ -28,9 +28,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           python pythonscripts/steamid.py
-
-      - name: Run fixsteamid.py
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
-          python pythonscripts/fixsteamid.py

@@ -206,6 +206,59 @@ body {
     gap: 16px;
 }
 
+/* Slide overlay migliorato */
+.slide-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.4) 100%);
+}
+
+/* Badge provider nello slider */
+.slide-badge-provider {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.slide-badge-provider.steamrip {
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    color: white;
+}
+
+.slide-badge-provider.onlinefix {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.slide-badge-provider.fitgirl {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    color: white;
+}
+
+.slide-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
 .btn-primary {
     background: var(--accent);
     padding: 12px 28px;
