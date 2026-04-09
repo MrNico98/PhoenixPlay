@@ -1,4 +1,4 @@
-name: Daily Steam Sync + Fix
+name: Daily Steam Sync
 
 on:
   schedule:
@@ -26,5 +26,6 @@ jobs:
       - name: Run steamid.py
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          STEAMGRIDDB_API_KEY: $${{ secrets.STEAMGRIDKEY }}
         run: |
           python pythonscripts/steamid.py
