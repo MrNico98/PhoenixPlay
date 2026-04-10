@@ -801,6 +801,146 @@ body {
     display: block;
     animation: fadeIn 0.3s ease;
 }
+/* App Download Banner */
+.app-download-banner {
+    margin: 24px 0 32px 0;
+    background: linear-gradient(135deg, #1a1e2e 0%, #0f1119 100%);
+    border-radius: 20px;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.app-download-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 100% 0%, rgba(249, 115, 22, 0.15), transparent 70%);
+    pointer-events: none;
+}
+
+.app-download-banner:hover {
+    border-color: var(--accent);
+    box-shadow: 0 8px 30px rgba(249, 115, 22, 0.2);
+    transform: translateY(-2px);
+}
+
+.app-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 32px;
+    flex-wrap: wrap;
+}
+
+.app-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--accent), #ea580c);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
+}
+
+.app-icon i {
+    font-size: 36px;
+    color: white;
+}
+
+.app-info {
+    flex: 1;
+}
+
+.app-info h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    background: linear-gradient(135deg, #fff, var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.app-info p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.app-features {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.app-features span {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.app-features span i {
+    color: var(--accent);
+    font-size: 0.75rem;
+}
+
+.btn-download-app {
+    background: linear-gradient(135deg, var(--accent), #ea580c);
+    padding: 14px 28px;
+    border-radius: 50px;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+    white-space: nowrap;
+}
+
+.btn-download-app:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(249, 115, 22, 0.5);
+    background: linear-gradient(135deg, #ff8533, #f97316);
+}
+
+.btn-download-app i {
+    font-size: 1.2rem;
+}
+
+.btn-download-app small {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    font-weight: normal;
+    margin-left: 4px;
+}
+
+/* Responsive per mobile */
+@media (max-width: 768px) {
+    .app-banner-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px;
+    }
+    
+    .app-features {
+        justify-content: center;
+    }
+    
+    .btn-download-app {
+        width: 100%;
+        justify-content: center;
+    }
+}
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
