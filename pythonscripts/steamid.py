@@ -37,6 +37,11 @@ SOURCES = {
         "url": "https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/onlinefix.json",
         "output": "steamIDOnlineFix.json",
         "force_recreate": False  # Merge normale
+    },
+    "AIMODS": {
+        "url": "https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/aimods.json",
+        "output": "steamIDAltro.json",
+        "force_recreate": False  # Merge normale
     }
 }
 
