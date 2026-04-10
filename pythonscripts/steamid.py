@@ -240,8 +240,7 @@ def upload_to_github_merge(path, new_data, message):
     print(f"   ✅ Upload completato")
 
 def upload_to_github_force(path, new_data, message):
-    """Upload forzato: sovrascrive sempre (per FitGirl)"""
-    url = f"https://api.github.com/repos/{OWNER}/{REPO}/contents/{path}"
+    """Upload forzato per file grandi (>1MB) usando git blob API"""
     
     final_data = sorted(new_data, key=lambda x: x["title"].lower())
     
@@ -252,24 +251,76 @@ def upload_to_github_force(path, new_data, message):
         print(f"   🖼️ Hero: {with_hero}/{len(final_data)} ({with_hero*100//len(final_data) if final_data else 0}%)")
         print(f"   🖼️ Grid: {with_grid}/{len(final_data)} ({with_grid*100//len(final_data) if final_data else 0}%)")
     
-    encoded = base64.b64encode(
-        json.dumps(final_data, ensure_ascii=False, indent=2).encode("utf-8")
-    ).decode("utf-8")
+    # Converti a JSON
+    json_content = json.dumps(final_data, ensure_ascii=False, indent=2)
+    json_bytes = json_content.encode("utf-8")
     
-    payload = {
-        "message": f"FORCE RECREATE: {message}",
-        "content": encoded,
-        "branch": BRANCH
+    print(f"   📦 Dimensione JSON: {len(json_bytes) / 1024 / 1024:.2f} MB")
+    
+    # 1. Crea un blob su GitHub
+    blob_url = f"https://api.github.com/repos/{OWNER}/{REPO}/git/blobs"
+    blob_payload = {
+        "content": base64.b64encode(json_bytes).decode("utf-8"),
+        "encoding": "base64"
     }
     
-    # Prova prima a prendere lo sha se esiste
-    _, sha = get_github_file(path)
-    if sha:
-        payload["sha"] = sha
+    blob_resp = requests.post(blob_url, headers=github_headers(), json=blob_payload)
+    blob_resp.raise_for_status()
+    blob_sha = blob_resp.json()["sha"]
+    print(f"   📦 Blob creato: {blob_sha[:8]}...")
     
-    res = requests.put(url, headers=github_headers(), json=payload)
-    res.raise_for_status()
-    print(f"   ✅ Upload forzato completato ({len(final_data)} giochi)")
+    # 2. Ottieni l'albero corrente del branch
+    ref_url = f"https://api.github.com/repos/{OWNER}/{REPO}/git/refs/heads/{BRANCH}"
+    ref_resp = requests.get(ref_url, headers=github_headers())
+    ref_resp.raise_for_status()
+    current_commit_sha = ref_resp.json()["object"]["sha"]
+    
+    # 3. Ottieni l'albero del commit corrente
+    commit_url = f"https://api.github.com/repos/{OWNER}/{REPO}/git/commits/{current_commit_sha}"
+    commit_resp = requests.get(commit_url, headers=github_headers())
+    commit_resp.raise_for_status()
+    current_tree_sha = commit_resp.json()["tree"]["sha"]
+    
+    # 4. Crea un nuovo albero con il file aggiornato
+    tree_url = f"https://api.github.com/repos/{OWNER}/{REPO}/git/trees"
+    tree_payload = {
+        "base_tree": current_tree_sha,
+        "tree": [
+            {
+                "path": path,
+                "mode": "100644",
+                "type": "blob",
+                "sha": blob_sha
+            }
+        ]
+    }
+    
+    tree_resp = requests.post(tree_url, headers=github_headers(), json=tree_payload)
+    tree_resp.raise_for_status()
+    new_tree_sha = tree_resp.json()["sha"]
+    
+    # 5. Crea un nuovo commit
+    new_commit_url = f"https://api.github.com/repos/{OWNER}/{REPO}/git/commits"
+    new_commit_payload = {
+        "message": f"FORCE RECREATE: {message}",
+        "tree": new_tree_sha,
+        "parents": [current_commit_sha]
+    }
+    
+    new_commit_resp = requests.post(new_commit_url, headers=github_headers(), json=new_commit_payload)
+    new_commit_resp.raise_for_status()
+    new_commit_sha = new_commit_resp.json()["sha"]
+    
+    # 6. Aggiorna il branch
+    update_ref_payload = {
+        "sha": new_commit_sha,
+        "force": True
+    }
+    
+    update_resp = requests.patch(ref_url, headers=github_headers(), json=update_ref_payload)
+    update_resp.raise_for_status()
+    
+    print(f"   ✅ Upload forzato completato ({len(final_data)} giochi, {len(json_bytes)/1024/1024:.2f} MB)")
 
 # ----------------------------
 # MAIN VELOCE
