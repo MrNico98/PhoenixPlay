@@ -340,7 +340,7 @@ async function loadAllGamesData() {
             loadImageData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDSteamRip.json'),
             loadImageData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDOnlineFix.json'),
             loadImageData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDFitGirl.json'),
-            loadImageData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDAltro.json')
+            loadImageData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamIDAIMODS.json')
         ]);
         
         // Carica i dati originali dei giochi
@@ -348,7 +348,7 @@ async function loadAllGamesData() {
             loadSourceData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamrip.json', 'steamrip'),
             loadSourceData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/onlinefix.json', 'onlinefix'),
             loadSourceData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/fitgirl.json', 'fitgirl'),
-            loadSourceData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/Altro/AltriGiochi.json', 'altro')
+            loadSourceData('https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/aimods.json', 'altro')
         ]);
         
         // Unisci i dati dei giochi con le immagini
