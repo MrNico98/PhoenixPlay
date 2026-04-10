@@ -25,15 +25,18 @@ STEAMGRIDDB_BASE = "https://www.steamgriddb.com/api/v2"
 SOURCES = {
     "SteamRip": {
         "url": "https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/steamrip.json",
-        "output": "steamIDSteamRip.json"
+        "output": "steamIDSteamRip.json",
+        "force_recreate": False  # Merge normale
     },
     "FitGirl": {
         "url": "https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/fitgirl.json",
-        "output": "steamIDFitGirl.json"
+        "output": "steamIDFitGirl.json",
+        "force_recreate": True   # Sempre ricreato da zero
     },
     "OnlineFix": {
         "url": "https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/onlinefix.json",
-        "output": "steamIDOnlineFix.json"
+        "output": "steamIDOnlineFix.json",
+        "force_recreate": False  # Merge normale
     }
 }
 
@@ -63,18 +66,14 @@ def clean_title_for_search(title, source_name):
     
     # Pulizia specifica per OnlineFix
     if source_name == "OnlineFix":
-        # Rimuove "Build XXXX" (es: Build 02032026, Build 12345)
         title = re.sub(r'\s+Build\s+[\d]+', '', title, flags=re.IGNORECASE)
-        # Rimuove versioni tipo "1.0.5", "v1.2.3", "1.0", "1.0.0.0"
         title = re.sub(r'\s+v?\d+(?:\.\d+)+$', '', title)
         title = title.strip()
     
     # Pulizia specifica per FitGirl
     elif source_name == "FitGirl":
-        # Prende tutto ciò che è prima del " – " (trattino lungo)
         if " – " in title:
             title = title.split(" – ")[0].strip()
-        # Gestisce anche trattino normale come fallback
         elif " - " in title:
             title = title.split(" - ")[0].strip()
     
@@ -93,7 +92,6 @@ def get_game_images(session, game_id):
     
     images = {"grid": None, "hero": None, "icon": None}
     
-    # Richieste in parallelo
     urls = {
         "grid": f"{STEAMGRIDDB_BASE}/grids/game/{game_id}",
         "hero": f"{STEAMGRIDDB_BASE}/heroes/game/{game_id}",
@@ -111,7 +109,6 @@ def get_game_images(session, game_id):
             pass
         return image_type, None
     
-    # Esegui richieste in parallelo
     with ThreadPoolExecutor(max_workers=3) as executor:
         futures = {executor.submit(fetch_image, img_type, url): img_type for img_type, url in urls.items()}
         for future in as_completed(futures):
@@ -132,7 +129,6 @@ def find_game_images(session, game_title, source_name=""):
         return None, None, None
     
     try:
-        # Search
         search_url = f"{STEAMGRIDDB_BASE}/search/autocomplete/{quote(search_term)}"
         resp = session.get(search_url, headers=headers, timeout=15)
         
@@ -143,7 +139,6 @@ def find_game_images(session, game_title, source_name=""):
         if not data.get("success") or not data.get("data"):
             return None, None, None
         
-        # Trova miglior match
         best_match = data["data"][0]
         search_lower = search_term.lower()
         
@@ -158,7 +153,6 @@ def find_game_images(session, game_title, source_name=""):
         if not game_id:
             return None, None, None
         
-        # Recupera solo le immagini
         images = get_game_images(session, game_id)
         
         return images["hero"], images["grid"], images["icon"]
@@ -177,6 +171,7 @@ def github_headers():
     }
 
 def get_github_file(path):
+    """Legge file da GitHub, ritorna (data, sha) o (None, None) se errore"""
     url = f"https://api.github.com/repos/{OWNER}/{REPO}/contents/{path}"
     r = requests.get(url, headers=github_headers())
     
@@ -184,26 +179,25 @@ def get_github_file(path):
         data = r.json()
         content = base64.b64decode(data["content"]).decode("utf-8")
         
-        # Gestisci file vuoto o JSON non valido
+        # Gestisci file vuoto
         if not content or content.strip() == "":
-            print(f"   ⚠️ File {path} vuoto, verrà creato da zero")
-            return [], None
+            return None, None
         
         try:
             return json.loads(content), data["sha"]
-        except json.JSONDecodeError as e:
-            print(f"   ⚠️ JSON non valido in {path}: {e}")
-            print(f"   📄 Contenuto: {content[:200]}...")
-            return [], None
+        except json.JSONDecodeError:
+            print(f"   ⚠️ JSON corrotto in {path}, verrà ricreato")
+            return None, None
     
     return None, None
 
-def upload_to_github(path, new_data, message):
+def upload_to_github_merge(path, new_data, message):
+    """Upload con merge (per SteamRip e OnlineFix)"""
     url = f"https://api.github.com/repos/{OWNER}/{REPO}/contents/{path}"
     
     old_data, sha = get_github_file(path)
     
-    if old_data:
+    if old_data and isinstance(old_data, list):
         existing_map = {g["title"].strip().lower(): g for g in old_data}
         new_map = {g["title"].strip().lower(): g for g in new_data}
         
@@ -213,15 +207,18 @@ def upload_to_github(path, new_data, message):
         new_count = sum(1 for k in new_map if k not in existing_map)
         if new_count > 0:
             print(f"   ➕ Nuovi: {new_count}")
+        else:
+            print(f"   🔄 Nessun nuovo gioco")
     else:
         final_data = new_data
         print("   📄 Nuovo file creato")
     
     # Statistiche immagini
-    with_hero = sum(1 for g in final_data if g.get("hero_image"))
-    with_grid = sum(1 for g in final_data if g.get("grid_image"))
-    print(f"   🖼️ Hero: {with_hero}/{len(final_data)} ({with_hero*100//len(final_data) if final_data else 0}%)")
-    print(f"   🖼️ Grid: {with_grid}/{len(final_data)} ({with_grid*100//len(final_data) if final_data else 0}%)")
+    if final_data:
+        with_hero = sum(1 for g in final_data if g.get("hero_image"))
+        with_grid = sum(1 for g in final_data if g.get("grid_image"))
+        print(f"   🖼️ Hero: {with_hero}/{len(final_data)} ({with_hero*100//len(final_data) if final_data else 0}%)")
+        print(f"   🖼️ Grid: {with_grid}/{len(final_data)} ({with_grid*100//len(final_data) if final_data else 0}%)")
     
     final_data = sorted(final_data, key=lambda x: x["title"].lower())
     
@@ -242,13 +239,45 @@ def upload_to_github(path, new_data, message):
     res.raise_for_status()
     print(f"   ✅ Upload completato")
 
+def upload_to_github_force(path, new_data, message):
+    """Upload forzato: sovrascrive sempre (per FitGirl)"""
+    url = f"https://api.github.com/repos/{OWNER}/{REPO}/contents/{path}"
+    
+    final_data = sorted(new_data, key=lambda x: x["title"].lower())
+    
+    # Statistiche
+    if final_data:
+        with_hero = sum(1 for g in final_data if g.get("hero_image"))
+        with_grid = sum(1 for g in final_data if g.get("grid_image"))
+        print(f"   🖼️ Hero: {with_hero}/{len(final_data)} ({with_hero*100//len(final_data) if final_data else 0}%)")
+        print(f"   🖼️ Grid: {with_grid}/{len(final_data)} ({with_grid*100//len(final_data) if final_data else 0}%)")
+    
+    encoded = base64.b64encode(
+        json.dumps(final_data, ensure_ascii=False, indent=2).encode("utf-8")
+    ).decode("utf-8")
+    
+    payload = {
+        "message": f"FORCE RECREATE: {message}",
+        "content": encoded,
+        "branch": BRANCH
+    }
+    
+    # Prova prima a prendere lo sha se esiste
+    _, sha = get_github_file(path)
+    if sha:
+        payload["sha"] = sha
+    
+    res = requests.put(url, headers=github_headers(), json=payload)
+    res.raise_for_status()
+    print(f"   ✅ Upload forzato completato ({len(final_data)} giochi)")
+
 # ----------------------------
 # MAIN VELOCE
 # ----------------------------
 
-def process_source(name, url, output_file):
+def process_source(name, url, output_file, force_recreate=False):
     print(f"\n{'='*50}")
-    print(f"📦 {name}")
+    print(f"📦 {name} {'(FORCE RECREATE)' if force_recreate else '(MERGE MODE)'}")
     print(f"{'='*50}")
     
     session = requests.Session()
@@ -277,7 +306,6 @@ def process_source(name, url, output_file):
             if hero or grid:
                 images_found += 1
             
-            # Progresso ogni 100 giochi
             if i % 100 == 0:
                 print(f"   📍 Progresso: {i}/{len(games)} (immagini: {images_found})")
             
@@ -291,13 +319,22 @@ def process_source(name, url, output_file):
     print(f"\n📊 Immagini trovate: {images_found}/{len(games)} ({images_found*100//len(games) if games else 0}%)")
     
     github_path = f"{BASE_PATH}/{output_file}"
-    upload_to_github(github_path, results, f"Update {output_file}")
+    
+    if force_recreate:
+        upload_to_github_force(github_path, results, f"Force recreate {output_file}")
+    else:
+        upload_to_github_merge(github_path, results, f"Update {output_file}")
 
 def main():
     print("🚀 Avvio sincronizzazione immagini SteamGridDB\n")
     
     for name, info in SOURCES.items():
-        process_source(name, info["url"], info["output"])
+        process_source(
+            name, 
+            info["url"], 
+            info["output"], 
+            info.get("force_recreate", False)
+        )
     
     print(f"\n{'='*50}")
     print("🎉 Completato!")
