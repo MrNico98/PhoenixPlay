@@ -721,7 +721,7 @@ function createGameCard(game) {
     
     card.innerHTML = `
         <div class="game-image" style="background-image: url('${imageUrl}'); background-size: cover; background-position: center;">
-            <div class="game-source-badge ${sourceBadgeClass}">${game.source.toUpperCase()}</div>
+            <div class="game-source-badge ${sourceBadgeClass}">${game.source === 'altro' ? 'AIMODS' : game.source.toUpperCase()}</div>
         </div>
         <div class="game-info">
             <h3 class="game-title" title="${displayTitle.replace(/"/g, '&quot;')}">${displayTitle}</h3>
