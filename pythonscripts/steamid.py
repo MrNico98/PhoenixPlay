@@ -40,7 +40,7 @@ SOURCES = {
     },
     "AIMODS": {
         "url": "https://raw.githubusercontent.com/MrNico98/PhoenixPlay/refs/heads/main/IDapp/aimods.json",
-        "output": "steamIDAltro.json",
+        "output": "steamIDAIMODS.json",
         "force_recreate": False  # Merge normale
     }
 }
