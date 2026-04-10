@@ -183,7 +183,18 @@ def get_github_file(path):
     if r.status_code == 200:
         data = r.json()
         content = base64.b64decode(data["content"]).decode("utf-8")
-        return json.loads(content), data["sha"]
+        
+        # Gestisci file vuoto o JSON non valido
+        if not content or content.strip() == "":
+            print(f"   ⚠️ File {path} vuoto, verrà creato da zero")
+            return [], None
+        
+        try:
+            return json.loads(content), data["sha"]
+        except json.JSONDecodeError as e:
+            print(f"   ⚠️ JSON non valido in {path}: {e}")
+            print(f"   📄 Contenuto: {content[:200]}...")
+            return [], None
     
     return None, None
 
