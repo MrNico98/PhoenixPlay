@@ -639,7 +639,7 @@ function renderGames() {
     const endIndex = Math.min(currentPage * GAMES_PER_PAGE, filteredGames.length);
     if (gamesCountEl) gamesCountEl.textContent = `Mostrando ${startIndex}-${endIndex} di ${filteredGames.length} giochi`;
     
-    const sourceNames = { steamrip: 'SteamRip', onlinefix: 'OnlineFix', fitgirl: 'FitGirl', altro: 'Altro Provider' };
+    const sourceNames = { steamrip: 'SteamRip', onlinefix: 'OnlineFix', fitgirl: 'FitGirl', altro: 'AIMODS' };
     const sourceIcons = { steamrip: 'cloud-download-alt', onlinefix: 'wifi', fitgirl: 'female', altro: 'plus-circle' };
     
     if (sourceIndicator) {
