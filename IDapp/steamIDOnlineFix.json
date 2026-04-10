@@ -385,9 +385,9 @@
   },
   {
     "title": "Aliens vs Predator 1.0.0.0",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/11f2a87167e3ff5263d9b7a807f59524.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/fac99c77695b5655eefadf78498b8430.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/97108695bd93b6be52fa0334874c8722.ico"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/6e839dd93911f945cd02c9b15da23db0.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/8df71b1a941cf3ed804e8b1d89f9c426.png",
+    "icon_image": null
   },
   {
     "title": "All Hands on Deck 1.0.8",
@@ -460,6 +460,12 @@
     "hero_image": null,
     "grid_image": "https://cdn2.steamgriddb.com/grid/b8add9e717a3701a3d0a50e65ee167be.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/6dbcb03896cfbf3601fa31c53d1a9068.ico"
+  },
+  {
+    "title": "Anomaly Company Build 02032026",
+    "hero_image": null,
+    "grid_image": null,
+    "icon_image": null
   },
   {
     "title": "Another Try 2 0.0.1.8",
@@ -799,9 +805,9 @@
   },
   {
     "title": "Barony 4.2.1.2024.03.07",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/ee4742b2788bd5f7565dbcd7f0b5de8e.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/03e2da2157f1a7784d4f832c99e445ca.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/72e506131c6a71a98d296ce82344fc08.png"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/7b438ebfae511d81ac2285d02d829ad5.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/0a7f590e47cbc2cc230235268f316bb5.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/510722cc664a3fe29f259b8867e18d1c.ico"
   },
   {
     "title": "Barotrauma 1.5.9.1",
@@ -955,7 +961,7 @@
   },
   {
     "title": "Bio Inc Redemption Build 15052018",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/e6b61cb3f6d8c2bec3f885f43ffcc11e.png",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/5713ed3a5860f727b27f07093393a3b5.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/e93912430008b1a9b5ff0bf3ec4b235f.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/0fd961ff25f65ab9e86399999a49dbb7.png"
   },
@@ -1471,9 +1477,9 @@
   },
   {
     "title": "Caravanners Build 02112025",
-    "hero_image": null,
-    "grid_image": "https://cdn2.steamgriddb.com/grid/1d69830b7ebc85b2ce1d0cce213f2e29.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/68331ff0427b551b68e911eebe35233b.ico"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/d401f83482b3248fdb06b598d3a591f5.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/3fb0485ee3f4b87a3206dcdb430d7314.png",
+    "icon_image": null
   },
   {
     "title": "Carcassonne Tiles & Tactics 1.10.2967",
@@ -1537,8 +1543,8 @@
   },
   {
     "title": "CAST 1.0.2",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/e2e08c19bcd0b01b55ce423b4ba22324.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/ecc96c7da288e12c72dd1a6a6961f705.png",
+    "hero_image": null,
+    "grid_image": null,
     "icon_image": null
   },
   {
@@ -1590,6 +1596,12 @@
     "icon_image": "https://cdn2.steamgriddb.com/icon/62afbc57ab75791a38f7d727efa90fc7.ico"
   },
   {
+    "title": "Chained Wheels Build 30032026",
+    "hero_image": null,
+    "grid_image": null,
+    "icon_image": null
+  },
+  {
     "title": "Chaos Express Delivery Simulator Build 22022025",
     "hero_image": null,
     "grid_image": null,
@@ -1633,9 +1645,9 @@
   },
   {
     "title": "Chronicon 1.30.2",
-    "hero_image": null,
-    "grid_image": null,
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/hero/664604d70bd60f1f888ec66fe5f9c583.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/fcfcfb3f4115ee574f51d2627fb5175e.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/28b673023e123cdefc28fd22e24c6c98.ico"
   },
   {
     "title": "Circle Empires Rivals 2.0.34",
@@ -1711,9 +1723,9 @@
   },
   {
     "title": "Code Vein 1.0.11.0",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/4acfed046b7a1c0c311d6bbf9fd33b82.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/04dbb99a252712b653e15af5e64049fb.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/fba5dc5886ffca911f1ffaec1e7a231f.png"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/0bd81786a8ec6ae9b22cbb3cb4d88179.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/ba7cc1ae22c9fe2a0b1807ccb58451d3.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/70082ac261d74f5a55812335ad13f2b3.ico"
   },
   {
     "title": "Collapsed Build 20082019",
@@ -1783,9 +1795,9 @@
   },
   {
     "title": "Contagion 2.2.1.1",
-    "hero_image": null,
-    "grid_image": "https://cdn2.steamgriddb.com/grid/e02868b99c2e351da9d847deb64a63e1.png",
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/hero/67e19867d0c1a2fc445053ec818b59a1.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/e88ea88793f3891e2587415cb90c27d6.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/90e67987539164c4f62dd88d4558b1d6.png"
   },
   {
     "title": "Contain Build 22012024",
@@ -2443,9 +2455,9 @@
   },
   {
     "title": "Demeo 1.10.135079",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/a9e17c0557594ded4aa69733a6583648.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/ea7648813ab9c111ff3a19e872124908.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/29e76265358084944601dbcd9fe723ce.ico"
+    "hero_image": null,
+    "grid_image": "https://cdn2.steamgriddb.com/grid/4964c6662f7c2b74208554b99d519b08.jpg",
+    "icon_image": null
   },
   {
     "title": "Demeo PC Edition 1.23.180967",
@@ -2491,9 +2503,9 @@
   },
   {
     "title": "Desolate 1.3.4",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/82dc5258e8cf752bf0615f6bb29388a1.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/a512b92aad141ff3bebf9d07cd7e6635.png",
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/hero/32e0bd1497aa43e02a42f47d9d6515ad.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/d0dcbef5a8ea4e3440294882ca3d7cfb.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/975e1866ddac1afdc0346b88c7d6b10d.ico"
   },
   {
     "title": "Destroy All Humans 2 Reprobed 1.0.362",
@@ -2791,9 +2803,9 @@
   },
   {
     "title": "DREADZONE 1.4.4",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/ee9f27294518464fb899ff8de0f7dc7f.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/bb1f8e964c81a96404565dc29a30c75b.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/83af7e0972f2fcaa31fee8b286aecd05.png"
+    "hero_image": null,
+    "grid_image": null,
+    "icon_image": null
   },
   {
     "title": "Drift21 Build 22062021",
@@ -2923,9 +2935,9 @@
   },
   {
     "title": "Dungeon Defenders 9.7.2",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/767c3213ffa29abed776d95b74db9e69.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/36ee2da08ec092da9447d4d9a0e011d6.jpg",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/bafcae57d9828b629375532832e3f0d7.png"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/10a5ab2db37feedfdeaab192ead4ac0e.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/18b28d4f3ae3ea62495d7bf47ac2e1a7.jpg",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/eb798275340a79d3a6d874aeb5f7fa0b.ico"
   },
   {
     "title": "Dungeon Defenders Awakened 2.1.0.35022",
@@ -2965,21 +2977,21 @@
   },
   {
     "title": "Dungeons 3 1.7",
-    "hero_image": null,
-    "grid_image": null,
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/hero/b400f98a2d7ae72b97cb87a354ebfb9f.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/cde88643eea575802e3a9a3dc7136542.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/1a7735ce230cb54713ca646f15fd11fa.png"
   },
   {
     "title": "Dungeons 4 1.1.1",
     "hero_image": null,
-    "grid_image": null,
-    "icon_image": null
+    "grid_image": "https://cdn2.steamgriddb.com/grid/c0014bffa3639fb9a6e3a72259566210.jpg",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/7a9044f58ba25564d2a56b6007c47165.png"
   },
   {
     "title": "Dungeons 4 1.8.2001.0",
     "hero_image": null,
-    "grid_image": null,
-    "icon_image": null
+    "grid_image": "https://cdn2.steamgriddb.com/grid/c0014bffa3639fb9a6e3a72259566210.jpg",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/7a9044f58ba25564d2a56b6007c47165.png"
   },
   {
     "title": "Dungeons of Sundaria Build 23092022",
@@ -3313,9 +3325,9 @@
   },
   {
     "title": "Enter the Gungeon 2.1.9",
-    "hero_image": null,
-    "grid_image": null,
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/hero/3f41d2337b29507d20a2fdd7f8305110.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/dfdc927d9542600572d2a16e41d6f005.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/9d752cb08ef466fc480fba981cfa44a1.png"
   },
   {
     "title": "Entropy Survivors 1.0.10.21602",
@@ -3397,7 +3409,7 @@
   },
   {
     "title": "Euro Truck Simulator 2 1.50.1.0s",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/2fdedfe5f26e59775b55fb09b60a88b8.png",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/309f9c1587ee1d24ef7a40ed71003aad.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/4ba6c472f1057449e226bfc754ff0ddf.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/86ebc43444cdf451b149e5de84ff3ef5.ico"
   },
@@ -3409,21 +3421,21 @@
   },
   {
     "title": "Europa Universalis V 1.0.0",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/c647f2a6f34278b30c28af729766bdd4.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/34ae7779d90117e3cdcc041b182dc26b.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/3e6260b81898beacda3d16db379ed329.ico"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/ca3036c5492e501c705ef503e228587c.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/c5399bf20250c9d74403fc38fe68e236.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/51c722b4c99812d450b628f38461408e.ico"
   },
   {
     "title": "Europa Universalis V 1.0.4",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/c647f2a6f34278b30c28af729766bdd4.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/34ae7779d90117e3cdcc041b182dc26b.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/3e6260b81898beacda3d16db379ed329.ico"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/ca3036c5492e501c705ef503e228587c.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/c5399bf20250c9d74403fc38fe68e236.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/51c722b4c99812d450b628f38461408e.ico"
   },
   {
     "title": "Europa Universalis V 1.0.8",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/c647f2a6f34278b30c28af729766bdd4.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/34ae7779d90117e3cdcc041b182dc26b.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/3e6260b81898beacda3d16db379ed329.ico"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/ca3036c5492e501c705ef503e228587c.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/c5399bf20250c9d74403fc38fe68e236.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/51c722b4c99812d450b628f38461408e.ico"
   },
   {
     "title": "Everdell 1.1.9.603",
@@ -3925,9 +3937,9 @@
   },
   {
     "title": "For the King 1.1.00.11330",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/aa2dece09777392d3403cc2907d24985.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/f84056b759a21597a94977a5019272de.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/7358b9ed556418d3bfc6f5964b7c3982.ico"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/46d9834fa62209a6504b2aabe46d7bfb.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/a9fa34b067b19c21e33f71497b73ae59.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/c4de8ced6214345614d33fb0b16a8acd.ico"
   },
   {
     "title": "For The King II 1.1.88",
@@ -4045,27 +4057,27 @@
   },
   {
     "title": "Forza Motorsport 1.591.459.0",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/21928eda50b8057eb6708e3c4d52faed.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/5c9502f388b4863509ed72dc251219a2.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/3f763c617dea53a246503921288e89e5.ico"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/7dee721b12bbaadc82d228adff5eeb03.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/5105a0e8d0cf6fa9d0db4c733eaf9998.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/2e7004ba2bc7a020f9e345fd6cb3dcaa.png"
   },
   {
     "title": "Forza Motorsport 1.699.2399.0",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/21928eda50b8057eb6708e3c4d52faed.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/5c9502f388b4863509ed72dc251219a2.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/3f763c617dea53a246503921288e89e5.ico"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/7dee721b12bbaadc82d228adff5eeb03.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/5105a0e8d0cf6fa9d0db4c733eaf9998.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/2e7004ba2bc7a020f9e345fd6cb3dcaa.png"
   },
   {
     "title": "Forza Motorsport 1.755.169.0",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/21928eda50b8057eb6708e3c4d52faed.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/5c9502f388b4863509ed72dc251219a2.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/3f763c617dea53a246503921288e89e5.ico"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/7dee721b12bbaadc82d228adff5eeb03.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/5105a0e8d0cf6fa9d0db4c733eaf9998.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/2e7004ba2bc7a020f9e345fd6cb3dcaa.png"
   },
   {
     "title": "Forza Motorsport 1.859.7102.0",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/21928eda50b8057eb6708e3c4d52faed.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/5c9502f388b4863509ed72dc251219a2.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/3f763c617dea53a246503921288e89e5.ico"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/7dee721b12bbaadc82d228adff5eeb03.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/5105a0e8d0cf6fa9d0db4c733eaf9998.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/2e7004ba2bc7a020f9e345fd6cb3dcaa.png"
   },
   {
     "title": "Forza Motorsport 7 1.174.4791.2",
@@ -4130,7 +4142,7 @@
   {
     "title": "Frosthaven 0.10.8",
     "hero_image": null,
-    "grid_image": null,
+    "grid_image": "https://cdn2.steamgriddb.com/grid/43cf61f12147aa6bd054605ac9145943.jpg",
     "icon_image": null
   },
   {
@@ -4178,7 +4190,7 @@
   {
     "title": "Galactic Civilizations IV 2.0",
     "hero_image": null,
-    "grid_image": "https://cdn2.steamgriddb.com/grid/4186baa00b17434ae97f4ae68b34040e.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/058eefe321cb4b61efe1867cfdfb95a3.jpg",
     "icon_image": null
   },
   {
@@ -4243,9 +4255,9 @@
   },
   {
     "title": "Gears 5 1.1.967.0",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/6a768d2c1d5098b68cdf3247b290519e.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/ceaaa4fc3850a687ea572a270f1cce14.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/8e5b86e5ee7a3e99390794af3930e80e.png"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/1b3b4d3427e6f7f7ba142e5f283bc4bc.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/96a7864b8d8f4e5123103bc4aafc0c3f.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/204da255aea2cd4a75ace6018fad6b4d.ico"
   },
   {
     "title": "Gears of War 4 14.4.0.2",
@@ -4519,9 +4531,9 @@
   },
   {
     "title": "Granblue Fantasy Versus Build 24022021",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/acd3da98a97c10892671c6f02c7aae49.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/88bf552f81299682d5a94bdce17a95da.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/c008c31802ec4b9c2126914d5d41ed9f.png"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/4ffe6e571c904d58f61af7811918cac3.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/7856b931ce95761794d86d077311d36c.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/9a15edfbee45bb3e6f2785dd200012e5.png"
   },
   {
     "title": "Granblue Fantasy Versus Rising Build 14082025",
@@ -4911,7 +4923,7 @@
     "title": "He is Coming 0.8.19",
     "hero_image": "https://cdn2.steamgriddb.com/hero/b98bb8f89e76f4a30d3fa0f8dcce2c40.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/e41b59f5f14e9c3c1a80d1d56f02c22d.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/17fbb4ebc6ba292d38179c87dadb989e.ico"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/c8d195dc7fb3706c4afa320ea0370884.ico"
   },
   {
     "title": "Headbangers Rhythm Royale 1.0.50842",
@@ -5017,9 +5029,9 @@
   },
   {
     "title": "Hero's Hour 2.2.3",
-    "hero_image": null,
-    "grid_image": null,
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/hero/20f07cbb433e686888a317c3bd759602.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/2e76394cf3bfcd0b62579f2e7f0098d5.jpg",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/6f919dc2ad423a2a9ae6b607237c8144.ico"
   },
   {
     "title": "Heroes of Hammerwatch II Build 16012025",
@@ -5210,7 +5222,7 @@
   {
     "title": "HUNTERxHUNTER NENxIMPACT 1.0.6",
     "hero_image": "https://cdn2.steamgriddb.com/hero/eced0c3421cf1bee809e8b087e808d00.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/9cf48d5a48d7bb8acef97a4b7aaff83c.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/e047059a4c5be81590f2c35f71e8b15c.png",
     "icon_image": null
   },
   {
@@ -5289,6 +5301,12 @@
     "title": "I Am Not A Monster 1.9.9",
     "hero_image": "https://cdn2.steamgriddb.com/hero/2342d8a616837cd6d79017fe68172b28.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/0227f2691a88cb092bf9885e87dccbbc.png",
+    "icon_image": null
+  },
+  {
+    "title": "I Know a Guy Shady Life Simulator Build 05042026",
+    "hero_image": null,
+    "grid_image": null,
     "icon_image": null
   },
   {
@@ -6159,7 +6177,7 @@
     "title": "Lightyear Frontier 0.1.361",
     "hero_image": "https://cdn2.steamgriddb.com/hero/6d19b223b7e2905a5c47a7748fc01699.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/192f5cd82052820ef838f16b75f9b7fb.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/f21aa9a67ef524410f718cff368a6ff2.png"
+    "icon_image": null
   },
   {
     "title": "Livelock Build 1453457",
@@ -6283,9 +6301,9 @@
   },
   {
     "title": "Lost Castle 2.11",
-    "hero_image": null,
-    "grid_image": "https://cdn2.steamgriddb.com/grid/83fb20c0b86e17f875aae461bfbaa6c1.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/abd19437d3541945cf100fc11a7e5436.png"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/b015655a2cdf752533fe676a6963cf12.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/54e00767554277f714ca1fc0cc682144.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/f91a0071eace31e2e06f4aee7d577c74.png"
   },
   {
     "title": "Lost Lullabies The Orphanage Chronicles 1.0",
@@ -6432,6 +6450,12 @@
     "icon_image": null
   },
   {
+    "title": "Mall Rivals 0.2.65",
+    "hero_image": null,
+    "grid_image": "https://cdn2.steamgriddb.com/grid/5f1e1ebbd53fac029e31da5f3c090683.png",
+    "icon_image": null
+  },
+  {
     "title": "Mamas Sleeping Angels 1.3",
     "hero_image": "https://cdn2.steamgriddb.com/hero/6e5acd341c646d333c05dff5e53b093b.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/8902d34a780a0da60c73dfe7166b6d42.jpg",
@@ -6463,9 +6487,9 @@
   },
   {
     "title": "Marvel Ultimate Alliance Build 30082016",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/948bcdb0dcc8e5d1e82fd7d38b8d4f15.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/e3798cedd56de01caaa3ce86e2e2c32b.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/344f7ef63191c90344c8ab3db8200d5d.png"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/def9a1ae6b388380f25a2aee35346e78.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/cdc8281ba1980e96daa0371eb22ca697.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/15a12b83500e93d7fe8bcb09dab9a771.ico"
   },
   {
     "title": "Marvel vs Capcom Infinite Build 15052018",
@@ -6607,21 +6631,21 @@
   },
   {
     "title": "Microsoft Flight Simulator 1.37.19.0",
-    "hero_image": null,
-    "grid_image": "https://cdn2.steamgriddb.com/grid/c501a337155e933a5e35a26e78e92cf9.png",
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/hero/2dc78e6026928309d3d26dc6dbd0276e.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/7b0ff7682796d0b90b1dd565c942dda1.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/0ec0eb979ae9f0e78aa950e332635d90.ico"
   },
   {
     "title": "Microsoft Flight Simulator 1.38.2.0",
-    "hero_image": null,
-    "grid_image": "https://cdn2.steamgriddb.com/grid/c501a337155e933a5e35a26e78e92cf9.png",
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/hero/2dc78e6026928309d3d26dc6dbd0276e.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/7b0ff7682796d0b90b1dd565c942dda1.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/0ec0eb979ae9f0e78aa950e332635d90.ico"
   },
   {
     "title": "Microsoft Flight Simulator 1.39.9.0",
-    "hero_image": null,
-    "grid_image": "https://cdn2.steamgriddb.com/grid/c501a337155e933a5e35a26e78e92cf9.png",
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/hero/2dc78e6026928309d3d26dc6dbd0276e.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/7b0ff7682796d0b90b1dd565c942dda1.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/0ec0eb979ae9f0e78aa950e332635d90.ico"
   },
   {
     "title": "Microsoft Flight Simulator 2024 1.1.7.0",
@@ -6745,9 +6769,9 @@
   },
   {
     "title": "Monaco 2 1.0.0.18962",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/3f0f51954aaf9e72904483e4f2e061b8.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/f2c30ad4bc536ecda17eaf772a3edc26.jpg",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/72bc7319c83fa7d8936bbdf4a8dd5a3d.png"
+    "hero_image": null,
+    "grid_image": "https://cdn2.steamgriddb.com/grid/6279ac8f9abadae85c2c53a1d88cb56e.jpg",
+    "icon_image": null
   },
   {
     "title": "Monaco What's Yours Is Mine Build 06062019",
@@ -7075,9 +7099,9 @@
   },
   {
     "title": "N++ Build 23032020",
-    "hero_image": null,
-    "grid_image": null,
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/hero/559dcf86450d923620d257db78be2f4d.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/30b8a6aee93efb4be51af5e05ea3ce29.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/a3c92e21d6f28a68bb9009e8ebe7daaf.png"
   },
   {
     "title": "NARUTO SHIPPUDEN Ultimate Ninja STORM 4 1.09",
@@ -7501,15 +7525,15 @@
   },
   {
     "title": "Old Market Simulator 0.1.12",
-    "hero_image": null,
-    "grid_image": null,
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/hero/fc1ce591b5bada912c07d1fa03f13840.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/f767830b04b0bdefcba99149679f9001.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/3a04b47723f83817cb892120dcd23de8.png"
   },
   {
     "title": "Old Market Simulator 1.5.6",
-    "hero_image": null,
-    "grid_image": null,
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/hero/fc1ce591b5bada912c07d1fa03f13840.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/f767830b04b0bdefcba99149679f9001.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/3a04b47723f83817cb892120dcd23de8.png"
   },
   {
     "title": "Old World 1.0.63239",
@@ -7693,9 +7717,9 @@
   },
   {
     "title": "Overcooked 2 Build 01102020",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/df5aec07cb149d32c29c536d694bce24.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/74db7c6e7c2b43e307ba6bc4818e74d7.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/6aed000af86a084f9cb0264161e29dd3.ico"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/5c64db62424a286a59daa6913b170a67.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/ba4f62b45edade1c8e90a8f97c5fe95e.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/78421a2e0e1168e5cd1b7a8d23773ce6.ico"
   },
   {
     "title": "Overcooked! All You Can Eat 1156",
@@ -8005,9 +8029,9 @@
   },
   {
     "title": "PEAK 1.8",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/3d2d53e5abcd70e24cc444935b88e6ac.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/04bf9ae5fabcc4a4a3a92a2b99daa283.jpg",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/9a46841c7df6435e8df5644f4867a987.png"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/697c22e48e9cb0207d3e5d7560c971f6.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/fbf3321aabbfb52b9361463b92a3b84b.jpg",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/55c1db3215355af45d48f701bb19527f.ico"
   },
   {
     "title": "PEAK 1.9.a",
@@ -8017,8 +8041,8 @@
   },
   {
     "title": "Peekaboo 1.3.7.0",
-    "hero_image": null,
-    "grid_image": null,
+    "hero_image": "https://cdn2.steamgriddb.com/hero/67a4b0f54d720a47e18a5c99ba191a06.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/da433ab4741385925121acd9571780fb.png",
     "icon_image": null
   },
   {
@@ -8346,6 +8370,12 @@
     "icon_image": "https://cdn2.steamgriddb.com/icon/f1f9618fda3af40bcf01d34ac4f2df27.ico"
   },
   {
+    "title": "Project Castaway 1.0.5",
+    "hero_image": null,
+    "grid_image": null,
+    "icon_image": null
+  },
+  {
     "title": "Project Motor Racing 1.5.0.0",
     "hero_image": "https://cdn2.steamgriddb.com/hero/e340d9cc7b2ab2788acc53f6413dddfb.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/e3f885c09f49f9acb597596dd3b0acdd.png",
@@ -8473,9 +8503,9 @@
   },
   {
     "title": "R.E.P.O 0.1.2",
-    "hero_image": null,
-    "grid_image": null,
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/hero/c137d9bfad46b1ebcc9b3f06e6eb5683.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/93f9e0833fcc512b9b20d4face39251f.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/8ddd389dc325faeb9e252d331df22b72.ico"
   },
   {
     "title": "R.E.P.O 0.2.1",
@@ -8785,8 +8815,8 @@
   },
   {
     "title": "Remnants 0.22.08.21",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/9bcfb8264cf53ed70ad779e7a43bd96a.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/df0574e1cc617d2705547581ad6e5e81.png",
+    "hero_image": null,
+    "grid_image": "https://cdn2.steamgriddb.com/grid/0600480d533e3f41ce2e6e77415aa54e.jpg",
     "icon_image": null
   },
   {
@@ -8845,9 +8875,9 @@
   },
   {
     "title": "Retimed Build 13112021",
-    "hero_image": null,
-    "grid_image": null,
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/hero/f4298a1737da0d2fc0180b613f12a807.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/dd4e5fc30dad536f2910c337a19237b3.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/af1c200b37867473a824e7c94e98d4ec.ico"
   },
   {
     "title": "Returnal 1.3.195864",
@@ -9097,9 +9127,9 @@
   },
   {
     "title": "Root 1.30.4.2049",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/d922646e87baa7c57a6aa74ab391d517.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/d3aeb5e24c8a5e483e488ce3964e0500.jpg",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/a50303d16c89e22c53d45bd5b9fd888b.png"
+    "hero_image": null,
+    "grid_image": "https://cdn2.steamgriddb.com/grid/d05c131b7a18c5f622de5ea9eeadcf42.png",
+    "icon_image": null
   },
   {
     "title": "Roots of Pacha 1.0.4",
@@ -9295,9 +9325,9 @@
   },
   {
     "title": "Samurai Shodown 1.0",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/b6af2c9703f203a2794be03d443af2e3.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/ff48b9639bdde74481fecaa86c7973b3.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/333c04a1fa69b79d52f54dc8961fb158.png"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/8f2ba96517924ee3d08ec132c4bad818.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/e2b2ad10a0cce81f7b1757538471f089.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/6851e5b49c83dac63a31fe502cc4ad72.png"
   },
   {
     "title": "SAMURAI WARRIORS 4 DX Build 14062024",
@@ -9525,6 +9555,12 @@
     "title": "Scrapnaut 1.5.4",
     "hero_image": null,
     "grid_image": null,
+    "icon_image": null
+  },
+  {
+    "title": "Screamer Build 07042026",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/216c7a1fad5dc4b1a2be2df9820337af.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/2d9ea666ce9ade662b57ee7165d3a213.png",
     "icon_image": null
   },
   {
@@ -9781,8 +9817,8 @@
   },
   {
     "title": "Shieldwall 1.1.0",
-    "hero_image": null,
-    "grid_image": "https://cdn2.steamgriddb.com/grid/412f2afbcb56f6a681f62ac228b0aebc.png",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/bf723bb4de3a62e75c3af8a8bc014286.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/44fa023dbcd8cc234043c9d5fa7c576a.png",
     "icon_image": null
   },
   {
@@ -9794,8 +9830,8 @@
   {
     "title": "Shing 1.0.26",
     "hero_image": null,
-    "grid_image": "https://cdn2.steamgriddb.com/grid/902b61103a835a6ccf9e5b58821259fc.jpg",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/792f8e61a6c40c26076d191daf185a31.ico"
+    "grid_image": "https://cdn2.steamgriddb.com/grid/7b7a0bce4bb442aab44878bbc581c097.png",
+    "icon_image": null
   },
   {
     "title": "Ship Graveyard Simulator 2 8962",
@@ -9872,7 +9908,7 @@
   {
     "title": "SIDE EFFECTS 1.03",
     "hero_image": null,
-    "grid_image": null,
+    "grid_image": "https://cdn2.steamgriddb.com/grid/983697a266b186d7d3856af9fc5ae7f7.png",
     "icon_image": null
   },
   {
@@ -10471,9 +10507,9 @@
   },
   {
     "title": "Stellaris 3.12.1",
-    "hero_image": null,
-    "grid_image": null,
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/hero/a160a01c5ced2a79bc07e2b2ef1a2ada.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/b2d07452cf118e98723c0dae380ea76b.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/c5c1cb0bebd56ae38817b251ad72bedb.ico"
   },
   {
     "title": "Stellaris Nexus 0.28.5646",
@@ -10597,9 +10633,9 @@
   },
   {
     "title": "Stronghold 2 1.5",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/a8b32485ea3dafd7c06f87afe4f7c6d2.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/b3f3202f9a4dd730c679fc2a0504441c.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/1da38e9fc1f765ffa964a0ab64c8d8fe.png"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/fc9e62695def29ccdb9eb3fed5b4c8c8.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/54f681153c0cdad6224312508205d5f6.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/fbb2edb68e804720ff2593eff56ae190.ico"
   },
   {
     "title": "Stronghold Crusader 2 1.0.22794",
@@ -10723,9 +10759,9 @@
   },
   {
     "title": "Super Bomberman R 2.2",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/7c0036e55c70abef8439cf4a0b559ad9.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/8b3a2e3f0b1a70be18606deff4841ae6.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/085d5d1e61effabc440d74ac51b91d87.png"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/366c0196895c9eeaa75992bacac60426.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/0210bc8545fc0c796315722768a2d98b.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/991f2e28c68715b3fdf0c12914499fcb.png"
   },
   {
     "title": "Super Bunny Man 0.9.0.8",
@@ -10916,7 +10952,7 @@
   {
     "title": "SWORN 1.0.0.1.1002",
     "hero_image": null,
-    "grid_image": null,
+    "grid_image": "https://cdn2.steamgriddb.com/grid/4a6ac51348926167f70a69276ace04a7.jpg",
     "icon_image": null
   },
   {
@@ -11851,9 +11887,9 @@
   },
   {
     "title": "Total War WARHAMMER 1.6.0",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/d3d2a1a264feb84bd8ba9d0557aafca8.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/a475ebceac9e384657c6f1148c8f91ef.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/f8f122d50eba11c3af5607575b277bc6.png"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/8b1bf4586215f7060151b4cb87d86336.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/abed45100ff2d767981b2c7becc58bbd.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/298f587406c914fad5373bb689300433.png"
   },
   {
     "title": "Total War WARHAMMER II 1.12.0",
@@ -12163,9 +12199,9 @@
   },
   {
     "title": "UNDERWARD 1.0.1.0",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/2f1d3fd6e46444e10e9211a8844c70fe.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/83dbd497d34f89f0b88802f2b3ba4c12.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/a6e45e77e2828da5826939b2446b7495.ico"
+    "hero_image": null,
+    "grid_image": null,
+    "icon_image": null
   },
   {
     "title": "UnEpic 1.51.1",
@@ -12319,9 +12355,9 @@
   },
   {
     "title": "Victoria 3 1.5.12",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/7b84679a6ae864115de56d33caf5728c.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/06f20d90b2a19b3467917457cfd7dd9c.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/07de104ba7337dfc7b9fb0d882f291ef.ico"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/40947268c085716bd36a68d080755d7f.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/330ae7397fd8295a6edb81d70e5400a4.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/f0413389b899baa7224d3b3343160f5f.png"
   },
   {
     "title": "Vikings Wolves of Midgard 2.1",
@@ -12382,6 +12418,12 @@
     "hero_image": null,
     "grid_image": "https://cdn2.steamgriddb.com/grid/791483792ac4ca271e8a7e34041dd0ca.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/a12f69495f41bb3b637ba1b6238884d6.png"
+  },
+  {
+    "title": "Voodoo Fishin Build 31032026",
+    "hero_image": null,
+    "grid_image": null,
+    "icon_image": null
   },
   {
     "title": "Vox Machinae 1.0.6",
@@ -12601,9 +12643,9 @@
   },
   {
     "title": "Wasteland 3 1.6.9.420.309496",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/9e263dac6a579f42dacad12b1a963f37.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/bfb1d368f5873188e61de0c3b4bc5e6c.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/128433173bd991b5f6d7493f2d98ffcc.ico"
+    "hero_image": "https://cdn2.steamgriddb.com/hero/ad8d3a0a0f0a084a97fad357c649438c.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/75a8415011978d373d5ce689611a62cc.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/199f31fdc570a054d8727204b1407c20.ico"
   },
   {
     "title": "Way of the Hunter 1.24.3.111349",
@@ -12722,7 +12764,7 @@
   {
     "title": "Who's Who 0.9.19",
     "hero_image": null,
-    "grid_image": "https://cdn2.steamgriddb.com/grid/95b80814d490d3d986c72777ce64aacc.png",
+    "grid_image": null,
     "icon_image": null
   },
   {
@@ -12799,9 +12841,9 @@
   },
   {
     "title": "Witch It 1.2.6",
-    "hero_image": null,
-    "grid_image": null,
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/hero/1f75943068ed444fb245bf2a6a291c0c.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/2f4967fb2415c4731bb9ea8f82adc1c0.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/adf7a9ebb3f37899aebeaa20db3f34f1.png"
   },
   {
     "title": "Witchtastic 1.0",
@@ -12932,7 +12974,7 @@
   {
     "title": "Wrap House Simulator 1.0",
     "hero_image": null,
-    "grid_image": "https://cdn2.steamgriddb.com/grid/b854a1942ab5a230d21c904eaad5f9d3.png",
+    "grid_image": null,
     "icon_image": null
   },
   {
@@ -13082,8 +13124,8 @@
   {
     "title": "Zeno Clash 2 1.04",
     "hero_image": null,
-    "grid_image": "https://cdn2.steamgriddb.com/grid/54ac89ac6928fe968c150c002e74ebcb.png",
-    "icon_image": null
+    "grid_image": "https://cdn2.steamgriddb.com/grid/5aa280f5c0342b720a72b71d3b2a0cc9.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/3a2a03bc937e81a40d7f9933874cbfda.png"
   },
   {
     "title": "ZEPHON 1.0.18",
