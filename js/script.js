@@ -1,4 +1,3 @@
-// Alpine.js Slider Component - VERSIONE DINAMICA
 function heroSlider(totalSlides) {
     return {
         current: 0,
@@ -274,6 +273,7 @@ let currentFilter = "all";
 let currentSort = "date-desc";
 let currentView = "grid";
 let maxFileSize = 0;
+let showHvOnly = false;
 
 const GAMES_PER_PAGE = 30;
 let currentPage = 1;
@@ -610,9 +610,19 @@ function renderGames() {
     }
     
     filteredGames = gamesToFilter.filter(game => {
+        const title = getGameTitle(game);
+        const hasHv = title.includes('[HV]');
+        
+        // Regola 1: se contiene [HV] non visualizzare su fitgirl, steamrip, onlinefix
+        // (Quindi accetta [HV] solo se la sorgente è 'altro' ovvero AIMODS)
+        if (hasHv && game.source !== 'altro') return false;
+        
+        // Regola 2: Filtro per gli [HV] (se attivo, mostra solo quelli che hanno [HV])
+        if (showHvOnly && !hasHv) return false;
+
         if (searchBox && searchBox.value.trim() === '' && currentFilter !== 'all' && game.category !== currentFilter) return false;
         if (searchBox && searchBox.value) {
-            const originalTitle = getGameTitle(game).toLowerCase();
+            const originalTitle = title.toLowerCase();
             if (!originalTitle.includes(searchBox.value.toLowerCase())) return false;
         }
         const maxSize = parseInt(sizeSlider?.value || maxFileSize);
@@ -980,6 +990,16 @@ function setupEventListeners() {
             renderGames();
         });
     });
+
+    const hvFilterBtn = document.getElementById('hv-filter-btn');
+    if (hvFilterBtn) {
+        hvFilterBtn.addEventListener('click', function() {
+            showHvOnly = !showHvOnly;
+            this.classList.toggle('active', showHvOnly);
+            currentPage = 1;
+            renderGames();
+        });
+    }
     
     if (sizeSlider) sizeSlider.addEventListener('input', function() { updateSizeValue(this.value); currentPage = 1; renderGames(); });
     
