@@ -741,7 +741,7 @@ function createGameCard(game) {
     card.innerHTML = `
         <div class="game-image" style="background-image: url('${imageUrl}'); background-size: cover; background-position: center;">
             <div class="game-source-badge ${sourceBadgeClass}">${game.source === 'altro' ? 'AIMODS' : game.source.toUpperCase()}</div>
-            ${showAppBadge ? '<div class="app-availability-badge"><i class="fas fa-mobile-alt"></i> Disponibile nella nostra app!</div>' : ''}
+            ${showAppBadge ? `<a href="javascript:void(0)" class="app-availability-badge" onclick="event.stopPropagation(); scrollToAppBanner();"><i class="fas fa-mobile-alt"></i> Disponibile nella nostra app!</a>` : ''}
         </div>
         <div class="game-info">
             <h3 class="game-title" title="${displayTitle.replace(/"/g, '&quot;')}">${displayTitle}</h3>
@@ -850,10 +850,10 @@ function showGameDetails(game) {
         const hasBuzzHeavier = uris.some(uri => String(uri).toLowerCase().includes('buzzheavier') || String(uri).toLowerCase().includes('buzzhavier'));
         if (game.source === 'steamrip' && hasBuzzHeavier) {
             gameProperties.innerHTML += `
-                <div class="modal-app-info">
+                <a href="javascript:void(0)" class="modal-app-info" onclick="closeModal(); scrollToAppBanner();" style="text-decoration: none; cursor: pointer;">
                     <i class="fas fa-mobile-alt" style="font-size: 1.2rem"></i>
                     <div>Disponibile nella nostra app!</div>
-                </div>
+                </a>
             `;
         }
     }
@@ -958,6 +958,20 @@ function closeModal() {
     document.body.style.overflow = 'auto';
 }
 
+function scrollToAppBanner() {
+    const banner = document.getElementById('app-download-banner');
+    if (banner) {
+        const headerOffset = 100;
+        const elementPosition = banner.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    }
+}
+
 function showErrorMessage(message) {
     if (gamesContainer) {
         gamesContainer.innerHTML = `<div class="loading"><i class="fas fa-exclamation-triangle"></i><h3>Errore</h3><p>${message}</p></div>`;
@@ -990,7 +1004,7 @@ function renderTrendingGames() {
         card.innerHTML = `
             <div class="game-image" style="background-image: url('${imageUrl}'); background-size: cover; background-position: center;">
                 <div class="game-source-badge ${game.source}-badge-card">${game.source.toUpperCase()}</div>
-                ${showAppBadge ? '<div class="app-availability-badge"><i class="fas fa-mobile-alt"></i> Disponibile nella nostra app!</div>' : ''}
+                ${showAppBadge ? `<a href="javascript:void(0)" class="app-availability-badge" onclick="event.stopPropagation(); scrollToAppBanner();"><i class="fas fa-mobile-alt"></i> Disponibile nella nostra app!</a>` : ''}
             </div>
             <div class="game-info">
                 <h3 class="game-title">${cleanDisplayTitle(getGameTitle(game))}</h3>
