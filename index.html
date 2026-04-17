@@ -81,6 +81,9 @@
                             <span x-text="slide.sourceName"></span>
                         </div>
                         <h2 class="slide-title" x-text="slide.title"></h2>
+                        <div x-show="slide.isAvailableInApp" class="app-availability-badge" style="position: static; margin-bottom: 20px; width: fit-content; font-size: 0.9rem">
+                            <i class="fas fa-mobile-alt"></i> Disponibile nella nostra app!
+                        </div>
                         <div class="slide-meta">
                             <span class="slide-version" x-text="slide.version"></span>
                             <span class="slide-platform">PC</span>
