@@ -572,6 +572,18 @@ body {
     font-weight: 500;
 }
 
+.special-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#hv-filter-btn.active {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(234, 88, 12, 0.2));
+    border: 1px solid var(--accent);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
 /* Games Grid */
 .games-grid {
     flex: 1;
