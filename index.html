@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <!-- Alpine.js per interattività moderna -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
+
 <body class="dark" x-data="app()" x-init="init()">
     <!-- Header moderno -->
     <header class="sticky-header">
@@ -37,85 +39,81 @@
             </div>
         </div>
     </header>
-<!-- Download App Banner -->
-<section class="app-download-banner">
-    <div class="app-banner-content">
-        <div class="app-icon">
-            <i class="fas fa-rocket"></i>
-        </div>
-        <div class="app-info">
-            <h3>Phoenix Play Desktop App</h3>
-            <p>Scarica l'applicazione ufficiale per Windows e gestisci i tuoi giochi offline</p>
-            <div class="app-features">
-                <span><i class="fas fa-bolt"></i> Download diretti (NO ADS)</span>
-                <span><i class="fas fa-database"></i> Gestione libreria</span>
-                <span><i class="fas fa-wifi"></i> Tempo di gioco</span>
+    <!-- Download App Banner -->
+    <section class="app-download-banner">
+        <div class="app-banner-content">
+            <div class="app-icon">
+                <i class="fas fa-rocket"></i>
             </div>
+            <div class="app-info">
+                <h3>Phoenix Play Desktop App</h3>
+                <p>Scarica l'applicazione ufficiale per Windows e gestisci i tuoi giochi offline</p>
+                <div class="app-features">
+                    <span><i class="fas fa-bolt"></i> Download diretti (NO ADS)</span>
+                    <span><i class="fas fa-database"></i> Gestione libreria</span>
+                    <span><i class="fas fa-wifi"></i> Tempo di gioco</span>
+                </div>
+            </div>
+            <a href="https://github.com/MrNico98/PhoenixPlay/releases/download/PhoenixPlay-v.0.0.1.2/AIMODS.Phoenix.Play-Setup.v.0.0.1.2.exe"
+                class="btn-download-app" download>
+                <i class="fas fa-download"></i>
+                Scarica App
+                <small>v0.0.1.2</small>
+            </a>
         </div>
-        <a href="https://github.com/MrNico98/PhoenixPlay/releases/download/PhoenixPlay-v.0.0.1.2/AIMODS.Phoenix.Play-Setup.v.0.0.1.2.exe" 
-           class="btn-download-app" 
-           download>
-            <i class="fas fa-download"></i>
-            Scarica App
-            <small>v0.0.1.2</small>
-        </a>
-    </div>
-</section>
+    </section>
     <!-- Hero Slider Section -->
     <section class="hero-slider" x-data="heroSlider(3)" x-init="init()">
-    <div class="slider-container">
-        <template x-for="(slide, index) in slides" :key="index">
-            <div class="slide" x-show="current === index" 
-                 x-transition:enter="transition-all duration-700 ease-out"
-                 x-transition:enter-start="opacity-0 scale-[1.02]"
-                 x-transition:enter-end="opacity-100 scale-100"
-                 x-transition:leave="transition-all duration-500 ease-in"
-                 x-transition:leave-start="opacity-100"
-                 x-transition:leave-end="opacity-0">
-                <div class="slide-bg" :style="{ backgroundImage: 'url(' + slide.image + ')' }">
-                    <div class="slide-overlay"></div>
-                </div>
-                <div class="slide-content">
-                    <div class="slide-badge-provider" :class="slide.source">
-                        <i x-show="slide.source === 'steamrip'" class="fas fa-cloud-download-alt"></i>
-                        <i x-show="slide.source === 'onlinefix'" class="fas fa-wifi"></i>
-                        <i x-show="slide.source === 'fitgirl'" class="fas fa-female"></i>
-                        <span x-text="slide.sourceName"></span>
-                    </div>
-                    <h2 class="slide-title" x-text="slide.title"></h2>
-                    <div class="slide-meta">
-                        <span class="slide-version" x-text="slide.version"></span>
-                        <span class="slide-platform">PC</span>
-                    </div>
-                    <p class="slide-desc" x-text="slide.description"></p>
-                    <div class="slide-buttons">
-                        <button class="btn-primary" @click="downloadGame(slide)">
-                            <i class="fas fa-download"></i> Scarica Ora
-                        </button>
-                        <button class="btn-secondary" @click="showGameDetails(slide)">
-                            Dettagli <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </template>
-        
-        <!-- Slider Controls -->
-        <button class="slider-nav prev" @click="prev()">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        <button class="slider-nav next" @click="next()">
-            <i class="fas fa-chevron-right"></i>
-        </button>
-        
-        <!-- Slider Dots -->
-        <div class="slider-dots">
+        <div class="slider-container">
             <template x-for="(slide, index) in slides" :key="index">
-                <button class="dot" :class="{ active: current === index }" @click="goTo(index)"></button>
+                <div class="slide" x-show="current === index" x-transition:enter="transition-all duration-700 ease-out"
+                    x-transition:enter-start="opacity-0 scale-[1.02]" x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:leave="transition-all duration-500 ease-in" x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0">
+                    <div class="slide-bg" :style="{ backgroundImage: 'url(' + slide.image + ')' }">
+                        <div class="slide-overlay"></div>
+                    </div>
+                    <div class="slide-content">
+                        <div class="slide-badge-provider" :class="slide.source">
+                            <i x-show="slide.source === 'steamrip'" class="fas fa-cloud-download-alt"></i>
+                            <i x-show="slide.source === 'onlinefix'" class="fas fa-wifi"></i>
+                            <i x-show="slide.source === 'fitgirl'" class="fas fa-female"></i>
+                            <span x-text="slide.sourceName"></span>
+                        </div>
+                        <h2 class="slide-title" x-text="slide.title"></h2>
+                        <div class="slide-meta">
+                            <span class="slide-version" x-text="slide.version"></span>
+                            <span class="slide-platform">PC</span>
+                        </div>
+                        <p class="slide-desc" x-text="slide.description"></p>
+                        <div class="slide-buttons">
+                            <button class="btn-primary" @click="downloadGame(slide)">
+                                <i class="fas fa-download"></i> Scarica Ora
+                            </button>
+                            <button class="btn-secondary" @click="showGameDetails(slide)">
+                                Dettagli <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </template>
+
+            <!-- Slider Controls -->
+            <button class="slider-nav prev" @click="prev()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-nav next" @click="next()">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Slider Dots -->
+            <div class="slider-dots">
+                <template x-for="(slide, index) in slides" :key="index">
+                    <button class="dot" :class="{ active: current === index }" @click="goTo(index)"></button>
+                </template>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <div class="container">
         <!-- Source Selector Moderno -->
@@ -153,17 +151,17 @@
                         <input type="text" class="search-box" id="search-box" placeholder="Cerca un gioco...">
                     </div>
                 </div>
-                
+
                 <div class="filter-section">
                     <h3><i class="fas fa-filter"></i> Categorie</h3>
                     <ul class="category-list" id="category-list">
                         <li><button class="category-btn active" data-category="all">
-                            <span>Tutti</span>
-                            <span class="category-count">0</span>
-                        </button></li>
+                                <span>Tutti</span>
+                                <span class="category-count">0</span>
+                            </button></li>
                     </ul>
                 </div>
-                
+
                 <div class="filter-section">
                     <h3><i class="fas fa-sort"></i> Ordina</h3>
                     <div class="sort-options">
@@ -181,12 +179,21 @@
                         </button>
                     </div>
                 </div>
-                
+
                 <div class="filter-section">
                     <h3><i class="fas fa-chart-line"></i> Dimensione max</h3>
                     <div class="size-filter">
                         <input type="range" min="0" max="150" value="150" class="size-slider" id="size-slider">
                         <div class="size-value" id="size-value">Tutti</div>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3><i class="fas fa-star"></i> Denuvo</h3>
+                    <div class="special-filters">
+                        <button class="sort-btn" id="hv-filter-btn">
+                            <i class="fas fa-bolt"></i> Giochi [HV]
+                        </button>
                     </div>
                 </div>
             </aside>
@@ -208,7 +215,7 @@
                         </button>
                     </div>
                 </div>
-                
+
                 <div class="games-container" id="games-container">
                     <div class="loading-skeleton">
                         <div class="skeleton-card" v-for="i in 6">
@@ -218,7 +225,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Pagination -->
                 <div class="pagination" id="pagination">
                     <button class="pagination-btn" id="first-page">
@@ -258,13 +265,13 @@
                 <span>Guida Installazione</span>
                 <i class="fas fa-chevron-down"></i>
             </button>
-            
+
             <div class="faq-section" id="faq-section">
                 <div class="faq-header">
                     <h2><i class="fas fa-compass"></i> Domande Frequenti</h2>
                     <button class="close-faq" id="close-faq">&times;</button>
                 </div>
-                
+
                 <div class="faq-grid">
                     <div class="faq-card">
                         <div class="faq-icon"><i class="fas fa-female"></i></div>
@@ -278,7 +285,7 @@
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div class="faq-card">
                         <div class="faq-icon"><i class="fas fa-cloud-download-alt"></i></div>
                         <h3>SteamRip</h3>
@@ -291,7 +298,7 @@
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div class="faq-card">
                         <div class="faq-icon"><i class="fas fa-wifi"></i></div>
                         <h3>OnlineFix</h3>
@@ -304,7 +311,7 @@
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div class="faq-card gdk-guide">
                         <div class="faq-icon"><i class="fas fa-terminal"></i></div>
                         <h3>Guida GDK (Xbox)</h3>
@@ -368,4 +375,5 @@
 
     <script src="js/script.js"></script>
 </body>
+
 </html>
