@@ -83,6 +83,10 @@ function heroSlider(totalSlides) {
             const imageUrl = this.getGameImageUrl(game);
             const description = this.truncateDescription(game.description || this.getDefaultDescription(source), 120);
             
+            const uris = (game.uris && Array.isArray(game.uris)) ? game.uris : (game.links || []);
+            const hasBuzzHeavier = uris.some(uri => String(uri).toLowerCase().includes('buzzheavier') || String(uri).toLowerCase().includes('buzzhavier'));
+            const isAvailableInApp = source === 'steamrip' && hasBuzzHeavier;
+
             const sourceNames = {
                 steamrip: 'SteamRip',
                 onlinefix: 'OnlineFix',
@@ -99,7 +103,8 @@ function heroSlider(totalSlides) {
                 downloadUrl: "#",
                 gameData: game,
                 source: source,
-                sourceName: sourceNames[source] || source.toUpperCase()
+                sourceName: sourceNames[source] || source.toUpperCase(),
+                isAvailableInApp: isAvailableInApp
             };
         },
         
@@ -729,9 +734,14 @@ function createGameCard(game) {
     
     const sourceBadgeClass = `${game.source}-badge-card`;
     
+    const uris = getDownloadLinks(game);
+    const hasBuzzHeavier = uris.some(uri => String(uri).toLowerCase().includes('buzzheavier') || String(uri).toLowerCase().includes('buzzhavier'));
+    const showAppBadge = game.source === 'steamrip' && hasBuzzHeavier;
+    
     card.innerHTML = `
         <div class="game-image" style="background-image: url('${imageUrl}'); background-size: cover; background-position: center;">
             <div class="game-source-badge ${sourceBadgeClass}">${game.source === 'altro' ? 'AIMODS' : game.source.toUpperCase()}</div>
+            ${showAppBadge ? '<div class="app-availability-badge"><i class="fas fa-mobile-alt"></i> Disponibile nella nostra app!</div>' : ''}
         </div>
         <div class="game-info">
             <h3 class="game-title" title="${displayTitle.replace(/"/g, '&quot;')}">${displayTitle}</h3>
@@ -835,6 +845,17 @@ function showGameDetails(game) {
             <div class="property"><div class="property-label">Fonte</div><div class="property-value">${game.source.toUpperCase()}</div></div>
             <div class="property"><div class="property-label">Titolo Originale</div><div class="property-value" style="font-size:0.85rem;color:var(--text-secondary)">${originalTitle}</div></div>
         `;
+
+        const uris = getDownloadLinks(game);
+        const hasBuzzHeavier = uris.some(uri => String(uri).toLowerCase().includes('buzzheavier') || String(uri).toLowerCase().includes('buzzhavier'));
+        if (game.source === 'steamrip' && hasBuzzHeavier) {
+            gameProperties.innerHTML += `
+                <div class="modal-app-info">
+                    <i class="fas fa-mobile-alt" style="font-size: 1.2rem"></i>
+                    <div>Disponibile nella nostra app!</div>
+                </div>
+            `;
+        }
     }
     
     const links = getDownloadLinks(game);
@@ -959,12 +980,17 @@ function renderTrendingGames() {
     
     trendingGrid.innerHTML = '';
     allGames.forEach(game => {
+        const uris = getDownloadLinks(game);
+        const hasBuzzHeavier = uris.some(uri => String(uri).toLowerCase().includes('buzzheavier') || String(uri).toLowerCase().includes('buzzhavier'));
+        const showAppBadge = game.source === 'steamrip' && hasBuzzHeavier;
+
         const card = document.createElement('div');
         card.className = 'game-card';
         const imageUrl = getGameImageUrl(game);
         card.innerHTML = `
             <div class="game-image" style="background-image: url('${imageUrl}'); background-size: cover; background-position: center;">
                 <div class="game-source-badge ${game.source}-badge-card">${game.source.toUpperCase()}</div>
+                ${showAppBadge ? '<div class="app-availability-badge"><i class="fas fa-mobile-alt"></i> Disponibile nella nostra app!</div>' : ''}
             </div>
             <div class="game-info">
                 <h3 class="game-title">${cleanDisplayTitle(getGameTitle(game))}</h3>
