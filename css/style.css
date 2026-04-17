@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --bg-primary: #0a0c10;
     --bg-secondary: #13161c;
@@ -856,6 +860,7 @@ body {
 /* App Download Banner */
 .app-download-banner {
     margin: 24px 0 32px 0;
+    scroll-margin-top: 100px;
     background: linear-gradient(135deg, #1a1e2e 0%, #0f1119 100%);
     border-radius: 20px;
     border: 1px solid rgba(249, 115, 22, 0.3);
