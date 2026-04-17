@@ -40,7 +40,7 @@
         </div>
     </header>
     <!-- Download App Banner -->
-    <section class="app-download-banner">
+    <section class="app-download-banner" id="app-download-banner">
         <div class="app-banner-content">
             <div class="app-icon">
                 <i class="fas fa-rocket"></i>
@@ -81,9 +81,9 @@
                             <span x-text="slide.sourceName"></span>
                         </div>
                         <h2 class="slide-title" x-text="slide.title"></h2>
-                        <div x-show="slide.isAvailableInApp" class="app-availability-badge" style="position: static; margin-bottom: 20px; width: fit-content; font-size: 0.9rem">
+                        <a href="javascript:void(0)" x-show="slide.isAvailableInApp" @click="scrollToAppBanner()" class="app-availability-badge" style="position: static; margin-bottom: 20px; width: fit-content; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 8px; cursor: pointer;">
                             <i class="fas fa-mobile-alt"></i> Disponibile nella nostra app!
-                        </div>
+                        </a>
                         <div class="slide-meta">
                             <span class="slide-version" x-text="slide.version"></span>
                             <span class="slide-platform">PC</span>
