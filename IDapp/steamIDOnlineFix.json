@@ -824,7 +824,7 @@
   {
     "title": "Battle Realms Zen Edition 1.59.1",
     "hero_image": null,
-    "grid_image": null,
+    "grid_image": "https://cdn2.steamgriddb.com/grid/8906801cb936dbdf9744cb84174a8de3.jpg",
     "icon_image": null
   },
   {
@@ -3536,7 +3536,7 @@
   {
     "title": "Exploding Kittens 2 674993",
     "hero_image": null,
-    "grid_image": "https://cdn2.steamgriddb.com/grid/692a2dd88cb31ce27f36dd62c7b7b43a.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/233fa8b3b1535056857331d22764823e.png",
     "icon_image": null
   },
   {
@@ -7435,25 +7435,25 @@
   },
   {
     "title": "Nuclear Nightmare Build 06082025",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/dd4f47919d6a0fa34d4f059f618c44e7.png",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/43511d4a95d25482e140a48746fa74ae.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/206f14324d9d462b758d081242bdc9cc.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/b5ea9736b6a0b6f8a54f9f27c6e08c3e.png"
   },
   {
     "title": "Nuclear Nightmare Build 06122024",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/dd4f47919d6a0fa34d4f059f618c44e7.png",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/43511d4a95d25482e140a48746fa74ae.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/206f14324d9d462b758d081242bdc9cc.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/b5ea9736b6a0b6f8a54f9f27c6e08c3e.png"
   },
   {
     "title": "Nuclear Nightmare Build 24012025",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/dd4f47919d6a0fa34d4f059f618c44e7.png",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/43511d4a95d25482e140a48746fa74ae.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/206f14324d9d462b758d081242bdc9cc.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/b5ea9736b6a0b6f8a54f9f27c6e08c3e.png"
   },
   {
     "title": "Nuclear Nightmare Build 28102024",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/dd4f47919d6a0fa34d4f059f618c44e7.png",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/43511d4a95d25482e140a48746fa74ae.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/206f14324d9d462b758d081242bdc9cc.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/b5ea9736b6a0b6f8a54f9f27c6e08c3e.png"
   },
@@ -8809,25 +8809,25 @@
   },
   {
     "title": "Remnant II Build 12112024",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/4d8c150eb82579842e2d5dc5faa07999.png",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/43efdd90b9cdaa8aee186cbd51c1839a.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/d1f0d59aa5eb5d4001c3dee59fc8820e.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/bd55122154b37dd5297d29c7794bed19.png"
   },
   {
     "title": "Remnant II Build 17102024",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/4d8c150eb82579842e2d5dc5faa07999.png",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/43efdd90b9cdaa8aee186cbd51c1839a.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/d1f0d59aa5eb5d4001c3dee59fc8820e.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/bd55122154b37dd5297d29c7794bed19.png"
   },
   {
     "title": "Remnant II Build 23042024",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/4d8c150eb82579842e2d5dc5faa07999.png",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/43efdd90b9cdaa8aee186cbd51c1839a.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/d1f0d59aa5eb5d4001c3dee59fc8820e.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/bd55122154b37dd5297d29c7794bed19.png"
   },
   {
     "title": "Remnant II Build 24092024",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/4d8c150eb82579842e2d5dc5faa07999.png",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/43efdd90b9cdaa8aee186cbd51c1839a.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/d1f0d59aa5eb5d4001c3dee59fc8820e.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/bd55122154b37dd5297d29c7794bed19.png"
   },
@@ -11360,7 +11360,7 @@
   {
     "title": "The Forest Build 4175072",
     "hero_image": "https://cdn2.steamgriddb.com/hero/feaa5178df4eacbdb7db7e491efe7d95.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/b98ee86215125aa5b01966e7891a4cf7.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/f03c1b76769ba6af93c93e1247defc35.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/12e1b435e5e53888e787d22c1e8d262d.ico"
   },
   {
