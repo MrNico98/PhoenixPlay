@@ -2,6 +2,478 @@
   "name": "onlinefix",
   "downloads": [
     {
+      "fileSize": "28.5 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:44b4a56de4cebacf45a83a5ce92e8d2c81eaa333&dn=MotoGP+26&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "MotoGP 26 Build 13052026",
+      "uploadDate": "2026-05-20T15:50:25.000Z"
+    },
+    {
+      "fileSize": "47.2 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:f656d20a7db13fda080cae94508f38042534bce8&dn=TIEBREAK+Official+Game+of+the+ATP+and+WTA&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "TIEBREAK Official Game of the ATP and WTA 1.0.6099",
+      "uploadDate": "2026-05-20T15:55:34.000Z"
+    },
+    {
+      "fileSize": "3.6 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:171b3f760d080f381c954ff7796b3c2966ae01d3&dn=Deep+Rock+Galactic+Rogue+Core&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Deep Rock Galactic Rogue Core 0.4.142792.0",
+      "uploadDate": "2026-05-20T16:21:17.000Z"
+    },
+    {
+      "fileSize": "1 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:7cfca6fac1205a49173ac870aa919f6a126f758c&dn=Monster+Mop+Up&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Monster Mop Up 1.0.24",
+      "uploadDate": "2026-05-19T12:17:23.000Z"
+    },
+    {
+      "fileSize": "8.3 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:b3dbfd3b03fa201a34697d2e8804c094991abc37&dn=Dollhouse+Of+Dead&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Dollhouse Of Dead Build 11022026",
+      "uploadDate": "2026-05-19T12:04:06.000Z"
+    },
+    {
+      "fileSize": "861.9 MB",
+      "uris": [
+        "magnet:?xt=urn:btih:6d764b747dcfa2447796fd4899ffa146d033b26c&dn=Go-Go+Town!&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Go-Go Town! 0.7.125.24057EA",
+      "uploadDate": "2026-05-19T12:11:42.000Z"
+    },
+    {
+      "fileSize": "367.5 MB",
+      "uris": [
+        "magnet:?xt=urn:btih:b6fe690e95afb4c0b41cd0cd10a9af49364d8b9a&dn=PIT+OF+GOBLIN&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "PIT OF GOBLIN 0.7.13.655213536.0",
+      "uploadDate": "2026-05-19T12:18:41.000Z"
+    },
+    {
+      "fileSize": "148.9 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:bbf258aa8e2d4896976dee1d2297be0b01a85e87&dn=Forza+Horizon+6&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Forza Horizon 6 360.259",
+      "uploadDate": "2026-05-19T11:12:45.000Z"
+    },
+    {
+      "fileSize": "10.7 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:7039c6c333f9f85e514d58023dfef33f3d388af6&dn=Total+War+MEDIEVAL+II+Definitive+Edition&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Total War MEDIEVAL II Definitive Edition 1.52",
+      "uploadDate": "2026-05-18T16:41:45.000Z"
+    },
+    {
+      "fileSize": "9.3 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:de032ab72cd7b607c25b80c8fb7a1c01b3ac5a98&dn=Beyond+Sandbox&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Beyond Sandbox 0.10.4",
+      "uploadDate": "2026-05-18T14:29:50.000Z"
+    },
+    {
+      "fileSize": "5 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:65525a4daaccd6cc42e34c79fb50e3332becbd10&dn=Far+Far+West&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Far Far West 644",
+      "uploadDate": "2026-05-18T16:20:29.000Z"
+    },
+    {
+      "fileSize": "9 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:d447e83a8ec596bdeb123c51b241f1329932dcd1&dn=Nested+Lands&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Nested Lands 0.7.11.1",
+      "uploadDate": "2026-05-18T16:29:06.000Z"
+    },
+    {
+      "fileSize": "637.1 MB",
+      "uris": [
+        "magnet:?xt=urn:btih:fd1e1230450ff06338256307c00dabe49418987c&dn=Dark+Quest+4&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Dark Quest 4 Build 14012026",
+      "uploadDate": "2026-05-18T16:19:45.000Z"
+    },
+    {
+      "fileSize": "146.5 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:d5ee1966417f34186c83422049299a160f6fafcf&dn=Forza+Horizon+6&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Forza Horizon 6 354.221",
+      "uploadDate": "2026-05-14T22:03:32.000Z"
+    },
+    {
+      "fileSize": "1.3 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:030fdebe672b11d7f4aa6843b47330e6826a249b&dn=No+Time&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "No Time Build 12052026",
+      "uploadDate": "2026-05-14T22:50:52.000Z"
+    },
+    {
+      "fileSize": "3.8 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:08f7497a85c3d06ae9791707221e5b747f9c5390&dn=Outworld+Station&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Outworld Station 1.0.0.2",
+      "uploadDate": "2026-05-14T22:51:30.000Z"
+    },
+    {
+      "fileSize": "2.3 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:dcacda90221a47d5901b7db9f8f2ec04f9f34a44&dn=Plains+Of+Pain&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Plains Of Pain 0.8.8.12.0",
+      "uploadDate": "2026-05-14T22:54:43.000Z"
+    },
+    {
+      "fileSize": "13.4 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:5740ea588ba4e6b2da4a1d9d3d4b72ef7ae60900&dn=Subnautica+2&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Subnautica 2 0.10.0.113109",
+      "uploadDate": "2026-05-14T12:47:50.000Z"
+    },
+    {
+      "fileSize": "1.2 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:a90ed96c16e6de52387dcdd7dd9e6b9b02b474e8&dn=Don't+Panic!+It+is+Just+a+Turbulence&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Don't Panic! It is Just a Turbulence 0.528",
+      "uploadDate": "2026-05-13T14:05:12.000Z"
+    },
+    {
+      "fileSize": "12.9 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:36db11aeb2f2381b6987b416d086ed19af0eeb13&dn=Baby+Steps&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Baby Steps 7.1",
+      "uploadDate": "2026-05-13T14:00:31.000Z"
+    },
+    {
+      "fileSize": "9.1 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:1b02c7765a1104e5ecf67ebe19bd66e54b6d4370&dn=Invincible+VS&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Invincible VS 0.9.9108.0",
+      "uploadDate": "2026-05-13T14:16:19.000Z"
+    },
+    {
+      "fileSize": "176.5 MB",
+      "uris": [
+        "magnet:?xt=urn:btih:8495befe6701f29d1ed35723c3b4936739338f6d&dn=Flock+Around&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Flock Around 1.0.28",
+      "uploadDate": "2026-05-12T14:45:23.000Z"
+    },
+    {
+      "fileSize": "321.1 MB",
+      "uris": [
+        "magnet:?xt=urn:btih:e952cfa5db35a7a7db7a6e73e3628cbceee2e674&dn=Spider+Roulette&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Spider Roulette Build 15042026",
+      "uploadDate": "2026-05-12T14:47:07.000Z"
+    },
+    {
+      "fileSize": "6.1 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:78352a07046584ef9786413a35c89136277835cb&dn=Outbound&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Outbound 1.0.2.797",
+      "uploadDate": "2026-05-11T17:18:29.000Z"
+    },
+    {
+      "fileSize": "1.8 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:7561c6dcd2d8d463d3e2275c8db59271095ad5c7&dn=Golf+Gambit&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Golf Gambit 1.0.5-EA",
+      "uploadDate": "2026-05-11T17:17:54.000Z"
+    },
+    {
+      "fileSize": "322.5 MB",
+      "uris": [
+        "magnet:?xt=urn:btih:fca1b74b5ee90a8573d1c995bd16ce87a2f0532c&dn=Sledding+Game&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Sledding Game Build 30042026",
+      "uploadDate": "2026-05-11T13:09:20.000Z"
+    },
+    {
+      "fileSize": "3.3 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:0e3492dce2d48acf08f92ebe91a77187a05dec5a&dn=Garfield+Kart+2+-+All+You+Can+Drift&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Garfield Kart 2 - All You Can Drift Build 22012026",
+      "uploadDate": "2026-05-11T13:07:10.000Z"
+    },
+    {
+      "fileSize": "3.3 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:61c614cd39832934e2334804dd99d4d6677e0a7d&dn=Task+Time&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Task Time 0.1.5.01",
+      "uploadDate": "2026-05-11T13:09:34.000Z"
+    },
+    {
+      "fileSize": "1.7 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:65538cbb821c4874d539b8b5a9ecc27523f20653&dn=Aliens+Vs.+Ghosts&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Aliens Vs. Ghosts 1.1.2",
+      "uploadDate": "2026-05-11T12:44:45.000Z"
+    },
+    {
+      "fileSize": "17.2 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:530dbb7380d9e00300fcc0bc0578ef6757c6c4f9&dn=NO+BACKUP&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "NO BACKUP 0.7.9.0",
+      "uploadDate": "2026-05-11T12:46:47.000Z"
+    },
+    {
+      "fileSize": "811.3 MB",
+      "uris": [
+        "magnet:?xt=urn:btih:9c1b4430d25f953c8953811271ffccd25b7f6590&dn=Gamble+With+Your+Friends&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Gamble With Your Friends 1.0.4",
+      "uploadDate": "2026-05-11T12:46:24.000Z"
+    },
+    {
+      "fileSize": "5 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:a0cf9a687b590f929bc740afb9fa5c2261396fc3&dn=Over+The+Top+WWI&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Over The Top WWI Build 06052026",
+      "uploadDate": "2026-05-07T11:55:57.000Z"
+    },
+    {
+      "fileSize": "1.6 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:89bd90180c868c1d049c18f8f79e9ceda7e92f84&dn=Rosalie&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Rosalie Build 26042026",
+      "uploadDate": "2026-05-07T11:58:21.000Z"
+    },
+    {
+      "fileSize": "51.3 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:c7826f4fb7865454602722bbb4c1d70219c0780a&dn=SnowRunner&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "SnowRunner 1.0.151.0",
+      "uploadDate": "2026-05-06T15:44:53.000Z"
+    },
+    {
+      "fileSize": "31 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:9cd1c0fd391b21f45969cd67ae2fcced9846c147&dn=RoadCraft&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "RoadCraft 1.9.63.0",
+      "uploadDate": "2026-05-06T15:26:02.000Z"
+    },
+    {
+      "fileSize": "28.6 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:7056dcb456862dbfc8ec9f205228e9edf290cbf7&dn=Expeditions+A+MudRunner+Game&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Expeditions A MudRunner Game 1.27.0.0",
+      "uploadDate": "2026-05-06T15:11:55.000Z"
+    },
+    {
+      "fileSize": "47.2 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:1c55746fedd6ee77f55e98df89364881af4cf810&dn=Bus+Bound&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Bus Bound Build 29042026",
+      "uploadDate": "2026-05-06T14:55:53.000Z"
+    },
+    {
+      "fileSize": "96.8 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:c5e5436fb260579725c69fa7fe0c3482e666d882&dn=Cricket+26+The+Official+Game+of+the+Ashes&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Cricket 26 The Official Game of the Ashes 1.0.2807",
+      "uploadDate": "2026-05-04T10:21:57.000Z"
+    },
+    {
+      "fileSize": "9.6 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:5b51cf814c1d505e246f5059caaee25c3c062e20&dn=Windrose&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Windrose 0.10.0.0.5.120.073042fb",
+      "uploadDate": "2026-05-06T15:57:22.000Z"
+    },
+    {
+      "fileSize": "4.9 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:3f336bd7a51d68c07be5bc7c360f15eee38d8742&dn=Far+Far+West&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Far Far West 601",
+      "uploadDate": "2026-05-06T15:23:46.000Z"
+    },
+    {
+      "fileSize": "28.6 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:823ec80150eb9190fd919b174877efdfb6cc96f6&dn=MotoGP+26&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "MotoGP 26 Build 23042026",
+      "uploadDate": "2026-05-05T16:08:28.000Z"
+    },
+    {
+      "fileSize": "9.1 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:e62453343a8a728320d98a4647a26534344f70af&dn=Invincible+VS&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Invincible VS 0.9.7146.0",
+      "uploadDate": "2026-05-04T12:57:54.000Z"
+    },
+    {
+      "fileSize": "813.1 MB",
+      "uris": [
+        "magnet:?xt=urn:btih:2d0369b1c1a72458ef6e186b147b8b65e6b5a388&dn=Gamble+With+Your+Friends&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Gamble With Your Friends 1.0.4",
+      "uploadDate": "2026-05-04T10:28:41.000Z"
+    },
+    {
+      "fileSize": "9.3 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:80672c4ff42d64954dbe16b5f7fee6f6bf3a0f59&dn=Beyond+Sandbox&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Beyond Sandbox 0.10.4",
+      "uploadDate": "2026-04-30T22:07:11.000Z"
+    },
+    {
+      "fileSize": "9.6 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:893e73fd62b70b286d1e4123acf629fe162894c7&dn=Windrose&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Windrose 0.10.0.4.268.9d2ca277",
+      "uploadDate": "2026-04-30T22:08:38.000Z"
+    },
+    {
+      "fileSize": "2.6 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:367612eb8639c70990c7e0653d9f090068f3fcaf&dn=Heroes+of+Might+and+Magic+Olden+Era&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Heroes of Might and Magic Olden Era 0.80.02",
+      "uploadDate": "2026-04-30T14:09:11.000Z"
+    },
+    {
+      "fileSize": "2.3 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:e2794050ca74edb2fad874af69a1f22f031f9b70&dn=Rest+Area+Simulator&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Rest Area Simulator Build 25042026",
+      "uploadDate": "2026-04-29T11:04:09.000Z"
+    },
+    {
+      "fileSize": "4.9 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:ae1d532e2e3d26b505469f3d737dc84f4f4f93f6&dn=Far+Far+West&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Far Far West 572",
+      "uploadDate": "2026-04-28T13:58:38.000Z"
+    },
+    {
+      "fileSize": "3.2 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:d286d811a2d2cf3cd8d52d0944fb7b89eb45d389&dn=Dangerous+Mountain+Together&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Dangerous Mountain Together Build 17042026",
+      "uploadDate": "2026-04-28T13:58:23.000Z"
+    },
+    {
+      "fileSize": "18.1 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:fa6a127cfd887747f82bdb38221d57133bbd18c5&dn=Plants+vs+Zombies+Battle+for+Neighborville&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Plants vs Zombies Battle for Neighborville 1.0.0.0",
+      "uploadDate": "2026-04-27T12:44:01.000Z"
+    },
+    {
+      "fileSize": "1.5 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:9933da2db64cab12f6f029c88ed579552a755f9f&dn=SimplePlanes+2&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "SimplePlanes 2 0.7.0.0",
+      "uploadDate": "2026-04-27T12:48:37.000Z"
+    },
+    {
+      "fileSize": "7.6 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:cfadfa96e22c7e86911b24c97d6b9bdd0518a89c&dn=Plants+vs+Zombies+Garden+Warfare&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Plants vs Zombies Garden Warfare 1.0.3.0",
+      "uploadDate": "2026-04-27T12:45:48.000Z"
+    },
+    {
+      "fileSize": "22.9 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:10c33661f68c19cef502ca362b818483eaa81485&dn=Plants+vs+Zombies+Garden+Warfare+2&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Plants vs Zombies Garden Warfare 2 1.0.12.0",
+      "uploadDate": "2026-04-27T12:46:36.000Z"
+    },
+    {
+      "fileSize": "3.9 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:e3d7470aac5b6ff4e0f1394fe3d8318234eb2e99&dn=Together+Moon+Escape&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Together Moon Escape 1.1",
+      "uploadDate": "2026-04-24T13:30:15.000Z"
+    },
+    {
+      "fileSize": "287 MB",
+      "uris": [
+        "magnet:?xt=urn:btih:cc5ee245e6c23dd0644fac1a6f579294a3778531&dn=Pratfall&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Pratfall 1.0.0.R2502",
+      "uploadDate": "2026-04-23T10:25:04.000Z"
+    },
+    {
+      "fileSize": "8.4 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:a8a1fcff757439079dc2a245cd23571048d7f4c9&dn=Cooking+Simulator+2+Better+Together&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Cooking Simulator 2 Better Together 1.11.8838be4",
+      "uploadDate": "2026-04-23T10:22:17.000Z"
+    },
+    {
+      "fileSize": "903.4 MB",
+      "uris": [
+        "magnet:?xt=urn:btih:bbcdd3b282bb1ff273e64699d9430f7b20f53e43&dn=Mall+Rivals&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Mall Rivals 0.2.119",
+      "uploadDate": "2026-04-22T13:40:45.000Z"
+    },
+    {
+      "fileSize": "6 GB",
+      "uris": [
+        "magnet:?xt=urn:btih:57a9f315a687b33ee135e608016d3719bdfb804a&dn=Last+Man+Sitting&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Last Man Sitting Build 13042026",
+      "uploadDate": "2026-04-22T13:41:38.000Z"
+    },
+    {
+      "fileSize": "780.3 MB",
+      "uris": [
+        "magnet:?xt=urn:btih:02c2a78818ef5737a0b7ce453f2a73359c9e19af&dn=Knights+End&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
+      ],
+      "title": "Knights End Build 18042026",
+      "uploadDate": "2026-04-22T13:41:22.000Z"
+    },
+    {
       "fileSize": "733.1 MB",
       "uris": [
         "magnet:?xt=urn:btih:393ae46916d0e49f82a545faf762731b4a2ab68a&dn=Roadside+Research&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337"
