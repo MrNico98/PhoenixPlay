@@ -361,7 +361,7 @@
   },
   {
     "title": "Ale & Tale Tavern 1.0.2",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/0d27ce757c9b438c15428089aed7b404.png",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/d68472f150162a23a91288c6b4ff7261.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/caa27c304cba2dd266154e122f9e6f42.jpg",
     "icon_image": "https://cdn2.steamgriddb.com/icon/00f78cde29bb8610bbff01c5bd6c47b3.ico"
   },
@@ -703,7 +703,7 @@
   },
   {
     "title": "Automobilista 2 1.3.2.0",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/6c10dd9d9883013d8b7573ae5431099d.jpg",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/934565059cf0f53d1c395a1035617440.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/ea265d226af9447a761d0c3caafb72d6.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/0e71113b51de89529d0c6a52286f2d7c.ico"
   },
@@ -1125,13 +1125,13 @@
     "title": "Bloons TD 6 38.3.6901",
     "hero_image": "https://cdn2.steamgriddb.com/hero/01b7ebbc8e1990be2acfee93902b2675.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/cfbdd53427adac998e0dd01f9c000b4d.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/cb4a597d895f0b34add0254c67f9c9ae.png"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/85c1a6f72607d18651f7015df0c9a07c.ico"
   },
   {
     "title": "Bloons TD 6 44.1.8303",
     "hero_image": "https://cdn2.steamgriddb.com/hero/01b7ebbc8e1990be2acfee93902b2675.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/cfbdd53427adac998e0dd01f9c000b4d.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/cb4a597d895f0b34add0254c67f9c9ae.png"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/85c1a6f72607d18651f7015df0c9a07c.ico"
   },
   {
     "title": "Blur Build 05062014",
@@ -1413,7 +1413,7 @@
     "title": "Call To Arms 1.228.0",
     "hero_image": "https://cdn2.steamgriddb.com/hero/2e5e60c350c1bacba8d2b44e37029ed2.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/8d54258a9c9905bdbeff5064698c0670.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/08f835f4cac61f448a8c001529a36510.ico"
+    "icon_image": null
   },
   {
     "title": "Call to Arms Gates of Hell Ostfront 1.041.0",
@@ -3475,7 +3475,7 @@
   },
   {
     "title": "Escape the Backrooms Build 28012024",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/a23f4ecc97aae620242779f62f22bed5.png",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/128d5eb8d8a614e90f1faf4dc5b76e96.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/c252a7ef37aeb84a8a9679f19b413f22.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/6daab15a4f57549b7f236d7f0cfca3c8.png"
   },
@@ -5005,7 +5005,7 @@
   },
   {
     "title": "Hammerwatch II Build 18082023",
-    "hero_image": null,
+    "hero_image": "https://cdn2.steamgriddb.com/hero/2dbc9026ccad34bb6b62533ac5416cb6.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/5a8a3b80b7eb397b7561dde148df57e1.jpg",
     "icon_image": "https://cdn2.steamgriddb.com/icon/100a2a14a7f2903d29db0dc435c0cfe8.png"
   },
@@ -5179,7 +5179,7 @@
   },
   {
     "title": "Heroes of Hammerwatch II Build 16012025",
-    "hero_image": null,
+    "hero_image": "https://cdn2.steamgriddb.com/hero/2dbc9026ccad34bb6b62533ac5416cb6.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/5a8a3b80b7eb397b7561dde148df57e1.jpg",
     "icon_image": "https://cdn2.steamgriddb.com/icon/100a2a14a7f2903d29db0dc435c0cfe8.png"
   },
@@ -5433,7 +5433,7 @@
     "title": "Hytale Build 17012026",
     "hero_image": "https://cdn2.steamgriddb.com/hero/3d84ab65edc34e0bcebab4081714c496.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/24d5d9de8fd0f989a622c597d4bb036b.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/f9189ab8a3d3920fa3cee4bc216d09a6.ico"
+    "icon_image": null
   },
   {
     "title": "Hytale Build 18022026",
@@ -6134,14 +6134,14 @@
   {
     "title": "LEGO Brawls 5.0.0",
     "hero_image": "https://cdn2.steamgriddb.com/hero/c6c979cec211a74f59c87ec75c74f197.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/6a2a73e797c470253dba3c8af40663f1.jpg",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/26e5f52fb8c6201ef7f2850042b6b72e.png"
+    "grid_image": "https://cdn2.steamgriddb.com/grid/8faf68b9c1d61dff456c50c5739a9139.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/721f2dce343b24683800fa419d384340.ico"
   },
   {
     "title": "LEGO City Undercover Build 26052017",
     "hero_image": "https://cdn2.steamgriddb.com/hero/38685ed8d75379b8ec47e42ff2618c32.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/efe0ef8a495f5639a1d2ccc80684f5d8.jpg",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/9cea886b9f44a3c2df1163730ab64994.ico"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/b65fa8601325c3019c47c8fc1383104a.ico"
   },
   {
     "title": "LEGO DC Super-Villains Build 10052019",
@@ -6152,7 +6152,7 @@
   {
     "title": "Lego Harry Potter Years 1-4 Build 01052014",
     "hero_image": "https://cdn2.steamgriddb.com/hero/b56ee293ece31f0c23a4fa6aa712b536.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/3e650b25726078fe6024f0c1aad82fdf.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/60a399eedc5ad40dbf3cd69cf3c178a6.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/ec5decca5ed3d6b8079e2e7e7bacc9f2.ico"
   },
   {
@@ -6163,7 +6163,7 @@
   },
   {
     "title": "LEGO Horizon Adventures Build 04112024",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/f70d697e7cc68667d8b64cddc716a9e0.png",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/9ab97c80c75ba6ace089ee8013b753af.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/e70c9b3302f67475373be230d336ecb4.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/91507cfc0a1af20a18712d572ae8b6e9.ico"
   },
@@ -6171,7 +6171,7 @@
     "title": "LEGO Indiana Jones The Original Adventures Build 23102011",
     "hero_image": "https://cdn2.steamgriddb.com/hero/320e4df890a1a620573db8170f39a093.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/1d344a510f97b0a1c77ef8a26fe5b1c7.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/84ca205fe6bc691c41c3bfe5a2820a15.png"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/d0009f47491adfab36c201e76a9d3b8e.ico"
   },
   {
     "title": "LEGO Jurassic World Build 23072015",
@@ -6201,25 +6201,25 @@
     "title": "LEGO Star Wars The Skywalker Saga Build 06042022",
     "hero_image": "https://cdn2.steamgriddb.com/hero/cd1d1e4b8a0463102b60a63a1a8b67fc.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/5a4048fbf4eb0fe64801b2bf0d6f94e7.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/b156769842d5235767f769b5c8617399.ico"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/53ad88c6e16e4fddb4f3c5df6f9cc6aa.ico"
   },
   {
     "title": "LEGO The Hobbit Build 14102014",
     "hero_image": "https://cdn2.steamgriddb.com/hero/043a1c71577f6249b071679bce73d008.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/a765bbc741fef6f3f22bd119224796dd.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/e8eca216fb239da0b4f483fae6cb9909.ico"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/0e9ea397080a1d15f7c7017548b3c1fe.ico"
   },
   {
     "title": "LEGO The Incredibles 1.0.0",
     "hero_image": "https://cdn2.steamgriddb.com/hero/ab9989d9b7160b800aaa1251b561c14d.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/9b729b11226be3cdc002900197940f8e.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/b70652de9dffc827c434fb750d80909c.ico"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/62e420fb614abdb6d560eaf984ee74cb.ico"
   },
   {
     "title": "LEGO Worlds Build 09072019",
     "hero_image": "https://cdn2.steamgriddb.com/hero/660698e3c17b019e73778f87ba483355.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/c4f0c3cb68a19172019d9769aba64501.jpg",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/654f44bbdf1894d0d1ab934282e9444e.png"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/512bac1f178f22da9d91e2d381392120.ico"
   },
   {
     "title": "Lemnis Gate 1.3.26342",
@@ -7004,7 +7004,7 @@
   {
     "title": "Monster Prom 2 Monster Camp Build 30082021",
     "hero_image": "https://cdn2.steamgriddb.com/hero/4dfd297062ac8f10c47d6de2c6adbe9f.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/89071135eaae1c422b1eb82a29193dc5.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/7933723a06047682a733b159c7932e1d.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/f9018bbd4704cc171da8b3c8c7d65e00.png"
   },
   {
@@ -9723,7 +9723,7 @@
     "title": "Satisfactory Build 28112024",
     "hero_image": "https://cdn2.steamgriddb.com/hero/b6d6d70e13319c5b232f3b1018b18376.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/960022abd82d76dab840c7943826fd3a.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/6a6e71cab0825a7575ebf6c3112dbfac.ico"
+    "icon_image": null
   },
   {
     "title": "Save Your Nuts 1.5",
@@ -11534,7 +11534,7 @@
   {
     "title": "The Anomaly Project Build 23012025",
     "hero_image": null,
-    "grid_image": null,
+    "grid_image": "https://cdn2.steamgriddb.com/grid/bc29695b2989edfa53d688205818cb5f.png",
     "icon_image": null
   },
   {
@@ -13268,19 +13268,19 @@
   {
     "title": "Wizard of Legend 2 0.4.21",
     "hero_image": "https://cdn2.steamgriddb.com/hero/310d207e8a620a0a9244d208338e3d05.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/ea96455eb6e9a4cfc12fa99aaf0978b1.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/b963020d5cb78ac5c58745981882ece7.jpg",
     "icon_image": "https://cdn2.steamgriddb.com/icon/89c8d2400e09f970ac2ab0677b7d2b33.png"
   },
   {
     "title": "Wizard of Legend 2 0.6.3",
     "hero_image": "https://cdn2.steamgriddb.com/hero/310d207e8a620a0a9244d208338e3d05.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/ea96455eb6e9a4cfc12fa99aaf0978b1.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/b963020d5cb78ac5c58745981882ece7.jpg",
     "icon_image": "https://cdn2.steamgriddb.com/icon/89c8d2400e09f970ac2ab0677b7d2b33.png"
   },
   {
     "title": "Wizard of Legend 2 1.0.0",
     "hero_image": "https://cdn2.steamgriddb.com/hero/310d207e8a620a0a9244d208338e3d05.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/ea96455eb6e9a4cfc12fa99aaf0978b1.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/b963020d5cb78ac5c58745981882ece7.jpg",
     "icon_image": "https://cdn2.steamgriddb.com/icon/89c8d2400e09f970ac2ab0677b7d2b33.png"
   },
   {
