@@ -769,7 +769,7 @@
   },
   {
     "title": "Backrooms Rec 0.1",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/413f0d03bf8f350d2f369b05a10b71da.jpg",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/34cb5a827fec7e4450275d760a6131a5.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/0a2810d2240e621069ccaa0a3dd1f521.jpg",
     "icon_image": "https://cdn2.steamgriddb.com/icon/ce87bb68a51886f5eeb7f9d3636304c1.png"
   },
@@ -1166,7 +1166,7 @@
   {
     "title": "Bodycam Build 19052025",
     "hero_image": "https://cdn2.steamgriddb.com/hero/1ae43fda4919e9e2836c7bdb1ffa6dca.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/d41232431e9df6e12ac56a25ba833da8.png",
+    "grid_image": null,
     "icon_image": "https://cdn2.steamgriddb.com/icon/bc6d7e4cd2c1f2bba38d19773d2bc1fc.ico"
   },
   {
@@ -1723,9 +1723,9 @@
   },
   {
     "title": "Cloudheim Build 13022026",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/9a0ec9c7fda43fcc8fc8218fd17d7858.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/407390de6e9ddab286d41b01aef0e84e.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/42380e91efe1a72fc7d55b71365c2084.png"
+    "hero_image": null,
+    "grid_image": null,
+    "icon_image": null
   },
   {
     "title": "ClueCluedo Build 25102023",
@@ -2197,7 +2197,7 @@
   },
   {
     "title": "Daemon X Machina Titanic Scion 1.0.3",
-    "hero_image": null,
+    "hero_image": "https://cdn2.steamgriddb.com/hero/bad42009e707961e90f1940f6c7fba51.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/ace856b30da8015a510182cf087b3ac5.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/1fbd02197ce9924616402392d2554987.png"
   },
@@ -2636,7 +2636,7 @@
   {
     "title": "DIRT 5 1.2767.60.0",
     "hero_image": "https://cdn2.steamgriddb.com/hero/3bd14b063dae45004337e350dd7ff469.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/f2cf481d5f6b129864f7ce908974033e.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/6dc75c1c83ae4136f3a2f03e7210c701.jpg",
     "icon_image": "https://cdn2.steamgriddb.com/icon/2eb7ea88b49a296a7169b1aba200da72.ico"
   },
   {
@@ -4029,7 +4029,7 @@
     "title": "FlyKnight 1.0.2b",
     "hero_image": "https://cdn2.steamgriddb.com/hero/1a167de8bba4eb951cbc111830816011.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/9b60b0a0a456b665874cf850e3aecf6c.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/72b7ae19563c496dfabb7431457326e1.png"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/67c83625715b329203194fcca104969c.ico"
   },
   {
     "title": "Folklore Hunter 0.6",
@@ -4322,7 +4322,7 @@
   {
     "title": "Gamble With Your Friends 1.0.4",
     "hero_image": "https://cdn2.steamgriddb.com/hero/2f3cf58114103d5c4a8aa1485385843f.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/cb57ea46a2a058027007e617ea690396.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/4881a62bbd63ed58fab0ff6b0757bf36.jpg",
     "icon_image": "https://cdn2.steamgriddb.com/icon/aca31c6cd871371f17c338bee9417931.ico"
   },
   {
@@ -5930,7 +5930,7 @@
   {
     "title": "KeyWe Build 16092021",
     "hero_image": "https://cdn2.steamgriddb.com/hero/d4d3ddf29ea07527ce96c0839ae4b4c2.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/26e39f6bda099379408e02182914d31f.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/0c4be2c75f2fb14954a83aefffa92ebd.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/7530b57b32d340ff1a860bc4188ce671.ico"
   },
   {
@@ -6817,7 +6817,7 @@
   },
   {
     "title": "Microsoft Flight Simulator 1.38.2.0",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/2dc78e6026928309d3d26dc6dbd0276e.jpg",
+    "hero_image": null,
     "grid_image": "https://cdn2.steamgriddb.com/grid/7b0ff7682796d0b90b1dd565c942dda1.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/0ec0eb979ae9f0e78aa950e332635d90.ico"
   },
@@ -6891,7 +6891,7 @@
     "title": "Mindustry Build 06032021",
     "hero_image": "https://cdn2.steamgriddb.com/hero/f4e3432b305e7e30ce4e6f981f260cce.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/518b0bc6ec175055a4bca965df70d379.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/ea3794d0e74639b6ecc441c07e9ffda8.ico"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/c05225ad3adfb3f4b73a7d7d04d3c2d7.png"
   },
   {
     "title": "Minecraft Dungeons 1.17.0.0",
@@ -7363,7 +7363,7 @@
   },
   {
     "title": "Necesse 0.26.1",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/c3cce164fbff71c8ed728dd03c857d59.jpg",
+    "hero_image": null,
     "grid_image": "https://cdn2.steamgriddb.com/grid/efb6747e5258f579ddad588b5568624f.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/4d912d7f945b3e21e044ac4c92b5de63.ico"
   },
@@ -7928,7 +7928,7 @@
   {
     "title": "Outer Wilds 1.1.15.1018",
     "hero_image": "https://cdn2.steamgriddb.com/hero/1166db2e6b57e62146edee2f05a5c885.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/ff9bc06bf30f5066e1be70b7fe1be7d6.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/eb14cccbec050d8e6b6d21116d5a3dd9.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/0e080857e96278e6dba76ac029faf291.png"
   },
   {
@@ -8191,7 +8191,7 @@
   },
   {
     "title": "PAYDAY The Heist 1.22.0",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/9185f3ec501c674c7c788464a36e7fb3.jpg",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/b24c2746c61a04d2ee059ada217c39a7.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/2863298e1c75172824d2f5aa7517c899.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/781e3fcf18f02501240a8816eb5a08f7.ico"
   },
@@ -9361,7 +9361,7 @@
   },
   {
     "title": "Rock of Ages 2 Build 01022018",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/c589c526cecf1ad5b0afae7d24d97bb3.jpg",
+    "hero_image": null,
     "grid_image": "https://cdn2.steamgriddb.com/grid/44cd8f14e89c775c390d2d282735057a.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/6a54289b29ceb58cb7609cc50e0dc1c8.png"
   },
@@ -9525,7 +9525,7 @@
     "title": "RV There Yet 1.0.14373",
     "hero_image": "https://cdn2.steamgriddb.com/hero/20ca31343ffddbf56ed5e416feae0777.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/9983e09c222e68826865672a7b4f3a26.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/4f9c06bf9590978fe9ee1b803a399a46.ico"
+    "icon_image": null
   },
   {
     "title": "RV There Yet 1.0.14460",
@@ -10057,7 +10057,7 @@
   },
   {
     "title": "Serious Sam Classics Revolution 3381",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/fc1c0e14eb70979caa9294b586fe6099.png",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/2ba9f102905f4102fe5751c7cbe28b9b.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/b5a09da4176948b0e403e40b79b1217e.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/402b101d0a6ddddecf2227b18c03f248.png"
   },
@@ -11006,7 +11006,7 @@
   {
     "title": "Stronghold Warlords 1.10.23933",
     "hero_image": null,
-    "grid_image": "https://cdn2.steamgriddb.com/grid/12e06ecc62001a00de490d0f789a02c4.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/2f56684b135560a0eff324abb9eb51a1.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/7b1fe52274ec74b791a055f839c8ddd4.png"
   },
   {
@@ -11114,7 +11114,7 @@
   {
     "title": "Super Bomberman R 2.2",
     "hero_image": "https://cdn2.steamgriddb.com/hero/366c0196895c9eeaa75992bacac60426.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/0210bc8545fc0c796315722768a2d98b.png",
+    "grid_image": null,
     "icon_image": "https://cdn2.steamgriddb.com/icon/991f2e28c68715b3fdf0c12914499fcb.png"
   },
   {
@@ -11719,9 +11719,9 @@
   },
   {
     "title": "The Headliners 1.0.2",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/3b95c5967881658b18794f05a343e51d.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/be79b3cd59a357674f02ce12d183f956.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/ca6b3a03ff85131141a80501ba7ca23b.png"
+    "hero_image": null,
+    "grid_image": null,
+    "icon_image": null
   },
   {
     "title": "The Headliners 1.2.1",
@@ -13220,25 +13220,25 @@
   {
     "title": "Windrose 0.10.0.0.5.120.073042fb",
     "hero_image": "https://cdn2.steamgriddb.com/hero/180818806099681d013dd12e0c219ea6.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/4a9a4e8935e53d47bf9b3f31f98a1444.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/d2f3af12eeaad701864b9d824df10446.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/18ce748f1a4d231cf6b3a11cbea62a8d.ico"
   },
   {
     "title": "Windrose 0.10.0.1.6.02cb3254",
     "hero_image": "https://cdn2.steamgriddb.com/hero/180818806099681d013dd12e0c219ea6.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/4a9a4e8935e53d47bf9b3f31f98a1444.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/d2f3af12eeaad701864b9d824df10446.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/18ce748f1a4d231cf6b3a11cbea62a8d.ico"
   },
   {
     "title": "Windrose 0.10.0.3.104.256f9653",
     "hero_image": "https://cdn2.steamgriddb.com/hero/180818806099681d013dd12e0c219ea6.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/4a9a4e8935e53d47bf9b3f31f98a1444.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/d2f3af12eeaad701864b9d824df10446.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/18ce748f1a4d231cf6b3a11cbea62a8d.ico"
   },
   {
     "title": "Windrose 0.10.0.4.268.9d2ca277",
     "hero_image": "https://cdn2.steamgriddb.com/hero/180818806099681d013dd12e0c219ea6.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/4a9a4e8935e53d47bf9b3f31f98a1444.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/d2f3af12eeaad701864b9d824df10446.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/18ce748f1a4d231cf6b3a11cbea62a8d.ico"
   },
   {
