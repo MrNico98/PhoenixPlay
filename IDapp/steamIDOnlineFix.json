@@ -3199,7 +3199,7 @@
   },
   {
     "title": "Echo Point Nova 1.1",
-    "hero_image": null,
+    "hero_image": "https://cdn2.steamgriddb.com/hero/94cc5f21f2d808adec62c9a1787a2e06.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/4038da3c3e9560a906eb7d46aa19a151.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/dc1d022fd35bf2bd566c7d1e91ffbdf8.ico"
   },
@@ -6453,7 +6453,7 @@
     "title": "Lords of the Fallen 1.5.115",
     "hero_image": "https://cdn2.steamgriddb.com/hero/dcacff2565700c8f88f59cf4a16f9dfc.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/d429d47203b5890c103f352320d467ff.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/accd5a5480c79baadc2a8cdf8e253dd6.png"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/ff9b65a7297daded3acc13fa16f96999.png"
   },
   {
     "title": "LORT 0.5.2",
@@ -7911,7 +7911,7 @@
     "title": "Outbound 1.0.2.797",
     "hero_image": "https://cdn2.steamgriddb.com/hero/43d16865446db4bef5f6699c8be9ae8f.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/02cdb1bdd99eda7d60bb361a69a8dc65.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/609c34a3f39cd2c6616cf2eeaaa8fb3d.png"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/6cef2fc5b32d2790cf3182caa1b91346.ico"
   },
   {
     "title": "Outbreak Epidemic v5.0",
@@ -8582,7 +8582,7 @@
   {
     "title": "Pratfall 1.0.0.R2502",
     "hero_image": null,
-    "grid_image": null,
+    "grid_image": "https://cdn2.steamgriddb.com/grid/11a82adcd836a563c7df38236c862d06.jpg",
     "icon_image": null
   },
   {
@@ -8696,7 +8696,7 @@
   {
     "title": "Project Zomboid 41.78.16",
     "hero_image": "https://cdn2.steamgriddb.com/hero/c9afbbba3267b6ac7218283ecdda546c.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/cdfea0d249d7cf72ca4109e24d49ac82.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/47b3b470c823be1fe974763bc20d0a31.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/237c97e668d135feb5992e9f844b107b.ico"
   },
   {
@@ -12140,7 +12140,7 @@
   {
     "title": "Titan Quest Anniversary Edition 2.10.19520",
     "hero_image": "https://cdn2.steamgriddb.com/hero/e6bd786fa3fd7aa8113704422fe4c9c2.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/a2dbd487d350f43e7595cd4750f3a513.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/bcecb6401b84a65e6b8759b6d4274338.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/f7664060cc52bc6f3d620bcedc94a4b6.png"
   },
   {
@@ -12739,9 +12739,9 @@
   },
   {
     "title": "Victoria 3 1.5.12",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/40947268c085716bd36a68d080755d7f.png",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/e1c0c8f753132adf0dc05e0c66b909aa.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/330ae7397fd8295a6edb81d70e5400a4.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/f0413389b899baa7224d3b3343160f5f.png"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/2590cd9217f744fbdeab14462ddd6e1e.ico"
   },
   {
     "title": "Vikings Wolves of Midgard 2.1",
@@ -12753,7 +12753,7 @@
     "title": "Virtua Fighter 5 R.E.V.O Build 04022025",
     "hero_image": "https://cdn2.steamgriddb.com/hero/3a22c3433330648ec2a8b5e80d9fc2e5.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/328cb758d6312255ddf3bf0c74b5b4fd.png",
-    "icon_image": null
+    "icon_image": "https://cdn2.steamgriddb.com/icon/7c4717b82d85e553dafc1c2d1c09268d.png"
   },
   {
     "title": "Viscera Cleanup Detail 1.145",
