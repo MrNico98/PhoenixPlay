@@ -243,7 +243,7 @@
     "title": "[ECHOSTASIS]",
     "hero_image": "https://cdn2.steamgriddb.com/hero/f36088fe68e013f8991a041702fd40e2.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/5fd34cd756fd3e12874eb181a30692fd.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/f41817961bd183e5bd5dc1c2f06cc2ec.ico"
+    "icon_image": null
   },
   {
     "title": "[REC] Paroxysm + Windows 7 Fix",
@@ -1346,7 +1346,7 @@
   {
     "title": "Aircraft Carrier Survival (v1.7.3 + 2 DLCs, MULTi8) [FitGirl Repack]",
     "hero_image": "https://cdn2.steamgriddb.com/hero/6edad03b830971e99c281faabdad68b1.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/717860cecbaf7c20b2c571acbf0038e0.png",
+    "grid_image": null,
     "icon_image": null
   },
   {
@@ -2420,7 +2420,7 @@
   {
     "title": "Architect Life: A House Design Simulator – Supporter Edition + 3 DLCs",
     "hero_image": null,
-    "grid_image": "https://cdn2.steamgriddb.com/grid/7b02fdd1c34ddd423c47d07682567e86.jpg",
+    "grid_image": null,
     "icon_image": "https://cdn2.steamgriddb.com/icon/8cdc9e294680a5a85de95c783816974e.ico"
   },
   {
@@ -2589,7 +2589,7 @@
     "title": "Arranger: A Role-Puzzling Adventure – v1.1.13 + Bonus Soundtrack",
     "hero_image": "https://cdn2.steamgriddb.com/hero/62f88e8b8574b10c37301a7e12096403.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/3474c93c754a2c6262bf51ac44fd2e73.png",
-    "icon_image": null
+    "icon_image": "https://cdn2.steamgriddb.com/icon/ba878928aa59f900e656eb4b0d308f43.ico"
   },
   {
     "title": "Arsene Lupin: Once a Thief",
@@ -3453,13 +3453,13 @@
     "title": "Avowed: Premium Edition – v1.2.5.0 + 2 DLCs/Bonuses",
     "hero_image": "https://cdn2.steamgriddb.com/hero/f19654628f9f5081d969f145932c9a1c.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/752cc8d43ec503f5a3d3c5a4cdee093f.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/ba84ce8066868bf670e7e22ffc3b9b86.ico"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/1a1a4a67edcd2cf0f208661de0afd901.ico"
   },
   {
     "title": "Avowed: Premium Edition – v2.0.0.0 + 3 DLCs/Bonuses",
     "hero_image": "https://cdn2.steamgriddb.com/hero/f19654628f9f5081d969f145932c9a1c.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/752cc8d43ec503f5a3d3c5a4cdee093f.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/ba84ce8066868bf670e7e22ffc3b9b86.ico"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/1a1a4a67edcd2cf0f208661de0afd901.ico"
   },
   {
     "title": "AWAKEN: Astral Blade – Deluxe Edition – v202410222004 + 3 DLCs/Bonuses",
@@ -4058,7 +4058,7 @@
   {
     "title": "Battlezone: Gold Edition – v1.08 + Multiplayer",
     "hero_image": null,
-    "grid_image": null,
+    "grid_image": "https://cdn2.steamgriddb.com/grid/d90a229dfa7b20c986c2bae5841330af.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/3a10619f95f9ea7535353dece3ac5718.png"
   },
   {
@@ -5473,9 +5473,9 @@
   },
   {
     "title": "Bright Memory: Infinite - Ultimate Edition (Build 10325320 + 9 DLCs + Bonus Content, MULTi11) [FitGirl Repack, Selective Download - from 6.2 GB]",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/588fad4e41a1544c03e7d5625c37cbf0.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/29671d8b9671aabac5a440cb95eb059f.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/f87ce61286012c89c54a93e61a88e761.png"
+    "hero_image": null,
+    "grid_image": null,
+    "icon_image": null
   },
   {
     "title": "Bright Memory: Infinite - Ultimate Edition (Build 12410962 + 9 DLCs + Bonus Content, MULTi11) [FitGirl Repack, Selective Download - from 6.2 GB]",
@@ -8395,7 +8395,7 @@
   },
   {
     "title": "Crime Scene Cleaner – v2.0.1G + Bonus OST",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/9e4813649219fa1edd9794620143edcc.jpg",
+    "hero_image": null,
     "grid_image": "https://cdn2.steamgriddb.com/grid/a7e22a52c3fc4b69d6d19afbdaabd200.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/eaab7b2c86e89c42046edab9d41f6ad1.ico"
   },
@@ -8499,7 +8499,7 @@
     "title": "Crow Country (MULTi5) [FitGirl Repack]",
     "hero_image": "https://cdn2.steamgriddb.com/hero/a51e949f1dcc889334caa4ae285dffb8.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/703e0cc4dbbe02a559b10c9376cf7033.jpg",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/924353816fd4786d728c9e21d91681e5.png"
+    "icon_image": null
   },
   {
     "title": "Crow Country – Build 18416687 + Bonus OST",
@@ -8833,7 +8833,7 @@
   },
   {
     "title": "Curious Expedition 2: Deluxe Edition – v3.3.1.r.r1844 + 3 DLCs",
-    "hero_image": null,
+    "hero_image": "https://cdn2.steamgriddb.com/hero/b47f8b6b7a464c9c9cc74478f47c9218.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/9d28226cd3e58e1d8f4b5ba32172a543.png",
     "icon_image": null
   },
@@ -9740,7 +9740,7 @@
   {
     "title": "Dead Space 2: Collector’s Edition – v1.1 + All DLCs and Conduit Rooms Unlocker",
     "hero_image": "https://cdn2.steamgriddb.com/hero/24e01830d213d75deb99c22b9cd91ddd.jpg",
-    "grid_image": null,
+    "grid_image": "https://cdn2.steamgriddb.com/grid/f5d589ab486178e83c95283826899b5f.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/c2c2a04512b35d13102459f8784f1a2d.png"
   },
   {
@@ -11354,7 +11354,7 @@
   {
     "title": "Doraemon: Story of Seasons",
     "hero_image": "https://cdn2.steamgriddb.com/hero/b164250f03b08804a9697111ba542f21.jpg",
-    "grid_image": null,
+    "grid_image": "https://cdn2.steamgriddb.com/grid/bda7069a6ac3481b27c9986c9bc51e49.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/d710c019bc0db2d7334b7fbfcdb5e171.png"
   },
   {
@@ -11552,7 +11552,7 @@
   {
     "title": "DRAGON QUEST MONSTERS: The Dark Prince – v1.0.1 (Denuvoless)",
     "hero_image": "https://cdn2.steamgriddb.com/hero/b2b19a06070c7ca2726ef5909054d54c.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/62f51bced5a508ba823060d40c945fdc.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/c5621010758ac03b63ff0c102ec85f9b.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/2283b01963b73b474a937ed81dd5b89b.png"
   },
   {
@@ -11588,7 +11588,7 @@
   {
     "title": "Dragon Quest XI: Echoes of an Elusive Age – Digital Edition of Light + CrackFix",
     "hero_image": "https://cdn2.steamgriddb.com/hero/593906af0d138e69f49d251d3e7cbed0.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/b75b7d6f924572186164822f1180ab1d.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/7e4e3277267d94013911b1dd05cd161b.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/3799d6254b1ac93044fca94e19b89e9c.ico"
   },
   {
@@ -11901,7 +11901,7 @@
     "title": "Drova: Forsaken Kin – v1.0.1",
     "hero_image": "https://cdn2.steamgriddb.com/hero/ca090df1e4ad192666ee1fd1510d7fae.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/7b17d33d14735732e5b22083cbec52e5.png",
-    "icon_image": null
+    "icon_image": "https://cdn2.steamgriddb.com/icon/ecc09a0ac82c6e891c70270215c9eb2e.png"
   },
   {
     "title": "Drox Operative 2 [FitGirl Repack]",
@@ -12465,7 +12465,7 @@
     "title": "EARTH DEFENSE FORCE 6 + 22 DLCs + CrackFix",
     "hero_image": "https://cdn2.steamgriddb.com/hero/72b40d987a6cc10047bec9c441e7b2e0.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/bde7bf3f7174301f82671b56c1b2df1b.jpg",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/53811ee1ad9591912755977bae449f58.png"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/eee3cae23cf4e320f218956e94c51417.ico"
   },
   {
     "title": "Earth Defense Force: Iron Rain + 52 DLCs + Multiplayer",
@@ -12542,7 +12542,7 @@
   {
     "title": "Easy Red 2 (v1.1.7c + Stalingrad DLC, MULTi14) [FitGirl Repack]",
     "hero_image": "https://cdn2.steamgriddb.com/hero/8928fa6c3aa6c065f75fa1e8b965057c.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/e8f98fc1ad8cb283a6534b4b488e4bee.jpg",
+    "grid_image": null,
     "icon_image": "https://cdn2.steamgriddb.com/icon/43bf67f752b620ea7bcaafa1a4e8ec0d.png"
   },
   {
@@ -13855,9 +13855,9 @@
   },
   {
     "title": "Expeditions: Rome (v1.1.21.58239 + Bonus OST, MULTi8) [FitGirl Repack, Selective Download - from 16.8 GB]",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/42291a9397f8d34f807bb85ed28522b8.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/3539e1ba0c321976a07036309d24e264.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/f320924d8b6d15e190ed513cca7e715e.png"
+    "hero_image": null,
+    "grid_image": null,
+    "icon_image": null
   },
   {
     "title": "Expeditions: Rome (v1.4.0.84.62236 + Death or Glory DLC + Bonus OST, MULTi8) [FitGirl Repack, Selective Download - from 17.5 GB]",
@@ -14575,9 +14575,9 @@
   },
   {
     "title": "Fe (MULTi6) [FeGirl Repack]",
-    "hero_image": null,
-    "grid_image": null,
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/hero/e7a493b9b2145a9a61cbd4a62c12b171.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/bbafe3f11233ebe5cc35a50d4f65ff7b.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/32f5fe21a017d3ea7d846492c57e98e3.png"
   },
   {
     "title": "Fear Academy",
@@ -14731,7 +14731,7 @@
   },
   {
     "title": "FIFA 18 + Update 2",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/42819db6a1110a53719d796c443ddffa.jpg",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/5ff73197b9afc700388de8840b041afb.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/49cf29ace37f49be10bfc6d26498d406.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/bb62ffecf68202ef17726ed2b1f3fb4f.png"
   },
@@ -17408,7 +17408,7 @@
   {
     "title": "Great God Grove: Divine Edition, v2024.11.25 01 + Bonus Content",
     "hero_image": null,
-    "grid_image": "https://cdn2.steamgriddb.com/grid/03e43b30bdb3b21333d33b10fa559910.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/58529499988c0634c885e1dd0573f53c.jpg",
     "icon_image": null
   },
   {
@@ -18026,7 +18026,7 @@
   {
     "title": "Hammerting (v1.0.12.0 + Multiplayer, MULTi10) [FitGirl Repack]",
     "hero_image": "https://cdn2.steamgriddb.com/hero/8ebb689de7dd8b99aabba38e2990bf0d.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/9002293cac6542a5e888e8080c80cc84.png",
+    "grid_image": null,
     "icon_image": "https://cdn2.steamgriddb.com/icon/a86c98d2f02850192f0b3d8f866cf157.png"
   },
   {
@@ -18099,7 +18099,7 @@
     "title": "Hard West 2 (v1.0.0.0.4021 + 2 DLCs, MULTi9) [FitGirl Repack, Selective Download - from 10.5 GB]",
     "hero_image": "https://cdn2.steamgriddb.com/hero/1047d6ee54ba2aa72969538a69873129.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/7939d3c480ebb5dc7255f2ac27600ce4.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/95c44538a1f203acb21fcbf0d768b1c6.ico"
+    "icon_image": null
   },
   {
     "title": "HARDCORE MECHA: Fighter's Edition (+ 7 DLCs, MULTi7) [FitGirl Repack]",
@@ -19262,7 +19262,7 @@
   {
     "title": "Hot Wheels Unleashed (+ 4 DLCs, MULTi14) [FitGirl Repack]",
     "hero_image": "https://cdn2.steamgriddb.com/hero/4863492250efb997afd521bc8bebb1ec.png",
-    "grid_image": null,
+    "grid_image": "https://cdn2.steamgriddb.com/grid/2dfb5f187120b3db4f0ad2aed22fd2e9.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/e16851c2e51d737d0f6a3b1529b93b26.png"
   },
   {
@@ -21056,19 +21056,19 @@
   {
     "title": "Jujutsu Kaisen: Cursed Clash - Ultimate Edition (v1.0.1 + 3 DLCs/Bonuses + Windows 7 Fix, MULTi11) [FitGirl Repack, Selective Download - from 6.3 GB]",
     "hero_image": "https://cdn2.steamgriddb.com/hero/149cacc4e92e77a029c2fabfa2b365f2.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/7bdd9859e6cc85b4ec43ec7e365a07b6.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/d6ebb3d200aab806d861f92aad939cef.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/3b88ee42707b436867d050527872d6ec.png"
   },
   {
     "title": "Jujutsu Kaisen: Cursed Clash – Ultimate Edition – v1.1.0 + 5 DLCs/Bonuses + Windows 7 Fix",
     "hero_image": "https://cdn2.steamgriddb.com/hero/149cacc4e92e77a029c2fabfa2b365f2.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/7bdd9859e6cc85b4ec43ec7e365a07b6.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/d6ebb3d200aab806d861f92aad939cef.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/3b88ee42707b436867d050527872d6ec.png"
   },
   {
     "title": "Jujutsu Kaisen: Cursed Clash – Ultimate Edition – v1.4.0 + 7 DLCs/Bonuses + Windows 7 Fix",
     "hero_image": "https://cdn2.steamgriddb.com/hero/149cacc4e92e77a029c2fabfa2b365f2.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/7bdd9859e6cc85b4ec43ec7e365a07b6.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/d6ebb3d200aab806d861f92aad939cef.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/3b88ee42707b436867d050527872d6ec.png"
   },
   {
@@ -21134,13 +21134,13 @@
   {
     "title": "Just Cause 3: XL Edition – v1.05 + All DLCs",
     "hero_image": "https://cdn2.steamgriddb.com/hero/5e84bd89fe45860ca1ebaf025f494461.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/e7754899df9ffd588b84479d5c978e36.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/3dd6e74b088b988772e9e9da215fdbf1.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/0d750253c0b7418bac0d15b1722d923f.ico"
   },
   {
     "title": "Just Cause 3: XXL Edition – v1.05 Denuvoless + All DLCs",
     "hero_image": "https://cdn2.steamgriddb.com/hero/5e84bd89fe45860ca1ebaf025f494461.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/e7754899df9ffd588b84479d5c978e36.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/3dd6e74b088b988772e9e9da215fdbf1.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/0d750253c0b7418bac0d15b1722d923f.ico"
   },
   {
@@ -26097,7 +26097,7 @@
     "title": "MY HERO ACADEMIA: All’s Justice – v01.00 + 9 DLCs",
     "hero_image": "https://cdn2.steamgriddb.com/hero/c7c3640e54adeadc9f2fb59b11cbab4c.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/0ce18ee1de8a3c3c5092415a10a340c2.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/8aeac0e0c508da09147a840b9ef1b6cd.ico"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/f9313d7ba37e0403528c79dab94e4c1b.ico"
   },
   {
     "title": "My Hero One’s Justice + 4 DLCs",
@@ -27266,7 +27266,7 @@
   {
     "title": "No Man’s Sky – v5.00 (Worlds Part 1 Update) + DLC + Bonus OST",
     "hero_image": "https://cdn2.steamgriddb.com/hero/a50abba8132a77191791390c3eb19fe7.png",
-    "grid_image": null,
+    "grid_image": "https://cdn2.steamgriddb.com/grid/c8d77146931324f4001237a93fe4ba8c.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/460295ce15c9440d9be6fb474387a285.ico"
   },
   {
@@ -29744,7 +29744,7 @@
   {
     "title": "Pine: A Story of Loss – Collector’s Edition, v1.4.12853 + Bonus Content",
     "hero_image": "https://cdn2.steamgriddb.com/hero/25db30729926826f46bb0d071eea4cc5.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/48538de967e7f18652f0b9625decaace.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/7c843277d7c9953362cab19075bb7a0a.jpg",
     "icon_image": null
   },
   {
@@ -30260,7 +30260,7 @@
   {
     "title": "Portal Collection",
     "hero_image": null,
-    "grid_image": "https://cdn2.steamgriddb.com/grid/e0ae8d47fddfc95a02e055f06e6ccb9d.png",
+    "grid_image": null,
     "icon_image": null
   },
   {
@@ -30566,7 +30566,7 @@
   {
     "title": "Primeval",
     "hero_image": null,
-    "grid_image": null,
+    "grid_image": "https://cdn2.steamgriddb.com/grid/6075a8c51072c44d8c7fd1a266a2d6af.png",
     "icon_image": null
   },
   {
@@ -31766,7 +31766,7 @@
   {
     "title": "Real Boxing 2: Remastered",
     "hero_image": null,
-    "grid_image": null,
+    "grid_image": "https://cdn2.steamgriddb.com/grid/773bd808790afe55bf39aafd43638b2d.jpg",
     "icon_image": null
   },
   {
@@ -33207,7 +33207,7 @@
     "title": "Roguebook: Deluxe Edition (v1.6.4 + 3 DLCs + Bonus Content, MULTi12) [FitGirl Repack, Selective Download - from 518 MB]",
     "hero_image": "https://cdn2.steamgriddb.com/hero/75afa880da5f1e563fbe61b77adb9e74.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/e1838a4f4bbb864e7874975a3813685f.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/56b70931909391f2c284f804cb22ce87.ico"
+    "icon_image": null
   },
   {
     "title": "Roll Me Home (MULTi3) [FitGirl Repack]",
@@ -35569,7 +35569,7 @@
   },
   {
     "title": "Sker Ritual: Ultimate Edition – v1.2.3.25254 (Anniversary Update) + 14 DLCs",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/71ef304b652381877e64087fdb0ab3d9.png",
+    "hero_image": null,
     "grid_image": "https://cdn2.steamgriddb.com/grid/6d6e4d5eb2d36714a9385ffd1f2c9683.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/42895ec5cf4e1fda9f36bb868632ecfd.png"
   },
@@ -35654,7 +35654,7 @@
   {
     "title": "Skydrift Infinity",
     "hero_image": "https://cdn2.steamgriddb.com/hero/3685ebe71137ef331ab044da489cbfce.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/f3fd1a587d2d1292c4f83dadc276987b.png",
+    "grid_image": null,
     "icon_image": "https://cdn2.steamgriddb.com/icon/de4760e367d03a126325218519c96406.png"
   },
   {
@@ -38366,19 +38366,19 @@
   {
     "title": "SubwaySim 2 – v2153",
     "hero_image": null,
-    "grid_image": null,
+    "grid_image": "https://cdn2.steamgriddb.com/grid/1c9846d46fc6ff9613f5c3b2ebd6d2aa.jpg",
     "icon_image": null
   },
   {
     "title": "SubwaySim 2 – v2673 + Hamburg Akkulok AL1 DLC",
     "hero_image": null,
-    "grid_image": null,
+    "grid_image": "https://cdn2.steamgriddb.com/grid/1c9846d46fc6ff9613f5c3b2ebd6d2aa.jpg",
     "icon_image": null
   },
   {
     "title": "SubwaySim 2: Complete Edition – v2840 + 2 DLCs",
     "hero_image": null,
-    "grid_image": null,
+    "grid_image": "https://cdn2.steamgriddb.com/grid/1c9846d46fc6ff9613f5c3b2ebd6d2aa.jpg",
     "icon_image": null
   },
   {
@@ -39993,7 +39993,7 @@
     "title": "Terminator: Dark Fate – Defiance: Complete Bundle, v1.07.1145 + 3 DLCs/Bonuses + Windows 7 Fix",
     "hero_image": "https://cdn2.steamgriddb.com/hero/ba07e1e3b31d4f58b75abb5bd5da1dba.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/9530c8194556be148727b355f6e23cc2.png",
-    "icon_image": null
+    "icon_image": "https://cdn2.steamgriddb.com/icon/80c7d0a77ed7f233664fae37f786bb06.ico"
   },
   {
     "title": "Terminator: Resistance (Update 12 + Annihilation Line DLC + Bonus, MULTi10) [FitGirl Repack, Selective Download - from 13.9 GB]",
@@ -41191,7 +41191,7 @@
   },
   {
     "title": "The Gunk (v1012.1.5.0 + Windows 7 Fix, MULTi9) [FitGirl Repack]",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/1a009b56c1b7d90e5b4216fc0f9fa4e6.jpg",
+    "hero_image": null,
     "grid_image": "https://cdn2.steamgriddb.com/grid/caedd05c4e31dc4033766d4c515588ca.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/cdb26524db7caa32b214bc249df032b4.ico"
   },
@@ -41390,7 +41390,7 @@
   {
     "title": "The King of Fighters XV: Deluxe Edition (v2.30.0_75211 + 12 DLCs, MULTi13) [FitGirl Repack]",
     "hero_image": "https://cdn2.steamgriddb.com/hero/84ea3a7910c3ca971d4718adf0f707f2.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/ec9be577c5bbe0b6711c2d6b499e393f.jpg",
+    "grid_image": null,
     "icon_image": "https://cdn2.steamgriddb.com/icon/d68ab3cd0cca46d54b53094d5c2911a8.png"
   },
   {
@@ -41751,7 +41751,7 @@
     "title": "The Legend of Zelda: Link’s Awakening – v1.0.1 + Yuzu Emu for PC + Mods",
     "hero_image": "https://cdn2.steamgriddb.com/hero/5fa2bff730d799299a1c095a9f3c031d.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/0ec360c243d4a23244accb3d04851604.png",
-    "icon_image": null
+    "icon_image": "https://cdn2.steamgriddb.com/icon/3c5cacc351984a48a50d065f662789df.png"
   },
   {
     "title": "The Legend of Zelda: Skyward Sword HD+ Yuzu/Ryujinx Emus for PC",
@@ -43838,7 +43838,7 @@
   {
     "title": "Tomb Raider IV-VI Remastered",
     "hero_image": "https://cdn2.steamgriddb.com/hero/6008720451dad6313c3966f5eda7fe54.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/7701da2c1bac8db024d34506cee51b23.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/6e62ea829c0838681d7cb00f87e11dc3.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/b00b2d32001e555d14cc55e16003b814.ico"
   },
   {
@@ -47745,7 +47745,7 @@
     "title": "Wolfenstein II: The New Colossus + Update 10 + 5 DLCs",
     "hero_image": "https://cdn2.steamgriddb.com/hero/35fe071cd4426fe8a90666101fff1bf0.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/fab68d941875c19041a374166a67a8eb.jpg",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/c13876496247493d0c0a524b0678d683.png"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/02adbf83ef82e182414ca46fd1fe8b09.png"
   },
   {
     "title": "Wolfenstein: Youngblood – Deluxe Edition – v1.0.3 + 3 DLCs",
