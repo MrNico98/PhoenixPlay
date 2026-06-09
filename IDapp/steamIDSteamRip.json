@@ -321,7 +321,7 @@
     "title": "Alien: Isolation Free Download (v1.0.4)",
     "hero_image": "https://cdn2.steamgriddb.com/hero/26fdf7a66ca64f8a53765bf80d84a4ed.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/79c13d436a27633a80830cd3ab624b32.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/50abc3e730e36b387ca8e02c26dc0a22.ico"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/673e1e6d831554e52985f55ccaffad5a.ico"
   },
   {
     "title": "Alien: Rogue Incursion Evolved Edition Free Download (v1.0.2)",
@@ -614,7 +614,7 @@
   {
     "title": "Assassin’s Creed Brotherhood Free Download (v1.03)",
     "hero_image": "https://cdn2.steamgriddb.com/hero/491442df5f88c6aa018e86dac21d3606.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/fc535d4ae8496bf8ed9e3cd8895f5b71.png",
+    "grid_image": null,
     "icon_image": "https://cdn2.steamgriddb.com/icon/f78b6f0004f7094edb7e9a63cdabbe9c.ico"
   },
   {
@@ -867,7 +867,7 @@
     "title": "Avowed Free Download (v2.1.0.0)",
     "hero_image": "https://cdn2.steamgriddb.com/hero/f19654628f9f5081d969f145932c9a1c.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/752cc8d43ec503f5a3d3c5a4cdee093f.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/ba84ce8066868bf670e7e22ffc3b9b86.ico"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/1a1a4a67edcd2cf0f208661de0afd901.ico"
   },
   {
     "title": "Baba Is You Free Download (v481d)",
@@ -3746,7 +3746,7 @@
   {
     "title": "Driver San Francisco Free Download (v1.04)",
     "hero_image": "https://cdn2.steamgriddb.com/hero/4b85256c4881edb6c0776df5d81f6236.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/1cfef7cfd8d26b1ecb8b0eccca6366ca.jpg",
+    "grid_image": null,
     "icon_image": "https://cdn2.steamgriddb.com/icon/366f0bc7bd1d4bf414073cabbadfdfcd.ico"
   },
   {
@@ -5181,7 +5181,7 @@
     "title": "Gears of War: Reloaded Free Download (v1.0.1.3689997)",
     "hero_image": "https://cdn2.steamgriddb.com/hero/b9efcffffa1f33ea918d09ee069650c7.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/e2b907fb2773ac248492eb933d4b746d.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/a51bfe54de1f79c46934918fb6778bcf.ico"
+    "icon_image": null
   },
   {
     "title": "Generation Zero Free Download (v2725238)",
@@ -6661,7 +6661,7 @@
   },
   {
     "title": "Intravenous 2 Free Download (v1.4.9)",
-    "hero_image": null,
+    "hero_image": "https://cdn2.steamgriddb.com/hero/d2d02f32f6d8aa7dacd7f0442b6053b3.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/57dc1fdc20fc20b45cf8f6edc387c790.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/bbe86a4b8e8ef1d4b6315c2aa25ebc89.ico"
   },
@@ -6860,7 +6860,7 @@
   {
     "title": "Jujutsu Kaisen Cursed Clash Free Download (v1.4.0)",
     "hero_image": "https://cdn2.steamgriddb.com/hero/149cacc4e92e77a029c2fabfa2b365f2.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/7bdd9859e6cc85b4ec43ec7e365a07b6.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/d6ebb3d200aab806d861f92aad939cef.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/3b88ee42707b436867d050527872d6ec.png"
   },
   {
@@ -6902,7 +6902,7 @@
   {
     "title": "Just Cause 3 Free Download (v1.0.5)",
     "hero_image": "https://cdn2.steamgriddb.com/hero/5e84bd89fe45860ca1ebaf025f494461.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/e7754899df9ffd588b84479d5c978e36.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/3dd6e74b088b988772e9e9da215fdbf1.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/0d750253c0b7418bac0d15b1722d923f.ico"
   },
   {
@@ -10634,8 +10634,8 @@
   {
     "title": "Recycling Center Simulator Free Download (v1.7.1)",
     "hero_image": null,
-    "grid_image": null,
-    "icon_image": null
+    "grid_image": "https://cdn2.steamgriddb.com/grid/31c7d7db9cf65ec694421048712f7d51.jpg",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/0d076d0315a6b94e56e903f7fdbef3e9.png"
   },
   {
     "title": "Red Dead Redemption 2 Free Download (Build 1491.50)",
@@ -13209,7 +13209,7 @@
     "title": "Temtem: Swarm Free Download (v1.0.0)",
     "hero_image": "https://cdn2.steamgriddb.com/hero/02edde3f648b821ebe6627cec6e374c6.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/24b979e0b65fd87925bbe45a12ed27c9.jpg",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/8933cd65695f1006c37cb0c2f926d621.ico"
+    "icon_image": null
   },
   {
     "title": "Terminator 2D: NO FATE Free Download",
@@ -14282,7 +14282,7 @@
   {
     "title": "Tomb Raider IV-VI Remastered Free Download",
     "hero_image": "https://cdn2.steamgriddb.com/hero/6008720451dad6313c3966f5eda7fe54.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/7701da2c1bac8db024d34506cee51b23.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/6e62ea829c0838681d7cb00f87e11dc3.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/b00b2d32001e555d14cc55e16003b814.ico"
   },
   {
@@ -15231,7 +15231,7 @@
     "title": "Wolfenstein II: The New Colossus Free Download (Build 3329064)",
     "hero_image": "https://cdn2.steamgriddb.com/hero/35fe071cd4426fe8a90666101fff1bf0.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/fab68d941875c19041a374166a67a8eb.jpg",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/c13876496247493d0c0a524b0678d683.png"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/02adbf83ef82e182414ca46fd1fe8b09.png"
   },
   {
     "title": "Wolfenstein: The New Order Free Download (v1.0.0.2)",
