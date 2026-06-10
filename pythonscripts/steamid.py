@@ -58,7 +58,7 @@ def clean_title(title):
     """Pulisci titolo per la ricerca"""
     if not title:
         return ""
-    title = re.sub(r'\s*Free\s+Download\s*$', '', title, flags=re.IGNORECASE)
+    title = re.sub(r'\s*Free\s+Download\s*(?:\(.*?\))?\s*$', '', title, flags=re.IGNORECASE)
     title = re.sub(r'\s*Download\s*$', '', title, flags=re.IGNORECASE)
     return title.strip()
 
