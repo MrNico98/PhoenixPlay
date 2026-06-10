@@ -89,17 +89,18 @@ def clean_title_for_search(title, source_name):
 # ----------------------------
 
 def get_game_images(session, game_id):
-    """Recupera TUTTE le immagini in parallelo"""
+    """Recupera immagini da 4 categorie con fallback grids → heroes → logos → icons"""
     headers = {
         "Authorization": f"Bearer {STEAMGRIDDB_API_KEY}",
         "Accept": "application/json"
     }
     
-    images = {"grid": None, "hero": None, "icon": None}
+    images = {"grid": None, "hero": None, "logo": None, "icon": None}
     
     urls = {
         "grid": f"{STEAMGRIDDB_BASE}/grids/game/{game_id}",
         "hero": f"{STEAMGRIDDB_BASE}/heroes/game/{game_id}",
+        "logo": f"{STEAMGRIDDB_BASE}/logos/game/{game_id}",
         "icon": f"{STEAMGRIDDB_BASE}/icons/game/{game_id}"
     }
     
@@ -114,11 +115,24 @@ def get_game_images(session, game_id):
             pass
         return image_type, None
     
-    with ThreadPoolExecutor(max_workers=3) as executor:
+    with ThreadPoolExecutor(max_workers=4) as executor:
         futures = {executor.submit(fetch_image, img_type, url): img_type for img_type, url in urls.items()}
         for future in as_completed(futures):
             img_type, url = future.result()
             images[img_type] = url
+    
+    # Fallback: grids → heroes → logos → icons, prima trovata
+    fallback_order = ["grid", "hero", "logo", "icon"]
+    first_found = None
+    for key in fallback_order:
+        if images[key]:
+            first_found = images[key]
+            break
+    
+    if first_found:
+        for key in ["hero", "grid", "icon"]:
+            if not images[key]:
+                images[key] = first_found
     
     return images
 
@@ -361,6 +375,8 @@ def process_source(name, url, output_file, force_recreate=False):
             
             if hero or grid:
                 images_found += 1
+            elif not hero and not grid and not icon:
+                print(f"   ⚠️ Nessuna immagine trovata per: {title}")
             
             if i % 100 == 0:
                 print(f"   📍 Progresso: {i}/{len(games)} (immagini: {images_found})")
