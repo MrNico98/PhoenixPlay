@@ -84,8 +84,15 @@ function heroSlider(totalSlides) {
             const description = this.truncateDescription(game.description || this.getDefaultDescription(source), 120);
             
             const uris = (game.uris && Array.isArray(game.uris)) ? game.uris : (game.links || []);
-            const hasBuzzHeavier = uris.some(uri => String(uri).toLowerCase().includes('buzzheavier') || String(uri).toLowerCase().includes('buzzhavier'));
-            const isAvailableInApp = source === 'steamrip' && hasBuzzHeavier;
+            const hasSupportedLink = uris.some(uri => {
+                const link = String(uri).toLowerCase();
+                return link.includes('buzzheavier') || 
+                       link.includes('buzzhavier') ||
+                       link.includes('pixeldrain') ||
+                       link.includes('pixeldra.in') ||
+                       link.includes('gofile.io');
+            });
+            const isAvailableInApp = source === 'steamrip' && hasSupportedLink;
 
             const sourceNames = {
                 steamrip: 'SteamRip',
@@ -740,8 +747,15 @@ function createGameCard(game) {
     const sourceBadgeClass = `${game.source}-badge-card`;
     
     const uris = getDownloadLinks(game);
-    const hasBuzzHeavier = uris.some(uri => String(uri).toLowerCase().includes('buzzheavier') || String(uri).toLowerCase().includes('buzzhavier'));
-    const showAppBadge = game.source === 'steamrip' && hasBuzzHeavier;
+    const hasSupportedLink = uris.some(uri => {
+        const link = String(uri).toLowerCase();
+        return link.includes('buzzheavier') || 
+               link.includes('buzzhavier') ||
+               link.includes('pixeldrain') ||
+               link.includes('pixeldra.in') ||
+               link.includes('gofile.io');
+    });
+    const showAppBadge = game.source === 'steamrip' && hasSupportedLink;
     
     card.innerHTML = `
         <div class="game-image" style="background-image: url('${imageUrl}'); background-size: cover; background-position: center;">
@@ -852,8 +866,15 @@ function showGameDetails(game) {
         `;
 
         const uris = getDownloadLinks(game);
-        const hasBuzzHeavier = uris.some(uri => String(uri).toLowerCase().includes('buzzheavier') || String(uri).toLowerCase().includes('buzzhavier'));
-        if (game.source === 'steamrip' && hasBuzzHeavier) {
+        const hasSupportedLink = uris.some(uri => {
+            const link = String(uri).toLowerCase();
+            return link.includes('buzzheavier') || 
+                   link.includes('buzzhavier') ||
+                   link.includes('pixeldrain') ||
+                   link.includes('pixeldra.in') ||
+                   link.includes('gofile.io');
+        });
+        if (game.source === 'steamrip' && hasSupportedLink) {
             gameProperties.innerHTML += `
                 <a href="javascript:void(0)" class="modal-app-info" onclick="closeModal(); scrollToAppBanner();" style="text-decoration: none; cursor: pointer;">
                     <i class="fas fa-mobile-alt" style="font-size: 1.2rem"></i>
@@ -874,7 +895,7 @@ function showGameDetails(game) {
 function setDownloadInstructions(source) {
     if (!downloadInstructions) return;
     const instructions = {
-        steamrip: '<p>I link sono mostrati in ordine di preferenza: <strong>buzzheavier</strong> → <strong>vikingfile</strong> → <strong>gofile</strong></p>',
+        steamrip: '<p>I link sono mostrati in ordine di preferenza: <strong>buzzheavier</strong> → <strong>vikingfile</strong> → <strong>gofile</strong> → <strong>pixeldrain</strong></p>',
         onlinefix: '<p><strong>🔴 IMPORTANTE:</strong> Giochi <strong>MULTIPLAYER</strong> con supporto online.</p>',
         fitgirl: '<p>FitGirl repacks sono altamente compressi. Disabilita l\'antivirus durante l\'installazione.</p>',
         altro: '<p><strong>🎮 MISTO:</strong> Giochi da varie fonti. Segui le istruzioni specifiche.</p>'
@@ -1024,8 +1045,15 @@ function renderTrendingGames() {
     trendingGrid.innerHTML = '';
     allGames.forEach(game => {
         const uris = getDownloadLinks(game);
-        const hasBuzzHeavier = uris.some(uri => String(uri).toLowerCase().includes('buzzheavier') || String(uri).toLowerCase().includes('buzzhavier'));
-        const showAppBadge = game.source === 'steamrip' && hasBuzzHeavier;
+        const hasSupportedLink = uris.some(uri => {
+            const link = String(uri).toLowerCase();
+            return link.includes('buzzheavier') || 
+                   link.includes('buzzhavier') ||
+                   link.includes('pixeldrain') ||
+                   link.includes('pixeldra.in') ||
+                   link.includes('gofile.io');
+        });
+        const showAppBadge = game.source === 'steamrip' && hasSupportedLink;
 
         const card = document.createElement('div');
         card.className = 'game-card';
