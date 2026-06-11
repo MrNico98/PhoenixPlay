@@ -288,6 +288,8 @@ let filteredGames = [];
 const SITE_PRIORITY = {
     'buzzheavier.com': { name: 'Buzzheavier', class: 'buzzheavier', icon: 'fas fa-bolt', priority: 1 },
     'vikingfile.com': { name: 'Vikingfile', class: 'vikingfile', icon: 'fas fa-shield-alt', priority: 2 },
+    'pixeldrain.com': { name: 'Pixeldrain', class: 'pixeldrain', icon: 'fas fa-cloud-upload-alt', priority: 2 },
+    'pixeldra.in': { name: 'Pixeldrain', class: 'pixeldrain', icon: 'fas fa-cloud-upload-alt', priority: 2 },
     'gofile.io': { name: 'Gofile', class: 'gofile', icon: 'fas fa-file-archive', priority: 3 },
     '1drv.ms': { name: 'OneDrive', class: 'onedrive', icon: 'fas fa-cloud', priority: 1 },
     'onedrive.live.com': { name: 'OneDrive', class: 'onedrive', icon: 'fas fa-cloud', priority: 1 },
@@ -368,6 +370,9 @@ async function loadAllGamesData() {
         setupCategories();
         updateSourceCounts();
         renderTrendingGames();
+        
+        const lastUpdateEl = document.getElementById('last-update');
+        if (lastUpdateEl) lastUpdateEl.textContent = 'Oggi';
         
         // Aggiorna lo slider con i dati reali (trigger evento)
         window.dispatchEvent(new CustomEvent('gamesDataLoaded'));
@@ -628,7 +633,7 @@ function renderGames() {
         if (searchBox && searchBox.value.trim() === '' && currentFilter !== 'all' && game.category !== currentFilter) return false;
         if (searchBox && searchBox.value) {
             const originalTitle = title.toLowerCase();
-            if (!originalTitle.includes(searchBox.value.toLowerCase())) return false;
+            if (!originalTitle.includes(searchBox.value.toLowerCase().trim())) return false;
         }
         const maxSize = parseInt(sizeSlider?.value || maxFileSize);
         if (maxSize < maxFileSize && (!game.numericSize || game.numericSize > maxSize)) return false;
@@ -863,6 +868,7 @@ function showGameDetails(game) {
     
     gameDetailsModal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
+    history.pushState({ modal: true }, '');
 }
 
 function setDownloadInstructions(source) {
@@ -874,6 +880,23 @@ function setDownloadInstructions(source) {
         altro: '<p><strong>🎮 MISTO:</strong> Giochi da varie fonti. Segui le istruzioni specifiche.</p>'
     };
     downloadInstructions.innerHTML = instructions[source] || '<p>Clicca su un link per avviare il download.</p>';
+}
+
+function isPixeldrainLink(link) {
+    const l = link.toLowerCase();
+    return l.includes('pixeldrain.com') || l.includes('pixeldra.in');
+}
+
+function isGoFileLink(link) {
+    return link.toLowerCase().includes('gofile.io');
+}
+
+function getBypassDirectUrl(link) {
+    const pdMatch = link.match(/^https?:\/\/(?:pixeldra\.in|pixeldrain\.com|pixeldrain\.net|pixeldrain\.dev)\/(?:u|api\/file|l)\/([^\/\?\s]+)/);
+    if (pdMatch) return `https://cdn.pixeldrain.eu.cc/${pdMatch[1]}`;
+    const gfMatch = link.match(/^https?:\/\/(?:www\.)?gofile\.io\/d\/([A-Za-z0-9]+)/);
+    if (gfMatch) return `https://gofilecdn.eu.cc/${gfMatch[1]}`;
+    return null;
 }
 
 function displayDownloadLinks(links, source) {
@@ -897,6 +920,9 @@ function displayDownloadLinks(links, source) {
             safeHref = 'https://' + link;
         }
         
+        const bypassUrl = getBypassDirectUrl(link);
+        const downloadHref = bypassUrl || safeHref;
+        
         const linkDiv = document.createElement('div');
         linkDiv.className = 'download-link';
         linkDiv.innerHTML = `
@@ -906,7 +932,7 @@ function displayDownloadLinks(links, source) {
             </div>
             <div style="display:flex;align-items:center;gap:15px">
                 ${index === 0 ? '<span class="preferred-badge"><i class="fas fa-crown"></i> Preferito</span>' : ''}
-                <a href="${safeHref}" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fas fa-external-link-alt"></i> Download</a>
+                <a href="${downloadHref}" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fas fa-external-link-alt"></i> Download</a>
             </div>
         `;
         downloadLinks.appendChild(linkDiv);
@@ -954,8 +980,11 @@ function updateSizeValue(value) {
 }
 
 function closeModal() {
-    if (gameDetailsModal) gameDetailsModal.style.display = 'none';
-    document.body.style.overflow = 'auto';
+    if (gameDetailsModal && gameDetailsModal.style.display === 'flex') {
+        gameDetailsModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        history.back();
+    }
 }
 
 function scrollToAppBanner() {
@@ -1065,6 +1094,12 @@ function setupEventListeners() {
     if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
     if (gameDetailsModal) gameDetailsModal.addEventListener('click', (e) => { if (e.target === gameDetailsModal) closeModal(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+    window.addEventListener('popstate', () => {
+        if (gameDetailsModal && gameDetailsModal.style.display === 'flex') {
+            gameDetailsModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
     
     if (firstPageBtn) firstPageBtn.addEventListener('click', () => { if (currentPage > 1) { currentPage = 1; renderGames(); gamesContainer?.scrollIntoView({ behavior: 'smooth' }); } });
     if (prevPageBtn) prevPageBtn.addEventListener('click', () => { if (currentPage > 1) { currentPage--; renderGames(); gamesContainer?.scrollIntoView({ behavior: 'smooth' }); } });

@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>AIMODS BYPASS | PixelDrain + GoFile | Download diretto</title>
+    <!-- Font & base styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #0a0c12 0%, #0f111a 100%);
+            font-family: 'Inter', sans-serif;
+            color: #edf2ff;
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+        }
+
+        :root {
+            --primary: #c084fc;
+            --primary-glow: rgba(192, 132, 252, 0.4);
+            --primary-dark: #a855f7;
+            --secondary: #3b82f6;
+            --bg-card: rgba(18, 22, 35, 0.75);
+            --border: rgba(66, 78, 110, 0.5);
+            --border-hover: rgba(192, 132, 252, 0.6);
+            --radius-lg: 28px;
+            --radius-md: 20px;
+            --radius-sm: 14px;
+            --shadow-lg: 0 25px 45px -12px rgba(0, 0, 0, 0.6);
+            --transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(192, 132, 252, 0.2);
+            backdrop-filter: blur(8px);
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border: 1px solid rgba(192, 132, 252, 0.5);
+            color: #d9b4ff;
+            margin-bottom: 1.2rem;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #c084fc 70%, #a855f7 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+        .sub {
+            font-size: 1.1rem;
+            color: #a4b0d4;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .service-selector {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .service-btn {
+            background: rgba(20, 25, 40, 0.7);
+            backdrop-filter: blur(4px);
+            padding: 0.7rem 2rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #cbd5ff;
+        }
+        .service-btn.active {
+            background: linear-gradient(115deg, #292e42, #1f2332);
+            border-color: var(--primary);
+            color: white;
+            box-shadow: 0 0 12px var(--primary-glow);
+        }
+        .service-btn:hover:not(.active) {
+            border-color: var(--border-hover);
+            background: rgba(40, 48, 75, 0.8);
+            transform: translateY(-2px);
+        }
+
+        .service-panel {
+            display: none;
+        }
+        .service-panel.active {
+            display: block;
+        }
+
+        .card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 1.8rem;
+            transition: var(--transition);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .tabs-container {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+        .tab {
+            background: rgba(20, 25, 40, 0.7);
+            backdrop-filter: blur(4px);
+            padding: 0.8rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #cbd5ff;
+        }
+        .tab i {
+            font-size: 1rem;
+        }
+        .tab.active {
+            background: linear-gradient(115deg, #292e42, #1f2332);
+            border-color: var(--primary);
+            color: white;
+            box-shadow: 0 0 12px var(--primary-glow);
+        }
+        .tab:hover:not(.active) {
+            border-color: var(--border-hover);
+            background: rgba(40, 48, 75, 0.8);
+            transform: translateY(-2px);
+        }
+
+        .tab-content {
+            display: none;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .tab-content.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        textarea, input {
+            width: 100%;
+            background: #0b0e17;
+            border: 1.5px solid #282e44;
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            color: white;
+            font-family: 'Inter', monospace;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            resize: vertical;
+        }
+        textarea:focus, input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(192, 132, 252, 0.2);
+        }
+        label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: inline-block;
+            font-size: 0.85rem;
+            color: #cddcff;
+        }
+        .btn-glow {
+            background: linear-gradient(95deg, #7c3aed, #c084fc);
+            border: none;
+            border-radius: 40px;
+            padding: 0.8rem 1.6rem;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
+        }
+        .btn-glow:hover {
+            transform: scale(1.02);
+            background: linear-gradient(95deg, #8b5cf6, #d9a7fc);
+            box-shadow: 0 8px 20px rgba(192, 132, 252, 0.5);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid var(--primary);
+            color: var(--primary);
+            border-radius: 40px;
+            padding: 0.5rem 1.2rem;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        .btn-outline:hover {
+            background: rgba(192, 132, 252, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .output-box {
+            margin-top: 1.5rem;
+            background: #06080f;
+            border-radius: var(--radius-md);
+            padding: 1.2rem;
+            border-left: 4px solid var(--primary);
+        }
+        .flex-btns {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            margin-top: 12px;
+        }
+        .hidden {
+            display: none;
+        }
+        .spin {
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #6a6f8f;
+        }
+        hr {
+            border-color: rgba(192, 132, 252, 0.2);
+            margin: 1rem 0;
+        }
+        .alert {
+            background: rgba(255, 80, 120, 0.2);
+            border-left: 4px solid #ff4d6d;
+            padding: 0.7rem 1rem;
+            border-radius: 16px;
+        }
+        .info-note {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid #3b82f6;
+            padding: 0.7rem 1rem;
+            border-radius: 16px;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+        }
+        .input-group {
+            margin-bottom: 1rem;
+        }
+        .row-2cols {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .row-2cols > div {
+            flex: 1;
+            min-width: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="badge"><i class="fas fa-bolt"></i> bypass istantaneo • velocità massima</div>
+        <h1>AIMODS BYPASS</h1>
+        <div class="sub">PixelDrain + GoFile — scarica senza limiti, senza attese, senza pubblicità invasiva</div>
+    </div>
+
+    <!-- Selettore servizio -->
+    <div class="service-selector">
+        <div class="service-btn active" data-service="pixeldrain"><i class="fas fa-cloud-upload-alt"></i> PixelDrain</div>
+        <div class="service-btn" data-service="gofile"><i class="fas fa-file-alt"></i> GoFile</div>
+    </div>
+
+    <!-- PANEL PIXELDRAIN -->
+    <div id="pixeldrain-panel" class="service-panel active">
+        <div class="tabs-container">
+            <div class="tab active" data-tab="pd-single"><i class="fas fa-link"></i> Link singoli</div>
+            <div class="tab" data-tab="pd-album"><i class="fas fa-folder-open"></i> Album / Cartelle</div>
+            <div class="tab" data-tab="pd-info"><i class="fas fa-info-circle"></i> Come funziona</div>
+        </div>
+
+        <!-- SINGOLI PD -->
+        <div id="pd-single-tab" class="tab-content active">
+            <div class="card">
+                <label><i class="fas fa-paste"></i> URL PixelDrain (uno per riga)</label>
+                <textarea id="pdInputUrls" rows="5" placeholder="https://pixeldrain.com/u/abc123
+https://pixeldrain.com/api/file/def456
+https://pixeldra.in/l/xyz789"></textarea>
+                <div style="margin-top: 20px;">
+                    <button id="pdConvertBtn" class="btn-glow"><i class="fas fa-magic"></i> Converti in download diretto</button>
+                </div>
+                <div id="pdOutBox" class="output-box hidden">
+                    <label><i class="fas fa-download"></i> Link bypassati (CDN veloce)</label>
+                    <textarea id="pdIndividualOut" rows="4" readonly style="background:#05070c;"></textarea>
+                    <div class="flex-btns">
+                        <button id="pdCopyIndBtn" class="btn-outline" style="display:none"><i class="far fa-copy"></i> Copia tutto</button>
+                        <button id="pdSaveIndBtn" class="btn-outline" style="display:none"><i class="fas fa-save"></i> Salva .txt</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ALBUM PD -->
+        <div id="pd-album-tab" class="tab-content">
+            <div class="card">
+                <label><i class="fas fa-layer-group"></i> URL album o cartella PixelDrain</label>
+                <input type="text" id="pdAlbumUrl" placeholder="Es: https://pixeldrain.com/l/albumID  oppure  https://pixeldrain.com/d/folderID">
+                <div style="margin-top: 22px;">
+                    <button id="pdExtractBtn" class="btn-glow"><i class="fas fa-code-branch"></i> Estrai tutti i link</button>
+                </div>
+                <div id="pdAlbumOutBox" class="output-box hidden">
+                    <div style="margin-bottom: 12px;"><i class="fas fa-file-archive"></i> <strong>DOWNLOAD ZIP COMPLETO</strong></div>
+                    <input type="text" id="pdAlbumZipUrl" readonly style="background:#0a0e18; margin-bottom: 18px;">
+                    <label>🔗 Link originali (Pixeldrain + nome)</label>
+                    <textarea id="pdExtractedUrls" rows="3" readonly></textarea>
+                    <label style="margin-top: 12px;">⚡ Link BYPASS diretti</label>
+                    <textarea id="pdAlbumOut" rows="4" readonly></textarea>
+                    <div class="flex-btns">
+                        <button id="pdCopyAlbumBtn" class="btn-outline"><i class="far fa-copy"></i> Copia bypass</button>
+                        <button id="pdCopyOrigBtn" class="btn-outline"><i class="fas fa-list"></i> Copia originali</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- INFO PD -->
+        <div id="pd-info-tab" class="tab-content">
+            <div class="card">
+                <i class="fas fa-shield-alt" style="font-size: 2rem; color: #c084fc;"></i>
+                <h3 style="margin: 1rem 0;">✨ Bypass PixelDrain</h3>
+                <p>Proxy CDN dedicato <strong>cdn.pixeldrain.eu.cc</strong> per download ad alta velocità. Supporta album pubblici e cartelle strutturate.</p>
+                <div class="info-note"><i class="fas fa-check-circle"></i> Nessun file viene memorizzato: reindirizzamento intelligente.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PANEL GOFILE -->
+    <div id="gofile-panel" class="service-panel">
+        <div class="tabs-container">
+            <div class="tab active" data-tab="gf-single"><i class="fas fa-link"></i> Link singoli</div>
+            <div class="tab" data-tab="gf-folder"><i class="fas fa-folder-open"></i> Cartelle / Multi-file</div>
+            <div class="tab" data-tab="gf-info"><i class="fas fa-info-circle"></i> Come funziona</div>
+        </div>
+
+        <!-- SINGOLI GF -->
+        <div id="gf-single-tab" class="tab-content active">
+            <div class="card">
+                <label><i class="fas fa-paste"></i> URL GoFile (uno per riga)</label>
+                <textarea id="gfInputUrls" rows="5" placeholder="https://gofile.io/d/AbCdEf
+https://gofile.io/d/XyZ123"></textarea>
+                <div class="input-group" style="margin-top: 1rem;">
+                    <label><i class="fas fa-lock"></i> Password (se protetto, opzionale)</label>
+                    <input type="text" id="gfInputPw" placeholder="Lascia vuoto se nessuna password">
+                </div>
+                <div style="margin-top: 20px;">
+                    <button id="gfConvertBtn" class="btn-glow"><i class="fas fa-magic"></i> Genera link bypassati</button>
+                </div>
+                <div id="gfOutBox" class="output-box hidden">
+                    <label><i class="fas fa-download"></i> Link bypassati (CDN veloce)</label>
+                    <textarea id="gfIndividualOut" rows="4" readonly style="background:#05070c;"></textarea>
+                    <div class="flex-btns">
+                        <button id="gfCopyIndBtn" class="btn-outline" style="display:none"><i class="far fa-copy"></i> Copia tutto</button>
+                        <button id="gfSaveIndBtn" class="btn-outline" style="display:none"><i class="fas fa-save"></i> Salva .txt</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARTELLE GF -->
+        <div id="gf-folder-tab" class="tab-content">
+            <div class="card">
+                <label><i class="fas fa-folder-tree"></i> URL cartella GoFile</label>
+                <input type="text" id="gfFolderUrl" placeholder="https://gofile.io/d/AbCdEf">
+                <div class="input-group" style="margin-top: 1rem;">
+                    <label><i class="fas fa-lock"></i> Password (se richiesta)</label>
+                    <input type="text" id="gfFolderPw" placeholder="Lascia vuoto se nessuna password">
+                </div>
+                <div style="margin-top: 22px;">
+                    <button id="gfExtractBtn" class="btn-glow"><i class="fas fa-code-branch"></i> Estrai tutti i file</button>
+                </div>
+                <div id="gfFolderOutBox" class="output-box hidden">
+                    <label>🔗 File originali (nomi)</label>
+                    <textarea id="gfExtractedUrls" rows="3" readonly></textarea>
+                    <label style="margin-top: 12px;">⚡ Link BYPASS diretti (singoli file)</label>
+                    <textarea id="gfFolderOut" rows="4" readonly></textarea>
+                    <div class="flex-btns">
+                        <button id="gfCopyFolderBtn" class="btn-outline"><i class="far fa-copy"></i> Copia bypass</button>
+                        <button id="gfSaveFolderBtn" class="btn-outline"><i class="fas fa-save"></i> Salva .txt</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- INFO GF -->
+        <div id="gf-info-tab" class="tab-content">
+            <div class="card">
+                <i class="fas fa-rocket" style="font-size: 2rem; color: #c084fc;"></i>
+                <h3 style="margin: 1rem 0;">🚀 Bypass GoFile</h3>
+                <p>Proxy veloce <strong>gofilecdn.eu.cc</strong> — supporta cartelle pubbliche e link protetti da password. Estrazione automatica dei file.</p>
+                <div class="info-note"><i class="fas fa-info-circle"></i> I link bypassati funzionano come download diretto, senza limiti di velocità.</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 AIMODS BYPASS — Strumento indipendente per accelerare i download da PixelDrain e GoFile.</p>
+    </footer>
+</div>
+
+<script>
+    // ======================== PIXELDRAIN BYPASS ========================
+    (function() {
+        const PD_BYPASS = "cdn.pixeldrain.eu.cc";
+
+        document.getElementById('pdConvertBtn').addEventListener('click', () => {
+            const raw = document.getElementById('pdInputUrls').value.split('\n').map(l=>l.trim()).filter(l=>l);
+            const outBox = document.getElementById('pdOutBox');
+            const outTxt = document.getElementById('pdIndividualOut');
+            const copyBtn = document.getElementById('pdCopyIndBtn');
+            const saveBtn = document.getElementById('pdSaveIndBtn');
+            if(!raw.length) { alert('Inserisci almeno un link PixelDrain'); return; }
+            const converted = [];
+            for(let url of raw) {
+                let match = url.match(/^https?:\/\/(?:pixeldra\.in|pixeldrain\.com|pixeldrain\.net|pixeldrain\.dev)\/(?:u|api\/file|l)\/([^\/\?\s]+)/);
+                if(match) converted.push(`https://${PD_BYPASS}/${match[1]}`);
+                else {
+                    let alt = url.match(/pixeldrain\.com\/u\/([a-zA-Z0-9]+)/);
+                    if(alt) converted.push(`https://${PD_BYPASS}/${alt[1]}`);
+                }
+            }
+            outBox.classList.remove('hidden');
+            if(converted.length===0) {
+                outTxt.value = '❌ Nessun URL valido trovato.';
+                copyBtn.style.display='none'; saveBtn.style.display='none';
+            } else {
+                outTxt.value = converted.join('\n');
+                copyBtn.style.display='inline-flex'; saveBtn.style.display='inline-flex';
+            }
+        });
+
+        document.getElementById('pdCopyIndBtn').addEventListener('click', ()=>{
+            const val = document.getElementById('pdIndividualOut').value;
+            if(val) { navigator.clipboard.writeText(val); alert('Copiato!'); }
+        });
+        document.getElementById('pdSaveIndBtn').addEventListener('click', ()=>{
+            const val = document.getElementById('pdIndividualOut').value;
+            if(val) { const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([val])); a.download='pd_bypass.txt'; a.click(); URL.revokeObjectURL(a.href); }
+        });
+
+        // PD Album
+        document.getElementById('pdExtractBtn').addEventListener('click', async ()=>{
+            const url = document.getElementById('pdAlbumUrl').value.trim();
+            if(!url) return alert('Inserisci URL album/cartella');
+            const albumMatch = url.match(/\/l\/([a-zA-Z0-9_-]+)/);
+            const folderMatch = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+            if(!albumMatch && !folderMatch) return alert('URL deve contenere /l/ o /d/');
+            const btn = document.getElementById('pdExtractBtn');
+            const origHtml = btn.innerHTML;
+            btn.disabled=true; btn.innerHTML='<i class="fas fa-spinner fa-pulse"></i> Estrazione...';
+            const outBox = document.getElementById('pdAlbumOutBox');
+            const zipField = document.getElementById('pdAlbumZipUrl');
+            const origArea = document.getElementById('pdExtractedUrls');
+            const bypassArea = document.getElementById('pdAlbumOut');
+            outBox.classList.remove('hidden');
+            zipField.value = ''; origArea.value = ''; bypassArea.value = '';
+            try {
+                if(albumMatch) {
+                    const id = albumMatch[1];
+                    zipField.value = `https://${PD_BYPASS}/zip/${id}`;
+                    const resp = await fetch(`https://pixeldrain.com/api/list/${id}`);
+                    if(!resp.ok) throw new Error('Album non trovato');
+                    const data = await resp.json();
+                    let orig=[], bypass=[];
+                    data.files.forEach(f=>{ orig.push(`https://pixeldrain.com/u/${f.id}  •  ${f.name}`); bypass.push(`https://${PD_BYPASS}/${f.id}`); });
+                    origArea.value = orig.join('\n'); bypassArea.value = bypass.join('\n');
+                } else if(folderMatch) {
+                    const id = folderMatch[1];
+                    zipField.value = `https://${PD_BYPASS}/dzip/${id}`;
+                    const proxyApi = `https://cdn.pixeldrain.eu.cc/proxy-api/filesystem/${id}`;
+                    const resp = await fetch(proxyApi);
+                    if(!resp.ok) throw new Error('Cartella non accessibile');
+                    const data = await resp.json();
+                    let orig=[], bypass=[];
+                    if(data.children?.forEach) data.children.forEach(child=>{
+                        if(child.type==='file' && child.name!=='.search_index.gz'){
+                            orig.push(`https://pixeldrain.com/d/${id}/${child.name}`);
+                            bypass.push(`https://${PD_BYPASS}/${id}/${encodeURIComponent(child.name)}`);
+                        }
+                    });
+                    origArea.value = orig.join('\n'); bypassArea.value = bypass.join('\n');
+                }
+            } catch(e) { bypassArea.value = 'Errore: '+e.message; }
+            finally { btn.disabled=false; btn.innerHTML=origHtml; }
+        });
+        document.getElementById('pdCopyAlbumBtn').addEventListener('click', ()=>{ const val=document.getElementById('pdAlbumOut').value; if(val){ navigator.clipboard.writeText(val); alert('Copiato'); } });
+        document.getElementById('pdCopyOrigBtn').addEventListener('click', ()=>{ const val=document.getElementById('pdExtractedUrls').value; if(val){ navigator.clipboard.writeText(val); alert('Copiato'); } });
+    })();
+
+    // ======================== GOFILE BYPASS ========================
+    (function() {
+        const GF_BYPASS = 'gofilecdn.eu.cc';
+        const GOFILE_REGEX = /^https?:\/\/(?:www\.)?gofile\.io\/d\/([A-Za-z0-9]+)/;
+
+        function buildBypassUrl(contentId, pw, filename) {
+            let url = `https://${GF_BYPASS}/${contentId}`;
+            if (filename) url += `/${encodeURIComponent(filename)}`;
+            if (pw) url += `?pw=${encodeURIComponent(pw)}`;
+            return url;
+        }
+        function buildInfoUrl(contentId, pw) {
+            let url = `https://${GF_BYPASS}/${contentId}?info=1`;
+            if (pw) url += `&pw=${encodeURIComponent(pw)}`;
+            return url;
+        }
+
+        // Singoli
+        document.getElementById('gfConvertBtn').addEventListener('click', ()=>{
+            const raw = document.getElementById('gfInputUrls').value.split('\n').map(l=>l.trim()).filter(Boolean);
+            const pw = document.getElementById('gfInputPw').value.trim();
+            const outBox = document.getElementById('gfOutBox');
+            const outTxt = document.getElementById('gfIndividualOut');
+            const copyBtn = document.getElementById('gfCopyIndBtn');
+            const saveBtn = document.getElementById('gfSaveIndBtn');
+            if(!raw.length) { alert('Inserisci almeno un URL GoFile'); return; }
+            const converted = [];
+            for(let url of raw){
+                const m = url.match(GOFILE_REGEX);
+                if(m) converted.push(buildBypassUrl(m[1], pw));
+            }
+            outBox.classList.remove('hidden');
+            if(converted.length===0){
+                outTxt.value = '❌ URL GoFile non validi. Formato: https://gofile.io/d/ID';
+                copyBtn.style.display='none'; saveBtn.style.display='none';
+            } else {
+                outTxt.value = converted.join('\n');
+                copyBtn.style.display='inline-flex'; saveBtn.style.display='inline-flex';
+            }
+        });
+        document.getElementById('gfCopyIndBtn').addEventListener('click', ()=>{ const v=document.getElementById('gfIndividualOut').value; if(v){ navigator.clipboard.writeText(v); alert('Copiato!'); } });
+        document.getElementById('gfSaveIndBtn').addEventListener('click', ()=>{ const v=document.getElementById('gfIndividualOut').value; if(v){ const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([v])); a.download='gofile_links.txt'; a.click(); URL.revokeObjectURL(a.href); } });
+
+        // Cartelle / Multi-file
+        document.getElementById('gfExtractBtn').addEventListener('click', async ()=>{
+            const url = document.getElementById('gfFolderUrl').value.trim();
+            const pw = document.getElementById('gfFolderPw').value.trim();
+            if(!url) return alert('Inserisci URL cartella GoFile');
+            const m = url.match(GOFILE_REGEX);
+            if(!m) return alert('URL non valido: deve essere https://gofile.io/d/ID');
+            const contentId = m[1];
+            const btn = document.getElementById('gfExtractBtn');
+            const origHtml = btn.innerHTML;
+            btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Analisi cartella...';
+            const outBox = document.getElementById('gfFolderOutBox');
+            const extArea = document.getElementById('gfExtractedUrls');
+            const outArea = document.getElementById('gfFolderOut');
+            outBox.classList.remove('hidden');
+            extArea.value = ''; outArea.value = '';
+            try {
+                const infoUrl = buildInfoUrl(contentId, pw);
+                const resp = await fetch(infoUrl);
+                if(!resp.ok) throw new Error(`HTTP ${resp.status} — Controlla ID o password`);
+                const data = await resp.json();
+                let files = [];
+                if(data && Array.isArray(data.files)) files = data.files;
+                else if(data?.data?.children) files = Object.values(data.data.children).filter(f=>f.type==='file');
+                else if(data?.children) files = Object.values(data.children).filter(f=>f.type==='file');
+                else if(data?.contents) files = Object.values(data.contents).filter(f=>f.type==='file');
+                if(!files.length) throw new Error('Nessun file trovato nella cartella');
+                let orig=[], bypass=[];
+                files.forEach((f,idx)=>{
+                    const name = f.name || f.fileName || `file_${idx}`;
+                    orig.push(`${name} — gofile.io/d/${contentId}`);
+                    bypass.push(buildBypassUrl(contentId, pw, name));
+                });
+                extArea.value = orig.join('\n');
+                outArea.value = bypass.join('\n');
+            } catch(e){
+                outArea.value = 'Errore: '+e.message;
+            } finally {
+                btn.disabled=false; btn.innerHTML=origHtml;
+            }
+        });
+        document.getElementById('gfCopyFolderBtn').addEventListener('click', ()=>{ const v=document.getElementById('gfFolderOut').value; if(v){ navigator.clipboard.writeText(v); alert('Link bypass copiati'); } });
+        document.getElementById('gfSaveFolderBtn').addEventListener('click', ()=>{ const v=document.getElementById('gfFolderOut').value; if(v){ const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([v])); a.download='gofile_folder_bypass.txt'; a.click(); URL.revokeObjectURL(a.href); } });
+    })();
+
+    // ======================== UI: Service switcher + Tabs ========================
+    document.querySelectorAll('.service-btn').forEach(btn=>{
+        btn.addEventListener('click',()=>{
+            const service = btn.dataset.service;
+            document.querySelectorAll('.service-btn').forEach(b=>b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.service-panel').forEach(panel=>panel.classList.remove('active'));
+            document.getElementById(`${service}-panel`).classList.add('active');
+        });
+    });
+
+    function initTabs(panelId, tabClass, contentClass) {
+        const panel = document.getElementById(panelId);
+        if(!panel) return;
+        const tabs = panel.querySelectorAll(`.${tabClass}`);
+        const contents = panel.querySelectorAll(`.${contentClass}`);
+        tabs.forEach(tab=>{
+            tab.addEventListener('click',()=>{
+                const targetId = tab.dataset.tab;
+                if(!targetId) return;
+                tabs.forEach(t=>t.classList.remove('active'));
+                tab.classList.add('active');
+                contents.forEach(c=>c.classList.remove('active'));
+                const target = panel.querySelector(`#${targetId}-tab`);
+                if(target) target.classList.add('active');
+            });
+        });
+    }
+    initTabs('pixeldrain-panel', 'tab', 'tab-content');
+    initTabs('gofile-panel', 'tab', 'tab-content');
+
+    // ======================== Query param handling ========================
+    (function() {
+        const params = new URLSearchParams(window.location.search);
+        const service = params.get('service');
+        const url = params.get('url');
+        if (service && url) {
+            // Switch to the right service tab
+            const serviceBtn = document.querySelector(`.service-btn[data-service="${service}"]`);
+            if (serviceBtn) serviceBtn.click();
+            
+            // Small delay to let the UI switch, then fill and convert
+            setTimeout(() => {
+                if (service === 'pixeldrain') {
+                    const ta = document.getElementById('pdInputUrls');
+                    if (ta) {
+                        ta.value = url;
+                        document.getElementById('pdConvertBtn').click();
+                    }
+                } else if (service === 'gofile') {
+                    const ta = document.getElementById('gfInputUrls');
+                    if (ta) {
+                        ta.value = url;
+                        document.getElementById('gfConvertBtn').click();
+                    }
+                }
+            }, 300);
+        }
+    })();
+</script>
+</body>
+</html>

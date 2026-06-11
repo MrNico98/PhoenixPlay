@@ -817,6 +817,74 @@ body {
     gap: 20px;
 }
 
+/* Telegram Section */
+.telegram-section {
+    margin: 48px 0;
+}
+
+.telegram-card {
+    background: linear-gradient(135deg, #1e293b, #1a1e2e);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 20px;
+    padding: 32px 40px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.telegram-card:hover {
+    border-color: rgba(59, 130, 246, 0.6);
+    box-shadow: 0 12px 35px rgba(59, 130, 246, 0.15);
+}
+
+.telegram-icon {
+    font-size: 2.5rem;
+    color: #3b82f6;
+    flex-shrink: 0;
+}
+
+.telegram-text {
+    flex: 1;
+    min-width: 200px;
+}
+
+.telegram-text h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #f1f5f9;
+}
+
+.telegram-text p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.telegram-btn {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    flex-shrink: 0;
+}
+
+.telegram-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+}
+
 /* FAQ Section */
 .faq-wrapper {
     margin: 48px 0;
@@ -1313,6 +1381,27 @@ body {
 
 .link-btn:hover {
     background: #ea580c;
+}
+
+.bypass-btn {
+    background: transparent;
+    border: 1.5px solid #c084fc;
+    color: #c084fc;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.bypass-btn:hover {
+    background: rgba(192, 132, 252, 0.15);
+    border-color: #d9a7fc;
+    color: #d9a7fc;
 }
 
 /* Pagination */
