@@ -895,9 +895,9 @@
   },
   {
     "title": "BeamNG Drive 0.32",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/beab831c783550ad003eddaed2d0849d.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/56b98caabdcf92d58337e4ccff7f7a4e.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/d53747ccb7ee68461cdce44eca7eca9b.png"
+    "hero_image": null,
+    "grid_image": null,
+    "icon_image": null
   },
   {
     "title": "BeamNG Drive 0.33.1.0",
@@ -3032,7 +3032,7 @@
   {
     "title": "DuneCrawl 1.01",
     "hero_image": "https://cdn2.steamgriddb.com/hero/bb6048a1b768bedccf39254d563864f3.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/578f2ebaea6573b55c65c5a1fb0f6f6e.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/9ac141b6b199cd2d2d6a79dfee54b7c8.jpg",
     "icon_image": "https://cdn2.steamgriddb.com/icon/4f32afe808cf47e3dfea599f83301585.png"
   },
   {
@@ -3967,9 +3967,9 @@
   },
   {
     "title": "Finnish Cottage Simulator Build 28112024",
-    "hero_image": null,
-    "grid_image": null,
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/logo/2b3c00beef9af651645f4945cacab1c9.png",
+    "grid_image": "https://cdn2.steamgriddb.com/logo/2b3c00beef9af651645f4945cacab1c9.png",
+    "icon_image": "https://cdn2.steamgriddb.com/logo/2b3c00beef9af651645f4945cacab1c9.png"
   },
   {
     "title": "Firefighting Simulator Ignite 1.003.28253.87388",
@@ -4195,19 +4195,19 @@
   },
   {
     "title": "Forza Horizon 6 354.221",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/35b0b52c6892699f86129ef791ed11c2.png",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/d6b3a54d189bc6cd921f6581a7d41b17.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/5b8613b547316cf7808db044637edb1c.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/58fecae5c6efb1c2195a82dca261919c.ico"
   },
   {
     "title": "Forza Horizon 6 360.259",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/35b0b52c6892699f86129ef791ed11c2.png",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/d6b3a54d189bc6cd921f6581a7d41b17.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/5b8613b547316cf7808db044637edb1c.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/58fecae5c6efb1c2195a82dca261919c.ico"
   },
   {
     "title": "Forza Horizon 6 364.933",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/35b0b52c6892699f86129ef791ed11c2.png",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/d6b3a54d189bc6cd921f6581a7d41b17.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/5b8613b547316cf7808db044637edb1c.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/58fecae5c6efb1c2195a82dca261919c.ico"
   },
@@ -5054,7 +5054,7 @@
   {
     "title": "Hammerwatch II Build 18082023",
     "hero_image": "https://cdn2.steamgriddb.com/hero/2dbc9026ccad34bb6b62533ac5416cb6.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/5a8a3b80b7eb397b7561dde148df57e1.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/b33bd54d1c3735f124426fbe19c1e61a.jpg",
     "icon_image": "https://cdn2.steamgriddb.com/icon/100a2a14a7f2903d29db0dc435c0cfe8.png"
   },
   {
@@ -5228,7 +5228,7 @@
   {
     "title": "Heroes of Hammerwatch II Build 16012025",
     "hero_image": "https://cdn2.steamgriddb.com/hero/2dbc9026ccad34bb6b62533ac5416cb6.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/5a8a3b80b7eb397b7561dde148df57e1.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/b33bd54d1c3735f124426fbe19c1e61a.jpg",
     "icon_image": "https://cdn2.steamgriddb.com/icon/100a2a14a7f2903d29db0dc435c0cfe8.png"
   },
   {
@@ -5324,7 +5324,7 @@
   {
     "title": "Hot Brass Build 03052021",
     "hero_image": "https://cdn2.steamgriddb.com/hero/22edbc961497916be395fa03d6ea4796.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/21497f017d57a37b5e45a139abbc287d.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/e680613d85ecaa9d88d77f8a3769381b.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/ea89621bee7c88b2c5be6681c8ef4906.png"
   },
   {
@@ -6848,7 +6848,7 @@
   {
     "title": "MELTY BLOOD TYPE LUMINA Build 10022023",
     "hero_image": "https://cdn2.steamgriddb.com/hero/94fb25de29c41081a956ec738a8faedf.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/61d37e87ec160394e32a41dd674a3b91.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/135633f8c09c57c7c8b8350aa3761af4.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/5a4b2df3e2c5e51353edce5eaef18479.ico"
   },
   {
@@ -7076,7 +7076,7 @@
   {
     "title": "Monster Prom 2 Monster Camp Build 30082021",
     "hero_image": "https://cdn2.steamgriddb.com/hero/4dfd297062ac8f10c47d6de2c6adbe9f.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/7933723a06047682a733b159c7932e1d.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/eeb08572172f0f1a145223c24e9cb7ea.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/f9018bbd4704cc171da8b3c8c7d65e00.png"
   },
   {
@@ -7465,9 +7465,9 @@
   },
   {
     "title": "Nerf Legends 0.1",
-    "hero_image": "https://cdn2.steamgriddb.com/grid/d217d1374791feec06ada274b933e8c1.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/d217d1374791feec06ada274b933e8c1.png",
-    "icon_image": "https://cdn2.steamgriddb.com/grid/d217d1374791feec06ada274b933e8c1.png"
+    "hero_image": "https://cdn2.steamgriddb.com/grid/c2f088247999bdb2e6c1dbb05f5226cd.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/c2f088247999bdb2e6c1dbb05f5226cd.png",
+    "icon_image": "https://cdn2.steamgriddb.com/grid/c2f088247999bdb2e6c1dbb05f5226cd.png"
   },
   {
     "title": "Nested Lands 0.7.11.1",
@@ -9181,8 +9181,8 @@
   },
   {
     "title": "Remnant Records 1.2.2",
-    "hero_image": "https://cdn2.steamgriddb.com/grid/b3001d20914225121de8e19bb1a1d1b7.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/b3001d20914225121de8e19bb1a1d1b7.png",
+    "hero_image": "https://cdn2.steamgriddb.com/grid/0147b48ae690e2ca35ed13831e7b43be.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/0147b48ae690e2ca35ed13831e7b43be.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/8cdf8fcef73001f146d0ac6f4c5fd665.ico"
   },
   {
@@ -9691,9 +9691,9 @@
   },
   {
     "title": "Saints Row 4 Complete Edition",
-    "hero_image": null,
-    "grid_image": null,
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/hero/01b2d3cd2e4d7a3b96251eadd9ecbab1.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/60f84107a8b3ddfdf8c67365b18e7c5e.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/a01610228fe998f515a72dd730294d87.ico"
   },
   {
     "title": "Saints Row Gat out of Hell Complete Edition",
@@ -10934,7 +10934,7 @@
   {
     "title": "State of Decay 2 Juggernaut Edition Build 04122023",
     "hero_image": "https://cdn2.steamgriddb.com/hero/d516165ceb1a5b894093fe13a391e818.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/hero/d516165ceb1a5b894093fe13a391e818.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/e47e4f02688d488ac15fe5d7e20ff2b4.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/36b84e50eac55cadf8778631ba96bc7a.ico"
   },
   {
@@ -11767,9 +11767,9 @@
   },
   {
     "title": "The Devourer Hunted Souls Build 31102023",
-    "hero_image": null,
-    "grid_image": null,
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/logo/76e937f675a5bf2aafba03aaca886f67.png",
+    "grid_image": "https://cdn2.steamgriddb.com/logo/76e937f675a5bf2aafba03aaca886f67.png",
+    "icon_image": "https://cdn2.steamgriddb.com/logo/76e937f675a5bf2aafba03aaca886f67.png"
   },
   {
     "title": "The Drone Racing League Simulator 3.10.7237",
@@ -12793,9 +12793,9 @@
   },
   {
     "title": "USAC Code Breach 1.0.0.45",
-    "hero_image": null,
-    "grid_image": null,
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/logo/a0662fe0effe92f66195cdc78fade2cb.png",
+    "grid_image": "https://cdn2.steamgriddb.com/logo/a0662fe0effe92f66195cdc78fade2cb.png",
+    "icon_image": "https://cdn2.steamgriddb.com/logo/a0662fe0effe92f66195cdc78fade2cb.png"
   },
   {
     "title": "V Rising 1.0.10.2.83846",
@@ -13058,7 +13058,7 @@
   {
     "title": "Warhammer 40,000 Battlesector 1.1.29",
     "hero_image": "https://cdn2.steamgriddb.com/hero/062659074f89789be5d3f108f1174b72.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/e6bc9a027edc380458d3eb66f1ec6d99.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/9fe1715565bcc7a118341b2c94be7a62.jpg",
     "icon_image": "https://cdn2.steamgriddb.com/icon/ea83b15fbc04a47cf048aeffb86834f8.png"
   },
   {
