@@ -895,9 +895,9 @@
   },
   {
     "title": "BeamNG Drive 0.32",
-    "hero_image": null,
-    "grid_image": null,
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/hero/beab831c783550ad003eddaed2d0849d.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/56b98caabdcf92d58337e4ccff7f7a4e.png",
+    "icon_image": "https://cdn2.steamgriddb.com/icon/d53747ccb7ee68461cdce44eca7eca9b.png"
   },
   {
     "title": "BeamNG Drive 0.33.1.0",
@@ -5653,7 +5653,7 @@
   },
   {
     "title": "Injustice 2 0.300GOTY1G-09",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/1c209e031f5ab9e5322af431618f1e8a.jpg",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/8c33e4788904c28f0aee4b02b35ed9d3.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/288ffb7472070728482f09036fc61bc1.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/0c4368bbf7125b83fd0295ac0ae683a2.ico"
   },
@@ -6231,7 +6231,7 @@
     "title": "LEGO Indiana Jones The Original Adventures Build 23102011",
     "hero_image": "https://cdn2.steamgriddb.com/hero/320e4df890a1a620573db8170f39a093.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/1d344a510f97b0a1c77ef8a26fe5b1c7.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/d0009f47491adfab36c201e76a9d3b8e.ico"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/84ca205fe6bc691c41c3bfe5a2820a15.png"
   },
   {
     "title": "LEGO Jurassic World Build 23072015",
@@ -6261,7 +6261,7 @@
     "title": "LEGO Star Wars The Skywalker Saga Build 06042022",
     "hero_image": "https://cdn2.steamgriddb.com/hero/cd1d1e4b8a0463102b60a63a1a8b67fc.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/5a4048fbf4eb0fe64801b2bf0d6f94e7.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/53ad88c6e16e4fddb4f3c5df6f9cc6aa.ico"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/71cdbb8ed6294ff8d052c40be6449167.png"
   },
   {
     "title": "LEGO The Hobbit Build 14102014",
@@ -6903,7 +6903,7 @@
     "title": "Microsoft Flight Simulator 2024 1.1.7.0",
     "hero_image": "https://cdn2.steamgriddb.com/hero/7e02bfbd51cc4b43f4e3fca06284ca85.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/14f47a55890bf9a0d09c7778f8880300.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/a3180bcb060b7ac8d4443c727d264415.ico"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/1fc6ad3a63a8c84a1b307a6d36df353b.ico"
   },
   {
     "title": "Midnight Ghost Hunt 0.1.3",
@@ -6991,19 +6991,19 @@
   },
   {
     "title": "MISERY Build 11112025",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/0648f5ce6c73f75ab794ed2fc9150146.jpg",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/947b92fa7696b816f29b20620f870346.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/09dbe28980e96c7ca19065dd21c3e8d6.jpg",
     "icon_image": "https://cdn2.steamgriddb.com/icon/a0556c463146bb6437b2d6d244fc7c44.png"
   },
   {
     "title": "MISERY Build 23102025",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/0648f5ce6c73f75ab794ed2fc9150146.jpg",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/947b92fa7696b816f29b20620f870346.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/09dbe28980e96c7ca19065dd21c3e8d6.jpg",
     "icon_image": "https://cdn2.steamgriddb.com/icon/a0556c463146bb6437b2d6d244fc7c44.png"
   },
   {
     "title": "MISERY Build 27102025",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/0648f5ce6c73f75ab794ed2fc9150146.jpg",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/947b92fa7696b816f29b20620f870346.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/09dbe28980e96c7ca19065dd21c3e8d6.jpg",
     "icon_image": "https://cdn2.steamgriddb.com/icon/a0556c463146bb6437b2d6d244fc7c44.png"
   },
@@ -8665,9 +8665,9 @@
   },
   {
     "title": "Pratfall 1.0.0.R2502",
-    "hero_image": "https://cdn2.steamgriddb.com/grid/11a82adcd836a563c7df38236c862d06.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/11a82adcd836a563c7df38236c862d06.jpg",
-    "icon_image": "https://cdn2.steamgriddb.com/grid/11a82adcd836a563c7df38236c862d06.jpg"
+    "hero_image": "https://cdn2.steamgriddb.com/grid/e2694db636460e1433ab5ca9e5d4c689.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/e2694db636460e1433ab5ca9e5d4c689.png",
+    "icon_image": "https://cdn2.steamgriddb.com/grid/e2694db636460e1433ab5ca9e5d4c689.png"
   },
   {
     "title": "Predator Hunting Grounds 2.37",
@@ -11557,7 +11557,7 @@
   },
   {
     "title": "Teenage Mutant Ninja Turtles Shredders Revenge 1.0.0.145",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/954eefa547afa2b3a70e0da613550dea.png",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/f26b2fda361466d6032efe4a6673912c.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/49f106866e8a44e452a3103f336f3d26.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/f77e6933fcd36e8df8af982592d59ce7.ico"
   },
@@ -13143,25 +13143,25 @@
     "title": "Wartales 1.0.29779",
     "hero_image": "https://cdn2.steamgriddb.com/hero/1b59f25f2650251b89256181613ec91a.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/be770f19f358489adbb4999d20b72fd7.png",
-    "icon_image": "https://cdn2.steamgriddb.com/grid/be770f19f358489adbb4999d20b72fd7.png"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/dd0704caf250ca94abde4f59fc77803f.ico"
   },
   {
     "title": "Wartales 1.0.36369.0",
     "hero_image": "https://cdn2.steamgriddb.com/hero/1b59f25f2650251b89256181613ec91a.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/be770f19f358489adbb4999d20b72fd7.png",
-    "icon_image": "https://cdn2.steamgriddb.com/grid/be770f19f358489adbb4999d20b72fd7.png"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/dd0704caf250ca94abde4f59fc77803f.ico"
   },
   {
     "title": "Wartales 1.0.37609.0",
     "hero_image": "https://cdn2.steamgriddb.com/hero/1b59f25f2650251b89256181613ec91a.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/be770f19f358489adbb4999d20b72fd7.png",
-    "icon_image": "https://cdn2.steamgriddb.com/grid/be770f19f358489adbb4999d20b72fd7.png"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/dd0704caf250ca94abde4f59fc77803f.ico"
   },
   {
     "title": "Wartales 1.0.40128.0",
     "hero_image": "https://cdn2.steamgriddb.com/hero/1b59f25f2650251b89256181613ec91a.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/be770f19f358489adbb4999d20b72fd7.png",
-    "icon_image": "https://cdn2.steamgriddb.com/grid/be770f19f358489adbb4999d20b72fd7.png"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/dd0704caf250ca94abde4f59fc77803f.ico"
   },
   {
     "title": "Wasted World 0.9f27",
