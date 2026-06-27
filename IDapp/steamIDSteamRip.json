@@ -85,9 +85,9 @@
   },
   {
     "title": "A Way Out Free Download (v1.0.62)",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/1f48cd492e3261bbc74dbfb22764f4b9.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/f933d5c2b1cf9fd42ec839ef9648bf46.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/919807a68a8d275b2e7dd47c1ad6a69c.png"
+    "hero_image": null,
+    "grid_image": null,
+    "icon_image": null
   },
   {
     "title": "A.I.L.A Free Download (v1.0.0.6001)",
@@ -559,8 +559,8 @@
   },
   {
     "title": "Arizona Sunshine 2 Free Download (Build 12833163)",
-    "hero_image": "https://cdn2.steamgriddb.com/grid/aed2bcd91b8683c3288214b1ceef7232.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/aed2bcd91b8683c3288214b1ceef7232.png",
+    "hero_image": "https://cdn2.steamgriddb.com/grid/7b57ddcc199b974db97ca1deace2e4e5.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/7b57ddcc199b974db97ca1deace2e4e5.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/9f75e281cbe6072bd91a286e64fb6f0d.ico"
   },
   {
@@ -703,7 +703,7 @@
   },
   {
     "title": "Assassin’s Creed Unity Free Download (v1.5.0)",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/54b2b21af94108d83c2a909d5b0a6a50.jpg",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/03e457430dd6cdda1216977987cf18ec.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/2947007280adf8859edffdaf48e6e558.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/72ca943134e67f7f77189054a68c95fc.ico"
   },
@@ -817,7 +817,7 @@
   },
   {
     "title": "Automobilista 2 Free Download (v1.6.6.0)",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/6c10dd9d9883013d8b7573ae5431099d.jpg",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/934565059cf0f53d1c395a1035617440.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/7d55504cea7802ef47192d4d243a9be7.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/0e71113b51de89529d0c6a52286f2d7c.ico"
   },
@@ -5697,7 +5697,7 @@
     "title": "GUNDAM BREAKER 4 Free Download",
     "hero_image": "https://cdn2.steamgriddb.com/hero/8a92b53e138a8256cd1d4eaa5b992a0e.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/3efcdf3717ddfb3f7a6b4eb9c21ab557.png",
-    "icon_image": "https://cdn2.steamgriddb.com/grid/3efcdf3717ddfb3f7a6b4eb9c21ab557.png"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/dee0507557ce73c60b2b1532b6f43e6f.ico"
   },
   {
     "title": "Gunfire Reborn Free Download (B25102025 + Co-op)",
@@ -8354,8 +8354,8 @@
   {
     "title": "Moomintroll: Winter’s Warmth Free Download (v0.1.1252)",
     "hero_image": "https://cdn2.steamgriddb.com/hero/864bc84a668d370aaf78afbf29147507.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/b1d18141521f7ddcc14b309cba9b0df9.jpg",
-    "icon_image": "https://cdn2.steamgriddb.com/grid/b1d18141521f7ddcc14b309cba9b0df9.jpg"
+    "grid_image": "https://cdn2.steamgriddb.com/grid/d3a42db10e9859b0f183d06f089db621.jpg",
+    "icon_image": "https://cdn2.steamgriddb.com/grid/d3a42db10e9859b0f183d06f089db621.jpg"
   },
   {
     "title": "Moonlighter 2: The Endless Vault Free Download (v0.18.16.0)",
@@ -11360,7 +11360,7 @@
   {
     "title": "Samson Free Download (Build 22995049)",
     "hero_image": "https://cdn2.steamgriddb.com/hero/4cc2eb6121744f32b97778356fd64c8c.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/cec1b54a3a36f5514fad15a37dc6cfee.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/8517b0c3024ac2369e40a05dee2799f8.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/4d0da825ff593c552a919cf6f5451df4.ico"
   },
   {
@@ -11655,7 +11655,7 @@
     "title": "Sea of Thieves Free Download (v2.135.8227.0 + Co-op)",
     "hero_image": "https://cdn2.steamgriddb.com/hero/889fbd1aec443cef389ea10c93b498d8.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/fc28dd210d52ecb0135730aa1d151b1b.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/a3de6497a244badb71313dd586fdacf8.ico"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/ed8a8a99fd79417dd5ee86e141fc2233.ico"
   },
   {
     "title": "Secret Neighbor Free Download (v1.8.8.0 + Multiplayer)",
@@ -13814,7 +13814,7 @@
   {
     "title": "The Precinct Free Download (v1.11.22854)",
     "hero_image": "https://cdn2.steamgriddb.com/hero/9b34b7bd34dc9442e446336f31b28241.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/08159e1d3756e571208f105621aed63e.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/474add0ae05b9d25858e494e1a181df5.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/38904aefaa5d1f6b1f20a767b53c7520.ico"
   },
   {
