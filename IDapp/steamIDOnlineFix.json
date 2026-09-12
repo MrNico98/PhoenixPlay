@@ -7603,9 +7603,9 @@
   },
   {
     "title": "NO BACKUP 0.7.9.0",
-    "hero_image": null,
-    "grid_image": null,
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/grid/b691e113e161c514cb2bdde83c5603b4.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/b691e113e161c514cb2bdde83c5603b4.png",
+    "icon_image": "https://cdn2.steamgriddb.com/grid/b691e113e161c514cb2bdde83c5603b4.png"
   },
   {
     "title": "No Captain Allowed! undefined",
@@ -8853,7 +8853,7 @@
     "title": "Puyo Puyo Tetris Build 21052018",
     "hero_image": "https://cdn2.steamgriddb.com/hero/8d8f733a7c2a2ea60df6439a28a2b9a3.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/8e95ecf89eb411bfc41bc406be264e42.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/13f161576e1f4325f8b5cf520ebb4b1e.ico"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/d542679cd869484e83686b45affc5579.ico"
   },
   {
     "title": "Puzzle Compound 25062023",
@@ -9380,13 +9380,13 @@
   {
     "title": "Rivals of Aether 2.1.2.0",
     "hero_image": "https://cdn2.steamgriddb.com/hero/b2dc449578a4744a1684d3b0ea933702.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/26d92ac258f0fbfa10e56184450c48fa.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/294124df69a468df3ca855683889895d.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/be816c8a164ab7992ac40b97ed687634.ico"
   },
   {
     "title": "Rivals of Aether II Build 29102024",
     "hero_image": "https://cdn2.steamgriddb.com/hero/b2dc449578a4744a1684d3b0ea933702.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/26d92ac258f0fbfa10e56184450c48fa.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/294124df69a468df3ca855683889895d.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/be816c8a164ab7992ac40b97ed687634.ico"
   },
   {
@@ -10905,7 +10905,7 @@
     "title": "Starbound 1.4.4",
     "hero_image": "https://cdn2.steamgriddb.com/hero/1b6a85b8fc1fb7c71201b666cb81677b.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/04eccd0076a2ba4c0ab95a548cb90543.png",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/b266ebaa0269e2001963b902a6920e50.ico"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/c0b199d73bdf390c2f4c3150b6ee1574.ico"
   },
   {
     "title": "Stardew Valley 1.6.6",
