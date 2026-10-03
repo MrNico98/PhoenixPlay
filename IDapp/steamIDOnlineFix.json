@@ -4759,9 +4759,9 @@
   },
   {
     "title": "Granvir 2.2.4",
-    "hero_image": null,
-    "grid_image": null,
-    "icon_image": null
+    "hero_image": "https://cdn2.steamgriddb.com/grid/688d9d249a178d3030ec42ee6cd61015.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/688d9d249a178d3030ec42ee6cd61015.png",
+    "icon_image": "https://cdn2.steamgriddb.com/grid/688d9d249a178d3030ec42ee6cd61015.png"
   },
   {
     "title": "GRAVEN Build 16864.0",
@@ -5306,7 +5306,7 @@
   {
     "title": "Horizon Chase 2 Build 05092023",
     "hero_image": "https://cdn2.steamgriddb.com/hero/f08b35ad73828be6c10727df2b206010.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/add500717355718ecf5a28ddfb85d1a1.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/abd44e2b6ce29ef3664774acce464e12.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/a60736f18cc3b35717ec9b284a75d1fe.ico"
   },
   {
@@ -5395,8 +5395,8 @@
   },
   {
     "title": "HumanitZ 0.906X.4",
-    "hero_image": "https://cdn2.steamgriddb.com/grid/3ae0658fa9df9adad60997b9cf4c6bb0.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/3ae0658fa9df9adad60997b9cf4c6bb0.png",
+    "hero_image": "https://cdn2.steamgriddb.com/grid/895416fe6633c23da9654e7a5a8c97d9.jpg",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/895416fe6633c23da9654e7a5a8c97d9.jpg",
     "icon_image": "https://cdn2.steamgriddb.com/icon/c13ef8d418c19de034d14d0f0864ff2e.png"
   },
   {
@@ -5672,7 +5672,7 @@
   {
     "title": "Inside the Backrooms 0.4.2",
     "hero_image": "https://cdn2.steamgriddb.com/hero/b6c7be06325bf15d5cfcf9621f8570ee.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/82932165ca3c2acfab258f575cf4c5c0.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/5c5c6f337a361f665ba18b906c9e2f84.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/3bc690387f88354b3d2e8e41d0455659.png"
   },
   {
@@ -5732,13 +5732,13 @@
   {
     "title": "iRacing Arcade Build 03032026",
     "hero_image": "https://cdn2.steamgriddb.com/hero/21a3f54bfadeec0acebfbac34eee29ad.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/e83c026baf22d160be272edff5ac9b82.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/f8c9c18397db8fe9bed90d5e215b6196.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/8157831845fb50c27b47cdba3b0dc1ea.ico"
   },
   {
     "title": "iRacing Arcade Build 04032026",
     "hero_image": "https://cdn2.steamgriddb.com/hero/21a3f54bfadeec0acebfbac34eee29ad.jpg",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/e83c026baf22d160be272edff5ac9b82.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/f8c9c18397db8fe9bed90d5e215b6196.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/8157831845fb50c27b47cdba3b0dc1ea.ico"
   },
   {
@@ -5767,7 +5767,7 @@
   },
   {
     "title": "It Takes Two 1.0.0.2",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/54430319f44a3febe74012d9ced38a1d.jpg",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/4eef81afcca65a2bec89409a35bc237d.png",
     "grid_image": "https://cdn2.steamgriddb.com/grid/84d8df6932e202152767f7579f32c613.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/c7674c8eb822d255f1ca0824090716fd.png"
   },
@@ -6026,7 +6026,7 @@
   {
     "title": "King Of The Castle 1.0.1",
     "hero_image": "https://cdn2.steamgriddb.com/hero/186af6271b295123654ddf7dff8a9ff0.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/43d8a44ea59ccd70d22d7e240d5c31f3.png",
+    "grid_image": "https://cdn2.steamgriddb.com/grid/51665b954cfe165b8b8548c6d006eb5a.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/7e0a79cfc141c8bfc8ee8247f40ce8cf.png"
   },
   {
@@ -6207,7 +6207,7 @@
     "title": "LEGO DC Super-Villains Build 10052019",
     "hero_image": "https://cdn2.steamgriddb.com/hero/ff0a431a29c728e766168d412be85567.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/57d33ca31ef6467b3544c167a9c017d1.jpg",
-    "icon_image": "https://cdn2.steamgriddb.com/icon/8e77b3768b440a281c5101ca7941d5e0.ico"
+    "icon_image": "https://cdn2.steamgriddb.com/icon/015e31933548461020e2ba448e85995e.ico"
   },
   {
     "title": "Lego Harry Potter Years 1-4 Build 01052014",
@@ -8425,7 +8425,7 @@
   },
   {
     "title": "PICO PARK 2 1.04",
-    "hero_image": "https://cdn2.steamgriddb.com/grid/9723d45eb738d6f0cc9b71a5860341c1.png",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/eafcd52ac7ba5dd8bd9278892f35f791.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/9723d45eb738d6f0cc9b71a5860341c1.png",
     "icon_image": "https://cdn2.steamgriddb.com/icon/894e08d9dd4f355254a2a72ca39eb002.png"
   },
@@ -13184,20 +13184,20 @@
   {
     "title": "Wayfinder Build 11092024",
     "hero_image": "https://cdn2.steamgriddb.com/hero/f6fd356ed18363bcd20888b0f4b6b113.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/ec55da829313a7bcb1cc7ac9ca6ee7be.png",
-    "icon_image": "https://cdn2.steamgriddb.com/grid/ec55da829313a7bcb1cc7ac9ca6ee7be.png"
+    "grid_image": "https://cdn2.steamgriddb.com/grid/67846ad8af4e78dc6f3094645ee4d54c.png",
+    "icon_image": "https://cdn2.steamgriddb.com/grid/67846ad8af4e78dc6f3094645ee4d54c.png"
   },
   {
     "title": "Wayfinder Build 22102024",
     "hero_image": "https://cdn2.steamgriddb.com/hero/f6fd356ed18363bcd20888b0f4b6b113.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/ec55da829313a7bcb1cc7ac9ca6ee7be.png",
-    "icon_image": "https://cdn2.steamgriddb.com/grid/ec55da829313a7bcb1cc7ac9ca6ee7be.png"
+    "grid_image": "https://cdn2.steamgriddb.com/grid/67846ad8af4e78dc6f3094645ee4d54c.png",
+    "icon_image": "https://cdn2.steamgriddb.com/grid/67846ad8af4e78dc6f3094645ee4d54c.png"
   },
   {
     "title": "Wayfinder Build 27022025",
     "hero_image": "https://cdn2.steamgriddb.com/hero/f6fd356ed18363bcd20888b0f4b6b113.png",
-    "grid_image": "https://cdn2.steamgriddb.com/grid/ec55da829313a7bcb1cc7ac9ca6ee7be.png",
-    "icon_image": "https://cdn2.steamgriddb.com/grid/ec55da829313a7bcb1cc7ac9ca6ee7be.png"
+    "grid_image": "https://cdn2.steamgriddb.com/grid/67846ad8af4e78dc6f3094645ee4d54c.png",
+    "icon_image": "https://cdn2.steamgriddb.com/grid/67846ad8af4e78dc6f3094645ee4d54c.png"
   },
   {
     "title": "Wayward 2.11.5",
@@ -13273,7 +13273,7 @@
   },
   {
     "title": "What The Fog Build 23052024",
-    "hero_image": "https://cdn2.steamgriddb.com/hero/a22e4383849b4bb63896c5655ac51f4a.jpg",
+    "hero_image": "https://cdn2.steamgriddb.com/hero/1d0d0c34317775900d44dec5b21f8638.jpg",
     "grid_image": "https://cdn2.steamgriddb.com/grid/7e5f73ddcf7cbeba65b4575a852cac12.jpg",
     "icon_image": "https://cdn2.steamgriddb.com/icon/ed3005edc1a43cbcbf586ff2636adf6a.png"
   },
